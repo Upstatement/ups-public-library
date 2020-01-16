@@ -1,11 +1,11 @@
 module.exports = {
-  title: 'Hyper Hi',
-  description: 'Learning.',
+  title: 'Upstatement Public Library',
+  description: 'Always be Learning',
   themeConfig: {
     nav: [
       {
         text: 'Welcome',
-        link: '/'
+        link: '/',
       },
       {
         text: 'Lessons',
@@ -13,7 +13,7 @@ module.exports = {
         items: [
           { text: 'Lesson One', link: '/learn/lessons/lesson-one/' },
           { text: 'Lesson Two', link: '/learn/lessons/lesson-two/' },
-        ]
+        ],
       },
       {
         text: 'References',
@@ -21,17 +21,9 @@ module.exports = {
       },
     ],
     sidebar: {
-      '/learn/': [
-        '',
-        'lessons/lesson-one',
-        'lessons/lesson-two'
-      ],
-      '/references/': [
-        '',
-      ],
-      '/': [
-        '',
-      ],
+      '/learn/': ['', 'lessons/lesson-one', 'lessons/lesson-two'],
+      '/references/': [''],
+      '/': [''],
     },
-  }
-}
+  },
+};
