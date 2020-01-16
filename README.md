@@ -8,19 +8,19 @@ A knowledge base and learning tool for designers at Upstatement who want to writ
 1. Install dependencies
 
    ```sh
-   npm install
+   yarn install
    ```
 
 1. Start the dev server
 
    ```sh
-   npm run dev
+   yarn dev
    ```
 
    Or, to generate with static assets:
 
    ```sh
-   npm run build
+   yarn build
    ```
 
 ## Editing Pages
