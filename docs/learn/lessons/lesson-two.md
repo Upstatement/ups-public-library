@@ -23,6 +23,8 @@ git clone [repo-url]
 
 Git is called version control because it uses commits to mark points in the code's evolution. Commits are like batch-saves. Once a developer completes an incremental change to an app or website, they bundle all of the file changes that comprise it into what's called a **commit.** Commits and the changes that they contain are made and grouped manually, and also contain a short message describing what they do. Git stores information on every commit that gets made, so we can trace changes all the way back to when they were introduced, who made them, and what the code was like before they were made. We use GitHub to view all of that information.
 
+> Because git commits are a catalog of a project's history, they should be meaningful milestones. Ideally, every commit should represent an incremental change that can be safely reverted to, in which everything works. Commits can be as small as you like, even down to fixing a typo, but be wary of letting them get large.
+
 ```sh
 # The add command accepts a path to a folder or file
 # that has been changed, and stages it to be included
