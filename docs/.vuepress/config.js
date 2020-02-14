@@ -11,8 +11,8 @@ module.exports = {
         text: 'Lessons',
         ariaLabel: 'Lessons Menu',
         items: [
-          { text: 'Lesson One', link: '/learn/lessons/lesson-one' },
-          { text: 'Lesson Two', link: '/learn/lessons/lesson-two' },
+          { text: 'Intro to Terminal', link: '/learn/lessons/lesson-one' },
+          { text: 'Intro to Git', link: '/learn/lessons/lesson-two' },
         ],
       },
       {
