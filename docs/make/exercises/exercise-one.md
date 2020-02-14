@@ -1,1 +1,1 @@
-# Exercise One
+# Exercise: Cloning a Repo

@@ -40,11 +40,13 @@ In many cases, most of the code to support a dynamic website must run on a serve
 
 ### end, Front
 
-Essentailly, the converse of [back-end](#end-back). The portion of a website that runs on the machine displaying it, such as the design, static content, and interactive scripting, is known as the "front-end". Creating this code is often referred to as front-end development.
+Essentailly, the converse of [back-end](#end-back). The portion of a website that runs on the machine displaying it, such as the design, static content, and interactive scripting, is known as the "front-end." Creating this code is often referred to as front-end development.
 
 ### Expression
 
 ### Function
+
+### Git
 
 ### HTML
 

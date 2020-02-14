@@ -36,10 +36,9 @@ module.exports = {
         title: 'Learn',
         path: '/learn/',
         children: [
-          '/learn/',
           '/learn/lessons/lesson-one',
-          '/make/exercises/exercise-one',
           '/learn/lessons/lesson-two',
+          '/make/exercises/exercise-one',
         ],
       },
       {
