@@ -10,7 +10,7 @@ When one person is writing code, there's no problem with them changing, updating
 
 ## Repositories
 
-Codebases in git are called **repositories** (or repos), and are stored in the cloud. At Upstatement, we use GitHub to host our repos. The code on GitHub is known as the "single source of truth": we can all clone it and make changes independently, but those copies are inconsequential until they've been uploaded back into the source of truth. The act of downloading a repo from the cloud onto your maching is called **cloning**, since you're not just downloading one set files, but information on the entire history of the repo.
+Codebases in git are called **repositories** (or repos), and are stored in the cloud. At Upstatement, we use GitHub to host our repos. The code on GitHub is known as the "single source of truth": we can all clone it and make changes independently, but those copies are inconsequential until they've been uploaded back into the source of truth. The act of downloading a repo from the cloud onto your matching is called **cloning**, since you're not just downloading one set files, but information on the entire history of the repo.
 
 GitHub has a handy button for copying the command to clone a repo, so you'll almost never have to type this one. It looks something like this:
 
@@ -64,7 +64,7 @@ git commit
 
 ## Branches
 
-Repos contain numerous instances of the codebase. Each instance is called a **branch.** Branches are isolated from each other, and be incrementally or entirely different versions of files (though we don't ever want too much diversion.) The default branch that new ones are based off of is usually named `develop` or `master`, and should always be a working, stable version of the codebase. When a developer wants to make changes, they create a new branch based off of an existing one, give it a relevant name, and carry on there.
+Repos contain numerous instances of the codebase. Each instance is called a **branch.** Branches are isolated from each other, and can contain incrementally or entirely different versions of files (though we don't ever want too much diversion). The default branch that new ones are based off of is usually named `develop` or `master`, and should always be a working, stable version of the codebase. When a developer wants to make changes, they create a new branch based off of an existing one, give it a relevant name, and carry on there.
 
 ### Swithcing branches with `checkout`
 

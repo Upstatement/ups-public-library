@@ -69,6 +69,6 @@ And here are some examples:
 | `command && command`                       | Do the first command, then immediately do the second.                                              |
 | `command >Path/To/FolderOrFile`            | Redirect the output of a command to a given path.                                                  |
 
-These are just the basics. There are myriad commands that come with your shell, and you can easily create complex scripts by chaining them together. In addition, you can install command line interfaces (CLI) to add more commands, and increase the amount you can accmplish within terminal.
+These are just the basics. There are myriad commands that come with your shell, and you can easily create complex scripts by chaining them together. In addition, you can install command line interfaces (CLI) to add more commands, and increase the amount you can accomplish within terminal.
 
 [Git](/references/#git) is one such CLI that is a core part of contributing to websites and other shared codebases. We'll learn about it in the next section.
