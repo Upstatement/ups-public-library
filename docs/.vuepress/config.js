@@ -18,7 +18,8 @@ module.exports = {
       {
         text: 'Exercises',
         ariaLabel: 'Exercises Menu',
-        items: [{ text: 'Exercise One', link: '/make/exercises/exercise-one' }],
+        items: [{ text: 'Setting Up a Repo', link: '/make/exercises/exercise-one' }],
+        items: [{ text: 'Working in Branches', link: '/make/exercises/exercise-two' }],
       },
       {
         text: 'References',
@@ -39,6 +40,7 @@ module.exports = {
           '/learn/lessons/lesson-one',
           '/learn/lessons/lesson-two',
           '/make/exercises/exercise-one',
+          '/make/exercises/exercise-two',
         ],
       },
       {
