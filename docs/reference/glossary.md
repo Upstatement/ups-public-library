@@ -1,9 +1,6 @@
----
-title: References
-sidebarDepth: 2
----
+# Glossary
 
-## General Programming Terms & Languages
+## General
 
 ### Array
 

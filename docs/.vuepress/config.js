@@ -18,12 +18,19 @@ module.exports = {
       {
         text: 'Exercises',
         ariaLabel: 'Exercises Menu',
-        items: [{ text: 'Setting Up a Repo', link: '/make/exercises/exercise-one' }],
-        items: [{ text: 'Working in Branches', link: '/make/exercises/exercise-two' }],
+        items: [
+          { text: 'Setting Up a Repo', link: '/make/exercises/exercise-one' },
+          { text: 'Working in Branches', link: '/make/exercises/exercise-two' },
+        ],
       },
       {
         text: 'References',
-        link: '/references',
+        ariaLabel: 'Reference Menu',
+        items: [
+          { text: 'Glossary', link: '/reference/glossary' },
+          { text: 'Terminal', link: '/reference/terminal' },
+          { text: 'Git', link: '/reference/git' },
+        ],
       },
     ],
     sidebar: [
@@ -45,7 +52,7 @@ module.exports = {
       },
       {
         title: 'References',
-        path: '/references',
+        children: ['/reference/glossary', '/reference/terminal', '/reference/git'],
       },
     ],
   },
