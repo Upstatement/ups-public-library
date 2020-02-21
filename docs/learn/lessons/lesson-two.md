@@ -2,7 +2,7 @@
 
 ## What is git?
 
-Git is a program for versioning and iterating code. It's often referred to as "version control." The way it works can seem comlpex at first, and it has with tons of features. But, once you get the hang of its core concepts, it becomes intuitive and helpful.
+Git is a program for versioning and iterating code. It's often referred to as "version control." The way it works can seem complex at first, and it has with tons of features. But, once you get the hang of its core concepts, it becomes intuitive and helpful.
 
 ### Why do we need git?
 
