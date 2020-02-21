@@ -2,7 +2,7 @@
 
 ## What is git?
 
-Git is a program for versioning and iterating code. It's often referred to as "version control." The way it works can seem comlpex at first, and it has with tons of features. But, once you get the hang of its core concepts, it becomes intuitive and helpful.
+Git is a program for versioning and iterating code. It's often referred to as "version control." The way it works can seem complex at first, and it has with tons of features. But, once you get the hang of its core concepts, it becomes intuitive and helpful.
 
 ### Why do we need git?
 
@@ -66,7 +66,7 @@ git commit
 
 Repos contain numerous instances of the codebase. Each instance is called a **branch.** Branches are isolated from each other, and can contain incrementally or entirely different versions of files (though we don't ever want too much diversion). The default branch that new ones are based off of is usually named `develop` or `master`, and should always be a working, stable version of the codebase. When a developer wants to make changes, they create a new branch based off of an existing one, give it a relevant name, and carry on there.
 
-### Swithcing branches with `checkout`
+### Switching branches with `checkout`
 
 Switching branches is called "checking out". When you check out to a branch, the contents of all of the files in your local repository are updated to match their versions in that branch. **You cannot checkout to another branch if you have un-commited changes.** That keeps you from accidentally overriding work in progress.
 
