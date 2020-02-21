@@ -5,6 +5,10 @@ A knowledge base and learning tool for designers at Upstatement who want to writ
 ## Getting Started
 
 1. Clone the repo
+1. Ensure you're using the right node version
+   ```sh
+   nvm use
+   ```
 1. Install dependencies
 
    ```sh
