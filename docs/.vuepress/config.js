@@ -44,10 +44,15 @@ module.exports = {
         title: 'Learn',
         path: '/learn/',
         children: [
-          '/learn/lessons/lesson-one',
-          '/learn/lessons/lesson-two',
-          '/make/exercises/exercise-one',
-          '/make/exercises/exercise-two',
+          {
+            title: 'Project Setup',
+            children: [
+              '/learn/lessons/lesson-one',
+              '/learn/lessons/lesson-two',
+              '/make/exercises/exercise-one',
+              '/make/exercises/exercise-two',
+            ],
+          },
         ],
       },
       {
