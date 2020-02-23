@@ -2,6 +2,17 @@
 
 ## Commands
 
+### `man`
+
+If you ever want to learn more about a command, you can read its manual right in the terminal using the `man` command.
+
+```sh
+# eg:
+man cd
+```
+
+To exit the documentation, simply press `q` (for quit)
+
 ### `cd`
 
 ```sh
@@ -27,22 +38,53 @@ open Path/To/File.abc
 [app name] Path/To/FolderOrFile
 ```
 
-### `mkdir Path/To/NewFolderName`
+### `mkdir`
 
-Creates a directory at the specified location, using the name at the end of the path.
+```sh
+# Creates a directory at the specified location, using the name at the end of the path.
+mkdir Path/To/NewFolderName
+```
 
-### `touch Path/To/NewFileName.abc`
+### `touch`
 
-Creates a new file at the specified location, using the name and extension at the end of the path.
+```sh
+# Creates a new file at the specified location, using the name and extension at the end of the path.
+touch Path/To/NewFileName.abc
+```
 
-### `echo anything`
+### `echo`
 
-Repeats the input back to you.
+```sh
+# Repeats the input back to you.
+echo a few words
 
-### `command && command`
+# Immeditely add input to the end of a target file.
+# Creates one if there is none at the specified destination.
+echo "this is the end of the file" > /Path/To/File.txt
+```
 
-Do the first command, then immediately do the second.
+### `&&`
 
-### `command >Path/To/FolderOrFile`
+```sh
+# Do the first command, then immediately do the second.
+mkdir /newFolder && cd /newFolder
+```
 
-Redirect the output of a command to a given path.
+### `>`
+
+```sh
+# Redirect the output of a command to a given path.
+echo anything > /Path/To/File.txt
+```
+
+### `rm`
+
+```sh
+# Delete something. Forever. IRREVERSIBLE. Will ask for confirmation.
+rm -i /file-you-will-never-see-again.txt
+
+# Immediately, permanently delete a folder and everything in it
+rm -rf /FolderToObliterate
+```
+
+## Shortcuts
