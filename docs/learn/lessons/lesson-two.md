@@ -10,7 +10,7 @@ When one person is writing code, there's no problem with them changing, updating
 
 ## Repositories
 
-Codebases in git are called **repositories** (or repos), and are stored in the cloud. At Upstatement, we use GitHub to host our repos. The code on GitHub is known as the "single source of truth": we can all clone it and make changes independently, but those copies are inconsequential until they've been uploaded back into the source of truth. The act of downloading a repo from the cloud onto your matching is called **cloning**, since you're not just downloading one set files, but information on the entire history of the repo.
+Codebases in git are called **repositories** (or repos), and are stored in the cloud. At Upstatement, we use GitHub to host our repos. The code on GitHub is known as the "single source of truth": we can all clone it and make changes independently, but those copies are inconsequential until they've been uploaded back into the source of truth. The act of downloading a repo from the cloud onto your machine is called **cloning**, since you're not just downloading one set files, but information on the entire history of the repo.
 
 GitHub has a handy button for copying the command to clone a repo, so you'll almost never have to type this one. It looks something like this:
 
