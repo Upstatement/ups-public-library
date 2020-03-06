@@ -13,6 +13,8 @@ module.exports = {
         items: [
           { text: 'Intro to Terminal', link: '/learn/lessons/lesson-one' },
           { text: 'Intro to Git', link: '/learn/lessons/lesson-two' },
+          { text: 'Intro to HTML', link: '/learn/lessons/lesson-three' },
+          { text: 'HTML Elements', link: '/learn/lessons/lesson-four' },
         ],
       },
       {
@@ -52,6 +54,10 @@ module.exports = {
               '/make/exercises/exercise-one',
               '/make/exercises/exercise-two',
             ],
+          },
+          {
+            title: 'HTML',
+            children: ['/learn/lessons/lesson-three', '/learn/lessons/lesson-four'],
           },
         ],
       },
