@@ -55,7 +55,7 @@ Another way of referring to webpages is as "HTML Documents". It's kind of a date
 
 ### Content Structure
 
-Every HTML Document has exactly one a body tag, which is where all of the visible site on the content goes. Inside the body, most web pages start with a common content structure:
+Every HTML Document has exactly one body tag, which is where all of the visible site on the content goes. Inside the body, most web pages start with a common content structure:
 
 ```HTML
 <body>
