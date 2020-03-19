@@ -25,6 +25,7 @@ module.exports = {
         items: [
           { text: 'Setting Up a Repo', link: '/make/exercises/exercise-1' },
           { text: 'Working in Branches', link: '/make/exercises/exercise-2' },
+          { text: 'Style Stuff', link: '/make/exercises/exercise-3' },
         ],
       },
       {
@@ -50,12 +51,7 @@ module.exports = {
         children: [
           {
             title: 'Project Setup',
-            children: [
-              '/learn/lessons/lesson-1',
-              '/learn/lessons/lesson-2',
-              '/make/exercises/exercise-3',
-              '/make/exercises/exercise-4',
-            ],
+            children: ['/learn/lessons/lesson-1', '/learn/lessons/lesson-2'],
           },
           {
             title: 'HTML',
