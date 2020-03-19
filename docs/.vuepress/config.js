@@ -11,18 +11,18 @@ module.exports = {
         text: 'Lessons',
         ariaLabel: 'Lessons Menu',
         items: [
-          { text: 'Intro to Terminal', link: '/learn/lessons/lesson-one' },
-          { text: 'Intro to Git', link: '/learn/lessons/lesson-two' },
-          { text: 'Intro to HTML', link: '/learn/lessons/lesson-three' },
-          { text: 'HTML Elements', link: '/learn/lessons/lesson-four' },
+          { text: 'Intro to Terminal', link: '/learn/lessons/lesson-1' },
+          { text: 'Intro to Git', link: '/learn/lessons/lesson-2' },
+          { text: 'Intro to HTML', link: '/learn/lessons/lesson-3' },
+          { text: 'HTML Elements', link: '/learn/lessons/lesson-4' },
         ],
       },
       {
         text: 'Exercises',
         ariaLabel: 'Exercises Menu',
         items: [
-          { text: 'Setting Up a Repo', link: '/make/exercises/exercise-one' },
-          { text: 'Working in Branches', link: '/make/exercises/exercise-two' },
+          { text: 'Setting Up a Repo', link: '/make/exercises/exercise-1' },
+          { text: 'Working in Branches', link: '/make/exercises/exercise-2' },
         ],
       },
       {
@@ -49,15 +49,15 @@ module.exports = {
           {
             title: 'Project Setup',
             children: [
-              '/learn/lessons/lesson-one',
-              '/learn/lessons/lesson-two',
-              '/make/exercises/exercise-one',
-              '/make/exercises/exercise-two',
+              '/learn/lessons/lesson-1',
+              '/learn/lessons/lesson-2',
+              '/make/exercises/exercise-3',
+              '/make/exercises/exercise-4',
             ],
           },
           {
             title: 'HTML',
-            children: ['/learn/lessons/lesson-three', '/learn/lessons/lesson-four'],
+            children: ['/learn/lessons/lesson-3', '/learn/lessons/lesson-4'],
           },
         ],
       },
