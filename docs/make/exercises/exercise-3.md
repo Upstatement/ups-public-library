@@ -4,7 +4,7 @@ Below is a JSFiddle with a new header for Upstatement Public Library scaffolded 
 
 We are going to go through a set of tasks to learn specific parts of CSS.
 
-1. Position the search icon
+1. Position the **search icon** `30px` below the **logo text** by only .
 
 1.
 
