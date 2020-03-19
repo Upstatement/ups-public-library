@@ -15,6 +15,8 @@ module.exports = {
           { text: 'Intro to Git', link: '/learn/lessons/lesson-2' },
           { text: 'Intro to HTML', link: '/learn/lessons/lesson-3' },
           { text: 'HTML Elements', link: '/learn/lessons/lesson-4' },
+          { text: 'CSS: The Box Model', link: '/learn/lessons/lesson-5' },
+          { text: 'CSS: In Practice', link: '/learn/lessons/lesson-6' },
         ],
       },
       {
@@ -58,6 +60,10 @@ module.exports = {
           {
             title: 'HTML',
             children: ['/learn/lessons/lesson-3', '/learn/lessons/lesson-4'],
+          },
+          {
+            title: 'CSS',
+            children: ['/learn/lessons/lesson-5', '/learn/lessons/lesson-6'],
           },
         ],
       },
