@@ -1,4 +1,24 @@
 {
+  "name": "upstatement-public-library",
+  "description": "A searchable catalog of information, lessons, and excercieses for building websites.",
+  "contributors": [
+    {
+      "name": "Alec Marcus",
+      "email": "alec@alecmarc.us",
+      "url": "https://alecmarc.us/"
+    },
+    {
+      "name": "Stephanie Lee",
+      "email": "stephaniewlee@gmail.com",
+      "url": "http://stephalee.com/"
+    }
+  ],
+  "license": "MIT",
+  "homepage": "https://library.upstatement.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/upstatement/ups-public-library.git"
+  },
   "devDependencies": {
     "@upstatement/eslint-config": "^0.4.2",
     "@upstatement/prettier-config": "^0.3.0",

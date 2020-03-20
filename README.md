@@ -40,3 +40,7 @@ Within that folder, you can create new pages by creating a folder with your desi
 > For more info on making pages, see the [vuepress docs](https://vuepress.vuejs.org/guide/directory-structure.html#default-page-routing).
 
 Powered by [vuepress](https://vuepress.vuejs.org/)
+
+## About Upstatement
+
+[Upstatement](https://www.upstatement.com/) is a digital transformation studio headquartered in Boston, MA that imagines and builds exceptional digital experiences. Make sure to check out our [services](https://www.upstatement.com/services/), [work](https://www.upstatement.com/work/), and [open positions](https://www.upstatement.com/jobs/)!
