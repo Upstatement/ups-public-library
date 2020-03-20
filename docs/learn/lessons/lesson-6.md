@@ -1,10 +1,10 @@
 # Cascade, Inheritance, and Specificity
 
-The cascade, inheritance, and specificity among the most fundamental concepts of CSS and control how CSS is applied to HTML.
+The cascade, inheritance, and specificity are among the most fundamental concepts of CSS and control how CSS is applied to HTML.
 
 ## Cascade
 
-Stylesheets cascade, meaning that **the order of CSS rules matter**. When two rules apply that have equal specificity, the one that comes last in the CSS will be applied.
+Stylesheets cascade, meaning that **the order of CSS rules matter.** When two rules apply that have equal specificity, the one that comes **last** will be applied.
 
 ```CSS
 /* Example CSS file*/
@@ -22,7 +22,7 @@ h1 {
 
 ## Inheritance
 
-Inheritance also plays an important role in how CSS rules are applied. Inheritance is the concept that some CSS property values set on parent elements are inherited by their child elements, and some aren't.
+Inheritance also plays an important role in how CSS rules are applied. Inheritance is the concept that some CSS property values set on parent elements are applied to their children as well, and some aren't.
 
 ### Inherited properties
 
@@ -30,7 +30,7 @@ For example, if you set a `color` and `font-family` on an element, every element
 
 ### Non-inherited properties
 
-Some properties do not inherit — for example if you set a `width` of `50%` on an element, all of its descendants **_do not_** get a `width` of `50%` of their parent's `width`.
+Some properties do not inherit &mdash; for example, if you set `width: 50%` on an element, all of its descendants **_do not_** get a `width` of `50%` of their parent's `width`.
 
 You can look up whether a specific CSS property is inherited here: [CSS Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
 
@@ -40,7 +40,7 @@ For more information on how the cascade, specificity, and inheritance work visit
 
 ## Specificity
 
-Specificity is how the browser decides which rule to apply. It is basically a measure of how specific a selector's selection will be. For example, a **class selector** [`.paragraph`, `.nav-link`, `.page-header`] is more specific than an **element or type selector** [`p`, `a`, `div`], and therefore will have a higher score.
+Specificity is the metric browsers use to decide which rules to apply. Every type of selector has a specificity score. If a property's value has been set on an element in more than one rule, browsers will use the value in the selector with the highest score. For example, a **class selector** (`.paragraph`, `.nav-link`, `.page-header`) is more specific than an **element or type selector** (`p`, `a`, `div`), and therefore will have a higher score.
 
 ### Element Selector
 
@@ -62,9 +62,11 @@ Selects all elements. Optionally, it may be restricted to a specific namespace o
 }
 ```
 
+> Generally, usage of the universal selector is discouraged, since it can slow things down: it forces the browser to look through every single element it could possible style on the page, and apply the rule you wrote to it. Use with intent!
+
 ### Type selector
 
-Selects all elements that have the given node name.
+Selects all elements that have the given tag name.
 
 ```CSS
 p {
@@ -104,9 +106,9 @@ h1, h2, h3, h4 {
 
 ## Combinators
 
-### ``
+### Descendant Combinator: `[space]`
 
-The **descendant combinator** combinator selects nodes that are descendants of the first element.
+The **descendant combinator** is used by simply adding a space between selectors. It selects nodes that are descendants of the first ingredient of the selector.
 
 ```CSS
 li a {
@@ -114,7 +116,9 @@ li a {
 }
 ```
 
-### `>`
+> Descendant combinators will select every matching descendant, all the way down the document tree.
+
+### Child Combinator: `>`
 
 The **child combinator** selects nodes that are direct children of the first element.
 
@@ -124,7 +128,9 @@ The **child combinator** selects nodes that are direct children of the first ele
 }
 ```
 
-### `~`
+> Differs from the descendant combinator in that it will only select direct children of the first ingredient.
+
+### General Sibling Combinator: `~`
 
 The **general sibling combinator** selects siblings. This means that the second element follows the first (though not necessarily immediately), and both share the same parent.
 
@@ -134,7 +140,7 @@ The **general sibling combinator** selects siblings. This means that the second 
 }
 ```
 
-### `+`
+### Adjacent Sibling Combinator: `+`
 
 The **adjacent sibling combinator** selects adjacent siblings. This means that the second element directly follows the first, and both share the same parent.
 
@@ -144,29 +150,57 @@ h3 ~ p  {
 }
 ```
 
-### `||`
+## Pseudo Selectors
 
-The **column combinator** selects nodes which belong to a column.
+Pseudo-CSS lets us access functionality and nodes that aren't directly exposed by the HTML that we write. States triggered by user interaction and user-agent styles/elements are some of the main things we use pseudo selectors to target. We can also create pseudo-elements that don't exist in our HTML by writing selectors for them.
 
-## Pseudo
+### Pseudo Classes: `:`
 
-### `:`
+**Pseudo classes** allow the selection of elements based on state information that is not contained in the document tree.
 
-**Pseudo classes** → allow the selection of elements based on state information that is not contained in the document tree.
+For a full list of pseudo class selectors and their functionality, [see MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes).
 
 ```CSS
 a:hover {
   color: blue;
 }
+
+.checkbox:checked {
+  font-weight: bold;
+}
+
+button:disabled {
+  opacity: 0.5;
+}
 ```
 
-### `::`
+### Pseudo Elements: `::`
 
-**Pseudo elements** → represent entities that are not included in HTML.
+**Pseudo elements** represent entities that are not included or described in HTML.
+
+For a full list of pseudo element selectors and their functionality, [see MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements).
 
 ```CSS
 li::first-child {
   margin-top: 0;
+}
+
+input::placeholder {
+  opacity: 0.8;
+}
+```
+
+We can create pseudo elements by writing selectors for them. There are two kinds we can make: `after` and `before` elements. They are injected into the DOM as either the first or last child of the parent selector.
+
+**In order for the browser to render a `before` or `after`, you must include the `content:` attribute. You can leave it blank (`""`), but it must be there.**
+
+```CSS
+footer::before {
+  content: "I'm now the first child of the footer!";
+}
+
+footer::after {
+  content: "And I'm the last.";
 }
 ```
 
