@@ -6,7 +6,7 @@ Below is a live demo of a new header for Upstatement Public Library scaffolded i
 
 <template>
 
-  <main>
+  <main class="exercise-3">
     <header>
       <nav>
         <ul>
@@ -38,13 +38,13 @@ body {
   margin: 0;
 }
 
-header {
+.exercise-3 header {
   display: flex;
   align-items: baseline;
 }
 
-nav,
-div {
+.exercise-3 nav,
+.exercise-3 div {
   flex: 1;
 }
 </style>
