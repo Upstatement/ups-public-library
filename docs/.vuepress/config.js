@@ -51,7 +51,12 @@ module.exports = {
         children: [
           {
             title: 'Project Setup',
-            children: ['/learn/lessons/lesson-1', '/learn/lessons/lesson-2'],
+            children: [
+              '/learn/lessons/lesson-1',
+              '/learn/lessons/lesson-2',
+              '/make/exercises/exercise-1',
+              '/make/exercises/exercise-2',
+            ],
           },
           {
             title: 'HTML',
@@ -59,7 +64,11 @@ module.exports = {
           },
           {
             title: 'CSS',
-            children: ['/learn/lessons/lesson-5', '/learn/lessons/lesson-6'],
+            children: [
+              '/learn/lessons/lesson-5',
+              '/learn/lessons/lesson-6',
+              '/make/exercises/exercise-3',
+            ],
           },
         ],
       },
