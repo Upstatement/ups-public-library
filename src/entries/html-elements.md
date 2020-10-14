@@ -1,7 +1,7 @@
 ---
 layout: layouts/entry/index.njk
 title: HTML Elements
-date: Last Modified
+date: 2020-10-14
 link:
 tags:
   - entry

@@ -1,7 +1,7 @@
 ---
 layout: layouts/entry/index.njk
 title: Intro to Terminal
-date: Last Modified
+date: 2020-10-14
 link:
 tags:
   - entry
