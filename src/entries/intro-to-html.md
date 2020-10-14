@@ -1,7 +1,7 @@
 ---
 layout: layouts/entry/index.njk
 title: Intro to HTML
-date: Last Modified
+date: 2020-10-14
 link:
 tags:
   - entry
