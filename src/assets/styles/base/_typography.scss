@@ -1,0 +1,19 @@
+.as-h1 {
+  @include h(1);
+}
+
+.as-h2 {
+  @include h(2);
+}
+
+.as-h3 {
+  @include h(3);
+}
+
+.as-h4 {
+  @include h(4);
+}
+
+.as-h5 {
+  @include h(5);
+}

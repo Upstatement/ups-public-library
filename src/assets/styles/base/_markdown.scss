@@ -1,0 +1,188 @@
+.md {
+  pre,
+  code {
+    font-family: $font-mono;
+    line-height: 1.5;
+  }
+
+  p,
+  li {
+    code {
+      padding: 0.2em 0.4em;
+      color: var(--text-color);
+      background-color: var(--secondary-bg-color);
+      font-size: 75%;
+    }
+  }
+
+  a {
+    code {
+      color: $blue;
+    }
+  }
+
+  pre,
+  pre[class*='language-'] {
+    line-height: 1.375;
+    direction: ltr;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    -moz-tab-size: 2;
+    -o-tab-size: 2;
+    tab-size: 2;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+    padding: 1em;
+    position: relative;
+  }
+
+  pre {
+    &[class*='language-']:before {
+      color: $white;
+      display: block;
+      margin-bottom: 0.6em;
+      opacity: 0.4;
+      text-transform: uppercase;
+    }
+
+    &[class*='css']:before {
+      content: 'css';
+    }
+
+    &[class*='html']:before {
+      content: 'html';
+    }
+
+    &[class*='shell']:before {
+      content: 'shell';
+    }
+
+    &[class*='js']:before {
+      content: 'javascript';
+    }
+  }
+
+  .highlight-line {
+    display: block;
+    padding: 0.125em 1em;
+    text-decoration: none; /* override del, ins, mark defaults */
+    color: inherit; /* override del, ins, mark defaults */
+  }
+
+  /* allow highlighting empty lines */
+  .highlight-line:empty:before {
+    content: ' ';
+  }
+  /* avoid double line breaks when using display: block; */
+  .highlight-line + br {
+    display: none;
+  }
+
+  .highlight-line-isdir {
+    color: #b0b0b0;
+    background-color: #222;
+  }
+  .highlight-line-active {
+    background-color: #444;
+    background-color: hsla(0, 0%, 27%, 0.8);
+  }
+  .highlight-line-add {
+    background-color: #45844b;
+  }
+  .highlight-line-remove {
+    background-color: #902f2f;
+  }
+
+  /* Direct Links / Markdown Headers */
+  a.direct-link {
+    margin-left: 0.1em;
+    font-family: $sans;
+    color: transparent;
+
+    &:visited {
+      color: transparent;
+    }
+
+    &:focus,
+    &:focus:visited {
+      color: $blue;
+    }
+  }
+
+  :hover > a.direct-link,
+  :hover > a.direct-link:visited {
+    color: $blue;
+  }
+
+  img[alt~='small'] {
+    width: 300px;
+  }
+
+  img[alt~='medium'] {
+    width: 500px;
+  }
+
+  hr {
+    margin: $sp5 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  //
+
+  h1 {
+    @include h(1);
+  }
+  h2 {
+    @include h(2);
+  }
+  h3 {
+    @include h(3);
+    font-weight: 400;
+  }
+  h4 {
+    @include h(4);
+    font-weight: 400;
+  }
+  h5 {
+    @include h(5);
+    font-weight: 400;
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin-top: $sp3;
+  }
+
+  h4,
+  h5 {
+    margin-top: $paragraph-spacing;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin-bottom: $paragraph-spacing;
+
+    + h1,
+    + h2,
+    + h3,
+    + h4,
+    + h5 {
+      margin-top: 0;
+    }
+  }
+
+  pre,
+  p,
+  ul,
+  ol {
+    @include margin($paragraph-spacing null);
+  }
+}

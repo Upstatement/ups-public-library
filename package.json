@@ -1,6 +1,6 @@
 {
   "name": "upstatement-public-library",
-  "description": "A searchable catalog of information, lessons, and excercieses for building websites.",
+  "description": "A searchable catalog of information, lessons, and exercises on learning to build websites.",
   "contributors": [
     {
       "name": "Alec Marcus",
@@ -15,43 +15,65 @@
   ],
   "license": "MIT",
   "homepage": "https://library.upstatement.com",
+  "author": "Upstatement",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/upstatement/ups-public-library.git"
   },
-  "devDependencies": {
-    "@upstatement/eslint-config": "^0.4.2",
-    "@upstatement/prettier-config": "^0.3.0",
-    "babel-eslint": "^10.0.3",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.9.0",
-    "eslint-plugin-vue": "^6.1.2",
-    "husky": "^4.0.6",
-    "lint-staged": "^9.5.0",
-    "node-sass": "^4.13.0",
-    "prettier": "^1.19.1",
-    "sass-loader": "^8.0.0",
-    "vue-eslint-parser": "^7.0.0",
-    "vuepress": "^1.2.0",
-    "vuepress-plugin-demo-code": "^0.5.0"
-  },
+  "version": "2.0.0",
   "scripts": {
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "watch": "eleventy --watch",
+    "serve": "eleventy --serve",
+    "debug": "DEBUG=* eleventy",
+    "start": "npm-run-all -p watch:*",
+    "build": "NODE_ENV=production npm-run-all -s build:styles build:scripts build:eleventy",
+    "start:netlify": "NETLIFY=true CONTEXT=production URL=http://localhost:8888 netlify dev",
+    "sass": "sass --style=compressed src/assets/styles/app.scss:_site/assets/styles/app.css",
+    "watch:eleventy": "eleventy --serve --quiet",
+    "watch:styles": "npm run sass -- --watch src/pages:_site/assets/styles src/_includes:_site/assets/styles",
+    "watch:scripts": "parcel watch ./src/assets/scripts/app.js --out-dir ./bundle --no-source-maps --no-hmr",
+    "build:eleventy": "eleventy",
+    "build:styles": "npm run sass",
+    "build:scripts": "parcel build ./src/assets/scripts/app.js --out-dir ./bundle --no-source-maps",
+    "temples": "temples"
   },
   "lint-staged": {
     "*.{js,css,json,md}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ],
     "*.js": [
-      "eslint --fix",
-      "git add"
+      "eslint --fix"
     ]
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "./scripts/last_modified.sh && lint-staged"
     }
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "babel-polyfill": "^6.26.0",
+    "fuse.js": "^6.0.0",
+    "sass": "^1.26.5"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy-navigation": "^0.1.5",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
+    "@upstatement/eslint-config": "^0.4.3",
+    "@upstatement/prettier-config": "^0.3.0",
+    "babel-eslint": "^10.1.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.7",
+    "luxon": "^1.21.3",
+    "markdown-it": "^8.4.2",
+    "markdown-it-anchor": "^5.2.5",
+    "npm-run-all": "^4.1.5",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^2.0.5",
+    "temples": "^1.2.0"
   }
 }

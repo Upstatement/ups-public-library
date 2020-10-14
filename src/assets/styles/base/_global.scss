@@ -1,0 +1,105 @@
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-size-adjust: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background: var(--bg-color-inverted);
+  color: var(--text-color-inverted);
+}
+
+body {
+  @include flex(column, 1);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: $sans;
+  font-size: $fs0;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-color);
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+svg {
+  fill: currentColor;
+}
+
+a,
+button,
+input {
+  color: inherit;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+button {
+  @include button-reset;
+}
+
+input {
+  @include text-input-reset;
+}
+
+button,
+input {
+  font-family: $display;
+  transition: $transition;
+}
+
+ul,
+ol {
+  @include list-reset;
+}
+
+hr {
+  @include hr-reset;
+}
+
+// Conditionally show/hide elements based on theme
+.light-mode {
+  display: block;
+}
+.dark-mode {
+  display: none;
+}
+
+[data-theme='dark'] {
+  .light-mode {
+    display: none;
+  }
+  .dark-mode {
+    display: block;
+  }
+}

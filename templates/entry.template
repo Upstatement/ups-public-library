@@ -1,0 +1,12 @@
+---
+layout: layouts/entry/index.njk
+title: {{ name }}
+date: Last Modified
+link:
+tags:
+  - entry
+---
+
+# {{ name }}
+
+[content]

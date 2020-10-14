@@ -1,0 +1,10 @@
+---
+layout: layouts/base/index.njk
+templateClass: entry
+---
+
+{% if content %}
+  <section class="entry__content md">
+    {{ content | safe }}
+  </section>
+{% endif %}
