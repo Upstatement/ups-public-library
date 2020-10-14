@@ -1,0 +1,49 @@
+$black: #000000;
+$white: #ffffff;
+
+$gray-1: hsl(204, 30%, 98%);
+$gray-2: hsl(210, 20%, 95%);
+$gray-3: hsl(214, 10%, 91%);
+$gray-4: hsl(211, 5%, 84%);
+$gray-5: hsl(214, 5%, 69%);
+$gray-6: hsl(216, 5%, 52%);
+$gray-7: hsl(218, 5%, 35%);
+$gray-8: hsl(218, 5%, 23%);
+$gray-9: hsl(220, 7%, 14%);
+$gray-10: hsl(220, 10%, 9%);
+
+$dark-mode: $gray-10;
+
+$blue: #2175ff;
+$red: #eb3e41;
+$pink: #ffb3c9;
+$yellow: #fadd1b;
+$orange: #ffb302;
+$green: #00bc02;
+$purple: #8e4cf8;
+
+:root {
+  --bg-color: #{$white};
+  --text-color: #{$black};
+  --secondary-text-color: #{$gray-7};
+  --secondary-bg-color: #{$gray-2};
+  --bg-color-inverted: #{$black};
+  --text-color-inverted: #{$white};
+  --border-color: #{$gray-6};
+  --search-text-color: #{$gray-7};
+  --search-placeholder-color: #{$gray-5};
+  --search-placeholder-focus-color: #{$gray-4};
+}
+
+[data-theme='dark'] {
+  --bg-color: #{$dark-mode};
+  --text-color: #{$white};
+  --secondary-text-color: #{$gray-5};
+  --secondary-bg-color: #{$gray-8};
+  --bg-color-inverted: #{$white};
+  --text-color-inverted: #{$dark-mode};
+  --border-color: #{$gray-3};
+  --search-text-color: #{$gray-4};
+  --search-placeholder-color: #{$gray-6};
+  --search-placeholder-focus-color: #{$gray-7};
+}

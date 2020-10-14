@@ -1,0 +1,33 @@
+@mixin font-face($family-name, $file-name, $font-weight: normal, $font-style: normal) {
+  @font-face {
+    $font-path: '/static/fonts/#{$file-name}';
+    font-family: '#{$family-name}';
+    font-display: auto;
+    src: url($font-path + '.woff') format('woff'), url($font-path + '.woff2') format('woff2'),
+      url($font-path + '.ttf') format('truetype'), url($font-path + '.otf') format('opentype');
+    font-weight: $font-weight;
+    font-style: $font-style;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Everett
+// ---------------------------------------------------------------------------
+
+@include font-face(
+  $family-name: 'Everett Jana',
+  $file-name: Everett/Everett-Jana,
+  $font-weight: 400
+);
+
+@include font-face($family-name: Everett, $file-name: Everett/Everett-Light, $font-weight: 300);
+
+@include font-face($family-name: Everett, $file-name: Everett/Everett-Regular, $font-weight: 400);
+
+@include font-face($family-name: Everett, $file-name: Everett/Everett-Medium, $font-weight: 500);
+
+// ---------------------------------------------------------------------------
+// SF Mono
+// ---------------------------------------------------------------------------
+
+@include font-face($family-name: SF Mono, $file-name: SF-Mono/SFMono-Regular, $font-weight: 400);

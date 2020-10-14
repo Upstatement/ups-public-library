@@ -1,0 +1,23 @@
+entry:
+  temples:
+    - template: ./templates/entry.template
+      output: ./src/entries/{{ kebab name }}.md
+  prompt:
+    - key: name
+      doc: Entry name
+
+collection:
+  temples:
+    - template: ./templates/collection.template
+      output: ./src/collections/{{ kebab name }}.md
+  prompt:
+    - key: name
+      doc: Collection name
+
+series:
+  temples:
+    - template: ./templates/series.template
+      output: ./src/series/{{ kebab name }}.md
+  prompt:
+    - key: name
+      doc: Series name

@@ -1,0 +1,26 @@
+@mixin gutters($dir: horiz, $size: half, $property: padding) {
+  $gutters: (
+    half: $gutter-half,
+    full: $gutter-full,
+  );
+  $gutter: map-get($gutters, $size);
+
+  @if $dir == horiz {
+    #{$property}-left: $gutter;
+    #{$property}-right: $gutter;
+  }
+
+  @if $dir == vert {
+    #{$property}-top: $gutter;
+    #{$property}-bottom: $gutter;
+  }
+
+  @if $dir == all {
+    #{$property}: $gutter;
+  }
+}
+
+@mixin grid-parent {
+  @include flex;
+  @include gutters;
+}

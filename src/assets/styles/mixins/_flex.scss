@@ -1,0 +1,22 @@
+@mixin flex($direction: 'row', $grow: false) {
+  display: flex;
+
+  @if $direction == 'column' {
+    flex-direction: $direction;
+  }
+
+  @if $grow != false {
+    flex-grow: $grow;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+}

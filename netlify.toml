@@ -1,0 +1,7 @@
+[build]
+  publish = "_site"
+  command = "npm run build"
+
+[[redirects]]
+  from = "/entries"
+  to = "/entries/page/1"

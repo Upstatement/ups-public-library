@@ -1,0 +1,17 @@
+@mixin mq($breakpoint, $range: 'min', $dimension: width) {
+  @media (#{$range}-#{$dimension}: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin show-at($breakpoint, $dimension: width) {
+  @include mq($breakpoint, 'max', $dimension) {
+    display: none;
+  }
+}
+
+@mixin hide-at($breakpoint, $dimension: width) {
+  @include mq($breakpoint, 'min', $dimension) {
+    display: none;
+  }
+}

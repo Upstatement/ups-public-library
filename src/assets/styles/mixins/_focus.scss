@@ -1,0 +1,15 @@
+@mixin on-focus($selector: null) {
+  $events: ('active', 'focus', 'focus-within', 'hover');
+
+  @each $event in $events {
+    @if $selector {
+      #{$selector}:#{$event} & {
+        @content;
+      }
+    } @else {
+      &:#{$event} {
+        @content;
+      }
+    }
+  }
+}

@@ -1,0 +1,111 @@
+.index__list {
+  padding-left: $gutter-full;
+  padding-bottom: $gutter-full;
+
+  &__item__type {
+    @include padding($sp0 null);
+    font-size: $fs-1;
+    line-height: 1;
+    min-width: 8em;
+    pointer-events: none;
+    text-transform: uppercase;
+    user-select: none;
+  }
+
+  &__item__desc,
+  &__item__nest &__item__title {
+    border-left: 1px solid $black;
+  }
+
+  &__item__desc {
+    border-bottom: 1px solid $black;
+    position: relative;
+  }
+
+  &__item__link,
+  &__item__expand__label,
+  &__item__expand__checkbox {
+    @include focus-reset;
+  }
+
+  &__item__expand__checkbox {
+    appearance: none;
+    box-sizing: content-box;
+    cursor: s-resize;
+    display: block;
+    height: calc(1.125em + 2 * #{$sp-2}); // match label height exactly
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: none;
+
+    @include on-focus {
+      ~ .index__list__item__expand__label {
+        font-weight: 500;
+      }
+    }
+
+    &:checked {
+      cursor: n-resize;
+
+      ~ .index__list__item__nest {
+        height: auto;
+      }
+
+      ~ .index__list__item__expand__label {
+        .index__list__item__icon--plus {
+          display: none;
+        }
+        .index__list__item__icon--minus {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  &__item__link,
+  &__item__expand__label {
+    @include gutters(horiz, full);
+    display: block;
+    user-select: none;
+  }
+
+  &__item__link {
+    @include on-focus {
+      font-weight: 500;
+    }
+  }
+
+  &__item__title {
+    @include flex;
+    @include padding($sp-2 null);
+    justify-content: space-between;
+
+    .index__list__item__nest__item & {
+      @include padding(($sp-2 / 2) null);
+      padding-left: $gutter-full;
+    }
+  }
+
+  &__item__icon {
+    @include size(0.75em);
+
+    @include on-focus('.index__list__item__link') {
+      transform: rotate(-45deg);
+    }
+
+    &--minus {
+      display: none;
+    }
+  }
+
+  &__item__nest {
+    height: 0;
+    overflow: hidden;
+
+    &:focus-within {
+      height: auto;
+    }
+  }
+}

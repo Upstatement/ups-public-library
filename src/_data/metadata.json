@@ -1,0 +1,17 @@
+{
+  "title": "Upstatement Public Library",
+  "shortTitle": "UPL",
+  "url": "library.upstatement.com",
+  "description": "Always be learning.",
+  "feed": {
+    "subtitle": "Feed subtitle",
+    "filename": "feed.xml",
+    "path": "/feed/feed.xml",
+    "id": "url"
+  },
+  "author": {
+    "name": "Upstatement",
+    "email": "info@upstatement.com"
+  },
+  "github": "https://github.com/Upstatement/"
+}
