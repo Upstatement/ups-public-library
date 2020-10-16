@@ -1,9 +1,9 @@
 ---
+layout: layouts/series/index.njk
 title: Basic HTML
-date: 2020-10-14
+date: 2020-10-16
 link:
 tags:
-  - series
 entries:
   - Intro to HTML
   - HTML Elements
