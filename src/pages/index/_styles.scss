@@ -1,8 +1,8 @@
-.index__list {
+.index {
   padding-left: $gutter-full;
   padding-bottom: $gutter-full;
 
-  &__item__type {
+  &__type {
     @include padding($sp0 null);
     font-size: $fs-1;
     line-height: 1;
@@ -12,23 +12,23 @@
     user-select: none;
   }
 
-  &__item__desc,
-  &__item__nest &__item__title {
+  &__desc,
+  &__nest &__title {
     border-left: 1px solid $black;
   }
 
-  &__item__desc {
+  &__desc {
     border-bottom: 1px solid $black;
     position: relative;
   }
 
-  &__item__link,
-  &__item__expand__label,
-  &__item__expand__checkbox {
+  &__link,
+  &__expand-label,
+  &__expand-input {
     @include focus-reset;
   }
 
-  &__item__expand__checkbox {
+  &__expand-input {
     appearance: none;
     box-sizing: content-box;
     cursor: s-resize;
@@ -41,7 +41,7 @@
     transition: none;
 
     @include on-focus {
-      ~ .index__list__item__expand__label {
+      ~ .index__expand-label {
         font-weight: 500;
       }
     }
@@ -49,49 +49,49 @@
     &:checked {
       cursor: n-resize;
 
-      ~ .index__list__item__nest {
+      ~ .index__nest {
         height: auto;
       }
 
-      ~ .index__list__item__expand__label {
-        .index__list__item__icon--plus {
+      ~ .index__expand-label {
+        .index__icon--plus {
           display: none;
         }
-        .index__list__item__icon--minus {
+        .index__icon--minus {
           display: inline-block;
         }
       }
     }
   }
 
-  &__item__link,
-  &__item__expand__label {
+  &__link,
+  &__expand-label {
     @include gutters(horiz, full);
     display: block;
     user-select: none;
   }
 
-  &__item__link {
+  &__link {
     @include on-focus {
       font-weight: 500;
     }
   }
 
-  &__item__title {
+  &__title {
     @include flex;
     @include padding($sp-2 null);
     justify-content: space-between;
 
-    .index__list__item__nest__item & {
+    .index__nest__item & {
       @include padding(($sp-2 / 2) null);
       padding-left: $gutter-full;
     }
   }
 
-  &__item__icon {
+  &__icon {
     @include size(0.75em);
 
-    @include on-focus('.index__list__item__link') {
+    @include on-focus('.index__link') {
       transform: rotate(-45deg);
     }
 
@@ -100,7 +100,7 @@
     }
   }
 
-  &__item__nest {
+  &__nest {
     height: 0;
     overflow: hidden;
 

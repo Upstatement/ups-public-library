@@ -5,18 +5,18 @@ title: Index
 ---
 
 {% macro entryLink(title, level) %}
-  <a href="{{ '/entries/' ~ (title | slug) }}" class="index__list__item__link">
+  <a href="{{ '/entries/' ~ (title | slug) }}" class="index__link">
     {% if level == 1 %}
-      <h1 class="index__list__item__title">
+      <h1 class="index__title">
         {{ title }}
-        <svg class="index__list__item__icon index__list__item__icon--arrow">
+        <svg class="index__icon index__icon--arrow">
           <use xlink:href="#arrow"></use>
         </svg>
       </h1>
     {% else %}
-      <h2 class="index__list__item__title">
+      <h2 class="index__title">
         {{ title }}
-        <svg class="index__list__item__icon index__list__item__icon--arrow">
+        <svg class="index__icon index__icon--arrow">
           <use xlink:href="#arrow"></use>
         </svg>
       </h2>
@@ -24,10 +24,10 @@ title: Index
   </a>
 {% endmacro %}
 
-<dl class="index__list" role="list">
+<dl class="index" role="list">
   {% for entry in collections.entry %}
-    <dt class="index__list__item__type">Entry</dt>
-    <dd class="as-h1 index__list__item__desc">
+    <dt class="index__type">Entry</dt>
+    <dd class="as-h1 index__desc">
       {{ entryLink(entry.data.title, 1) }}
     </dd>
   {% endfor %}
@@ -35,23 +35,23 @@ title: Index
   {% for collection in collections.collection %}
     {% if collection.data.entries.length > 0 %}
       {% set inputName = 'expand-' ~ (collection.data.title | slug) %}
-      <dt class="index__list__item__type">Collection</dt>
-      <dd class="as-h1 index__list__item__desc">
-        <input class="index__list__item__expand__checkbox" type="checkbox" name="{{ inputName }}" id="{{ inputName }}">
-        <label class="index__list__item__expand__label" for="{{ inputName }}">
-          <h1 class="index__list__item__title">
+      <dt class="index__type">Collection</dt>
+      <dd class="as-h1 index__desc">
+        <input class="index__expand-input" type="checkbox" name="{{ inputName }}" id="{{ inputName }}">
+        <label class="index__expand-label" for="{{ inputName }}">
+          <h1 class="index__title">
             {{ collection.data.title }}
-            <svg class="index__list__item__icon index__list__item__icon--plus">
+            <svg class="index__icon index__icon--plus">
               <use xlink:href="#plus"></use>
             </svg>
-            <svg class="index__list__item__icon index__list__item__icon--minus">
+            <svg class="index__icon index__icon--minus">
               <use xlink:href="#minus"></use>
             </svg>
           </h1>
         </label>
-        <ol class="index__list__item__nest">
+        <ol class="index__nest">
           {% for entry in collection.data.entries %}
-            <li class="index__list__item__nest__item">
+            <li class="index__nest__item">
               {{ entryLink(entry, 2) }}
             </li>
           {% endfor %}
@@ -63,23 +63,23 @@ title: Index
   {% for series in collections.series %}
     {% if series.data.entries.length > 0 %}
       {% set inputName = 'expand-' ~ (series.data.title | slug) %}
-      <dt class="index__list__item__type">Series</dt>
-      <dd class="as-h1 index__list__item__desc">
-        <input class="index__list__item__expand__checkbox" type="checkbox" name="{{ inputName }}" id="{{ inputName }}">
-        <label class="index__list__item__expand__label" for="{{ inputName }}">
-          <h1 class="index__list__item__title">
+      <dt class="index__type">Series</dt>
+      <dd class="as-h1 index__desc">
+        <input class="index__expand-input" type="checkbox" name="{{ inputName }}" id="{{ inputName }}">
+        <label class="index__expand-label" for="{{ inputName }}">
+          <h1 class="index__title">
             {{ series.data.title }}
-            <svg class="index__list__item__icon index__list__item__icon--plus">
+            <svg class="index__icon index__icon--plus">
               <use xlink:href="#plus"></use>
             </svg>
-            <svg class="index__list__item__icon index__list__item__icon--minus">
+            <svg class="index__icon index__icon--minus">
               <use xlink:href="#minus"></use>
             </svg>
           </h1>
         </label>
-        <ol class="index__list__item__nest">
+        <ol class="index__nest">
           {% for entry in series.data.entries %}
-            <li class="index__list__item__nest__item">
+            <li class="index__nest__item">
               {{ entryLink(entry, 2) }}
             </li>
           {% endfor %}
