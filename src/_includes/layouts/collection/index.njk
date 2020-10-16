@@ -1,0 +1,21 @@
+---
+layout: layouts/base/index.njk
+templateClass: collection
+---
+
+{% if content %}
+  <section class="collection__content md">
+    <h1>Collection: {{ title }}</h1>
+    {{ content | safe }}
+
+    <ul>
+      {% for entry in entries %}
+        <li>
+          <a href="{{ '/entries/' ~ (entry | slug) }}" class="">
+            {{ entry }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endif %}

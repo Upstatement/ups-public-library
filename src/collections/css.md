@@ -1,9 +1,9 @@
 ---
+layout: layouts/collection/index.njk
 title: CSS
-date: 2020-10-14
+date: 2020-10-16
 link:
 tags:
-  - collection
 entries:
   - The Box Model
   - Cascade, Inheritance, & Specificity

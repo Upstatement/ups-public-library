@@ -25,14 +25,14 @@ title: Index
 {% endmacro %}
 
 <dl class="index__list" role="list">
-  {% for entry in collections.entry %}
+  {% for entry in collections.entries %}
     <dt class="index__list__item__type">Entry</dt>
     <dd class="as-h1 index__list__item__desc">
       {{ entryLink(entry.data.title, 1) }}
     </dd>
   {% endfor %}
 
-  {% for collection in collections.collection %}
+  {% for collection in collections.collections %}
     {% if collection.data.entries.length > 0 %}
       {% set inputName = 'expand-' ~ (collection.data.title | slug) %}
       <dt class="index__list__item__type">Collection</dt>

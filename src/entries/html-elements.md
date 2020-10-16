@@ -1,10 +1,9 @@
 ---
 layout: layouts/entry/index.njk
 title: HTML Elements
-date: 2020-10-14
+date: 2020-10-16
 link:
 tags:
-  - entry
   - html
   - basic
 ---
