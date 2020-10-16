@@ -5,6 +5,8 @@ git diff --name-only HEAD | while read filename; do
   fi
 done
 
+git add .
+
 # This sets all .md files to have the same last edit dates as the Git log.
 # It shouldn't actually need to be run, but keeping it here for posterity.
 # git ls-tree -r --name-only HEAD | while read filename; do
