@@ -1,7 +1,7 @@
 .md {
   pre,
   code {
-    font-family: $font-mono;
+    font-family: $ff-mono;
     line-height: 1.5;
   }
 
@@ -11,7 +11,7 @@
       padding: 0.2em 0.4em;
       color: var(--text-color);
       background-color: var(--secondary-bg-color);
-      font-size: 75%;
+      font-size: 80%;
     }
   }
 
@@ -100,7 +100,7 @@
   /* Direct Links / Markdown Headers */
   a.direct-link {
     margin-left: 0.1em;
-    font-family: $sans;
+    font-family: $ff-sans;
     color: transparent;
 
     &:visited {
@@ -141,15 +141,13 @@
   }
   h3 {
     @include h(3);
-    font-weight: 400;
+    font-weight: $fw-med;
   }
   h4 {
     @include h(4);
-    font-weight: 400;
   }
   h5 {
     @include h(5);
-    font-weight: 400;
   }
 
   h1,
