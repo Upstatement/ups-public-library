@@ -1,20 +1,22 @@
-$sans: 'EverettTrial', system-ui, sans-serif;
-$display: 'EverettTrial', $sans;
-$font-mono: 'EverettMonoTrial', Consolas, Menlo, Monaco, 'Courier New', Courier, monospace;
+$ff-sans: 'EverettTrial', system-ui, sans-serif;
+$ff-mono: 'EverettMonoTrial', Consolas, Menlo, Monaco, 'Courier New', Courier, monospace;
 
-$fs-3: 13px;
+$fw-reg: 400;
+$fw-med: 500;
+
 $fs-2: 14px;
 $fs-1: 16px;
 $fs0: 18px;
-$fs1: 24px;
-$fs2: 32px;
-$fs3: 40px;
-$fs4: 48px;
-$fs5: 56px;
+$fs1: 20px;
+$fs2: 24px;
+$fs3: 32px;
+$fs4: 40px;
+$fs5: 48px;
+$fs6: 56px;
 
 $headings: (
-  h0: $fs5,
-  h1: $fs4,
+  h0: $fs6,
+  h1: $fs5,
   h2: $fs3,
   h3: $fs1,
   h4: $fs-1,
