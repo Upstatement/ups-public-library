@@ -4,6 +4,46 @@ permalink: /index/
 title: Index
 ---
 
+{% if collections.indexItems | length %}
+<ul style="margin: 50px">
+  {% for item in collections.indexItems %}
+    <li>
+      {# The tag assigned by the json file in the directory will always be the first tag #}
+      <p>
+        {% if item.data.tags[0] == 'collections' %}
+          Collection
+        {% elseif item.data.tags[0] == 'entries' %}
+          Entry
+        {% elseif item.data.tags[0] == 'series' %}
+          Series
+        {% endif %}
+      </p>
+
+      <h1 style="font-size: 30px">
+        <a href="{{ item.url }}">{{ item.data.title }}</a>
+      </h1>
+
+      {% if item.data.entries | length %}
+      <ul>
+        {% for entry in item.data.entries %}
+          {% set entryUrl %}/entries/{{ entry }}/{% endset %}
+          {% set entryTitle = collections.entriesMap[entry] %}
+          <li>
+            <a href="{{ entryUrl }}" class="">
+              {{ entryTitle}}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </li>
+
+    <br><br>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{#
 {% macro entryLink(title, level) %}
   <a href="{{ '/entries/' ~ (title | slug) }}" class="index__list__item__link">
     {% if level == 1 %}
@@ -24,37 +64,6 @@ title: Index
   </a>
 {% endmacro %}
 
-<ul style="margin: 50px">
-  {% for item in collections.indexItems %}
-  <li>
-    {# The tag assigned by the json file in the directory will always be the first tag #}
-    <p>
-      {% if item.data.tags[0] == 'collections' %}
-        Collection
-      {% elseif item.data.tags[0] == 'entries' %}
-        Entry
-      {% elseif item.data.tags[0] == 'series' %}
-        Series
-      {% endif %}
-    </p>
-    <h1 style="font-size: 30px">
-      <a href="{{ item.url }}">{{ item.data.title }}</a>
-    </h1>
-
-    {% if item.data.entries | length %}
-    <ul>
-      {% for entry in item.data.entries %}
-        <li>{{ entryLink(entry, 1) }}</li>
-      {% endfor %}
-    </ul>
-    {% endif %}
-  </li>
-
-  <br><br>
-  {% endfor %}
-</ul>
-
-{#
 <dl class="index__list" role="list">
   {% for entry in collections.entries %}
     <dt class="index__list__item__type">Entry</dt>
@@ -118,4 +127,5 @@ title: Index
       </dd>
     {% endif %}
   {% endfor %}
-</dl> #}
+</dl>
+#}
