@@ -16,12 +16,6 @@
 
 @include font-face(
   $family-name: EverettTrial,
-  $file-name: Everett/EverettTrial-Light-web,
-  $font-weight: 300
-);
-
-@include font-face(
-  $family-name: EverettTrial,
   $file-name: Everett/EverettTrial-Regular-web,
   $font-weight: 400
 );
@@ -30,12 +24,6 @@
   $family-name: EverettTrial,
   $file-name: Everett/EverettTrial-Medium-web,
   $font-weight: 500
-);
-
-@include font-face(
-  $family-name: EverettTrial,
-  $file-name: Everett/EverettTrial-Bold-web,
-  $font-weight: 700
 );
 
 // ---------------------------------------------------------------------------

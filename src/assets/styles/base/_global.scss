@@ -21,7 +21,7 @@ body {
   @include flex(column, 1);
   background-color: var(--bg-color);
   color: var(--text-color);
-  font-family: $sans;
+  font-family: $ff-sans;
   font-size: $fs0;
   line-height: 1.5;
   min-height: 100vh;
@@ -74,13 +74,17 @@ input {
 
 button,
 input {
-  font-family: $display;
+  font-family: $ff-sans;
   transition: $transition;
 }
 
 ul,
 ol {
   @include list-reset;
+}
+
+strong {
+  font-weight: $fw-med;
 }
 
 hr {
