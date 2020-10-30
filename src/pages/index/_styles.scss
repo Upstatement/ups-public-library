@@ -43,7 +43,7 @@
 
   @include on-focus {
     ~ .index__expand-label {
-      font-weight: 500;
+      color: var(--strong-text-color);
     }
   }
 
@@ -74,7 +74,7 @@
 
 .index__link {
   @include on-focus {
-    font-weight: 500;
+    color: var(--strong-text-color);
   }
 }
 
