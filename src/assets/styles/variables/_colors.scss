@@ -24,7 +24,8 @@ $purple: #8e4cf8;
 
 :root {
   --bg-color: #{$white};
-  --text-color: #{$black};
+  --text-color: #{$gray-7};
+  --strong-text-color: #{$black};
   --secondary-text-color: #{$gray-7};
   --secondary-bg-color: #{$gray-2};
   --bg-color-inverted: #{$black};
@@ -37,7 +38,8 @@ $purple: #8e4cf8;
 
 [data-theme='dark'] {
   --bg-color: #{$dark-mode};
-  --text-color: #{$white};
+  --text-color: #{$gray-4};
+  --strong-text-color: #{$white};
   --secondary-text-color: #{$gray-5};
   --secondary-bg-color: #{$gray-8};
   --bg-color-inverted: #{$white};

@@ -40,6 +40,10 @@ h6 {
   font-weight: inherit;
 }
 
+strong {
+  color: var(--strong-text-color);
+}
+
 img {
   width: 100%;
   height: auto;
@@ -75,7 +79,6 @@ input {
 
 button,
 input {
-  font-family: $sans;
   transition: $transition;
 }
 
