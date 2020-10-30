@@ -8,6 +8,7 @@ html {
 *:before,
 *:after {
   box-sizing: border-box;
+  font-style: normal;
   font-weight: 400;
   margin: 0;
   padding: 0;
@@ -40,8 +41,11 @@ h6 {
   font-weight: inherit;
 }
 
-strong {
-  color: var(--strong-text-color);
+b,
+strong,
+em,
+i {
+  text-decoration: underline;
 }
 
 img {
