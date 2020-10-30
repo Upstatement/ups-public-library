@@ -1,8 +1,7 @@
 ---
 layout: layouts/collection/index.njk
 title: CSS
-date: 2020-10-23
-link:
+date: 2020-10-30
 tags:
 entries:
   - the-box-model
