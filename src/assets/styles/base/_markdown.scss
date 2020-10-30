@@ -1,7 +1,7 @@
 .md {
   pre,
   code {
-    font-family: $ff-mono;
+    font-family: $mono;
     line-height: 1.5;
   }
 
@@ -100,7 +100,7 @@
   /* Direct Links / Markdown Headers */
   a.direct-link {
     margin-left: 0.1em;
-    font-family: $ff-sans;
+    font-family: $sans;
     color: transparent;
 
     &:visited {
