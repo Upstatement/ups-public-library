@@ -17,6 +17,8 @@
   <body>
     {% include "shared/svgs.njk" %}
 
+    {% include "shared/search-bar.njk" %}
+
     <main class="main{% if templateClass %} {{ templateClass }}{% endif %}">
       {{ content | safe }}
     </main>
