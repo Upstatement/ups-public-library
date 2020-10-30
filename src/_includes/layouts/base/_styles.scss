@@ -14,10 +14,9 @@ $mobile-header-height: 70px;
 .search-bar {
   @include flex;
   align-items: center;
-  flex-grow: 1;
+  flex-grow: 0;
   position: relative;
   height: $header-height;
-  padding: 20px 0;
   color: var(--search-placeholder-color);
   margin: 50px;
 
@@ -43,73 +42,20 @@ $mobile-header-height: 70px;
     background: transparent;
     font-size: 16px;
     color: black;
-    border: 1px solid black;
+    border-bottom: 1px solid black;
 
     @include mq($md) {
       font-size: 20px;
     }
   }
+}
 
-  .search-bar-results {
-    position: absolute;
-    top: $header-height;
-    width: 100%;
-    background-color: var(--bg-color);
-    border: 1px solid var(--border-color);
-    border-top: none;
-    z-index: 10;
-    display: none;
+.search-results {
+  display: none;
+  padding-left: $gutter-full;
+  padding-bottom: $gutter-full;
 
-    @include mq($md, 'max') {
-      top: $mobile-header-height;
-    }
-
-    @include mq($xs, 'max') {
-      width: 90vw;
-      left: -50px;
-    }
-
-    &.active {
-      display: block;
-    }
-
-    ul {
-      @include reset-list;
-
-      li {
-        margin: 0;
-        border-bottom: 1px solid var(--border-color);
-      }
-
-      a {
-        @include flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px;
-
-        &:hover,
-        &:focus {
-          text-decoration: none;
-
-          .title {
-            text-decoration: underline;
-          }
-        }
-
-        .label {
-          margin-bottom: 0;
-          padding: 5px 10px;
-          margin-left: 5px;
-          font-size: 12px;
-        }
-      }
-    }
-
-    .search-results-empty {
-      padding: 20px;
-      border: none;
-      background-color: var(--bg-color-inverted);
-      color: var(--text-color-inverted);
-    }
+  &.show {
+    display: block;
   }
 }
