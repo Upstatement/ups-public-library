@@ -8,6 +8,7 @@ html {
 *:before,
 *:after {
   box-sizing: border-box;
+  font-weight: 400;
   margin: 0;
   padding: 0;
 }
@@ -21,7 +22,7 @@ body {
   @include flex(column, 1);
   background-color: var(--bg-color);
   color: var(--text-color);
-  font-family: $ff-sans;
+  font-family: $sans;
   font-size: $fs0;
   line-height: 1.5;
   min-height: 100vh;
@@ -74,17 +75,13 @@ input {
 
 button,
 input {
-  font-family: $ff-sans;
+  font-family: $sans;
   transition: $transition;
 }
 
 ul,
 ol {
   @include list-reset;
-}
-
-strong {
-  font-weight: $fw-med;
 }
 
 hr {
