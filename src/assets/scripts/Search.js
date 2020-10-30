@@ -10,7 +10,7 @@ class Search {
     this.fuseOptions = {
       includeScore: true,
       threshold: 0.4,
-      keys: [{ name: 'title', weight: 2 }, 'solutions', 'technologies', 'tags', 'team'],
+      keys: [{ name: 'title', weight: 2 }, 'entries', 'collections', 'series', 'tags'],
     };
 
     this.subscriptions = [];
@@ -50,14 +50,14 @@ class Search {
   }
 
   getResultType(result) {
-    if (result.tags.includes('projects')) {
-      return 'project';
-    } else if (result.tags.includes('solutions')) {
-      return 'solution';
-    } else if (result.tags.includes('technologies')) {
-      return 'technology';
-    } else if (result.tags.includes('team')) {
-      return 'team';
+    if (result.tags.includes('entries')) {
+      return 'entry';
+    } else if (result.tags.includes('collections')) {
+      return 'collection';
+    } else if (result.tags.includes('series')) {
+      return 'series';
+    } else if (result.tags.includes('tags')) {
+      return 'tag';
     }
     return '';
   }

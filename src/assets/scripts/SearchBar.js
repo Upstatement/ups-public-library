@@ -17,7 +17,6 @@ class SearchBar {
     this.searchInput = document.querySelector('.js-search-input');
     this.searchResults = document.querySelector('.js-search-bar-results');
     this.searchResultsList = this.searchResults.querySelector('ul');
-    this.seeAllLink = this.searchResults.querySelector('.js-see-all');
 
     this.query = '';
     this.resultsShown = false;
@@ -179,8 +178,6 @@ class SearchBar {
       return;
     }
 
-    this.seeAllLink.href = `/search?q=${this.query}`;
-
     const results = this.search.getSearchResults(this.query);
 
     // Don't display nav search results on the search page
@@ -205,7 +202,6 @@ class SearchBar {
 
   displayResults(results) {
     this.showResults();
-    this.seeAllLink.classList.remove('hide');
     this.searchResultsList.innerHTML = '';
 
     if (!results.length) {
@@ -214,7 +210,6 @@ class SearchBar {
       emptyItem.textContent = `No results for “${this.query}”`;
 
       this.searchResultsList.append(emptyItem);
-      this.seeAllLink.classList.add('hide');
 
       return;
     }

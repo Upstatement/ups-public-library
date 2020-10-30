@@ -37,9 +37,8 @@ export const fetchJSON = async url => {
 };
 
 export const getSearchableData = async () => {
-  const projectsData = await fetchJSON('/api/projects');
-  const solutionsData = await fetchJSON('/api/solutions');
-  const teamData = await fetchJSON('/api/team');
-  const technologiesData = await fetchJSON('/api/technologies');
-  return [...projectsData, ...solutionsData, ...teamData, ...technologiesData];
+  const entriesData = await fetchJSON('/api/entries');
+  const collectionssData = await fetchJSON('/api/collections');
+  const seriesData = await fetchJSON('/api/series');
+  return [...entriesData, ...collectionssData, ...seriesData];
 };
