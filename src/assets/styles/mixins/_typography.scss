@@ -9,8 +9,8 @@
 
 @mixin h(
   $level,
-  $weight: 400,
-  $family: $ff-sans,
+  $weight: inherit,
+  $family: $sans,
   $color: $black,
   $size: map-get($headings, h#{$level})
 ) {
