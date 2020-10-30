@@ -4,8 +4,8 @@ title: Basic HTML
 date: 2020-10-30
 tags:
 entries:
-  - intro-to-html
-  - html-elements
+  - Intro to HTML
+  - HTML Elements
 ---
 
 [description]

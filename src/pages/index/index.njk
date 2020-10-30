@@ -25,7 +25,7 @@ title: Index
 {% endmacro %}
 
 {% if collections.indexItems | length %}
-  <dl class="index" role="list">
+  <dl class="index js-index-list" role="list">
     {% for item in collections.indexItems %}
 
       {# The tag assigned by the json file in the directory will always be the first tag #}
@@ -46,7 +46,9 @@ title: Index
         {% else %}
           {# Series & Collections #}
           {% set inputName = "expand-" ~ (item.data.title | slug) %}
-          <input class="index__expand-input" type="checkbox" name="{{ inputName }}" id="{{ inputName }}">
+
+          <input class="index__expand-input" type="checkbox" name="{{ inputName }}" id="{{ inputName }}" />
+
           <label class="index__expand-label" for="{{ inputName }}">
             <h1 class="index__title">
               {{ item.data.title }}
@@ -58,19 +60,22 @@ title: Index
               </svg>
             </h1>
           </label>
+
           <ol class="index__nest">
             {% if item.data.entries | length %}
               {% for entry in item.data.entries %}
-                {% set entryUrl = "/entries/" ~ entry %}
-                {% set entryTitle = collections.entriesMap[entry] %}
+                {% set entryUrl = "/entries/" ~ entry | slug %}
                 <li class="index__nest__item">
-                  {{ entryLink(entryTitle, entryUrl, 2) }}
+                  {{ entryLink(entry, entryUrl, 2) }}
                 </li>
               {% endfor %}
             {% endif %}
           </ol>
+
         {% endif %}
       </dd>
     {% endfor %}
   </dl>
 {% endif %}
+
+<dl class="search-results js-search-results"></dl>

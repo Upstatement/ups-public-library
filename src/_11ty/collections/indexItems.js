@@ -26,8 +26,8 @@ module.exports = collectionApi => {
 
   // Filter out entries that belong to a collection or series
   const indexItems = allItems
-    .filter(item => !entriesThatBelongToCollections.includes(item.fileSlug))
-    .filter(item => !entriesThatBelongToSeries.includes(item.fileSlug));
+    .filter(item => !entriesThatBelongToCollections.includes(item.data.title))
+    .filter(item => !entriesThatBelongToSeries.includes(item.data.title));
 
   // Sort items alphabetically by title
   indexItems.sort((a, b) => {
