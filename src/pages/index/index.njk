@@ -4,26 +4,10 @@ permalink: /index/
 title: Index
 ---
 
-{% macro entryLink(title, url, level) %}
-  <a href="{{ url }}" class="index__link">
-    {% if level == 1 %}
-      <h1 class="index__title">
-        {{ title }}
-        <svg class="index__icon index__icon--arrow">
-          <use xlink:href="#arrow"></use>
-        </svg>
-      </h1>
-    {% else %}
-      <h2 class="index__title">
-        {{ title }}
-        <svg class="index__icon index__icon--arrow">
-          <use xlink:href="#arrow"></use>
-        </svg>
-      </h2>
-    {% endif %}
-  </a>
-{% endmacro %}
+{# Search bar #}
+{% include "shared/search-bar.njk" %}
 
+{# Page content & search results #}
 {% if collections.indexItems | length %}
   <dl class="index js-index-list" role="list">
     {% for item in collections.indexItems %}
@@ -41,14 +25,19 @@ title: Index
       <dd class="as-h1 index__desc">
         {% if tagDef == "entries" %}
           {# Entries #}
-          {{ entryLink(item.data.title, item.url, 1) }}
+          <a href="{{ item.url }}" class="index__link">
+            <h1 class="index__title">
+              {{ item.data.title }}
+              <svg class="index__icon index__icon--arrow">
+                <use xlink:href="#arrow"></use>
+              </svg>
+            </h1>
+          </a>
 
         {% else %}
           {# Series & Collections #}
           {% set inputName = "expand-" ~ (item.data.title | slug) %}
-
-          <input class="index__expand-input" type="checkbox" name="{{ inputName }}" id="{{ inputName }}" />
-
+          <input class="index__expand-input" type="checkbox" name="{{ inputName }}" id="{{ inputName }}"/>
           <label class="index__expand-label" for="{{ inputName }}">
             <h1 class="index__title">
               {{ item.data.title }}
@@ -64,9 +53,15 @@ title: Index
           <ol class="index__nest">
             {% if item.data.entries | length %}
               {% for entry in item.data.entries %}
-                {% set entryUrl = "/entries/" ~ entry | slug %}
                 <li class="index__nest__item">
-                  {{ entryLink(entry, entryUrl, 2) }}
+                  <a href="{{ '/entries/' ~ entry | slug }}" class="index__link">
+                    <h2 class="index__title">
+                      {{ entry }}
+                      <svg class="index__icon index__icon--arrow">
+                        <use xlink:href="#arrow"></use>
+                      </svg>
+                    </h2>
+                  </a>
                 </li>
               {% endfor %}
             {% endif %}
