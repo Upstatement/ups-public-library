@@ -4,9 +4,9 @@ title: CSS
 date: 2020-10-30
 tags:
 entries:
-  - the-box-model
-  - cascade-inheritance-and-specificity
-  - css-preprocessing
+  - The Box Model
+  - Cascade, Inheritance, & Specificity
+  - CSS Preprocessing
 ---
 
 [description]

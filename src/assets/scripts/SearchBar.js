@@ -1,4 +1,4 @@
-import { getFocusables, throttle } from './utils';
+import { getFocusables, throttle, toSlug } from './utils';
 
 const KEYCODES = {
   tab: 'Tab',
@@ -15,8 +15,8 @@ class SearchBar {
 
     this.searchWrapper = document.querySelector('.js-search-bar');
     this.searchInput = document.querySelector('.js-search-input');
-    this.searchResults = document.querySelector('.js-search-bar-results');
-    this.searchResultsList = this.searchResults.querySelector('ul');
+    this.indexList = document.querySelector('.js-index-list');
+    this.searchResults = document.querySelector('.js-search-results');
 
     this.query = '';
     this.resultsShown = false;
@@ -39,7 +39,6 @@ class SearchBar {
 
   init() {
     document.addEventListener('keydown', e => this.onDocumentKeydown(e));
-    document.addEventListener('click', e => this.onDocumentClick(e));
     this.searchInput.addEventListener('keydown', e => this.onSearchInputKeydown(e));
     this.searchInput.addEventListener('input', e => this.onSearchInputChange(e));
   }
@@ -133,18 +132,6 @@ class SearchBar {
     }
   }
 
-  onDocumentClick(e) {
-    // Bail early if the search results are hidden
-    if (!this.resultsShown) {
-      return;
-    }
-    const wrapperContainsTarget = this.searchWrapper.contains(e.target);
-    // Hide search results when clicking off
-    if (e.target !== this.searchWrapper && !wrapperContainsTarget) {
-      this.hideResults();
-    }
-  }
-
   onSearchInputKeydown(e) {
     switch (e.key) {
       // Press escape to blur search
@@ -190,61 +177,108 @@ class SearchBar {
 
   showResults() {
     this.resultsShown = true;
-    this.searchResults.classList.add('active');
-    document.body.classList.add('unfocus');
+    this.searchResults.classList.add('show');
+    this.indexList.classList.add('hide');
   }
 
   hideResults() {
     this.resultsShown = false;
-    this.searchResults.classList.remove('active');
-    document.body.classList.remove('unfocus');
+    this.searchResults.classList.remove('show');
+    this.indexList.classList.remove('hide');
   }
 
   displayResults(results) {
     this.showResults();
-    this.searchResultsList.innerHTML = '';
+    this.searchResults.innerHTML = '';
 
     if (!results.length) {
-      const emptyItem = document.createElement('li');
-      emptyItem.classList.add('search-results-empty');
-      emptyItem.textContent = `No results for “${this.query}”`;
-
-      this.searchResultsList.append(emptyItem);
-
+      this.searchResults.textContent = `No results for “${this.query}”`;
       return;
     }
 
-    // Only show first 7 results
-    const limitedResults = results.slice(0, 7);
+    results.forEach(result => {
+      const { title, url, entries } = result.item;
 
-    limitedResults.forEach(result => {
-      const { title, url } = result.item;
-
-      // Create result link
-      const resultLink = document.createElement('a');
-      resultLink.setAttribute('href', url);
-
-      // Create result title
-      const resultTitle = document.createElement('span');
-      resultTitle.classList.add('title');
-      resultTitle.textContent = title;
-
-      // Create result label
-      const resultLabel = document.createElement('span');
+      const resultLabel = document.createElement('dt');
       const resultType = this.search.getResultType(result.item);
+      resultLabel.classList.add('index__type');
       resultLabel.textContent = resultType;
-      resultLabel.classList.add('label', resultType);
+      this.searchResults.appendChild(resultLabel);
 
-      // Append title and label to link
-      resultLink.appendChild(resultTitle);
-      resultLink.appendChild(resultLabel);
+      const resultDesc = document.createElement('dd');
+      resultDesc.classList.add('as-h1', 'index__desc');
 
-      // Append link to list item
-      const resultListItem = document.createElement('li');
-      resultListItem.appendChild(resultLink);
+      if (resultType === 'entry') {
+        const entryLink = document.createElement('a');
+        entryLink.classList.add('index__link');
+        entryLink.setAttribute('href', url);
+        entryLink.innerHTML = `
+          <h1 class="index__title">
+            ${title}
+            <svg class="index__icon index__icon--arrow">
+              <use xlink:href="#arrow"></use>
+            </svg>
+          </h1>
+        `.trim();
 
-      // Append list item to list
-      this.searchResultsList.append(resultListItem);
+        resultDesc.appendChild(entryLink);
+        this.searchResults.appendChild(resultDesc);
+      } else {
+        // Input
+        const expandInput = document.createElement('input');
+        expandInput.classList.add('index__expand-input');
+        expandInput.setAttribute('type', 'checkbox');
+        const inputName = `expand-${toSlug(title)}`;
+        expandInput.setAttribute('name', inputName);
+        expandInput.setAttribute('id', inputName);
+        resultDesc.appendChild(expandInput);
+
+        // Label
+        const expandLabel = document.createElement('label');
+        expandLabel.classList.add('index__expand-label');
+        expandLabel.setAttribute('for', inputName);
+        expandLabel.innerHTML = `
+          <h1 class="index__title">
+            ${title}
+            <svg class="index__icon index__icon--plus">
+              <use xlink:href="#plus"></use>
+            </svg>
+            <svg class="index__icon index__icon--minus">
+              <use xlink:href="#minus"></use>
+            </svg>
+          </h1>
+        `.trim();
+        resultDesc.appendChild(expandLabel);
+
+        // List
+        const nestList = document.createElement('ol');
+        nestList.classList.add('index__nest');
+
+        if (entries.length) {
+          entries.forEach(entry => {
+            const listItem = document.createElement('li');
+            listItem.classList.add('index__nest__item');
+            const entryUrl = `/entries/${toSlug(entry)}`;
+
+            listItem.innerHTML = `
+              <a href="${entryUrl}" class="index__link">
+                <h2 class="index__title">
+                  ${entry}
+                  <svg class="index__icon index__icon--arrow">
+                    <use xlink:href="#arrow"></use>
+                  </svg>
+                </h2>
+              </a>
+            `.trim();
+
+            nestList.appendChild(listItem);
+          });
+        }
+
+        resultDesc.appendChild(nestList);
+
+        this.searchResults.appendChild(resultDesc);
+      }
     });
   }
 }

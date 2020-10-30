@@ -1,6 +1,10 @@
 .index {
   padding-left: $gutter-full;
   padding-bottom: $gutter-full;
+
+  &.hide {
+    display: none;
+  }
 }
 
 .index__type {

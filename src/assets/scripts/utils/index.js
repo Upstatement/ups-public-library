@@ -1,3 +1,4 @@
+import slugify from 'slugify';
 import env from '../../../_data/env';
 
 export const onDocumentReady = callback => {
@@ -28,6 +29,8 @@ export const throttle = (callback, limit) => {
     }
   };
 };
+
+export const toSlug = str => slugify(str, { replacement: '-', lower: true });
 
 export const fetchJSON = async url => {
   const extension = env.netlify ? '' : '.json';
