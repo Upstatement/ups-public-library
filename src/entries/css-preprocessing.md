@@ -1,8 +1,7 @@
 ---
 layout: layouts/entry/index.njk
 title: CSS Preprocessing
-date: 2020-10-16
-link:
+date: 2020-10-30
 tags:
   - css
 ---

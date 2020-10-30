@@ -16,10 +16,7 @@ exports.serialize = (entry, siteUrl = '', hideFileExtensions = false) => {
     title: data.title,
     url: siteUrl + url,
     api_url: `${siteUrl}/api/entries/${fileSlug}${hideFileExtensions ? '' : '.json'}`,
-    link: data.link || '',
     tags: data.tags || [],
-    collection: data.collection || [],
-    series: data.series || [],
     last_modified: date || null,
   };
 };

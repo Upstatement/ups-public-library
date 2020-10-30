@@ -1,8 +1,7 @@
 ---
 layout: layouts/entry/index.njk
 title: The Box Model
-date: 2020-10-16
-link:
+date: 2020-10-30
 tags:
   - css
   - basic

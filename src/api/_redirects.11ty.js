@@ -13,6 +13,18 @@ exports.render = ({ collections }) => {
     redirects.push(`/api/entries/${entry.fileSlug}`);
   });
 
+  // Generate URLS for collections
+  redirects.push('/api/collections');
+  entries.forEach(collection => {
+    redirects.push(`/api/collections/${collection.fileSlug}`);
+  });
+
+  // Generate URLS for series
+  redirects.push('/api/series');
+  entries.forEach(series => {
+    redirects.push(`/api/series/${series.fileSlug}`);
+  });
+
   // Generate rewrite rules for URL -> File URL
   redirects = redirects.map(url => {
     const fileUrl = `${url}.json`;
