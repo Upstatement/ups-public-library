@@ -4,46 +4,60 @@ class Print {
   }
 
   init() {
-    const printEls = Array.from(document.querySelectorAll('[data-print]'));
+    // Initialize only for elements with all required options
+    const printEls = Array.from(
+      document.querySelectorAll('[data-print][data-delay][data-pause-range][data-duration]'),
+    );
 
+    // Create clone-able progenitors for elements we'll be creating later
     const baseCharEl = document.createElement('span');
+    baseCharEl.classList.add('js-print-char');
     baseCharEl.style.opacity = 0;
 
+    const baseLineEl = document.createElement('p');
+    baseLineEl.classList.add('js-print-line');
+
     printEls.forEach(printEl => {
-      const printStrings = printEl.getAttribute('data-print').split('/n/');
-      const printDelay = parseInt(printEl.getAttribute('data-delay'));
-      const printDuration = parseInt(printEl.getAttribute('data-duration'));
-      const printPauseMin = parseInt(JSON.parse(printEl.getAttribute('data-pause-range'))[0]) || 0;
-      const printPauseMax = parseInt(JSON.parse(printEl.getAttribute('data-pause-range'))[1]) || 0;
+      // Create an array of lines to print
+      const lines = printEl.getAttribute('data-print').split('/n/');
 
-      printStrings.map((string, stringIndex) => {
-        const line = document.createElement('p');
-        line.classList.add('js-print-line');
+      // Parse config options from data attributes
+      const delay = parseInt(printEl.getAttribute('data-delay'));
+      const pauseMin = parseInt(printEl.getAttribute('data-pause-range').split(', ')[0]);
+      const pauseMax = parseInt(printEl.getAttribute('data-pause-range').split(', ')[1]);
+      const duration = parseInt(printEl.getAttribute('data-duration'));
 
-        const allCharEls = [...string].map(char => {
+      // Render markup for each line
+      lines.map((line, lineIndex) => {
+        const lineEl = baseLineEl.cloneNode();
+
+        // Render markup for each character
+        const allCharEls = [...line].map(char => {
           const charEl = baseCharEl.cloneNode();
           charEl.appendChild(document.createTextNode(char));
           return charEl;
         });
 
-        allCharEls.forEach((el, i) => {
-          line.appendChild(el);
-          this.createTimeline(
-            el,
-            i + stringIndex * printStrings[0].length,
-            printDelay,
-            printPauseMin,
-            printPauseMax,
-            printDuration,
+        // Attach lines contianing animated characters to the provided DOM element
+        printEl.appendChild(lineEl);
+
+        // Finally, initiate animation timelines for each character
+        allCharEls.forEach((charEl, i) => {
+          lineEl.appendChild(charEl);
+          this.startTimeline(
+            charEl,
+            i + lineIndex * lines[0].length,
+            delay,
+            pauseMin,
+            pauseMax,
+            duration,
           );
         });
-
-        printEl.appendChild(line);
       });
     });
   }
 
-  createTimeline(el, i, delay, pauseMin, pauseMax, duration) {
+  startTimeline(el, i, delay, pauseMin, pauseMax, duration) {
     const pauseDur = pauseMin + Math.floor(Math.random() * pauseMax);
     const charDelay = (i + 1) * delay + pauseDur;
 
@@ -59,6 +73,7 @@ class Print {
       }, duration + duration + delay);
     }, charDelay);
 
+    // Timing is correct, but doesn't loop
     // setTimeout(() => {
     //   el.style.opacity = 1;
     //   setTimeout(() => {
