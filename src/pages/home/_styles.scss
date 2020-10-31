@@ -1,0 +1,19 @@
+.home {
+  @include grid-parent;
+  @include gutters(vert, full);
+  flex-flow: row wrap;
+}
+
+.print {
+  @include gutters;
+}
+
+.print--upl,
+.print--abl {
+  flex: 1 1 50%;
+}
+
+.print--tip {
+  margin-top: auto;
+  flex: 1 0 100%;
+}

@@ -9,12 +9,12 @@ import Print from './Print';
 
 onDocumentReady(() => {
   new ExternalLinks();
-  new Print();
   // new ThemeToggle();
 
   const search = new Search();
-
   if (document.querySelector('.js-search-input')) {
     new SearchBar(search);
   }
+
+  [...document.querySelectorAll('[data-print]')].forEach(printEl => new Print(printEl));
 });
