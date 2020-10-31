@@ -86,6 +86,11 @@ input {
   transition: $transition;
 }
 
+code,
+pre {
+  font-family: $font-mono;
+}
+
 ul,
 ol {
   @include list-reset;

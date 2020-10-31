@@ -5,7 +5,12 @@ title: Index
 ---
 
 {# Search bar #}
-{% include "shared/search-bar.njk" %}
+<div class="search-wrapper js-search-wrapper">
+  <svg class="search-icon">
+    <use xlink:href="#search"></use>
+  </svg>
+  <input class="search-input js-search-input" type="text" placeholder="Search">
+</div>
 
 {# Page content & search results #}
 {% if collections.indexItems | length %}
@@ -73,4 +78,4 @@ title: Index
   </dl>
 {% endif %}
 
-<dl class="search-results js-search-results"></dl>
+<dl class="index search-results js-search-results" role="list"></dl>
