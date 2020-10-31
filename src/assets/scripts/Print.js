@@ -7,11 +7,11 @@ class Print {
 
     // Parse animation config options from data attributes
     this.initialDelay = parseInt(printEl.getAttribute('data-initial-delay')) || 0;
-    this.visibleFor = parseInt(printEl.getAttribute('data-visible-for')) || 4000;
-    this.invisibleFor = parseInt(printEl.getAttribute('data-invisible-for')) || 1000;
+    this.visibleFor = parseInt(printEl.getAttribute('data-visible-for')) || 5000;
+    this.invisibleFor = parseInt(printEl.getAttribute('data-invisible-for')) || 2000;
 
     // Set static animation config options
-    this.pauseMin = 80;
+    this.pauseMin = 60;
     this.pauseMax = 120;
 
     // Create clone-able progenitors for DOM elements we'll be adding later
