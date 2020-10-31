@@ -53,10 +53,17 @@ class Print {
   }
 
   showCharacter(i) {
-    if (i === this.charEls.length) {
+    /**
+     * 1. Shows the character at charEls[i] after a timeout
+     * 2. Then calls this function with i + 1
+     */
+
+    // If no corresponding element exists, do nothing
+    if (!this.charEls[i]) {
       return;
     }
 
+    // Don't add a pause before showing the first character
     const pauseDur =
       i === 0 ? 0 : this.pauseMin + Math.floor(Math.random() * (this.pauseMax - this.pauseMin));
 
@@ -67,11 +74,25 @@ class Print {
   }
 
   hideCharacter(i) {
-    if (i === this.charEls.length) {
+    /**
+     * 1. Hides the character at charEls[i] after a timeout
+     * 2. Then calls this function with i + 1
+     */
+
+    // If no corresponding element exists, do nothing
+    if (!this.charEls[i]) {
       return;
     }
 
-    // Loop the timeline at the first character
+    /**
+     * This is where the loop is set in perpetuity.
+     *
+     * startPrintTimeline calls showCharacter(0),
+     * then this function with i = 0 as well.
+     *
+     * This condition calls startPrintTimeline when
+     * i = 0, thus creating a loop.
+     */
     if (i === 0) {
       this.startPrintTimeline(this.invisibleFor);
     }
@@ -82,14 +103,14 @@ class Print {
     }, this.pauseMin);
   }
 
-  startPrintTimeline(wait) {
+  startPrintTimeline(timeout) {
     setTimeout(() => {
       this.showCharacter(0);
 
       setTimeout(() => {
         this.hideCharacter(0);
       }, this.visibleFor);
-    }, wait);
+    }, timeout);
   }
 }
 
