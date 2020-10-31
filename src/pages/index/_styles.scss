@@ -1,16 +1,79 @@
 /**
+ * Search
+ */
+
+$icon-size: 1em;
+
+.search-wrapper {
+  @include flex;
+  align-items: center;
+  border-bottom: 1px solid $black;
+  flex-grow: 0;
+  font-size: $fs0;
+  height: $header-height;
+  left: $gutter-full;
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  @include mq($md) {
+    font-size: $fs2;
+  }
+}
+
+.search-icon {
+  @include size($icon-size);
+  color: var(--search-placeholder-color);
+  pointer-events: none;
+  position: relative;
+  transition: $transition;
+
+  .search-wrapper:focus-within & {
+    color: $blue;
+  }
+}
+
+.search-input {
+  @include focus-reset;
+  background: none;
+  color: var(--text-color);
+  flex: 1 0 100%;
+  height: 100%;
+  margin-left: -$icon-size;
+  padding-left: $icon-size * 1.75;
+
+  &::placeholder {
+    color: var(--search-placeholder-color);
+  }
+}
+
+/**
  * Page
  */
 
 .index {
-  padding-left: $gutter-full;
-  padding-bottom: $gutter-full;
+  @include padding($header-height null null $gutter-full);
+}
 
+.js-search-results {
+  &:not(.show) {
+    display: none;
+  }
+}
+
+.js-index-list {
   &.hide {
     display: none;
   }
 }
 
+/**
+ * Entries, Collections, & Series
+ */
+.no-results {
+  color: var(--search-placeholder-color);
+  padding-top: $sp0;
+}
 /**
  * Entries, Collections, & Series
  */
@@ -119,58 +182,5 @@
 
   &:focus-within {
     height: auto;
-  }
-}
-
-/**
- * Search
- */
-
-.search-bar {
-  @include flex;
-  align-items: center;
-  flex-grow: 0;
-  position: relative;
-  height: $header-height;
-  color: var(--search-placeholder-color);
-  margin: 50px;
-
-  svg {
-    @include size(15px);
-    margin-right: 10px;
-    flex-shrink: 0;
-
-    @include mq($md) {
-      @include size(20px);
-      margin-right: 20px;
-    }
-  }
-
-  form {
-    width: 100%;
-    height: 100%;
-  }
-
-  input {
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    font-size: 16px;
-    color: black;
-    border-bottom: 1px solid black;
-
-    @include mq($md) {
-      font-size: 20px;
-    }
-  }
-}
-
-.search-results {
-  display: none;
-  padding-left: $gutter-full;
-  padding-bottom: $gutter-full;
-
-  &.show {
-    display: block;
   }
 }

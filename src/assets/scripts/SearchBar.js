@@ -13,7 +13,7 @@ class SearchBar {
   constructor(search) {
     this.search = search;
 
-    this.searchWrapper = document.querySelector('.js-search-bar');
+    this.searchWrapper = document.querySelector('.js-search-wrapper');
     this.searchInput = document.querySelector('.js-search-input');
     this.indexList = document.querySelector('.js-index-list');
     this.searchResults = document.querySelector('.js-search-results');
@@ -192,7 +192,16 @@ class SearchBar {
     this.searchResults.innerHTML = '';
 
     if (!results.length) {
-      this.searchResults.textContent = `No results for “${this.query}”`;
+      const noResultsEl = document.createElement('p');
+      noResultsEl.classList.add('no-results', 'as-h1');
+      noResultsEl.textContent = `No results for `;
+
+      const queryEl = document.createElement('code');
+      queryEl.textContent = this.query;
+
+      noResultsEl.appendChild(queryEl);
+
+      this.searchResults.appendChild(noResultsEl);
       return;
     }
 
