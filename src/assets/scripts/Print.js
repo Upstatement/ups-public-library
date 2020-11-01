@@ -9,6 +9,11 @@ class Print {
     this.initialDelay = parseInt(printEl.getAttribute('data-initial-delay')) || 0;
     this.visibleFor = parseInt(printEl.getAttribute('data-visible-for')) || 5000;
     this.invisibleFor = parseInt(printEl.getAttribute('data-invisible-for')) || 2000;
+    this.targetLoopCount = parseInt(printEl.getAttribute('data-loops')) || 'infinite';
+    this.fillMode = printEl.getAttribute('data-fill-mode') || 'forwards';
+
+    // Store the number of times a loop has occured
+    this.loopCounter = 0;
 
     // Set static animation config options
     this.pauseMin = 60;
@@ -48,8 +53,8 @@ class Print {
     // Attach lines contianing characters to the instantiating DOM element
     this.lineEls.forEach(lineEl => this.printEl.appendChild(lineEl));
 
-    // Begin the print animation timeline
-    this.startPrintTimeline(this.initialDelay);
+    // Begin the animation
+    this.loop(this.initialDelay);
   }
 
   showCharacter(i) {
@@ -84,17 +89,8 @@ class Print {
       return;
     }
 
-    /**
-     * This is where the loop is set in perpetuity.
-     *
-     * startPrintTimeline calls showCharacter(0),
-     * then this function with i = 0 as well.
-     *
-     * This condition calls startPrintTimeline when
-     * i = 0, thus creating a loop.
-     */
     if (i === 0) {
-      this.startPrintTimeline(this.invisibleFor);
+      this.loop(this.invisibleFor);
     }
 
     setTimeout(() => {
@@ -103,14 +99,22 @@ class Print {
     }, this.pauseMin);
   }
 
-  startPrintTimeline(timeout) {
-    setTimeout(() => {
-      this.showCharacter(0);
-
+  loop(timeout) {
+    if (this.targetLoopCount === 'infinite' || this.loopCounter < this.targetLoopCount) {
       setTimeout(() => {
-        this.hideCharacter(0);
-      }, this.visibleFor);
-    }, timeout);
+        this.loopCounter++;
+        this.showCharacter(0);
+
+        // End the loop with visible text if fill mode is set to 'forwards'
+        if (this.fillMode === 'forwards' && this.targetLoopCount === this.loopCounter) {
+          return;
+        }
+
+        setTimeout(() => {
+          this.hideCharacter(0);
+        }, this.visibleFor);
+      }, timeout);
+    }
   }
 }
 
