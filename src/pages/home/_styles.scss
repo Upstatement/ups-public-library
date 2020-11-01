@@ -1,28 +1,71 @@
 .home {
+  @include gutters(vert, half, margin);
+}
+
+.home__header,
+.home__body,
+.home__footer {
   @include grid-parent;
-  @include gutters(vert, full, margin);
-  align-content: flex-start;
-  flex-flow: row wrap;
+  @include gutters(vert, half, margin);
+}
+
+.home__header {
+  flex-direction: column;
+}
+
+.home__body {
+  margin-top: auto;
+}
+
+.home__footer {
+  flex-direction: column;
   position: relative;
-}
 
-.print {
-  .home & {
-    @include gutters;
-    flex: 1 0 100%;
+  @include mq($md) {
+    align-items: flex-end;
+    flex-direction: row;
   }
 }
 
-.print--upl {
-  .home & {
-    margin-bottom: 1em;
-  }
-}
+.home__print {
+  @include gutters;
+  line-height: 1;
 
-.print--abl,
-.print--tip {
-  .home & {
-    bottom: 0;
+  &--upl {
+    margin-bottom: $paragraph-spacing;
+  }
+
+  &--abl {
     position: absolute;
+  }
+
+  &--tip {
+    margin-left: auto;
+  }
+
+  &--link {
+    @include focus-reset;
+    display: inline-block;
+
+    @include on-focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+.home__welcome {
+  @include gutters;
+
+  @include mq($sm) {
+    max-width: 23em;
+  }
+}
+
+.home__link__wrapper {
+  flex: 1 0 auto;
+  line-height: 1;
+
+  @include mq($sm) {
+    max-width: 23em;
   }
 }
