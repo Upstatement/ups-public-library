@@ -1,3 +1,31 @@
+@mixin flex($direction: 'row', $grow: false) {
+  display: flex;
+
+  @if $direction == 'column' {
+    flex-direction: $direction;
+  }
+
+  @if $grow != false {
+    flex-grow: $grow;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin flex-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
 @mixin gutters($dir: horiz, $size: half, $property: padding) {
   $gutters: (
     half: #{var(--gutter-half)},
@@ -23,4 +51,6 @@
 @mixin grid-parent {
   @include flex;
   @include gutters;
+  flex: 0 0 100%;
+  width: 100%;
 }
