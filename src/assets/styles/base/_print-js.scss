@@ -3,3 +3,7 @@
   padding: 0;
   white-space: pre;
 }
+
+.js-print-char {
+  transition: opacity 60ms linear; // linear is intentional
+}
