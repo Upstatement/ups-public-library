@@ -1,3 +1,5 @@
+import { throttle } from './utils';
+
 class Print {
   constructor(printEl) {
     this.printEl = printEl;
@@ -27,13 +29,28 @@ class Print {
     // Create empty array to store char DOM elements
     this.charEls = [];
 
-    // Track the number of times a loop has occured
     this.loopCounter = 0;
+
+    this.isIdling = false;
+    this.idleTimeout = 30000;
 
     this.init();
   }
 
   init() {
+    // Setup initial idle timeouts and reset listeners
+    document.addEventListener(
+      'mousemove',
+      throttle(() => this.resetIdle(), this.idleTimeout),
+    );
+    document.addEventListener(
+      'keyup',
+      throttle(() => this.resetIdle(), this.idleTimeout),
+    );
+    setTimeout(() => {
+      this.isIdling = true;
+    }, this.idleTimeout);
+
     // Render markup for each line
     this.lines.forEach(line => {
       const lineEl = this.baseLineEl.cloneNode();
@@ -57,7 +74,10 @@ class Print {
   }
 
   get shouldLoop() {
-    return this.targetLoopCount === 'infinite' || this.loopCounter < this.targetLoopCount;
+    return (
+      !this.isIdling &&
+      (this.targetLoopCount === 'infinite' || this.loopCounter < this.targetLoopCount)
+    );
   }
 
   showCharacter(i) {
@@ -103,7 +123,7 @@ class Print {
   }
 
   loop() {
-    if (this.shouldLoop) {
+    if (this.shouldLoop || this.fillMode === 'forwards') {
       const timeout = this.loopCounter === 0 ? this.initialDelay : this.invisibleFor;
 
       setTimeout(() => {
@@ -119,6 +139,17 @@ class Print {
           this.hideCharacter(0);
         }, this.visibleFor);
       }, timeout);
+    }
+  }
+
+  resetIdle() {
+    if (this.isIdling) {
+      this.loopCounter = 0;
+      this.isIdling = false;
+      this.loop();
+      setTimeout(() => {
+        this.isIdling = true;
+      }, this.idleTimeout);
     }
   }
 }
