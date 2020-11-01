@@ -17,7 +17,7 @@ class Print {
     this.pauseMax = 120;
 
     // Create clone-able progenitors for DOM elements we'll be adding later
-    this.baseLineEl = document.createElement('p');
+    this.baseLineEl = document.createElement('span');
     this.baseLineEl.classList.add('js-print-line');
     this.lineElsFragment = new DocumentFragment();
 
