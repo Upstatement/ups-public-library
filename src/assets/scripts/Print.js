@@ -12,9 +12,6 @@ class Print {
     this.targetLoopCount = parseInt(printEl.getAttribute('data-loops')) || 'infinite';
     this.fillMode = printEl.getAttribute('data-fill-mode') || 'forwards';
 
-    // Store the number of times a loop has occured
-    this.loopCounter = 0;
-
     // Set static animation config options
     this.pauseMin = 60;
     this.pauseMax = 120;
@@ -22,14 +19,17 @@ class Print {
     // Create clone-able progenitors for DOM elements we'll be adding later
     this.baseLineEl = document.createElement('p');
     this.baseLineEl.classList.add('js-print-line');
+    this.lineElsFragment = new DocumentFragment();
 
     this.baseCharEl = document.createElement('span');
     this.baseCharEl.classList.add('js-print-char');
     this.baseCharEl.style.opacity = 0;
 
-    // Initialize empty arrays that will contain DOM elements for future reference
-    this.lineEls = [];
+    // Create empty array to store char DOM elements
     this.charEls = [];
+
+    // Track the number of times a loop has occured
+    this.loopCounter = 0;
 
     this.init();
   }
@@ -47,14 +47,18 @@ class Print {
         lineEl.appendChild(charEl);
       });
 
-      this.lineEls.push(lineEl);
+      this.lineElsFragment.appendChild(lineEl);
     });
 
     // Attach lines contianing characters to the instantiating DOM element
-    this.lineEls.forEach(lineEl => this.printEl.appendChild(lineEl));
+    this.printEl.appendChild(this.lineElsFragment);
 
     // Begin the animation
-    this.loop(this.initialDelay);
+    this.loop();
+  }
+
+  get shouldLoop() {
+    return this.targetLoopCount === 'infinite' || this.loopCounter < this.targetLoopCount;
   }
 
   showCharacter(i) {
@@ -90,7 +94,7 @@ class Print {
     }
 
     if (i === 0) {
-      this.loop(this.invisibleFor);
+      this.loop();
     }
 
     setTimeout(() => {
@@ -99,14 +103,16 @@ class Print {
     }, this.pauseMin);
   }
 
-  loop(timeout) {
-    if (this.targetLoopCount === 'infinite' || this.loopCounter < this.targetLoopCount) {
+  loop() {
+    if (this.shouldLoop) {
+      const timeout = this.loopCounter === 0 ? this.initialDelay : this.invisibleFor;
+
       setTimeout(() => {
         this.loopCounter++;
         this.showCharacter(0);
 
         // End the loop with visible text if fill mode is set to 'forwards'
-        if (this.fillMode === 'forwards' && this.targetLoopCount === this.loopCounter) {
+        if (!this.shouldLoop && this.fillMode === 'forwards') {
           return;
         }
 
