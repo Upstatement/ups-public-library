@@ -23,7 +23,6 @@ class Print {
 
     this.baseCharEl = document.createElement('span');
     this.baseCharEl.classList.add('js-print-char');
-    this.baseCharEl.style.opacity = 0;
 
     // Create empty array to store char DOM elements
     this.charEls = [];
@@ -77,7 +76,7 @@ class Print {
       i === 0 ? 0 : this.pauseMin + Math.floor(Math.random() * (this.pauseMax - this.pauseMin));
 
     setTimeout(() => {
-      window.requestAnimationFrame(() => (this.charEls[i].style.opacity = 1));
+      window.requestAnimationFrame(() => this.charEls[i].classList.add('js-print-shown'));
       this.showCharacter(i + 1);
     }, pauseDur);
   }
@@ -98,7 +97,7 @@ class Print {
     }
 
     setTimeout(() => {
-      window.requestAnimationFrame(() => (this.charEls[i].style.opacity = 0));
+      window.requestAnimationFrame(() => this.charEls[i].classList.remove('js-print-shown'));
       this.hideCharacter(i + 1);
     }, this.pauseMin);
   }

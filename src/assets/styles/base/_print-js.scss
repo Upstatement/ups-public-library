@@ -1,9 +1,14 @@
 .js-print-line {
-  line-height: 1;
-  padding: 0;
   white-space: pre;
 }
 
 .js-print-char {
+  opacity: 0;
+  pointer-events: none;
   transition: opacity 60ms linear; // linear is intentional
+
+  &.js-print-shown {
+    opacity: 1;
+    pointer-events: all;
+  }
 }
