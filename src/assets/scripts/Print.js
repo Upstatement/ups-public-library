@@ -9,7 +9,7 @@ class Print {
 
     // Parse animation config options from data attributes
     this.initialDelay = parseInt(printEl.getAttribute('data-initial-delay')) || 0;
-    this.visibleFor = parseInt(printEl.getAttribute('data-visible-for')) || 5000;
+    this.visibleFor = parseInt(printEl.getAttribute('data-visible-for')) || 10000;
     this.invisibleFor = parseInt(printEl.getAttribute('data-invisible-for')) || 2000;
     this.targetLoopCount = parseInt(printEl.getAttribute('data-loops')) || 'infinite';
     this.fillMode = printEl.getAttribute('data-fill-mode') || 'forwards';
@@ -32,7 +32,7 @@ class Print {
     this.loopCounter = 0;
 
     this.isIdling = false;
-    this.idleTimeout = 30000;
+    this.idleTimeout = 60000;
 
     this.init();
   }
@@ -41,11 +41,11 @@ class Print {
     // Setup initial idle timeouts and reset listeners
     document.addEventListener(
       'mousemove',
-      throttle(() => this.resetIdle(), this.idleTimeout),
+      throttle(() => this.resetIdle(), 10000),
     );
     document.addEventListener(
       'keyup',
-      throttle(() => this.resetIdle(), this.idleTimeout),
+      throttle(() => this.resetIdle(), 10000),
     );
     setTimeout(() => {
       this.isIdling = true;
@@ -146,10 +146,15 @@ class Print {
     if (this.isIdling) {
       this.loopCounter = 0;
       this.isIdling = false;
-      this.loop();
+
+      // first, hide everthing for a blank slate, to preserve timing
+      // hideCharacter will then restart the loop from the beginning
+      this.hideCharacter(0);
       setTimeout(() => {
         this.isIdling = true;
       }, this.idleTimeout);
+    } else {
+      this.isIdling = false;
     }
   }
 }

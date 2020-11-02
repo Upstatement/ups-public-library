@@ -70,6 +70,7 @@
 .home__welcome {
   @include gutters;
   margin-bottom: $paragraph-spacing;
+  text-indent: 0.5em;
 
   @include mq($sm) {
     max-width: 23em;
