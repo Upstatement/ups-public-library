@@ -31,8 +31,7 @@
   @include gutters;
   line-height: 1;
 
-  &--upl,
-  &--last-update {
+  &--upl {
     margin-bottom: $paragraph-spacing;
   }
 
@@ -59,8 +58,10 @@
 }
 
 .home__nav__link {
+  padding: 0;
   display: inline-block;
   transition: $transition;
+  margin-bottom: $list-item-spacing;
 
   @include on-focus {
     color: $red;
