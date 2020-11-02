@@ -1,4 +1,4 @@
-import { throttle } from './utils';
+import { throttle } from '../utils';
 
 class Print {
   constructor(printEl) {
