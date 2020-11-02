@@ -2,9 +2,10 @@
 layout: layouts/base/index.njk
 permalink: /index/
 title: Index
+templateClass: index
 ---
 
-{# Search bar #}
+{# Search #}
 <div class="search-wrapper js-search-wrapper">
   <div class="search-bar">
     <svg class="search-icon">
@@ -13,12 +14,12 @@ title: Index
     <input class="search-input js-search-input" type="text" placeholder="Search">
   </div>
 
-  <dl class="index search-results js-search-results" role="list"></dl>
+  <dl class="index__list search-results js-search-results" role="list"></dl>
 </div>
 
 {# Page content & search results #}
 {% if collections.indexItems | length %}
-  <dl class="index js-index-list" role="list">
+  <dl class="index__list js-index-list" role="list">
     {% for item in collections.indexItems %}
 
       {# The tag assigned by the json file in the directory will always be the first tag #}
