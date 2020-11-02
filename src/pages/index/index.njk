@@ -6,10 +6,14 @@ title: Index
 
 {# Search bar #}
 <div class="search-wrapper js-search-wrapper">
-  <svg class="search-icon">
-    <use xlink:href="#search"></use>
-  </svg>
-  <input class="search-input js-search-input" type="text" placeholder="Search">
+  <div class="search-bar">
+    <svg class="search-icon">
+      <use xlink:href="#search"></use>
+    </svg>
+    <input class="search-input js-search-input" type="text" placeholder="Search">
+  </div>
+
+  <dl class="index search-results js-search-results" role="list"></dl>
 </div>
 
 {# Page content & search results #}
@@ -77,5 +81,3 @@ title: Index
     {% endfor %}
   </dl>
 {% endif %}
-
-<dl class="index search-results js-search-results" role="list"></dl>
