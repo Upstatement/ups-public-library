@@ -1,0 +1,3 @@
+@mixin layer($number) {
+  z-index: $number * 100;
+}
