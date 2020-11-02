@@ -14,7 +14,7 @@
 }
 
 .home__body {
-  margin-top: auto;
+  @include flex(column, 1);
 }
 
 .home__footer {
@@ -31,7 +31,8 @@
   @include gutters;
   line-height: 1;
 
-  &--upl {
+  &--upl,
+  &--last-update {
     margin-bottom: $paragraph-spacing;
   }
 
@@ -48,13 +49,27 @@
     display: inline-block;
 
     @include on-focus {
-      text-decoration: underline;
+      color: $red;
     }
+  }
+}
+
+.home__nav {
+  @include gutters;
+}
+
+.home__nav__link {
+  display: inline-block;
+  transition: $transition;
+
+  @include on-focus {
+    color: $red;
   }
 }
 
 .home__welcome {
   @include gutters;
+  margin-bottom: $paragraph-spacing;
 
   @include mq($sm) {
     max-width: 23em;
