@@ -1,18 +1,24 @@
-@mixin set-text($family, $size, $weight, $color, $line-height, $letter-spacing: initial) {
-  color: $color;
-  font-family: $family;
-  font-size: $size;
-  font-weight: $weight;
-  letter-spacing: $letter-spacing;
-  line-height: $line-height;
-}
-
 @mixin h(
   $level,
   $weight: inherit,
   $family: $sans,
   $color: $black,
-  $size: map-get($headings, h#{$level})
+  $size-xs: map-get($headings, h#{$level + 2}),
+  $size-sm: map-get($headings, h#{$level + 1}),
+  $size-base: map-get($headings, h#{$level})
 ) {
-  @include set-text($family, $size, $weight, $color, 1.125, -0.02em);
+  color: $color;
+  font-family: $family;
+  font-size: $size-xs;
+  font-weight: $weight;
+  letter-spacing: -0.02em;
+  line-height: 1.125;
+
+  @include mq($xs) {
+    font-size: $size-sm;
+  }
+
+  @include mq($md) {
+    font-size: $size-base;
+  }
 }
