@@ -1,23 +1,32 @@
+.index {
+  --header-height: #{$sm-header-height};
+
+  @include mq($sm) {
+    --header-height: #{$header-height};
+  }
+}
+
 /**
  * Search
  */
-
 $icon-size: 1em;
 
 .search-bar {
   @include flex;
+  @include layer(2);
   align-items: center;
+  background-color: var(--bg-color);
   border-bottom: 1px solid $black;
   flex-grow: 0;
-  font-size: $fs0;
-  height: $header-height;
-  left: $gutter-full;
+  font-size: $fs2;
+  height: var(--header-height);
+  left: var(--gutter-full);
   position: fixed;
   right: 0;
   top: 0;
 
-  @include mq($md) {
-    font-size: $fs2;
+  @include mq($sm) {
+    font-size: $fs3;
   }
 }
 
@@ -50,9 +59,9 @@ $icon-size: 1em;
 /**
  * Page
  */
-
-.index {
-  @include padding($header-height null null $gutter-full);
+.index__list {
+  @include padding(var(--header-height) null $sp3 var(--gutter-full));
+  @include layer(1);
 }
 
 .js-search-results {
@@ -67,25 +76,26 @@ $icon-size: 1em;
   }
 }
 
-/**
- * Entries, Collections, & Series
- */
 .no-results {
   color: var(--search-placeholder-color);
   padding-top: $sp0;
 }
+
 /**
  * Entries, Collections, & Series
  */
-
 .index__type {
   @include padding($sp0 null);
-  font-size: $fs-1;
+  font-size: $fs-2;
   line-height: 1;
   min-width: 8em;
   pointer-events: none;
   text-transform: uppercase;
   user-select: none;
+
+  @include mq($md) {
+    font-size: $fs-1;
+  }
 }
 
 .index__desc,
@@ -109,7 +119,7 @@ $icon-size: 1em;
   box-sizing: content-box;
   cursor: s-resize;
   display: block;
-  height: calc(1.125em + 2 * #{$sp-2}); // match label height exactly
+  height: calc(1.125em + var(--gutter-full)); // match label height exactly
   left: 0;
   position: absolute;
   right: 0;
@@ -118,7 +128,7 @@ $icon-size: 1em;
 
   @include on-focus {
     ~ .index__expand-label {
-      color: var(--strong-text-color);
+      color: $blue;
     }
   }
 
@@ -149,18 +159,19 @@ $icon-size: 1em;
 
 .index__link {
   @include on-focus {
-    color: var(--strong-text-color);
+    color: $red;
   }
 }
 
 .index__title {
   @include flex;
-  @include padding($sp-2 null);
+  @include gutters(vert);
   justify-content: space-between;
+  color: currentColor;
 
   .index__nest__item & {
-    @include padding(($sp-2 / 2) null);
-    padding-left: $gutter-full;
+    @include padding(calc(var(--gutter-half) / 2) null);
+    padding-left: var(--gutter-full);
   }
 }
 
