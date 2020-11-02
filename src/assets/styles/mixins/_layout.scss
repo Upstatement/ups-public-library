@@ -1,7 +1,7 @@
 @mixin gutters($dir: horiz, $size: half, $property: padding) {
   $gutters: (
-    half: $gutter-half,
-    full: $gutter-full,
+    half: #{var(--gutter-half)},
+    full: #{var(--gutter-full)},
   );
   $gutter: map-get($gutters, $size);
 
