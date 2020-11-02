@@ -10,6 +10,16 @@ $sp5: 56px;
 
 $paragraph-spacing: $sp-1;
 
+$sm-gutter-half: 8px;
 $gutter-half: $sp-2;
-$gutter-full: $gutter-half * 2;
+$gutter-full: calc(#{var(--gutter-half)} * 2);
 $grid-col-count: 18;
+
+:root {
+  --gutter-half: #{$sm-gutter-half};
+  --gutter-full: #{$gutter-full};
+
+  @media (min-width: $md) {
+    --gutter-half: #{$gutter-half};
+  }
+}
