@@ -4,7 +4,7 @@
 
 $icon-size: 1em;
 
-.search-wrapper {
+.search-bar {
   @include flex;
   align-items: center;
   border-bottom: 1px solid $black;
@@ -28,7 +28,7 @@ $icon-size: 1em;
   position: relative;
   transition: $transition;
 
-  .search-wrapper:focus-within & {
+  .search-bar:focus-within & {
     color: $blue;
   }
 }
