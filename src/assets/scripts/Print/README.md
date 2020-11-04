@@ -37,6 +37,23 @@ None — required
 1. Value is treated as plain-text, meaning HTML tags or entities will not work.
 1. Whitespace is preserved, and spaces (`" "`) will get rendered and wrapped.
 
+### `data-use-hover="[boolean]"`
+
+When enabled, hovering the instantiating element will trigger a single loop.
+
+```html
+<a data-print="Go home" data-use-hover="true" href="/"></a>
+```
+
+**Default**:
+`false`
+
+**Notes**:
+
+1. The text's initial state is visible, and loops are performed out/in.
+1. `data-initial-delay`, `data-loops`, and `data-fill-mode` have no effect when this option is enabled.
+1. Event listeners used are `mouseenter`, `touchstart`, and `focus`.
+
 ### `data-initial-delay="[integer(ms)]"`
 
 The amount of time after `DOMcontentLoaded`, in ms, to wait before beginning the first loop.
@@ -74,7 +91,8 @@ The amount of time per loop that each letter will be invisible.
 `2000`
 
 **Notes**:
-The scrolling entrance animation is achieved by staggering each character's entrance by a random amount of time between `60` and `120` ms. As a result, each character's invisible phase will actually between `60` to `120` ms greater than the given value.
+
+1. The scrolling entrance animation is achieved by staggering each character's entrance by a random amount of time between `60` and `120` ms. As a result, each character's invisible phase will actually between `60` to `120` ms greater than the given value.
 
 ### `data-loops="['infinite'|integer]"`
 
@@ -88,7 +106,9 @@ The amount of times that text should loop.
 `infinite`
 
 **Notes**:
-If Print.js stops and restarts after detecing that a user has idled, the loop counter is reset.
+
+1. If Print.js stops and restarts after detecing that a user has idled _and before the target # of loops has been reached_, the loop counter is reset to `0`.
+1. If the target number of loops is reached, Print.js will stop checking for user idle and remove all event listeners. The text will become entirely and indefinitely static (unless the page reloads).
 
 ### `data-fill-mode="['forwards'|any]"`
 
@@ -100,3 +120,8 @@ If a number of loops has been given, you can use this option to control whether 
 
 **Default**:
 `forwards`
+
+**Notes**:
+
+1. This option has no effect unless `data-loops` has been set to an integer.
+1. _Any_ value other than `forwards` will end on an invisible cycle.
