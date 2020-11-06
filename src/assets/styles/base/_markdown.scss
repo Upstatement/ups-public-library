@@ -135,7 +135,13 @@
 
   h1 {
     @include h(1);
+    font-family: $fleuron-reg;
+
+    &:first-letter {
+      font-family: $fleuron-mix;
+    }
   }
+
   h2 {
     @include h(2);
   }

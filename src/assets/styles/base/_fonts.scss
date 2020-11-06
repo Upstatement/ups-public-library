@@ -29,3 +29,24 @@
   $file-name: Everett/EverettMonoTrial-Regular-web,
   $font-weight: 400
 );
+
+// ---------------------------------------------------------------------------
+// Fleuron Regular
+// ---------------------------------------------------------------------------
+
+@include font-face(
+  $family-name: FlueronRegular,
+  $file-name: Fleuron/fleuronregular-webfont,
+  $font-weight: 400
+);
+
+// ---------------------------------------------------------------------------
+// Fleuron Mixed
+// ---------------------------------------------------------------------------
+
+@include font-face(
+  $family-name: FlueronMixed,
+  $file-name: Fleuron/fleuronmixed-webfont,
+  $font-weight: 400
+);
+
