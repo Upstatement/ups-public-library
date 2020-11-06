@@ -18,8 +18,7 @@ class Print {
       : parseInt(printEl.getAttribute('data-loops')) || 'infinite';
 
     // Delay between characters — "typing" speed
-    this.pauseMin = 60;
-    this.pauseMax = 120;
+    this.pause = 70;
 
     // Create clone-able progenitors for DOM elements we'll be adding later
     this.baseLineEl = document.createElement('span');
@@ -111,8 +110,7 @@ class Print {
     }
 
     // Don't add a pause before showing the first character
-    const pauseDur =
-      i === 0 ? 0 : this.pauseMin + Math.floor(Math.random() * (this.pauseMax - this.pauseMin));
+    const timeout = i === 0 ? 0 : this.pause;
 
     setTimeout(() => {
       // Show the character at charEls[i] after a timeout
@@ -120,7 +118,7 @@ class Print {
 
       // Call this function with i + 1
       this.showCharacter(i + 1);
-    }, pauseDur);
+    }, timeout);
   }
 
   hideCharacter(i) {
@@ -141,7 +139,7 @@ class Print {
 
       // Call this function with i + 1
       this.hideCharacter(i + 1);
-    }, this.pauseMin);
+    }, this.pause);
   }
 
   loop() {

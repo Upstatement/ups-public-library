@@ -92,7 +92,7 @@ The amount of time per loop that each letter will be invisible.
 
 **Notes**:
 
-1. The scrolling entrance animation is achieved by staggering each character's entrance by a random amount of time between `60` and `120` ms. As a result, each character's invisible phase will actually between `60` to `120` ms greater than the given value.
+The scrolling entrance animation is achieved by staggering each character's entrance by `70ms`. As a result, each character's invisible phase will actually be `70ms` greater than the given value.
 
 ### `data-loops="['infinite'|integer]"`
 
