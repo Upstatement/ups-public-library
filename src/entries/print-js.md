@@ -1,7 +1,7 @@
 ---
 layout: layouts/entry/index.njk
 title: 'Breakdown: Autotyped Text'
-date: 2020-11-03
+date: 2020-11-13
 tags:
   - javascript
   - js
