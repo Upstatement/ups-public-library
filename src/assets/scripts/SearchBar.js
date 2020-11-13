@@ -193,7 +193,7 @@ class SearchBar {
 
     if (!results.length) {
       const noResultsEl = document.createElement('p');
-      noResultsEl.classList.add('no-results', 'as-h1');
+      noResultsEl.classList.add('no-results', 'as-h2');
       noResultsEl.textContent = `No results for `;
 
       const queryEl = document.createElement('code');
@@ -215,7 +215,7 @@ class SearchBar {
       this.searchResults.appendChild(resultLabel);
 
       const resultDesc = document.createElement('dd');
-      resultDesc.classList.add('as-h1', 'index__desc');
+      resultDesc.classList.add('as-h2', 'index__desc');
 
       if (resultType === 'entry') {
         const entryLink = document.createElement('a');
