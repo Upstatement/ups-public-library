@@ -5,6 +5,22 @@ title: Index
 templateClass: index
 ---
 
+<div class="filter js-filter" style="padding: 20px;">
+  Filter by
+  <ul>
+    {% for tag in collections.tagList %}
+      <li>
+        <label for="">
+          <input type="checkbox" name="filter" value="{{ tag }}" />
+          <span>{{ tag }}</span>
+        </label>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <button class="clear">Clear Filters</button>
+</div>
+
 {# Search #}
 <div class="search-wrapper js-search-wrapper">
   <div class="search-bar">
@@ -26,59 +42,64 @@ templateClass: index
       {% set tagDef = item
         .data
         .tags[0] %}
-      <dt class="index__type">
-        {{ "Entry" if tagDef == "entries" }}
-        {{ "Collection" if tagDef == "collections" }}
-        {{ "Series" if tagDef == "series" }}
-      </dt>
 
-      <dd class="as-h1 index__desc">
-        {% if tagDef == "entries" %}
-          {# Entries #}
-          <a href="{{ item.url }}" class="index__link">
-            <h1 class="index__title">
-              {{ item.data.title }}
-              <svg class="index__icon index__icon--arrow">
-                <use xlink:href="#arrow"></use>
-              </svg>
-            </h1>
-          </a>
+      <div data-tags="{{ item.data.tags }}">
 
-        {% else %}
-          {# Series & Collections #}
-          {% set inputName = "expand-" ~ (item.data.title | slug) %}
-          <input class="index__expand-input" type="checkbox" name="{{ inputName }}" id="{{ inputName }}"/>
-          <label class="index__expand-label" for="{{ inputName }}">
-            <h1 class="index__title">
-              {{ item.data.title }}
-              <svg class="index__icon index__icon--plus">
-                <use xlink:href="#plus"></use>
-              </svg>
-              <svg class="index__icon index__icon--minus">
-                <use xlink:href="#minus"></use>
-              </svg>
-            </h1>
-          </label>
+        <dt class="index__type">
+          {{ "Entry" if tagDef == "entries" }}
+          {{ "Collection" if tagDef == "collections" }}
+          {{ "Series" if tagDef == "series" }}
+        </dt>
 
-          <ol class="index__nest">
-            {% if item.data.entries | length %}
-              {% for entry in item.data.entries %}
-                <li class="index__nest__item">
-                  <a href="{{ '/entries/' ~ entry | slug }}" class="index__link">
-                    <h2 class="index__title">
-                      {{ entry }}
-                      <svg class="index__icon index__icon--arrow">
-                        <use xlink:href="#arrow"></use>
-                      </svg>
-                    </h2>
-                  </a>
-                </li>
-              {% endfor %}
-            {% endif %}
-          </ol>
+        <dd class="as-h1 index__desc">
+          {% if tagDef == "entries" %}
+            {# Entries #}
+            <a href="{{ item.url }}" class="index__link">
+              <h1 class="index__title">
+                {{ item.data.title }}
+                <svg class="index__icon index__icon--arrow">
+                  <use xlink:href="#arrow"></use>
+                </svg>
+              </h1>
+            </a>
 
-        {% endif %}
-      </dd>
+          {% else %}
+            {# Series & Collections #}
+            {% set inputName = "expand-" ~ (item.data.title | slug) %}
+            <input class="index__expand-input" type="checkbox" name="{{ inputName }}" id="{{ inputName }}"/>
+            <label class="index__expand-label" for="{{ inputName }}">
+              <h1 class="index__title">
+                {{ item.data.title }}
+                <svg class="index__icon index__icon--plus">
+                  <use xlink:href="#plus"></use>
+                </svg>
+                <svg class="index__icon index__icon--minus">
+                  <use xlink:href="#minus"></use>
+                </svg>
+              </h1>
+            </label>
+
+            <ol class="index__nest">
+              {% if item.data.entries | length %}
+                {% for entry in item.data.entries %}
+                  <li class="index__nest__item">
+                    <a href="{{ '/entries/' ~ entry | slug }}" class="index__link">
+                      <h2 class="index__title">
+                        {{ entry }}
+                        <svg class="index__icon index__icon--arrow">
+                          <use xlink:href="#arrow"></use>
+                        </svg>
+                      </h2>
+                    </a>
+                  </li>
+                {% endfor %}
+              {% endif %}
+            </ol>
+
+          {% endif %}
+        </dd>
+
+      </div>
     {% endfor %}
   </dl>
 {% endif %}

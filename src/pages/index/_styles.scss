@@ -56,6 +56,25 @@ $icon-size: 1em;
   }
 }
 
+.filter {
+  background: #cccccc;
+  position: absolute;
+  z-index: 300;
+  width: 300px;
+  top: 0;
+  right: 0;
+
+  label {
+    display: flex;
+    align-items: center;
+
+    input {
+      width: auto;
+      margin-right: 10px;
+    }
+  }
+}
+
 /**
  * Page
  */

@@ -4,6 +4,7 @@ import { onDocumentReady } from './utils';
 import ExternalLinks from './ExternalLinks';
 import Search from './Search';
 import SearchBar from './SearchBar';
+import IndexFilters from './IndexFilters';
 // import ThemeToggle from './ThemeToggle';
 
 onDocumentReady(() => {
@@ -14,5 +15,9 @@ onDocumentReady(() => {
 
   if (document.querySelector('.js-search-input')) {
     new SearchBar(search);
+  }
+
+  if (document.querySelector('.index .js-filter')) {
+    new IndexFilters();
   }
 });

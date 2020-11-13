@@ -6,7 +6,7 @@ const markdownItAnchor = require('markdown-it-anchor');
 const {
   getSlugMap,
   getSortedCollection,
-  // getTagList
+  getTagList,
   indexItems,
 } = require('./src/_11ty/collections');
 const {
@@ -53,6 +53,7 @@ module.exports = function (eleventyConfig) {
   );
   eleventyConfig.addCollection('entriesMap', collectionApi => getSlugMap(collectionApi, 'entries'));
   eleventyConfig.addCollection('indexItems', indexItems);
+  eleventyConfig.addCollection('tagList', getTagList);
 
   /**
    * Add custom filters
