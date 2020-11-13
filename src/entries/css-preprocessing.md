@@ -1,7 +1,7 @@
 ---
 layout: layouts/entry/index.njk
 title: CSS Preprocessing
-date: 2020-10-30
+date: 2020-11-13
 tags:
   - css
 ---
@@ -35,5 +35,3 @@ For two, the answer is less simple. Improvements are being made to CSS, but slow
 ---
 
 That’s a lot of theory. If you take one thing away though, it should be this: **CSS pre-processing is a powerful tool, but you won’t be able to take full advantage of it without a deep understanding of CSS. Because at the end of the day, you’re still writing CSS.**
-
-Now, let’s get SASSy.

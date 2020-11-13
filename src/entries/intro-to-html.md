@@ -1,7 +1,7 @@
 ---
 layout: layouts/entry/index.njk
 title: Intro to HTML
-date: 2020-10-30
+date: 2020-11-13
 tags:
   - html
   - basic
@@ -14,8 +14,6 @@ HTML, or Hypertext Markup Language, is what we use to add content to websites. I
 ## How HTML Works
 
 Fundamentally, HTML is composed of three parts: Elements, Content, and Attributes.
-
-![Anchor Element Anatomy](./img/anchor-element.png 'Anchor Element Anatomy')
 
 ### Elements
 
