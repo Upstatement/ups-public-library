@@ -5,6 +5,6 @@ templateClass: entry
 
 {% if content %}
   <section class="entry__content md">
-    {{ content | safe }}
+    {{ content | wrapEachWord('test') | safe }}
   </section>
 {% endif %}

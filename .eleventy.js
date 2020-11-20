@@ -15,6 +15,7 @@ const {
   // includesTeam,
   // includesTechnology,
   readableDate,
+  wrapEachWord,
   // sortCollectionByTitle,
 } = require('./src/_11ty/filters');
 
@@ -61,6 +62,7 @@ module.exports = function (eleventyConfig) {
    */
   eleventyConfig.addFilter('htmlDateString', htmlDateString);
   eleventyConfig.addFilter('readableDate', readableDate);
+  eleventyConfig.addFilter('wrapEachWord', wrapEachWord);
   // eleventyConfig.addFilter('includesSolution', includesSolution);
   // eleventyConfig.addFilter('includesTeam', includesTeam);
   // eleventyConfig.addFilter('includesTechnology', includesTechnology);
