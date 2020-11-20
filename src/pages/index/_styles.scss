@@ -11,19 +11,22 @@
  */
 $icon-size: 1em;
 
-.search-bar {
-  @include flex;
+.search-and-filter-wrapper {
   @include layer(2);
-  align-items: center;
   background-color: var(--bg-color);
-  border-bottom: 1px solid $black;
-  flex-grow: 0;
-  font-size: $fs2;
-  height: var(--header-height);
   left: var(--gutter-full);
   position: fixed;
   right: 0;
   top: 0;
+}
+
+.search-bar {
+  @include flex;
+  align-items: center;
+  border-bottom: 1px solid $black;
+  flex-grow: 0;
+  font-size: $fs2;
+  height: var(--header-height);
 
   @include mq($sm) {
     font-size: $fs3;
@@ -56,23 +59,53 @@ $icon-size: 1em;
   }
 }
 
+/**
+ * Filter
+ */
+
+.filter-bar {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  padding: $sp-3 var(--gutter-full) $sp0 0;
+}
+
+.filter-heading {
+  &:not(:first-of-type) {
+    margin-left: $sp0;
+  }
+}
+
 .filter {
-  background: #cccccc;
-  position: absolute;
-  z-index: 300;
-  width: 300px;
-  top: 0;
-  right: 0;
+  cursor: pointer;
+  margin: 0 ($sp-1 / 2);
+}
 
-  label {
-    display: flex;
-    align-items: center;
+.filter--topic__list {
+  display: flex;
+}
 
-    input {
-      width: auto;
-      margin-right: 10px;
+.filter--topic__text {
+  display: inline-block;
+
+  &::after {
+    @include size(0.5em);
+    border: 1px solid currentColor;
+    content: '';
+    display: inline-block;
+    margin-left: 0.25em;
+    margin-bottom: 0.1em;
+
+    .filter--topic__label:focus &,
+    .filter--topic__label:hover &,
+    .filter--topic__input:checked + & {
+      background-color: currentColor;
     }
   }
+}
+
+.clear {
+  margin-left: auto;
 }
 
 /**

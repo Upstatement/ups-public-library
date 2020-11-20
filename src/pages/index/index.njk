@@ -5,37 +5,60 @@ title: Index
 templateClass: index
 ---
 
-<div class="filter js-filter" style="padding: 20px;">
-  Filter by
-  <ul>
-    <li>
-      <select name="type" id="typeFilter">
+{# Search #}
+<div class="js-search-wrapper">
+  <div class="search-and-filter-wrapper">
+    <section class="search-bar">
+      <h1 class="hide">
+        Search
+      </h1>
+      <svg class="search-icon">
+        <use xlink:href="#search"></use>
+      </svg>
+      <input class="search-input js-search-input" type="text" placeholder="Search">
+    </section>
+
+    <section class="filter-bar js-filter-bar">
+      <h1 class="hide">
+        Filter
+      </h1>
+
+      <h2 class="filter-heading">
+        Type:
+      </h2>
+      <select class="filter filter--type" name="type" id="typeFilter">
         <option value="js-clear" selected="selected">All</option>
         <option value="entries">Entries</option>
         <option value="series">Series</option>
         <option value="collections">Collections</option>
       </select>
-    </li>
-    {% for tag in collections.tagList %}
-      <li>
-        <label for="{{ tag ~ 'Filter' }}">
-          <input type="checkbox" name="filter" value="{{ tag }}" id="{{ tag ~ 'Filter' }}"/>
-          <span>{{ tag }}</span>
-        </label>
-      </li>
-    {% endfor %}
-  </ul>
 
-  <button class="clear">Clear Filters</button>
-</div>
+      <h2 class="filter-heading">
+        Level:
+      </h2>
+      <select class="filter filter--level" name="type" id="typeFilter">
+        <option value="js-clear" selected="selected">Any</option>
+        {% for level in difficultyLevels %}
+          <option value="{{ level }}">{{ level | capitalize }}</option>
+        {% endfor %}
+      </select>
 
-{# Search #}
-<div class="search-wrapper js-search-wrapper">
-  <div class="search-bar">
-    <svg class="search-icon">
-      <use xlink:href="#search"></use>
-    </svg>
-    <input class="search-input js-search-input" type="text" placeholder="Search">
+      <h2 class="filter-heading">
+        Topic:
+      </h2>
+      <ul class="filter--topic__list">
+        {% for tag in collections.tagList %}
+          <li>
+            <label class="filter filter--topic__label" for="{{ tag ~ 'Filter' }}">
+              <input class="filter--topic__input hide" type="checkbox" name="filter" value="{{ tag }}" id="{{ tag ~ 'Filter' }}"/>
+              <span class="filter--topic__text">{{ tag | upper }}</span>
+            </label>
+          </li>
+        {% endfor %}
+      </ul>
+
+      <button class="clear js-clear-button">Clear Filters</button>
+    </section>
   </div>
 
   <dl class="index__list search-results js-search-results" role="list"></dl>

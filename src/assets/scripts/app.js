@@ -17,7 +17,7 @@ onDocumentReady(() => {
     new SearchBar(search);
   }
 
-  if (document.querySelector('.index .js-filter')) {
+  if (document.querySelector('.index .js-filter-bar')) {
     new IndexFilters();
   }
 });

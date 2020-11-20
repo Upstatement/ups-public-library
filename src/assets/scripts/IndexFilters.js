@@ -1,9 +1,9 @@
 class IndexFilters {
   constructor() {
-    this.container = document.querySelector('.index .js-filter');
+    this.container = document.querySelector('.index .js-filter-bar');
     this.checkboxFilters = Array.from(this.container.querySelectorAll('input[type="checkbox"]'));
     this.selectFilters = Array.from(this.container.querySelectorAll('select'));
-    this.clearButton = this.container.querySelector('.clear');
+    this.clearButton = this.container.querySelector('.js-clear-button');
 
     this.indexItems = Array.from(document.querySelectorAll('[data-tags]'));
 
