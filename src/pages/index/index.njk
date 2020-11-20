@@ -51,7 +51,7 @@ templateClass: index
         .data
         .tags[0] %}
 
-      <div data-tags="{{ item.data.tags }}">
+      <div data-tags="{{ item.data.tags }}" data-level="{{ difficultyLevels[item.data.level - 1] }}">
 
         <dt class="index__type">
           {{ "Entry" if tagDef == "entries" }}

@@ -1,10 +1,10 @@
 ---
 layout: layouts/entry/index.njk
 title: Cascade, Inheritance, & Specificity
-date: 2020-10-30
+date: 2020-11-20
 tags:
   - css
-  - basic
+level: 1
 ---
 
 # Cascade, Inheritance, & Specificity

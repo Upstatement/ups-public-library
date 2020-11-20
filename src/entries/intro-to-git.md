@@ -1,10 +1,10 @@
 ---
 layout: layouts/entry/index.njk
 title: Intro to Git
-date: 2020-10-30
+date: 2020-11-20
 tags:
   - git
-  - basic
+level: 1
 ---
 
 # Intro to Git

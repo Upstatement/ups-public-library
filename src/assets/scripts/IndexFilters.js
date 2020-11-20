@@ -59,7 +59,7 @@ class IndexFilters {
     // For each index item, check if it matches the filter(s)
     // Have to select all every time we filter in case the user has made a search
     this.indexItems.forEach(indexItem => {
-      const itemTags = indexItem.dataset.tags.split(',');
+      const itemTags = [...indexItem.dataset.tags.split(','), indexItem.dataset.level];
       const shouldFilter = this.tagsToShow.every(tag => itemTags.includes(tag));
       indexItem.classList.toggle('hide', !shouldFilter);
     });

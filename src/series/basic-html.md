@@ -4,7 +4,7 @@ title: Basic HTML
 date: 2020-11-20
 tags:
   - html
-  - basic
+level: 1
 entries:
   - Intro to HTML
   - HTML Elements

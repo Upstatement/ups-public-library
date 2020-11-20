@@ -1,10 +1,10 @@
 ---
 layout: layouts/entry/index.njk
 title: Intro to HTML
-date: 2020-10-30
+date: 2020-11-20
 tags:
   - html
-  - basic
+level: 1
 ---
 
 # Intro to HTML
