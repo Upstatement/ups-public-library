@@ -28,7 +28,7 @@ class IndexFilters {
     // For each index item, check if it matches the filter(s)
     this.indexList.forEach(indexItem => {
       const itemTags = indexItem.dataset.tags.split(',');
-      const shouldFilter = itemTags.some(tag => tagsToShow.includes(tag));
+      const shouldFilter = tagsToShow.every(tag => itemTags.includes(tag));
       indexItem.classList.toggle('hide', !shouldFilter);
     });
   }
