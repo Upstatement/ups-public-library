@@ -4,7 +4,8 @@ templateClass: entry
 ---
 
 {% if content %}
+  {% set wrapped = content | wrapTitleWords %}
   <section class="entry__content md">
-    {{ content | wrapEachWord('test') | safe }}
+    {{ wrapped | safe }}
   </section>
 {% endif %}

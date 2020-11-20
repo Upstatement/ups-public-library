@@ -137,8 +137,13 @@
     @include h(1);
     font-family: $fleuron-reg;
 
-    &:first-letter {
-      font-family: $fleuron-mix;
+    span {
+      display: inline-block;
+      white-space: pre;
+
+      &:first-letter {
+        font-family: $fleuron-mix;
+      }
     }
   }
 
