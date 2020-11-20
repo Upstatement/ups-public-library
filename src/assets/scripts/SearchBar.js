@@ -206,13 +206,16 @@ class SearchBar {
     }
 
     results.forEach(result => {
-      const { title, url, entries } = result.item;
+      const { title, url, entries, tags } = result.item;
+
+      const resultWrapper = document.createElement('div');
+      resultWrapper.setAttribute('data-tags', tags);
 
       const resultLabel = document.createElement('dt');
       const resultType = this.search.getResultType(result.item);
       resultLabel.classList.add('index__type');
       resultLabel.textContent = resultType;
-      this.searchResults.appendChild(resultLabel);
+      resultWrapper.appendChild(resultLabel);
 
       const resultDesc = document.createElement('dd');
       resultDesc.classList.add('as-h1', 'index__desc');
@@ -231,7 +234,7 @@ class SearchBar {
         `.trim();
 
         resultDesc.appendChild(entryLink);
-        this.searchResults.appendChild(resultDesc);
+        resultWrapper.appendChild(resultDesc);
       } else {
         // Input
         const expandInput = document.createElement('input');
@@ -286,8 +289,10 @@ class SearchBar {
 
         resultDesc.appendChild(nestList);
 
-        this.searchResults.appendChild(resultDesc);
+        resultWrapper.appendChild(resultDesc);
       }
+
+      this.searchResults.appendChild(resultWrapper);
     });
   }
 }

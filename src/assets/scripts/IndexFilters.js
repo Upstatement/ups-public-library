@@ -3,8 +3,6 @@ class IndexFilters {
     this.container = document.querySelector('.index .js-filter');
     this.checkboxFilters = Array.from(this.container.querySelectorAll('input[type="checkbox"]'));
     this.selectFilters = Array.from(this.container.querySelectorAll('select'));
-    this.indexListContainer = document.querySelector('.index .js-index-list');
-    this.indexList = Array.from(this.indexListContainer.querySelectorAll('[data-tags]'));
     this.clearButton = this.container.querySelector('.clear');
 
     this.filterState = {};
@@ -48,7 +46,8 @@ class IndexFilters {
 
   updateIndexListItems(tagsToShow) {
     // For each index item, check if it matches the filter(s)
-    this.indexList.forEach(indexItem => {
+    // Have to select all every time we filter in case the user has made a search
+    Array.from(document.querySelectorAll('[data-tags]')).forEach(indexItem => {
       const itemTags = indexItem.dataset.tags.split(',');
       const shouldFilter = tagsToShow.every(tag => itemTags.includes(tag));
       indexItem.classList.toggle('hide', !shouldFilter);
@@ -66,7 +65,10 @@ class IndexFilters {
       [...filter.options].forEach(option => (this.filterState[option.value] = false));
     });
 
-    this.indexList.forEach(item => item.classList.remove('hide'));
+    // Have to select all every time we filter in case the user has made a search
+    Array.from(document.querySelectorAll('[data-tags]')).forEach(item =>
+      item.classList.remove('hide'),
+    );
   }
 }
 
