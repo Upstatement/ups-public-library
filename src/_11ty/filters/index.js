@@ -3,7 +3,7 @@ const includesSolution = require('./includesSolution');
 const includesTeam = require('./includesTeam');
 const includesTechnology = require('./includesTechnology');
 const readableDate = require('./readableDate');
-const wrapEachWord = require('./wrapEachWord');
+const wrapTitleWords = require('./wrapTitleWords');
 
 module.exports = {
   htmlDateString,
@@ -11,5 +11,5 @@ module.exports = {
   includesTeam,
   includesTechnology,
   readableDate,
-  wrapEachWord,
+  wrapTitleWords,
 };
