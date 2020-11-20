@@ -5,7 +5,13 @@ class IndexFilters {
     this.selectFilters = Array.from(this.container.querySelectorAll('select'));
     this.clearButton = this.container.querySelector('.clear');
 
+    this.indexItems = Array.from(document.querySelectorAll('[data-tags]'));
+
+    this.searchInput = document.querySelector('.js-search-input');
+
     this.filterState = {};
+
+    this.tagsToShow = [];
 
     this.init();
   }
@@ -20,15 +26,20 @@ class IndexFilters {
       filter.addEventListener('change', e => this.onSelectChange(e));
     });
 
+    this.searchInput.addEventListener('input', () => {
+      this.indexItems = Array.from(document.querySelectorAll('[data-tags]'));
+      this.updateIndexListItems();
+    });
+
     this.clearButton.addEventListener('click', () => this.onClearButtonClick());
   }
 
   onCheckboxChange(e) {
     const { value, checked } = e.target;
     this.filterState[value] = checked;
-    const tagsToShow = Object.keys(this.filterState).filter(key => this.filterState[key] === true);
+    this.tagsToShow = Object.keys(this.filterState).filter(key => this.filterState[key] === true);
 
-    this.updateIndexListItems(tagsToShow);
+    this.updateIndexListItems();
   }
 
   onSelectChange(e) {
@@ -39,17 +50,17 @@ class IndexFilters {
       this.filterState[value] = true;
     }
 
-    const tagsToShow = Object.keys(this.filterState).filter(key => this.filterState[key] === true);
+    this.tagsToShow = Object.keys(this.filterState).filter(key => this.filterState[key] === true);
 
-    this.updateIndexListItems(tagsToShow);
+    this.updateIndexListItems();
   }
 
-  updateIndexListItems(tagsToShow) {
+  updateIndexListItems() {
     // For each index item, check if it matches the filter(s)
     // Have to select all every time we filter in case the user has made a search
-    Array.from(document.querySelectorAll('[data-tags]')).forEach(indexItem => {
+    this.indexItems.forEach(indexItem => {
       const itemTags = indexItem.dataset.tags.split(',');
-      const shouldFilter = tagsToShow.every(tag => itemTags.includes(tag));
+      const shouldFilter = this.tagsToShow.every(tag => itemTags.includes(tag));
       indexItem.classList.toggle('hide', !shouldFilter);
     });
   }
@@ -66,9 +77,7 @@ class IndexFilters {
     });
 
     // Have to select all every time we filter in case the user has made a search
-    Array.from(document.querySelectorAll('[data-tags]')).forEach(item =>
-      item.classList.remove('hide'),
-    );
+    this.indexItems.forEach(item => item.classList.remove('hide'));
   }
 }
 
