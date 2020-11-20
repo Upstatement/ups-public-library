@@ -8,10 +8,18 @@ templateClass: index
 <div class="filter js-filter" style="padding: 20px;">
   Filter by
   <ul>
+    <li>
+      <select name="type" id="typeFilter">
+        <option value="js-clear" selected="selected">All</option>
+        <option value="entries">Entries</option>
+        <option value="series">Series</option>
+        <option value="collections">Collections</option>
+      </select>
+    </li>
     {% for tag in collections.tagList %}
       <li>
-        <label for="{{ tag ~ '-filter' }}">
-          <input type="checkbox" name="filter" value="{{ tag }}" id="{{ tag ~ '-filter' }}"/>
+        <label for="{{ tag ~ 'Filter' }}">
+          <input type="checkbox" name="filter" value="{{ tag }}" id="{{ tag ~ 'Filter' }}"/>
           <span>{{ tag }}</span>
         </label>
       </li>
