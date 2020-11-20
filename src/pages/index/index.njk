@@ -10,8 +10,8 @@ templateClass: index
   <ul>
     {% for tag in collections.tagList %}
       <li>
-        <label for="">
-          <input type="checkbox" name="filter" value="{{ tag }}" />
+        <label for="{{ tag ~ '-filter' }}">
+          <input type="checkbox" name="filter" value="{{ tag }}" id="{{ tag ~ '-filter' }}"/>
           <span>{{ tag }}</span>
         </label>
       </li>
@@ -52,6 +52,7 @@ templateClass: index
         </dt>
 
         <dd class="as-h1 index__desc">
+
           {% if tagDef == "entries" %}
             {# Entries #}
             <a href="{{ item.url }}" class="index__link">
@@ -62,7 +63,6 @@ templateClass: index
                 </svg>
               </h1>
             </a>
-
           {% else %}
             {# Series & Collections #}
             {% set inputName = "expand-" ~ (item.data.title | slug) %}
@@ -79,8 +79,8 @@ templateClass: index
               </h1>
             </label>
 
-            <ol class="index__nest">
-              {% if item.data.entries | length %}
+            {% if item.data.entries | length %}
+              <ol class="index__nest">
                 {% for entry in item.data.entries %}
                   <li class="index__nest__item">
                     <a href="{{ '/entries/' ~ entry | slug }}" class="index__link">
@@ -93,13 +93,13 @@ templateClass: index
                     </a>
                   </li>
                 {% endfor %}
-              {% endif %}
-            </ol>
+              </ol>
+            {% endif %}
 
           {% endif %}
         </dd>
-
       </div>
     {% endfor %}
+
   </dl>
 {% endif %}
