@@ -6,8 +6,6 @@ tags:
   - css
 ---
 
-# CSS Preprocessing
-
 So you’ve grasped the fundamentals of CSS. You can change your links from blue to green, add fancy transitions and hover states, and even translate a complex grid to flexbox.
 
 Are you starting to notice anything?

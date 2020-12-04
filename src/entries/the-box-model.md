@@ -1,13 +1,11 @@
 ---
 layout: layouts/entry/index.njk
 title: The Box Model
-date: 2020-10-30
+date: 2020-12-04
 tags:
   - css
   - basic
 ---
-
-# The Box Model
 
 All elements in HTML can be considered boxes. The CSS box model describes the rendered layout of an HTML element. It is comprised of `margins`, `borders`, `padding`, and the `content` itself. We use the box model to define borders and spacing around elements.
 

@@ -3,9 +3,16 @@ layout: layouts/base/index.njk
 templateClass: entry
 ---
 
+{% macro wrapWords(title = '', className = '') %}
+  {% set words = title | split(' ') %}
+  {% for word in words %}
+    <span {% if className %}class="{{ className }}"{% endif %}>{{ word }}</span>
+  {% endfor %}
+{% endmacro %}
+
 {% if content %}
-  {% set wrapped = content | wrapTitleWords %}
   <section class="entry__content md">
-    {{ wrapped | safe }}
+    <h1>{{ wrapWords(title) }}</h1>
+    {{ content | safe }}
   </section>
 {% endif %}

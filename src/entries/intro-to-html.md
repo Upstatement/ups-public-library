@@ -1,13 +1,11 @@
 ---
 layout: layouts/entry/index.njk
 title: Intro to HTML
-date: 2020-11-13
+date: 2020-12-04
 tags:
   - html
   - basic
 ---
-
-# Intro to HTML
 
 HTML, or Hypertext Markup Language, is what we use to add content to websites. It's a simple language with only a few rules, but it's also the backbone of a website.
 
