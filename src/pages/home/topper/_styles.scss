@@ -1,22 +1,31 @@
 .home__header,
-.home__util-links {
+.home__nav {
   @include grid-parent;
   @include gutters(vert, half, margin);
 }
 
 .home__header {
   min-height: 35vh;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.home__util-links {
   flex-direction: column;
-  position: relative;
 
   @include mq($md) {
-    align-items: flex-end;
     flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.home__nav {
+  position: relative;
+  align-items: flex-end;
+  flex-direction: row;
+}
+
+.home__links {
+  @include mq($md) {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: row;
+    flex: 0 0 66.667%;
   }
 }
 
@@ -81,8 +90,9 @@
 .home__link__wrapper {
   flex: 1 0 auto;
   line-height: 1;
+  margin-top: $paragraph-spacing;
 
-  @include mq($sm) {
-    max-width: 23em;
+  @include mq($md) {
+    margin-top: 0;
   }
 }
