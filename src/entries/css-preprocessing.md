@@ -1,12 +1,10 @@
 ---
 layout: layouts/entry/index.njk
 title: CSS Preprocessing
-date: 2020-10-30
+date: 2020-12-04
 tags:
   - css
 ---
-
-# CSS Preprocessing
 
 So you’ve grasped the fundamentals of CSS. You can change your links from blue to green, add fancy transitions and hover states, and even translate a complex grid to flexbox.
 

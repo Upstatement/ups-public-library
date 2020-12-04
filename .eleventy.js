@@ -11,11 +11,11 @@ const {
 } = require('./src/_11ty/collections');
 const {
   htmlDateString,
+  readableDate,
+  split,
   // includesSolution,
   // includesTeam,
   // includesTechnology,
-  readableDate,
-  wrapTitleWords,
   // sortCollectionByTitle,
 } = require('./src/_11ty/filters');
 
@@ -62,7 +62,7 @@ module.exports = function (eleventyConfig) {
    */
   eleventyConfig.addFilter('htmlDateString', htmlDateString);
   eleventyConfig.addFilter('readableDate', readableDate);
-  eleventyConfig.addFilter('wrapTitleWords', wrapTitleWords);
+  eleventyConfig.addFilter('split', split);
   // eleventyConfig.addFilter('includesSolution', includesSolution);
   // eleventyConfig.addFilter('includesTeam', includesTeam);
   // eleventyConfig.addFilter('includesTechnology', includesTechnology);

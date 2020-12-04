@@ -1,13 +1,11 @@
 ---
 layout: layouts/entry/index.njk
 title: Cascade, Inheritance, & Specificity
-date: 2020-10-30
+date: 2020-12-04
 tags:
   - css
   - basic
 ---
-
-# Cascade, Inheritance, & Specificity
 
 The cascade, inheritance, and specificity control how CSS is evaluated and applied to HTML. They are the governing principals of CSS, and fundamental to masterfully and effectively writing styles.
 

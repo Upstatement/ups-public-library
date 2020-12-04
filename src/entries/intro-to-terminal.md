@@ -1,13 +1,11 @@
 ---
 layout: layouts/entry/index.njk
 title: Intro to Terminal
-date: 2020-10-30
+date: 2020-12-04
 tags:
   - terminal
   - basic
 ---
-
-# Intro to Terminal
 
 ## What is the terminal?
 
