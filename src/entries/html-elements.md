@@ -1,13 +1,11 @@
 ---
 layout: layouts/entry/index.njk
 title: HTML Elements
-date: 2020-10-30
+date: 2020-12-04
 tags:
   - html
   - basic
 ---
-
-# HTML Elements
 
 ## Types of Elements
 
