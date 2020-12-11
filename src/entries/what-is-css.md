@@ -8,8 +8,6 @@ tags:
 nextEntryTitle: Cascade, Inheritance, & Specificity
 ---
 
-# What is CSS?
-
 CSS (Cascading Style Sheets) is the language used to describe how HTML should look. CSS allows us to write **rules** (also known as **rulesets**) containing descriptions of how things should look (**style declarations**), and select which elements each ruleset should apply to. A ruleset looks like this:
 
 ```css
