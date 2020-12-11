@@ -7,8 +7,6 @@ tags:
   - basic
 ---
 
-# Pseudo Classes & Elements
-
 By adding pseudo- CSS keywords to the end of a selector, we can style states and nodes that aren't present in HTML. Pseudo-classes specify states, like `:hover`. Pseudo-elements reference visual aspects or parts of elements, like `::first-line`.
 
 ## Pseudo-classes: `:`
