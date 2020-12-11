@@ -6,7 +6,7 @@ templateClass: entry
 {% macro wrapWords(title = '', className = '') %}
   {% set words = title | split(' ') %}
   {% for word in words %}
-    <span {% if className %}class="{{ className }}"{% endif %}>{{ word }}</span>
+    <span {% if className %} class="{{ className }}" {% endif %}>{{ word }}</span>
   {% endfor %}
 {% endmacro %}
 
@@ -14,5 +14,11 @@ templateClass: entry
   <section class="entry__content md">
     <h1>{{ wrapWords(title) }}</h1>
     {{ content | safe }}
+    {% if nextEntryTitle %}
+      <p>
+        Next:
+        <a href="{{ '/entries/' ~ nextEntryTitle | slug }}" class="next-entry-link">{{ nextEntryTitle }}</a>
+      </p>
+    {% endif %}
   </section>
 {% endif %}

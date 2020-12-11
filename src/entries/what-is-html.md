@@ -1,17 +1,18 @@
 ---
 layout: layouts/entry/index.njk
-title: Intro to HTML
-date: 2020-12-04
+title: What is HTML?
+date: 2020-12-11
 tags:
   - html
   - basic
+nextEntryTitle: HTML Elements
 ---
 
 HTML, or Hypertext Markup Language, is what we use to add content to websites. It's a simple language with only a few rules, but it's also the backbone of a website.
 
 ## How HTML Works
 
-Fundamentally, HTML is composed of three parts: Elements, Content, and Attributes.
+Fundamentally, HTML is composed of three parts: elements, content, and attributes.
 
 ### Elements
 
@@ -76,3 +77,5 @@ Every HTML Document has exactly one body tag, which is where all of the visible 
 ```
 
 The markup that composes an HTML Document is known as the web page's "DOM", for "Document Object Model".
+
+In the next entry of this series, we'll go into detail on the different types of HTML elements, how they are interpereted by browsers, and how to choose the right element for content.
