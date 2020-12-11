@@ -1,10 +1,10 @@
 ---
 layout: layouts/series/index.njk
-title: Basic HTML
-date: 2020-10-30
+title: Learn HTML
+date: 2020-12-11
 tags:
 entries:
-  - Intro to HTML
+  - What is HTML?
   - HTML Elements
 ---
 
