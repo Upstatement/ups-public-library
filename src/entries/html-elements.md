@@ -1,7 +1,7 @@
 ---
 layout: layouts/entry/index.njk
 title: HTML Elements
-date: 2020-12-04
+date: 2020-12-11
 tags:
   - html
   - basic
@@ -19,7 +19,7 @@ HTML elements are typically categorized as either "block-level" or "inline". By 
 
 Browsers typically display the block-level element with a newline both before and after the element. You can visualize them as a stack of boxes.
 
-Block level elements contain inline elements as well as other blocks, whereas inline elements should usually only contain other inline elements, or text and image content.
+Block level elements can contain inline elements as well as other blocks, whereas inline elements should only contain other inline elements, or text and image content.
 
 Components may also be "inline-blocks", which means they may be used inside of blocks to add inline content that behaves like block level content. We'll talk more about the distinctions between block, inline, and inline-block when we get to CSS.
 
@@ -42,7 +42,7 @@ Components may also be "inline-blocks", which means they may be used inside of b
 | `input`   | Used to create interactive controls for web-based forms in order to accept data from the user.                                                                                                     | Inline-block |
 | `button`  | Represents a clickable button, used to submit forms or anywhere in a document for accessible, standard button functionality.                                                                       | Inline-block |
 
-## Elements and Displaying Content
+## Elements & Displaying Content
 
 Some elements have a standard set of styles attached to them by the browser. Ultimately, the way anything looks by default is up to the browser, and for the most part, things are the same across the commonly used ones. There are differences, but we usually override them anyway, since we don't pick elements based on the way they look, but what they mean semantically.
 
