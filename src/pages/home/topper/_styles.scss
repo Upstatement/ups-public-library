@@ -36,7 +36,7 @@
 
   &--upl,
   &--abl {
-    font-family: 'Mondwest';
+    font-family: $mondwest;
   }
 
   &--upl {
@@ -50,7 +50,8 @@
     .js-print-line:last-child {
       vertical-align: super;
       font-size: 75%;
-      font-family: 'NeueBit';
+      font-family: $neuebit;
+      font-weight: $neuebit-bold;
     }
   }
 
@@ -62,7 +63,8 @@
   &--temp,
   &--link,
   &--tip {
-    font-family: 'NeueBit';
+    font-family: $neuebit;
+    font-weight: $neuebit-bold;
     line-height: 0.7;
   }
 
