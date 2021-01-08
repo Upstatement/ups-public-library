@@ -1,6 +1,24 @@
 .entry__content {
   @include margin($sp4 auto);
   @include gutters(horiz, full);
-  max-width: 40em;
+  max-width: 42.5em;
   width: 100%;
+}
+
+.entry__aside {
+  @include fixed(0 0 n n);
+  @include gutters(horiz, full);
+  @include margin($sp4 auto);
+  height: 100vh;
+  width: 25%;
+}
+
+.entry__annotation {
+  h4 {
+
+  }
+
+  p {
+
+  }
 }
