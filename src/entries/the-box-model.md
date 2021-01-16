@@ -14,11 +14,11 @@ All elements in HTML can be considered boxes. The CSS box model describes the re
 
 #### Content box
 
-The content, where text and images appear
+The content, where text and images appear.
 
 #### Padding box
 
-The area cleared around the content
+The area cleared around the content.
 
 #### Border box
 
