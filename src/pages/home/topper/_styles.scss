@@ -32,7 +32,7 @@
 .home__print {
   @include gutters;
   line-height: 1;
-  font-size: $fs2;
+  font-size: $fs0;
 
   &--upl,
   &--abl {
@@ -80,7 +80,8 @@
 
 .home__welcome {
   @include gutters;
-  font-size: $fs-1;
+  font-size: $fs-2;
+  line-height: 1.25;
   margin-bottom: $paragraph-spacing;
   text-indent: 0.5em;
 

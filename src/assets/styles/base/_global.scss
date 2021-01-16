@@ -21,11 +21,11 @@ html {
 
 body {
   @include flex(column, 1);
+  @include responsive-font-size(0);
   background-color: var(--bg-color);
   color: var(--text-color);
   font-family: $sans;
-  font-size: $fs0;
-  line-height: 1.5;
+  line-height: 1.6;
   min-height: 100vh;
 }
 
@@ -42,10 +42,8 @@ h6 {
 }
 
 b,
-strong,
-em,
-i {
-  text-decoration: underline;
+strong {
+  font-weight: $everett-bold;
 }
 
 img {
