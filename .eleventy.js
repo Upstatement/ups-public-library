@@ -13,9 +13,6 @@ const {
   htmlDateString,
   readableDate,
   split,
-  // includesSolution,
-  // includesTeam,
-  // includesTechnology,
   // sortCollectionByTitle,
 } = require('./src/_11ty/filters');
 
