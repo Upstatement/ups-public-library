@@ -1,23 +1,72 @@
 .md {
+  em {
+    font-family: $neuebit;
+    font-size: 1.2em;
+  }
+
+  i {
+    font-family: $mondwest;
+    font-size: 1.2em;
+  }
+
   pre,
   code {
+    font-size: $fs-smaller;
     font-family: $mono;
-    font-size: $fs-1;
     line-height: 1.5;
   }
 
   p,
-  li {
+  li,
+  td {
     code {
-      padding: 0.2em 0.4em;
+      padding: 0.125em;
       color: var(--text-color);
-      font-size: $fs-2;
+      background-color: var(--secondary-bg-color);
+    }
+  }
+
+  p {
+    position: relative;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    code {
+      padding: 0.125em;
+      color: var(--text-color-inverted);
+      background-color: var(--bg-color-inverted);
+      text-transform: none;
     }
   }
 
   a {
+    color: $blue;
+
     code {
       color: $blue;
+    }
+
+    @include on-focus {
+      color: var(--secondary-text-color);
+    }
+  }
+
+  .two-up-code {
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: -1px;
+    margin-right: -1px;
+    width: calc(100% + 2px);
+
+    pre {
+      margin: 0;
+      border: 1px solid var(--bg-color);
+      flex: 1 0 50%;
+      min-width: 200px;
     }
   }
 
@@ -44,25 +93,26 @@
     &[class*='language-']:before {
       color: $white;
       display: block;
+      font-size: $fs-smaller;
       margin-bottom: 0.6em;
-      opacity: 0.4;
+      opacity: 0.3;
       text-transform: uppercase;
     }
 
     &[class*='css']:before {
-      content: 'css';
+      content: 'Language: css';
     }
 
     &[class*='html']:before {
-      content: 'html';
+      content: 'Language: html';
     }
 
     &[class*='shell']:before {
-      content: 'shell';
+      content: 'Language: shell';
     }
 
     &[class*='js']:before {
-      content: 'javascript';
+      content: 'Language: javascript';
     }
   }
 
@@ -100,7 +150,7 @@
   /* Direct Links / Markdown Headers */
   a.direct-link {
     margin-left: 0.1em;
-    font-family: $sans;
+    font-family: inherit;
     color: transparent;
 
     &:visited {
@@ -109,13 +159,17 @@
 
     &:focus,
     &:focus:visited {
-      color: $blue;
+      color: var(--secondary-text-color);
     }
   }
 
   :hover > a.direct-link,
   :hover > a.direct-link:visited {
-    color: $blue;
+    color: var(--secondary-text-color);
+
+    &:hover {
+      color: $blue;
+    }
   }
 
   img[alt~='small'] {
@@ -130,8 +184,6 @@
     margin: $sp5 0;
     border-bottom: 1px solid var(--border-color);
   }
-
-  //
 
   h1 {
     @include h(1);
@@ -150,47 +202,132 @@
   h2 {
     @include h(2);
   }
+
   h3 {
     @include h(3);
   }
+
   h4 {
     @include h(4);
   }
+
   h5 {
-    @include h(5);
+    @include h(5, $weight: $everett-bold);
   }
 
   h1,
-  h2,
+  h2 {
+    margin-top: 2em;
+  }
+
   h3 {
-    margin-top: $sp3;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
   }
 
   h4,
   h5 {
-    margin-top: $paragraph-spacing;
-  }
+    margin-top: 2.5em;
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    margin-bottom: $paragraph-spacing;
-
-    + h1,
-    + h2,
-    + h3,
-    + h4,
-    + h5 {
-      margin-top: 0;
+    + p {
+      margin-top: $paragraph-spacing / 2;
     }
   }
 
+  p {
+    @include margin($paragraph-spacing null);
+  }
+
+  blockquote,
   pre,
-  p,
+  .two-up-code,
+  ul,
+  ol,
+  img {
+    @include margin($block-spacing null ($block-spacing * 1.25));
+  }
+
   ul,
   ol {
-    @include margin($paragraph-spacing null);
+    position: relative;
+
+    ul,
+    ol {
+      margin: 0;
+    }
+  }
+
+  ul {
+    li {
+      padding-left: 0.75em;
+
+      &::before {
+        content: '\2023';
+        font-family: $neuebit;
+        left: 0;
+        position: absolute;
+      }
+    }
+  }
+
+  ol {
+    counter-reset: list;
+
+    // hack to ensure counter respects start attribute
+    @for $i from 1 through 10 {
+      &[start='#{$i}'] {
+        counter-reset: list ($i - 1);
+      }
+    }
+
+    li {
+      counter-increment: list;
+      padding-left: 2em;
+
+      &::before {
+        content: counter(list, decimal-leading-zero);
+        font-family: $mono;
+        left: 0;
+        position: absolute;
+      }
+    }
+  }
+
+  blockquote {
+    border-left: 2px solid var(--text-color);
+    color: var(--secondary-text-color);
+    padding: 0 1.5em;
+
+    p {
+      margin: 0;
+
+      + p {
+        margin-top: $paragraph-spacing;
+      }
+    }
+
+    code {
+      background-color: var(--tertiary-bg-color);
+    }
+  }
+
+  hr {
+    @include margin($section-spacing null);
+  }
+
+  table {
+    border-collapse: collapse;
+    font-size: $fs-smaller;
+    line-height: 1.125;
+  }
+
+  th,
+  td {
+    border: 1px solid var(--text-color);
+    padding: 0.5em;
+  }
+
+  th {
+    font-weight: $everett-bold;
   }
 }
