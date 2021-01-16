@@ -1,4 +1,5 @@
 @mixin button-reset {
+  -webkit-appearance: none;
   appearance: none;
   background: none;
   border: 0;

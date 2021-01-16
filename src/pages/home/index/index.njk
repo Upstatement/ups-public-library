@@ -8,34 +8,32 @@
       <input class="search-input js-search-input" type="text" placeholder="Search the Library">
     </div>
 
-    <dl class="index__list search-results js-search-results" role="list"></dl>
+    <ul class="index__list search-results js-search-results" role="list"></ul>
   </div>
 
   {# Page content & search results #}
   {% if collections.indexItems | length %}
-    <dl class="index__list js-index-list" role="list">
+    <ul class="index__list js-index-list">
       {% for item in collections.indexItems %}
 
         {# The tag assigned by the json file in the directory will always be the first tag #}
         {% set tagDef = item
           .data
           .tags[0] %}
-        <dt class="index__type">
-          {{ "Entry" if tagDef == "entries" }}
-          {{ "Collection" if tagDef == "collections" }}
-          {{ "Series" if tagDef == "series" }}
-        </dt>
 
-        <dd class="as-h2 index__desc">
+        <li class="index__item">
+
           {% if tagDef == "entries" %}
             {# Entries #}
             <a href="{{ item.url }}" class="index__link">
               <h1 class="index__title">
-                {{ item.data.title }}
                 <svg class="index__icon index__icon--arrow">
                   <use xlink:href="#arrow"></use>
                 </svg>
+                {{ item.data.title }}
               </h1>
+              <span class="index__type">Entry</span>
+              <span class="index__date">{{ item.data.date | readableDate }}</span>
             </a>
 
           {% else %}
@@ -44,14 +42,20 @@
             <input class="index__expand-input" type="checkbox" name="{{ inputName }}" id="{{ inputName }}"/>
             <label class="index__expand-label" for="{{ inputName }}">
               <h1 class="index__title">
-                {{ item.data.title }}
                 <svg class="index__icon index__icon--plus">
                   <use xlink:href="#plus"></use>
                 </svg>
                 <svg class="index__icon index__icon--minus">
                   <use xlink:href="#minus"></use>
                 </svg>
+                {{ item.data.title }}
               </h1>
+              <span class="index__type">
+                {{ "Collection" if tagDef == "collections" }}
+                {{ "Series" if tagDef == "series" }}
+              </span>
+              <span class="index__count">{{ item.data.entries | length }}
+                entries</span>
             </label>
 
             <ol class="index__nest">
@@ -60,10 +64,14 @@
                   <li class="index__nest__item">
                     <a href="{{ '/entries/' ~ entry | slug }}" class="index__link">
                       <h2 class="index__title">
-                        {{ entry }}
-                        <svg class="index__icon index__icon--arrow">
-                          <use xlink:href="#arrow"></use>
-                        </svg>
+                        <span class="index__title__text">
+                          <svg class="index__icon index__icon--arrow">
+                            <use xlink:href="#arrow"></use>
+                          </svg>
+                          {{ entry }}
+                        </span>
+                        <span class="index__type">Entry</span>
+                        <span class="index__date">{{ item.data.date | readableDate }}</span>
                       </h2>
                     </a>
                   </li>
@@ -72,8 +80,8 @@
             </ol>
 
           {% endif %}
-        </dd>
+        </li>
       {% endfor %}
-    </dl>
+    </ul>
   {% endif %}
 </section>
