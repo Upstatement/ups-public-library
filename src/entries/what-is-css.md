@@ -1,7 +1,7 @@
 ---
 layout: layouts/entry/index.njk
 title: What is CSS?
-date: 2020-12-11
+date: 2021-01-16
 tags:
   - css
   - basic
@@ -18,19 +18,17 @@ selector {
 
 > `property: value;` pairs are reffered to as "declarations"
 
-**Selectors** target which element(s) a ruleset should affect. A single selector can apply to anywhere from 0 to all elements on a page.
+Selectors target which element(s) a ruleset should affect. A single selector can apply to anywhere from 0 to all elements on a page.
 
-**Properties** specify which aspect of the element you want to style. Each HTML element has a vast number of properties available. Most are universal, but some properties are specific to certain elements.
+Properties specify which aspect of the element you want to style. Each HTML element has a vast number of properties available. Most are universal, but some properties are specific to certain elements.
 
-**Values** set a property to one of its available options. Values can be numbers, keywords, functions, or a combination of each, depending on the property being set.
+Values set a property to one of its available options. Values can be numbers, keywords, functions, or a combination of each, depending on the property being set.
 
 ## Writing Selectors
 
-The first step to writing CSS is to write a selector that specifies which element(s) you want to style. There are several types of selectors, each with their own use cases. The most common ways to select elements are by <a href="#type-selector">tag type</a> and by <a href="#class-selector">class name</a>.
+The first step to writing CSS is to write a selector that specifies which element(s) you want to style. There are many types of selectors, each with their own use cases. The most common ways to select elements are by <a href="#type-selector">tag type</a> and by <a href="#class-selector">class name</a>.
 
-### Common Selectors
-
-Here's an overview of the most useful selectors:
+Here are some of the most common selectors and their use cases. For a complete list, visit the [CSS selectors reference on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors).
 
 #### Universal selector
 
@@ -71,7 +69,7 @@ A class selector will apply to all elements in its scope that have a given class
 
 Class selectors are by far the most common and useful selectors, since you have complete control over their application in both HTML and CSS. Furthermore, when named well, classes will help you and other developers navigate your styles quickly and easily.
 
-### Combining Selectors
+## Combining Selectors
 
 Combinators are characters and keywords that you can use to chain, modify, add conditions to a selector. They are extremely powerful, but can also be extremely confusing. Don't get too complex, and when in doubt, just add a class name.
 
@@ -90,7 +88,7 @@ h4 {
 
 #### Descendant combinator: `[space]`
 
-The descendant combinator is used just by adding a space between two or more selectors. It selects nodes that are descendants of the first ingredient of the selector.
+Used by adding a space between two or more selectors. It selects nodes that are descendants of the first ingredient of the selector.
 
 ```css
 .post .heading {
@@ -111,7 +109,7 @@ The above will select all `.heading` elements that appear inside `.post` element
 
 #### Child combinator: `>`
 
-The child combinator selects nodes that are direct descendants of the first element. It does not apply to grandchildren, or any other elements further down the document tree.
+Selects nodes that are direct descendants of the first element. It does not apply to grandchildren, or any other elements further down the document tree.
 
 ```css
 .post > .heading {
@@ -119,7 +117,7 @@ The child combinator selects nodes that are direct descendants of the first elem
 }
 ```
 
-The child combinator differs from the descendant combinator in that it will only select _direct_ children of the first ingredient, meaning this selector will apply like so:
+The child combinator differs from the descendant combinator in that it will only select direct children of the first ingredient, meaning this selector will apply like so:
 
 ```html
 <section class="post">
@@ -132,7 +130,7 @@ The child combinator differs from the descendant combinator in that it will only
 
 #### General sibling combinator: `~`
 
-The **general sibling combinator** selects siblings. This means that the second element comes _after_ the first (though not necessarily immediately), and both share the same parent.
+Selects all matching siblings. This means that the second element comes after the first (though not necessarily immediately), and both share the same parent.
 
 ```css
 .story-tease ~ img {
@@ -142,7 +140,7 @@ The **general sibling combinator** selects siblings. This means that the second 
 
 #### Adjacent sibling combinator: `+`
 
-The **adjacent sibling combinator** selects adjacent siblings. This means that the second element directly follows the first, and both share the same parent.
+Selects only adjacent matching siblings. This means that the second element immediate follows the first, both share the same parent.
 
 ```css
 h3 + p {
@@ -150,13 +148,11 @@ h3 + p {
 }
 ```
 
-## Continue Learning
+---
 
-For the full documentation of CSS selectors, visit: [CSS Selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors).
+At this point, you should have enough knowledge to write basic CSS. Learning property names and their corresponding values by heart is largely a memorization exercise that takes time. Don't hesitate to look up properties and their documentation on MDN or find advice about how to make something on Stack Overflow. Your editor's autocomplete feature will also likely be a big help.
 
-At this point, you should have enough knowledge to begin writing basic CSS. Learning property names and their corresponding values by heart is largely a memorization exercise that requires time. Don't hesitate to look up properties and their documentation on MDN or find advice about how to make something on Stack Overflow. Your editor's autocomplete feature will also likely be a big help!
-
-To continue your learning, look into these topics:
+#### Helpful links
 
 - [CSS attribute selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors)
 - [CSS variables](<https://developer.mozilla.org/en-US/docs/Web/CSS/var()>)
@@ -164,3 +160,5 @@ To continue your learning, look into these topics:
 - [Media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
 - Class naming conventions, such as [BEM](http://getbem.com/naming/)
 - [Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)
+
+---

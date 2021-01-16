@@ -1,91 +1,168 @@
 ---
 layout: layouts/entry/index.njk
 title: HTML Elements
-date: 2020-12-11
+date: 2021-01-16
 tags:
   - html
   - basic
 ---
 
-## Types of Elements
+There are nearly 90 different HTML elements &mdash; you'll only end up using about 10 &ndash; 20 of them regularly. Of those, an even smaller subset will cover most use cases for marking up content, and should be memorized. For the rest, turning to Google and MDN is the best way to make a decision. A good approach to writing markup is to always ask, "does this element accurately describe its content?" If the answer is no or a weak yes, there's a good chance you can pick a better one.
 
-There are tons of HTML elements &mdash; you don't have to know all of them by heart. A handful of them will become your go-tos for writing markup, and for the rest, Google and MDN are your friend. A good approach to writing markup is to always ask, "is this the right element to use for this content?" If the answer is no, there's a good chance you can find one that is.
+You can read the [MDN HTML elements reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) for a full, detailed list.
 
-You can head here for a list of all of them: [MDN HTML elements reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
+## Commonly Used Elements
 
-### Element Display Types
+> You'll notice each element in this list has a "default level". It's explained [here](#element-display-levels), at the end of this entry.
 
-HTML elements are typically categorized as either "block-level" or "inline". By default, a block-level element occupies the entire width of its parent element (container), thereby creating a "block."
+#### `section`
 
-Browsers typically display the block-level element with a newline both before and after the element. You can visualize them as a stack of boxes.
+Represents a standalone section &mdash; which doesn't have a more specific semantic element to represent it &mdash; contained within an HTML document.
 
-Block level elements can contain inline elements as well as other blocks, whereas inline elements should only contain other inline elements, or text and image content.
+> Default level: Block
 
-Components may also be "inline-blocks", which means they may be used inside of blocks to add inline content that behaves like block level content. We'll talk more about the distinctions between block, inline, and inline-block when we get to CSS.
+#### `article`
 
-### Commonly Used Elements
+Represents a self-contained composition in a document, page, application, or site, which is intended to be independently distributable or reusable (e.g., in syndication).
 
-| Tag       | Use                                                                                                                                                                                                | Display      |
-| --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
-| `section` | Represents a standalone section &mdash; which doesn't have a more specific semantic element to represent it — contained within an HTML document.                                                   | Block        |
-| `article` | Represents a self-contained composition in a document, page, application, or site, which is intended to be independently distributable or reusable (e.g., in syndication).                         | Block        |
-| `div`     | The division element is a generic container for flow content.                                                                                                                                      | Block        |
-| `p`       | Represents a single paragraph.                                                                                                                                                                     | Block        |
-| `img`     | Embeds an image into the document.                                                                                                                                                                 | Inline-block |
-| `a`       | The anchor element, with its href attribute, creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a URL can address                              | Inline       |
-| `span`    | A generic inline container for phrasing content, which does not inherently represent anything. It can be used to group elements for styling purposes.                                              | Inline       |
-| `ul`      | Represents an unordered list of items, typically rendered as a bulleted list.                                                                                                                      | Block        |
-| `li`      | Used to represent an item in a list.                                                                                                                                                               | Inline       |
-| `nav`     | Represents a section of a page whose purpose is to provide navigation links, either within the current document or to other documents. Common examples are menus, tables of contents, and indexes. | Block        |
-| `header`  | Represents introductory content, typically a group of introductory or navigational aids.                                                                                                           | Block        |
-| `footer`  | Represents a footer for its nearest sectioning content or sectioning root element. Typically contains information about the author, copyright data, or related links.                              | Block        |
-| `input`   | Used to create interactive controls for web-based forms in order to accept data from the user.                                                                                                     | Inline-block |
-| `button`  | Represents a clickable button, used to submit forms or anywhere in a document for accessible, standard button functionality.                                                                       | Inline-block |
+> Default level: Block
 
-## Elements & Displaying Content
+#### `div`
 
-Some elements have a standard set of styles attached to them by the browser. Ultimately, the way anything looks by default is up to the browser, and for the most part, things are the same across the commonly used ones. There are differences, but we usually override them anyway, since we don't pick elements based on the way they look, but what they mean semantically.
+The division element is a generic container for flow content.
 
-As you probably know, default unstyled links are blue with underlines, and browsers will try to use Times New Roman by default most times. There are other default displays for more complex elements as well, like the `details` element:
+> Default level: Block
+
+#### `h1` ... `h6`
+
+Denotes a heading that begins a new section in the document outline.
+
+> Default level: Block
+
+#### `p`
+
+Represents a single paragraph.
+
+> Default level: Block
+
+#### `img`
+
+Embeds an image into the document.
+
+> Default level: Inline-block
+
+#### `a`
+
+The anchor element, with its href attribute, creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a URL can address
+
+> Default level: Inline
+
+#### `span`
+
+A generic inline container for phrasing content, which does not inherently represent anything. It can be used to group elements for styling purposes.
+
+> Default level: Inline
+
+#### `ul`
+
+Represents an unordered list of items, typically rendered as a bulleted list.
+
+> Default level: Block
+
+#### `li`
+
+Used to represent an item in a list.
+
+> Default level: Inline
+
+#### `nav`
+
+Represents a section of a page whose purpose is to provide navigation links, either within the current document or to other documents. Common examples are menus, tables of contents, and indexes.
+
+> Default level: Block
+
+#### `header`
+
+Represents introductory content, typically a group of introductory or navigational aids.
+
+> Default level: Block
+
+#### `footer`
+
+Represents a footer for its nearest sectioning content or sectioning root element. Typically contains information about the author, copyright data, or related links.
+
+> Default level: Block
+
+#### `input`
+
+Used to create interactive controls for web-based forms in order to accept data from the user.
+
+> Default level: Inline-block
+
+#### `button`
+
+Represents a clickable button, used to submit forms or anywhere in a document for accessible, standard button functionality.
+
+> Default level: Inline-block
+
+### Choosing Elements Based on Semantics Versus Display
+
+Some elements have a standard set of styles attached to them by the browser. Ultimately, the way anything looks by default is up to the browser, and for the most part, things are the consistent between browsers. As we have come to expect, links are blue with underlines by default, and text is set in Times New Roman unless otherwise specified. There are other default styles for more complex elements, like the `details` element here:
 
 <details>
-  Surprise!
+  This element is for optional supporting information.
 </details>
 
-Which just requires:
+Which only requires:
 
 ```html
 <details>
-  Surprise!
+  This element is for optional supporting information.
 </details>
 ```
 
-Some other examples are:
+Other examples include:
 
-1. The `strong` tag, for bold text:
+The `strong` tag, for bold text:
 
-   <strong>Bold</strong>
+<strong>Attention</strong>
 
-   ```html
-   <strong>Bold</strong>
-   ```
+```html
+<strong>Attention</strong>
+```
 
-1. The `em` tag, for emphasized text:
+The `pre` tag, for pre-formatted, whitespace preserved, and monospaced text:
 
-   <em>Brash</em>
+<pre style="padding: 0;">$100.00</pre>
 
-   ```html
-   <em>Brash</em>
-   ```
+```html
+<pre>$100.00</pre>
+```
 
-1. The `sup` tag, for superscript text:
+The `sup` tag, for superscript text:
 
-   r<sup>2</sup>
+<pre style="padding: 0;">e=mc<sup>2</sup></pre>
 
-   ```html
-   r<sup>2</sup>
-   ```
+```html
+<pre>
+  e=mc<sup>2</sup>
+</pre>
+```
 
-and more.
+Default styles may be useful at times, but they are ultimately secondary, and shouldn't ever be your reason for choosing an element. What's most important is that you use whichever element most accurately describes the content within it. For this reason, we often remove or override default styles.
 
-As mentioned, we typically opt-out of or override these default styles. But they are good indicators of whether the element you're using is the correct choice for the content it houses.
+## Element Display Levels
+
+HTML elements are categorized as either "block", "inline", or "inline-block" level. Display level is another important factor when choosing elements, since it has semantic, visual, and structural implications (block-level elements can't go inside inline elements). We'll talk more about the design implications of display levels when we get to CSS.
+
+#### Block
+
+By default, a block-level element occupies the entire width of its parent element (container). Essentially, block level elements always form columns. They can contain other blocks, inline elements, or content.
+
+#### Inline
+
+Inline elements sit next to each other to form rows inside blocks, and can be used sequentially in bodies of text. By default, they will only be as wide as the content within them. They can only contain inline elements or content.
+
+#### Inline-Block
+
+Inline-blocks may be used inside of blocks to add semantically inline content that behaves like block-level content. The inline-block display mode has more to do with design and CSS than HTML.

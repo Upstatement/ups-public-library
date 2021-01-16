@@ -1,7 +1,7 @@
 ---
 layout: layouts/entry/index.njk
 title: Intro to Git
-date: 2021-01-15
+date: 2021-01-16
 tags:
   - git
   - basic
@@ -11,11 +11,11 @@ Git is a program for versioning and iterating code. It's often referred to as "v
 
 ## The Problem Git Solves
 
-When one person is writing code, there's no problem with them changing, adding, and deleting things whenever they feel. When people start working on the same product, that becomes an issue: they both might change one file in different ways, creating two conflicting versions. Or they might change different files, and fall out of sync. Git solves those issues by tracking, comapring, and merging changes algorithmically. Services like GitHub move this functionality into the cloud, and add features of their own.
+When one person is writing code, there's no problem with them changing, adding, and deleting things whenever they feel. When people start working on the same product, that becomes an issue: they both might change one file in different ways, creating two conflicting versions. Or they might change different files, and fall out of sync. Git solves those issues by tracking, comparing, and merging changes algorithmically. Services like GitHub move this functionality into the cloud, and add features of their own.
 
 ## Repositories
 
-Codebases being tracked with git are called repositories, and are ususally stored in the cloud. At Upstatement, we use GitHub to host our repos. The code on GitHub is known as the "single source of truth": we can all clone it and make changes independently, but those copies are inconsequential until they've been uploaded back into the source of truth. The act of downloading a repo from the cloud onto your machine is called **cloning,** since you're not just downloading one set of files, but information on the entire history of the repo.
+Codebases being tracked with git are called repositories, and are usually stored in the cloud. At Upstatement, we use GitHub to host our repos. The code on GitHub is known as the "single source of truth": we can all clone it and make changes independently, but those copies are inconsequential until they've been uploaded back into the source of truth. The act of downloading a repo from the cloud onto your machine is called **cloning,** since you're not just downloading one set of files, but information on the entire history of the repo.
 
 #### Cloning a repository
 
@@ -81,13 +81,13 @@ Now you can write a short title (must be less than 72 characters) and a long bod
 
 ## Branches
 
-Repos contain numerous instances of the codebase, called branches. Branches are isolated, chronologically ordered commits. Each one can contain incrementally or entirely different versions of the codebase, depening on what's been committed to it. When a developer wants to make changes to a codebase, they create a new branch from an existing one, give it a relevant name, and start committing changes to it.
+Repos contain numerous instances of the codebase, called branches. Branches are isolated, chronologically ordered commits. Each one can contain incrementally or entirely different versions of the codebase, depending on what's been committed to it. When a developer wants to make changes to a codebase, they create a new branch from an existing one, give it a relevant name, and start committing changes to it.
 
-Repos will always have at least one branch that represents the latest stable iteration of the codebase, usually named `develop`, `master`, or `main`. Most often, you will branch off of the default to implement changes, but in some cases, you may branch off of somebody else's work instead.
+Repos will always have at least one branch that represents the latest stable iteration of the codebase, usually named `develop`, `master`, or `main`. Most often, you will branch off of the default to implement changes, but in some cases, you will branch off the work of somebody else instead.
 
 ### Switching branches with `checkout`
 
-Switching branches is called "checking out". When you checkout to a branch, the contents of all of the files in your local repository are immediately modified to match their versions in that branch. **You cannot checkout to another branch if you have un-commited or unsaved changes.** That keeps you from accidentally losing work.
+Switching branches is called "checking out". When you checkout to a branch, the contents of all of the files in your local repository are immediately modified to match their versions in that branch. **You cannot checkout to another branch if you have un-committed or unsaved changes.** That keeps you from accidentally losing work.
 
 To checkout to an existing branch, invoke the `checkout` command followed by the branch name:
 
