@@ -1,7 +1,7 @@
 ---
 layout: layouts/entry/index.njk
 title: Pseudo Classes & Elements
-date: 2020-12-11
+date: 2021-01-16
 tags:
   - css
   - basic
@@ -9,7 +9,7 @@ tags:
 
 By adding pseudo- CSS keywords to the end of a selector, we can style states and nodes that aren't present in HTML. Pseudo-classes specify states, like `:hover`. Pseudo-elements reference visual aspects or parts of elements, like `::first-line`.
 
-## Pseudo-classes: `:`
+#### Pseudo-classes: `:`
 
 Pseudo-classes allow for the selection of elements based on state information that is not contained in the document tree. They're denoted by a single colon `:` between the base selector and the keyword.
 
@@ -29,7 +29,7 @@ button:disabled {
 }
 ```
 
-## Pseudo-elements: `::`
+#### Pseudo-elements: `::`
 
 Pseudo-elements represent entities or aspects of entities that are not described in HTML. They're denoted by two colons `::` between the base selector and the keyword.
 
@@ -47,11 +47,11 @@ input::placeholder {
 
 Two commonly used pseudo-elements are `::before` and `::after`. Unlike most pseudo-elements, which target content that is already present, these two elements don't exist at all until we target them. They are injected into the DOM as either the first (`::before`) or last (`::after`) child of the parent selector.
 
-**In order for the browser to render a `::before` or `::after`, you must include a `content:` declaration in its ruleset. You can leave it empty (`""`), but it must be there.**
+<i>⚠</i> In order for the browser to render a `::before` or `::after`, you must include a `content:` declaration in its ruleset. You can leave it empty (`""`), but it must be there.
 
 ```css
 footer::before {
-  content: "I'm now the first child of the footer!";
+  content: "I'm now the first child of the footer.";
 }
 
 footer::after {

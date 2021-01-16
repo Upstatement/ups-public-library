@@ -1,14 +1,14 @@
 ---
 layout: layouts/entry/index.njk
 title: What is HTML?
-date: 2020-12-11
+date: 2021-01-16
 tags:
   - html
   - basic
 nextEntryTitle: HTML Elements
 ---
 
-HTML, or Hypertext Markup Language, is what we use to add content to websites. It's a simple language with only a few rules, but it's also the backbone of a website.
+HTML, or HyperText Markup Language, is what we use to add content to websites. It's a simple language with only a few rules, but it's also the backbone of a website.
 
 ## How HTML Works
 
@@ -16,17 +16,18 @@ Fundamentally, HTML is composed of three parts: elements, content, and attribute
 
 ### Elements
 
-Every piece of content in HTML goes inside of an element. There are tons of elements to choose from, and each one carries semantic meaning regarding the purpose of the content in the page, or document's, outline. Elements are delinated using tags.
+Every piece of content in HTML goes inside of an element. There are many to choose from, and each one conveys semantic meaning about the content within it, and its purpose in the page. Elements are delineated using tags.
 
 ```html
 <p>
-  This is a paragraph element. It's delineated by the "tags" above and below the text.
+  This is a paragraph element. It's delineated by the opening and closing character sequences above
+  and below the text.
 </p>
 ```
 
 ### Content
 
-This one is simple. It's the text, images, videos, or other media that get put inside elements, and surfaced directly to users.
+Content is the text, images, videos, or other media that go inside elements, and get surfaced directly to users.
 
 ```html
 <p>
@@ -39,14 +40,12 @@ This one is simple. It's the text, images, videos, or other media that get put i
 
 ### Attributes
 
-HTML elements can be given attributes that allow us to alter or extend their functionality, as well as the amount of information browsers, developers, and users can obtain from the element. Attributes, unlike content, do not get shown to users. But they can have a direct effect on the way an element looks or behaves.
+Elements can be given attributes that alter or extend their functionality, as well as the amount of information browsers, developers, and users can obtain from the element. Attributes, unlike content, do not get shown to users. They can, however, have a direct effect on the way an element looks or behaves.
 
 ```html
 <p id="unique-identifier" class="class-name">
   Different attributes do different things. Some are universal.
 </p>
-
-<p></p>
 <p>
   Others are specific to elements, like the href on
   <a href="https://upstatement.com">
@@ -58,24 +57,34 @@ HTML elements can be given attributes that allow us to alter or extend their fun
 
 ## HTML Documents
 
-Another way of referring to webpages is as "HTML Documents". It's kind of a dated terminology, but it goes back to what the creators of the language had in mind when they designed it. Way back in the 1960s, before the Internet existed, the purpose of a network was to share and link to/from textual information. As such, HTML was designed as a way to display, mark-up, link, and organize text. We do that by choosing the right elements to display the right content. Crafting semantically correct web pages ensures that our sites are accessible, especially to users who access the web with screen readers.
+Web pages are also known as "HTML documents". In the 1960s, before the Internet existed, the purpose of most networks was to share and link to/from textual information. As such, HTML was designed as a way to describe, display, mark-up, link, and organize text. We do that by choosing the right elements to display content. Crafting semantically correct HTML documents ensures that our sites are accessible, SEO optimized, and functional&mdash;especially to those who access web pages via screen readers.
 
-### Content Structure
+> The term "semantically correct" is often used when assessing HTML. It's determined by how accurately elements are being used to describe the content within them, and their place in the overall document structure.
 
-Every HTML Document has exactly one body tag, which is where all of the visible site on the content goes. Inside the body, most web pages start with a common content structure:
+### Basic Document Content Structure
+
+Every HTML Document must have exactly one `body` tag, which houses all of the visible content on the site. Inside the body, you can structure the page however you need. The top-level anatomy below is roughly one of the most common ways to set up a page:
 
 ```html
 <body>
   <header>
     <nav />
   </header>
-  <main>
-    Most content goes inside the main element, of which there is also one per document.
-  </main>
+
+  <main />
+
   <footer />
 </body>
 ```
 
-The markup that composes an HTML Document is known as the web page's "DOM", for "Document Object Model".
+HTML is a straightforward language, that you can begin to understand just by reading it. The above is self-explanatory:
 
-In the next entry of this series, we'll go into detail on the different types of HTML elements, how they are interpereted by browsers, and how to choose the right element for content.
+- There is a header atop the page, which contains the site's navigation links/menus/buttons, etc.
+- The `main` tag will contain most of the page's content. Like the `body` tag, there can only be one per page. Unlike the `body` tag, use of a `main` element is not required (though it is highly suggested)
+- The footer at the end of the page will likely hold more links and copyright information
+
+Nothing about that structure is mandatory, though it tends to suit most websites&mdash;especially the ones we build at Upstatement. Even though it's only a small fraction of what goes into a page, you can envision how a site like that may be laid out visually, at a high level, just by looking at that code.
+
+---
+
+In the next entry of this series, we'll go into detail on the different types of HTML elements, how they are interpreted by browsers, and how to choose the right elements based on their contents.
