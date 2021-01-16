@@ -61,6 +61,13 @@
   $font-weight: 400
 );
 
+// Dingbats
+@include font-face(
+  $family-name: 'Fleurondingbats',
+  $file-name: Fleuron/fleurondingbats-webfont,
+  $font-weight: 400
+);
+
 // --
 // Mondwest
 // --
