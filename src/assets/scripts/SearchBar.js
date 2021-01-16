@@ -1,4 +1,5 @@
 import { getFocusables, throttle, toSlug } from './utils';
+import { DateTime } from 'luxon';
 
 const KEYCODES = {
   tab: 'Tab',
@@ -193,11 +194,11 @@ class SearchBar {
 
     if (!results.length) {
       const noResultsEl = document.createElement('p');
-      noResultsEl.classList.add('no-results', 'as-h2');
+      noResultsEl.classList.add('no-results');
       noResultsEl.textContent = `No results for `;
 
-      const queryEl = document.createElement('code');
-      queryEl.textContent = this.query;
+      const queryEl = document.createElement('span');
+      queryEl.textContent = `“${this.query}”`;
 
       noResultsEl.appendChild(queryEl);
 
@@ -206,16 +207,13 @@ class SearchBar {
     }
 
     results.forEach(result => {
-      const { title, url, entries } = result.item;
+      const { title, url, entries, last_modified } = result.item;
+      const date = DateTime.fromISO(last_modified, { zone: 'utc' }).toFormat('LLL dd, yyyy');
 
-      const resultLabel = document.createElement('dt');
       const resultType = this.search.getResultType(result.item);
-      resultLabel.classList.add('index__type');
-      resultLabel.textContent = resultType;
-      this.searchResults.appendChild(resultLabel);
 
-      const resultDesc = document.createElement('dd');
-      resultDesc.classList.add('as-h2', 'index__desc');
+      const resultDesc = document.createElement('li');
+      resultDesc.classList.add('index__item');
 
       if (resultType === 'entry') {
         const entryLink = document.createElement('a');
@@ -223,11 +221,13 @@ class SearchBar {
         entryLink.setAttribute('href', url);
         entryLink.innerHTML = `
           <h1 class="index__title">
-            ${title}
             <svg class="index__icon index__icon--arrow">
               <use xlink:href="#arrow"></use>
             </svg>
+            ${title}
           </h1>
+          <span class="index__type">Entry</span>
+          <span class="index__date">${date}</span>
         `.trim();
 
         resultDesc.appendChild(entryLink);
@@ -248,14 +248,18 @@ class SearchBar {
         expandLabel.setAttribute('for', inputName);
         expandLabel.innerHTML = `
           <h1 class="index__title">
-            ${title}
             <svg class="index__icon index__icon--plus">
               <use xlink:href="#plus"></use>
             </svg>
             <svg class="index__icon index__icon--minus">
               <use xlink:href="#minus"></use>
             </svg>
+            ${title}
           </h1>
+          <span class="index__type">
+            ${resultType}
+          </span>
+          <span class="index__count">${entries.length} entries</span>
         `.trim();
         resultDesc.appendChild(expandLabel);
 
@@ -272,10 +276,14 @@ class SearchBar {
             listItem.innerHTML = `
               <a href="${entryUrl}" class="index__link">
                 <h2 class="index__title">
-                  ${entry}
-                  <svg class="index__icon index__icon--arrow">
-                    <use xlink:href="#arrow"></use>
-                  </svg>
+                  <span class="index__title__text">
+                    <svg class="index__icon index__icon--arrow">
+                      <use xlink:href="#arrow"></use>
+                    </svg>
+                    ${entry}
+                  </span>
+                  <span class="index__type">Entry</span>
+                  <span class="index__date">${date}</span>
                 </h2>
               </a>
             `.trim();

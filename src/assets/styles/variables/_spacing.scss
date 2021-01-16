@@ -8,9 +8,12 @@ $sp2: 32px;
 $sp3: 40px;
 $sp4: 48px;
 $sp5: 56px;
+$sp6: 64px;
 
-$paragraph-spacing: $sp-1;
-$list-item-spacing: $sp-4;
+$section-spacing: 4em; // <hr>s
+$paragraph-spacing: 1em;
+$block-spacing: 1em; // lists, code blocks, blockquotes, etc
+$list-item-spacing: 0.5em;
 
 $sm-gutter-half: 8px;
 $gutter-half: $sp-2;

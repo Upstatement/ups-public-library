@@ -2,26 +2,44 @@ $sans: 'Everett', system-ui, sans-serif;
 $mono: 'EverettMono', Consolas, Menlo, Monaco, 'Courier New', Courier, monospace;
 $fleuron-mix: 'FleuronMixed', system-ui, sans-serif;
 $fleuron-reg: 'FleuronRegular', system-ui, sans-serif;
+$fleuron-dingbats: 'FleuronDingbats', $fleuron-mix;
 $mondwest: 'Mondwest', $sans;
 $neuebit: 'NeueBit', $sans;
 
 $neuebit-bold: 700;
 $everett-bold: 700;
 
-$fs-2: 14px;
-$fs-1: 16px;
-$fs0: 18px;
-$fs1: 20px;
-$fs2: 24px;
-$fs3: 32px;
-$fs4: 40px;
-$fs5: 48px;
-$fs6: 56px;
+$fs-smaller: 0.85em;
+
+$fs-4: 14px;
+$fs-3: 16px;
+$fs-2: 18px;
+$fs-1: 20px;
+$fs0: 28px;
+$fs1: 32px;
+
+$font-sizes: (
+  fs-4: $fs-4,
+  fs-3: $fs-3,
+  fs-2: $fs-2,
+  fs-1: $fs-1,
+  fs0: $fs0,
+  fs1: $fs1,
+);
+
+$h5: 20px;
+$h4: 22px;
+$h3: 30px;
+$h2: 48px;
+$h1: 56px;
 
 $headings: (
-  h0: $fs6,
-  h1: $fs5,
-  h2: $fs3,
-  h3: $fs1,
-  h4: $fs-1,
+  h1: $h1,
+  h2: $h2,
+  h3: $h3,
+  h4: $h4,
+  h5: $h5,
+  // for stepping down in the h() mixin
+    h6: $fs-3,
+  h7: $fs-4,
 );

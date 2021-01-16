@@ -1,24 +1,31 @@
+@mixin responsive-font-size($base) {
+  font-size: map-get($font-sizes, fs#{$base - 1});
+
+  @include mq($lg) {
+    font-size: map-get($font-sizes, fs#{$base});
+  }
+}
+
 @mixin h(
   $level,
-  $weight: inherit,
+  $weight: $everett-bold,
   $family: $sans,
-  $color: $black,
-  $size-xs: map-get($headings, h#{$level + 2}),
-  $size-sm: map-get($headings, h#{$level + 1}),
-  $size-base: map-get($headings, h#{$level})
+  $color: var(--text-color),
+  $fs-sm: map-get($headings, h#{$level + 1}),
+  $fs-base: map-get($headings, h#{$level})
 ) {
   color: $color;
   font-family: $family;
-  font-size: $size-xs;
   font-weight: $weight;
-  letter-spacing: -0.02em;
+  font-size: $fs-sm;
   line-height: 1.125;
 
-  @include mq($xs) {
-    font-size: $size-sm;
+  @if ($level > 3) {
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
   }
 
-  @include mq($md) {
-    font-size: $size-base;
+  @include mq($lg) {
+    font-size: $fs-base;
   }
 }
