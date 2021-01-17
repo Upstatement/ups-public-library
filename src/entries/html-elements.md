@@ -1,7 +1,7 @@
 ---
 layout: layouts/entry/index.njk
 title: HTML Elements
-date: 2021-01-16
+date: 2021-01-17
 tags:
   - html
   - basic
@@ -133,7 +133,7 @@ The `strong` tag, for bold text:
 
 The `pre` tag, for pre-formatted, whitespace preserved, and monospaced text:
 
-<pre style="padding: 0;">$100.00</pre>
+<pre style="padding: 0; background: 0;">$100.00</pre>
 
 ```html
 <pre>$100.00</pre>
@@ -141,7 +141,7 @@ The `pre` tag, for pre-formatted, whitespace preserved, and monospaced text:
 
 The `sup` tag, for superscript text:
 
-<pre style="padding: 0;">e=mc<sup>2</sup></pre>
+<pre style="padding: 0; background: 0;">e=mc<sup>2</sup></pre>
 
 ```html
 <pre>
