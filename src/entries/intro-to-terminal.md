@@ -1,7 +1,7 @@
 ---
 layout: layouts/entry/index.njk
 title: Intro to Terminal
-date: 2021-01-16
+date: 2021-01-17
 tags:
   - terminal
   - basic
@@ -11,7 +11,7 @@ Most of the time, we interact with computers through graphical interfaces. We ca
 
 ## How it Works
 
-Operating systems are programs, and we can use code to interface with them. MacOS lets you use [`shell scripts`](https://en.wikipedia.org/wiki/Shell_script) to give it instructions through the terminal. When we issue commands in the terminal, we are creating and executing tiny scripts for the operating system to run in real time.
+Operating systems are programs, and we can use code to interface with them. MacOS lets you use [shell scripts](https://en.wikipedia.org/wiki/Shell_script) to give it instructions through the terminal. When we issue commands in the terminal, we are creating and executing tiny scripts for the operating system to run in real time.
 
 Open up terminal (if you can't find it, hit ⌘ + SPACE, then type in 'terminal'). You should see a black window with text that reads something like this:
 
@@ -37,11 +37,11 @@ Two periods followed by a slash refers to the enclosing folder of your current d
 
 #### `/`
 
-A slash **preceeded by nothing** is a shortcut to your system root (Machintosh HD).
+A slash **preceded by nothing** is a shortcut to your system root (Macintosh HD).
 
 #### `~`
 
-A tilde **preceeded by nothing** is a shortcut for your home folder (usually named for your account username).
+A tilde **preceded by nothing** is a shortcut for your home folder (usually named for your account username).
 
 #### `/folder/`, `/folder`, `/file.ext`
 
@@ -49,7 +49,7 @@ Use text within or at the end of a path to refer to folders and files by name.
 
 #### Examples
 
-Use slashes after folder names to navigate within the preceeding folder.
+Use slashes after folder names to navigate within the preceding folder.
 
 ```bash
 ~/ $ cd Sites/an-awesome-website
