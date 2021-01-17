@@ -1,7 +1,7 @@
 ---
 layout: layouts/entry/index.njk
 title: Cascade, Inheritance, & Specificity
-date: 2021-01-16
+date: 2021-01-17
 tags:
   - css
 nextEntryTitle: The Box Model
@@ -34,7 +34,7 @@ a {
 
 </div>
 
-2. When two declarations are written with an equal level of specificity, the one that comes **last** will be applied:
+2. When two declarations are written with an equal level of specificity, the one that comes last will be applied:
 
 <div class="two-up-code">
 
@@ -66,9 +66,9 @@ For example, if you set a `color` and `font-family` on an element, every element
 
 ### Non-inherited properties
 
-Some properties do not inherit &mdash; for example, if you set `width: 50%` on an element, all of its descendants do not get a `width` of `50%` of their parent's `width`.
+Some properties do not inherit &mdash; for example, if you set `width: 50%` on an element, the widths of its children will remain unspecified.
 
-You can check whether a CSS property is inherited here on [MDN's CSS Properties reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference).
+You can check whether a CSS property is inherited on [MDN's CSS properties reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference).
 
 ## Specificity
 
