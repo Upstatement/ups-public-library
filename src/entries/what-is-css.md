@@ -152,7 +152,7 @@ h3 + p {
 
 At this point, you should have enough knowledge to write basic CSS. Learning property names and their corresponding values by heart is largely a memorization exercise that takes time. Don't hesitate to look up properties and their documentation on MDN or find advice about how to make something on Stack Overflow. Your editor's autocomplete feature will also likely be a big help.
 
-#### Helpful links
+#### Helpful Links
 
 - [CSS attribute selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors)
 - [CSS variables](<https://developer.mozilla.org/en-US/docs/Web/CSS/var()>)

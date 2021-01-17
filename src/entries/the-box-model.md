@@ -12,19 +12,19 @@ All elements in HTML can be considered boxes. The CSS box model describes the re
 
 <img src="/static/img/box-model.png" alt="CSS Box Model" width="200" style="width: 350px; margin-left: auto; margin-right: auto; display: block;">
 
-#### Content box
+#### Content Box
 
 The content, where text and images appear.
 
-#### Padding box
+#### Padding Box
 
 The area cleared around the content.
 
-#### Border box
+#### Border Box
 
 A border that goes around the padding and content. An element's background covers this area (up to the outer edge of the border box) by default. You can change this behavior by setting the `background-clip` property.
 
-#### Margin box
+#### Margin Box
 
 The area cleared outside the border. An element's background will never show in its margin box.
 
@@ -50,7 +50,7 @@ When certain conditions are met, the top and bottom margins of blocks are combin
 
 Margin collapsing occurs in three basic cases:
 
-#### Adjacent siblings
+#### Adjacent Siblings
 
 The margins of adjacent siblings are collapsed (except when the latter sibling needs to be cleared past floats).
 
@@ -63,7 +63,7 @@ The margins of adjacent siblings are collapsed (except when the latter sibling n
 </div>
 ```
 
-#### No content separating parent and descendants
+#### No Content Separating Parent & Descendants
 
 If there is no border, padding, inline part, block formatting context created, or clearance to separate the margin-top of a block from the margin-top of one or more of its descendant blocks; or no border, padding, inline content, height, min-height, or max-height to separate the margin-bottom of a block from the margin-bottom of one or more of its descendant blocks, then those margins collapse. The collapsed margin ends up outside the parent.
 
@@ -82,7 +82,7 @@ If there is no border, padding, inline part, block formatting context created, o
 </section>
 ```
 
-#### Empty blocks
+#### Empty Blocks
 
 If there is no border, padding, inline content, height, or min-height to separate a block's margin-top from its margin-bottom, then its top and bottom margins collapse.
 
@@ -92,7 +92,7 @@ If there is no border, padding, inline content, height, or min-height to separat
 </div>
 ```
 
-#### Other notes:
+#### Other Notes:
 
 - Margins of floating and absolutely positioned elements never collapse.
 
