@@ -1,6 +1,3 @@
 .entry__content {
-  @include margin($sp4 auto);
-  @include gutters(horiz, full);
-  max-width: 40em;
-  width: 100%;
+  @include content-column;
 }
