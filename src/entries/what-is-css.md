@@ -1,14 +1,14 @@
 ---
 layout: layouts/entry/index.njk
 title: What is CSS?
-date: 2021-01-16
+date: 2021-01-17
 tags:
   - css
   - basic
 nextEntryTitle: Cascade, Inheritance, & Specificity
 ---
 
-CSS (Cascading Style Sheets) is the language used to describe how HTML should look. CSS allows us to write **rules** (also known as **rulesets**) containing descriptions of how things should look (**style declarations**), and select which elements each ruleset should apply to. A ruleset looks like this:
+CSS (Cascading Style Sheets) is the language used to describe how HTML should look. CSS allows us to write rules (also known as rulesets) containing descriptions of how things should look (style declarations), and select which elements each ruleset should apply to. A ruleset looks like this:
 
 ```css
 selector {
@@ -16,7 +16,7 @@ selector {
 }
 ```
 
-> `property: value;` pairs are reffered to as "declarations"
+> `property: value;` pairs are referred to as "declarations"
 
 Selectors target which element(s) a ruleset should affect. A single selector can apply to anywhere from 0 to all elements on a page.
 

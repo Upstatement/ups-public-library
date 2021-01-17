@@ -1,13 +1,13 @@
 ---
 layout: layouts/entry/index.njk
 title: Intro to Git
-date: 2021-01-16
+date: 2021-01-17
 tags:
   - git
   - basic
 ---
 
-Git is a program for versioning and iterating code. It's often referred to as "version control." The way it works can seem complex or daunting at first. Don't be too put off&mdash;once you get the hang of its core concepts, it becomes intuitive and helpful.
+Git is a program for versioning and iterating code. It's often referred to as "version control." The way it works can seem complex or daunting at first. Don't be too put off &mdash; once you get the hang of its core concepts, it becomes intuitive and helpful.
 
 ## The Problem Git Solves
 
@@ -103,13 +103,13 @@ git checkout -b <new-branch-name>
 
 When creating a new branch with `-b`, you will also immediately be switched from the old branch to the new one.
 
-## Pushing, Pulling, and Merging
+## Pushing, Pulling, & Merging
 
 Local changes are synced to the remote repository (the one in GitHub) using actions called pulling, pushing, and merging.
 
 ### Pushing
 
-Changes you've made locally can be uploaded to the repo by **pushing.** Doing so will upload and apply your local changes to the remote version.
+Changes you've made locally can be uploaded to the repo by pushing. Doing so will upload and apply your local changes to the remote version.
 
 ```shell
 git push
