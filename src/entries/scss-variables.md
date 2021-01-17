@@ -96,7 +96,7 @@ button {
 
 </div>
 
-As you can see, it's useful to architecture variables with levels of meaning. We often separate value scales (`$border-width-thin`, `$border-width-thick`) from their application (`$button-border`, `$section-divider`) to keep our styles readable, relevant, and modular.
+As you can see, it's useful to scaffold variables with levels of meaning. We often separate value scales (`$border-width-thin`, `$border-width-thick`) from their application (`$button-border`, `$section-divider`) to keep our styles readable, relevant, and modular.
 
 ## Variables, Scope, & Cascade
 
