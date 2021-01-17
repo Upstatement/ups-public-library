@@ -1,7 +1,7 @@
 ---
 layout: layouts/entry/index.njk
 title: Pseudo Classes & Elements
-date: 2021-01-16
+date: 2021-01-17
 tags:
   - css
   - basic
@@ -9,7 +9,7 @@ tags:
 
 By adding pseudo- CSS keywords to the end of a selector, we can style states and nodes that aren't present in HTML. Pseudo-classes specify states, like `:hover`. Pseudo-elements reference visual aspects or parts of elements, like `::first-line`.
 
-#### Pseudo-classes: `:`
+## Pseudo-Classes: `:`
 
 Pseudo-classes allow for the selection of elements based on state information that is not contained in the document tree. They're denoted by a single colon `:` between the base selector and the keyword.
 
@@ -29,7 +29,7 @@ button:disabled {
 }
 ```
 
-#### Pseudo-elements: `::`
+## Pseudo-Elements: `::`
 
 Pseudo-elements represent entities or aspects of entities that are not described in HTML. They're denoted by two colons `::` between the base selector and the keyword.
 

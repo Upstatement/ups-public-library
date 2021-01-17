@@ -13,7 +13,7 @@ You can read the [MDN HTML elements reference](https://developer.mozilla.org/en-
 
 ## Commonly Used Elements
 
-> You'll notice each element in this list has a "default level". It's explained [here](#element-display-levels), at the end of this entry.
+> You'll notice each element in this list has a "default level". It's explained [at the end of this entry](#element-display-levels).
 
 #### `section`
 
@@ -105,7 +105,7 @@ Represents a clickable button, used to submit forms or anywhere in a document fo
 
 > Default level: Inline-block
 
-### Choosing Elements Based on Semantics Versus Display
+## Semantics vs Styles
 
 Some elements have a standard set of styles attached to them by the browser. Ultimately, the way anything looks by default is up to the browser, and for the most part, things are the consistent between browsers. As we have come to expect, links are blue with underlines by default, and text is set in Times New Roman unless otherwise specified. There are other default styles for more complex elements, like the `details` element here:
 
@@ -119,34 +119,6 @@ Which only requires:
 <details>
   This element is for optional supporting information.
 </details>
-```
-
-Other examples include:
-
-The `strong` tag, for bold text:
-
-<strong>Attention</strong>
-
-```html
-<strong>Attention</strong>
-```
-
-The `pre` tag, for pre-formatted, whitespace preserved, and monospaced text:
-
-<pre style="padding: 0; background: 0;">$100.00</pre>
-
-```html
-<pre>$100.00</pre>
-```
-
-The `sup` tag, for superscript text:
-
-<pre style="padding: 0; background: 0;">e=mc<sup>2</sup></pre>
-
-```html
-<pre>
-  e=mc<sup>2</sup>
-</pre>
 ```
 
 Default styles may be useful at times, but they are ultimately secondary, and shouldn't ever be your reason for choosing an element. What's most important is that you use whichever element most accurately describes the content within it. For this reason, we often remove or override default styles.
