@@ -68,7 +68,7 @@ For example, if you set a `color` and `font-family` on an element, every element
 
 Some properties do not inherit &mdash; for example, if you set `width: 50%` on an element, the widths of its children will remain unspecified.
 
-You can check whether a CSS property is inherited on [MDN's CSS properties reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference).
+You can check whether a CSS property is inherited on by finding it in [MDN's index of CSS properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference).
 
 ## Specificity
 
@@ -77,13 +77,15 @@ Specificity is the metric browsers use to decide which declarations to apply whe
 Here is the ranking of selectors, from lowest to highest specificity:
 
 1. Type selectors (e.g., `h1`) and pseudo-elements (e.g., `::before`)
+
 1. Class selectors (e.g., `.example`), attributes selectors (e.g., `[type="radio"]`) and pseudo-classes (e.g., `:hover`)
+
 1. ID selectors (e.g., `#example`)
 
 Universal selector (`*`), combinators (`+`, `>`, `~`, `' '`) and negation pseudo-class `:not()` have no effect on specificity. (The selectors declared inside `:not()` do, however.)
 
 Inline styles added to an element (e.g., `style="font-weight: bold;"`) always overwrite any styles in external stylesheets, and thus can be thought of as having the highest specificity.
 
-Specificity and inheritance can be powerful tools or introduce complications, depending on how your styles are managed.
+---
 
-For more information on how they work, visit: [Cascade and Inheritance](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance)
+These three concepts can be powerful tools or introduce complications, depending on how your styles are managed. For more information on how they work, [check out MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance).
