@@ -39,5 +39,3 @@ HTML is a straightforward language, that you can begin to understand just by rea
 Nothing about that structure is mandatory, though it tends to suit most websites &mdash; especially the ones we build at Upstatement. Even though it's only a small fraction of what goes into a page, you can envision how a site like that may be laid out visually, at a high level, just by looking at that code.
 
 ---
-
-In the next entry of this series, we'll go into detail on the different types of HTML elements, how they are interpreted by browsers, and how to choose the right elements based on their contents.

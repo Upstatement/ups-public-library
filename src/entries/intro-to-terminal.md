@@ -9,7 +9,7 @@ tags:
 
 Most of the time, we interact with computers through graphical interfaces. We can also use the terminal to interface with them through text-based commands. Since writing code is text based, and doesn't depend on a particular program, the terminal is our tool of choice for working on websites.
 
-## How it Works
+## How It Works
 
 Operating systems are programs, and we can use code to interface with them. MacOS lets you use [shell scripts](https://en.wikipedia.org/wiki/Shell_script) to give it instructions through the terminal. When we issue commands in the terminal, we are creating and executing tiny scripts for the operating system to run in real time.
 

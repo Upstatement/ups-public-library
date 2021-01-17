@@ -60,11 +60,11 @@ a {
 
 Some (but not all) CSS property values set on parent elements are applied to their children as well. Understanding inheritance in CSS will make your style sheets less verbose, and make troubleshooting easier.
 
-### Inherited properties
+### Inherited Properties
 
 For example, if you set a `color` and `font-family` on an element, every element inside it will also be styled with that color and font-family.
 
-### Non-inherited properties
+### Non-Inherited Properties
 
 Some properties do not inherit &mdash; for example, if you set `width: 50%` on an element, the widths of its children will remain unspecified.
 
