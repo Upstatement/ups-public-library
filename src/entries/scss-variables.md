@@ -1,7 +1,7 @@
 ---
 layout: layouts/entry/index.njk
 title: SCSS Variables
-date: 2021-01-16
+date: 2021-01-17
 tags:
   - scss
 ---
@@ -20,7 +20,7 @@ Variable declarations look much like style declarations. Variable names must beg
 $purple: #8e4cf8;
 ```
 
-After you declare a variable, you can use it as much as you want, as long as its after the declaration in the cascade, and in scope.
+After you declare a variable, you can use it as much as you want, as long as it is in scope.
 
 ```scss
 $purple: #8e4cf8;
@@ -38,7 +38,7 @@ input {
 }
 ```
 
-### Variable Composition
+## Variable Composition
 
 Variables can reference other variables. Composition can help to isolate moving parts of your style architecture, and keep things from breaking when changes get made. Here's a real-world example:
 
