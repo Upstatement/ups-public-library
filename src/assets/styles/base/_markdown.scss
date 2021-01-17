@@ -58,13 +58,9 @@
   .two-up-code {
     display: flex;
     flex-flow: row wrap;
-    margin-left: -1px;
-    margin-right: -1px;
-    width: calc(100% + 2px);
 
     pre {
       margin: 0;
-      border: 1px solid var(--bg-color);
       flex: 1 0 50%;
       min-width: 200px;
     }
@@ -72,47 +68,51 @@
 
   pre,
   pre[class*='language-'] {
-    line-height: 1.375;
-    direction: ltr;
-    text-align: left;
-    white-space: pre;
-    word-spacing: normal;
-    word-break: normal;
-    -moz-tab-size: 2;
-    -o-tab-size: 2;
-    tab-size: 2;
-    -webkit-hyphens: none;
     -moz-hyphens: none;
+    -moz-tab-size: 2;
     -ms-hyphens: none;
+    -o-tab-size: 2;
+    -webkit-hyphens: none;
+    background-color: $gray-1;
+    direction: ltr;
     hyphens: none;
+    line-height: 1.375;
     padding: 1em;
     position: relative;
+    tab-size: 2;
+    text-align: left;
+    white-space: pre;
+    word-break: normal;
+    word-spacing: normal;
   }
 
   pre {
     &[class*='language-']:before {
-      color: $white;
+      color: $gray-4;
       display: block;
       font-size: $fs-smaller;
-      margin-bottom: 0.6em;
-      opacity: 0.3;
+      margin-bottom: 0.75em;
       text-transform: uppercase;
     }
 
     &[class*='css']:before {
-      content: 'Language: css';
+      content: 'css';
+    }
+
+    &[class*='scss']:before {
+      content: 'scss';
     }
 
     &[class*='html']:before {
-      content: 'Language: html';
+      content: 'html';
     }
 
     &[class*='shell']:before {
-      content: 'Language: shell';
+      content: 'shell';
     }
 
     &[class*='js']:before {
-      content: 'Language: javascript';
+      content: 'javascript';
     }
   }
 
