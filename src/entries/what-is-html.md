@@ -54,5 +54,3 @@ Elements can be given attributes that alter or extend their functionality, as we
   which is used to create a hyperlink.
 </p>
 ```
-
----
