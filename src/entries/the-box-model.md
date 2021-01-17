@@ -105,5 +105,3 @@ If there is no border, padding, inline content, height, or min-height to separat
 - When all margins are negative, the size of the collapsed margin is the smallest (most negative) margin. This applies to both adjacent elements and nested elements.
 
 - Only margins can be negative. Negative values for padding will be ignored.
-
----

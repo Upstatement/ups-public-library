@@ -37,5 +37,3 @@ HTML is a straightforward language, that you can begin to understand just by rea
 - The footer at the end of the page will likely contain more links and copyright information
 
 Nothing about that structure is mandatory, though it tends to suit most websites &mdash; especially the ones we build at Upstatement. Even though it's only a small fraction of what goes into a page, you can envision how a site like that may be laid out visually, at a high level, just by looking at that code.
-
----

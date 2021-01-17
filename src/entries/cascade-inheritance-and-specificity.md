@@ -87,5 +87,3 @@ Inline styles added to an element (e.g., `style="font-weight: bold;"`) always ov
 Specificity and inheritance can be powerful tools or introduce complications, depending on how your styles are managed.
 
 For more information on how they work, visit: [Cascade and Inheritance](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance)
-
----

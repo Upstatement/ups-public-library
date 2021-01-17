@@ -51,5 +51,3 @@ git checkout -b <new-branch-name>
 ```
 
 When creating a new branch with `-b`, you will also immediately be switched from the old branch to the new one.
-
----

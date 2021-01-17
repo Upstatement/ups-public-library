@@ -15,6 +15,7 @@ templateClass: entry
     <h1>{{ wrapWords(title) }}</h1>
     {{ content | safe }}
     {% if nextEntryTitle %}
+      <hr>
       <p>
         Next:
         <a href="{{ '/entries/' ~ nextEntryTitle | slug }}" class="next-entry-link">{{ nextEntryTitle }}</a>
