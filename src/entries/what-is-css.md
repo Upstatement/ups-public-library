@@ -160,5 +160,3 @@ At this point, you should have enough knowledge to write basic CSS. Learning pro
 - [Media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
 - Class naming conventions, such as [BEM](http://getbem.com/naming/)
 - [Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)
-
----

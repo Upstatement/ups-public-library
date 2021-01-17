@@ -55,5 +55,3 @@ git commit
 ```
 
 Your terminal's built-in text editor will open in response. Now you can write a short title (must be less than 72 characters) and a long body. To separate the two, simply use an empty line.
-
----
