@@ -54,3 +54,10 @@
   flex: 0 0 100%;
   width: 100%;
 }
+
+@mixin content-column {
+  @include margin($sp4 auto);
+  @include gutters(horiz, full);
+  max-width: $content-max-width;
+  width: 100%;
+}
