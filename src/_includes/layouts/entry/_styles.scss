@@ -1,3 +1,7 @@
+.entry {
+  @include gutters(vert, half, margin);
+}
+
 .entry__content {
   @include content-column;
 }

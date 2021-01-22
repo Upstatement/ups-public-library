@@ -1,0 +1,13 @@
+
+.site__nav {
+  @include grid-parent;
+  @include gutters(vert, half, margin);
+  position: absolute;
+  align-items: flex-end;
+  flex-direction: row;
+
+  @media (min-width: $xxl) {
+    position: fixed;
+  }
+}
+
