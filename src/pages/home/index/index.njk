@@ -8,7 +8,7 @@
       <input class="search-input js-search-input" type="text" placeholder="Search the Library">
     </div>
 
-    <ul class="index__list search-results js-search-results" role="list"></ul>
+    <ul class="index__list search-results js-search-results"></ul>
   </div>
 
   {# Page content & search results #}
@@ -54,25 +54,25 @@
                 {{ "Collection" if tagDef == "collections" }}
                 {{ "Series" if tagDef == "series" }}
               </span>
-              <span class="index__count">{{ item.data.entries | length }}
-                entries</span>
+              <span class="index__count">
+                {{ item.data.entries | length }}
+                entries
+              </span>
             </label>
 
-            <ol class="index__nest">
+            <ol class="index__nested__list">
               {% if item.data.entries | length %}
                 {% for entry in item.data.entries %}
-                  <li class="index__nest__item">
+                  <li class="index__item">
                     <a href="{{ '/entries/' ~ entry | slug }}" class="index__link">
                       <h2 class="index__title">
-                        <span class="index__title__text">
-                          <svg class="index__icon index__icon--arrow">
-                            <use xlink:href="#arrow"></use>
-                          </svg>
-                          {{ entry }}
-                        </span>
-                        <span class="index__type">Entry</span>
-                        <span class="index__date">{{ item.data.date | readableDate }}</span>
+                        <svg class="index__icon index__icon--arrow">
+                          <use xlink:href="#arrow"></use>
+                        </svg>
+                        {{ entry }}
                       </h2>
+                      <span class="index__type">Entry</span>
+                      <span class="index__date">{{ item.data.date | readableDate }}</span>
                     </a>
                   </li>
                 {% endfor %}
