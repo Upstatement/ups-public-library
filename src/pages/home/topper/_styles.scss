@@ -5,7 +5,7 @@
 }
 
 .home__header {
-  min-height: 35vh;
+  min-height: 30vh;
   flex-direction: column;
 
   @include mq($md) {
