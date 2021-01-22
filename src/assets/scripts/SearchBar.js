@@ -212,89 +212,81 @@ class SearchBar {
 
       const resultType = this.search.getResultType(result.item);
 
-      const resultDesc = document.createElement('li');
-      resultDesc.classList.add('index__item');
+      const resultListItem = document.createElement('li');
+      resultListItem.classList.add('index__item');
 
       if (resultType === 'entry') {
-        const entryLink = document.createElement('a');
-        entryLink.classList.add('index__link');
-        entryLink.setAttribute('href', url);
+        const entryLink = document.createElement('template');
+
         entryLink.innerHTML = `
-          <h1 class="index__title">
-            <svg class="index__icon index__icon--arrow">
-              <use xlink:href="#arrow"></use>
-            </svg>
-            ${title}
-          </h1>
-          <span class="index__type">Entry</span>
-          <span class="index__date">${date}</span>
+          <a href="${url}" class="index__link">
+            <h1 class="index__title">
+              <svg class="index__icon index__icon--arrow">
+                <use xlink:href="#arrow"></use>
+              </svg>
+              ${title}
+            </h1>
+            <span class="index__type">Entry</span>
+            <span class="index__date">${date}</span>
+          </a>
         `.trim();
 
-        resultDesc.appendChild(entryLink);
-        this.searchResults.appendChild(resultDesc);
+        resultListItem.appendChild(entryLink.content);
+        this.searchResults.appendChild(resultListItem);
       } else {
-        // Input
-        const expandInput = document.createElement('input');
-        expandInput.classList.add('index__expand-input');
-        expandInput.setAttribute('type', 'checkbox');
+        // Input & Label
+        const resultContent = document.createElement('template');
         const inputName = `expand-${toSlug(title)}`;
-        expandInput.setAttribute('name', inputName);
-        expandInput.setAttribute('id', inputName);
-        resultDesc.appendChild(expandInput);
 
-        // Label
-        const expandLabel = document.createElement('label');
-        expandLabel.classList.add('index__expand-label');
-        expandLabel.setAttribute('for', inputName);
-        expandLabel.innerHTML = `
-          <h1 class="index__title">
-            <svg class="index__icon index__icon--plus">
-              <use xlink:href="#plus"></use>
-            </svg>
-            <svg class="index__icon index__icon--minus">
-              <use xlink:href="#minus"></use>
-            </svg>
-            ${title}
-          </h1>
-          <span class="index__type">
-            ${resultType}
-          </span>
-          <span class="index__count">${entries.length} entries</span>
+        resultContent.innerHTML = `
+          <input class="index__expand-input" type="checkbox" name="${inputName}" id="${inputName}"/>
+          <label class="index__expand-label" for="${inputName}">
+            <h1 class="index__title">
+              <svg class="index__icon index__icon--plus">
+                <use xlink:href="#plus"></use>
+              </svg>
+              <svg class="index__icon index__icon--minus">
+                <use xlink:href="#minus"></use>
+              </svg>
+              ${title}
+            </h1>
+            <span class="index__type">
+              ${resultType}
+            </span>
+            <span class="index__count">${entries.length} entries</span>
+          </label>
         `.trim();
-        resultDesc.appendChild(expandLabel);
+        resultListItem.appendChild(resultContent.content);
 
         // List
-        const nestList = document.createElement('ol');
-        nestList.classList.add('index__nest');
+        const nestedList = document.createElement('ol');
+        nestedList.classList.add('index__nested__list');
 
         if (entries.length) {
           entries.forEach(entry => {
-            const listItem = document.createElement('li');
-            listItem.classList.add('index__nest__item');
+            const nestedResultListItem = resultListItem.cloneNode();
             const entryUrl = `/entries/${toSlug(entry)}`;
 
-            listItem.innerHTML = `
+            nestedResultListItem.innerHTML = `
               <a href="${entryUrl}" class="index__link">
                 <h2 class="index__title">
-                  <span class="index__title__text">
-                    <svg class="index__icon index__icon--arrow">
-                      <use xlink:href="#arrow"></use>
-                    </svg>
-                    ${entry}
-                  </span>
-                  <span class="index__type">Entry</span>
-                  <span class="index__date">${date}</span>
+                  <svg class="index__icon index__icon--arrow">
+                    <use xlink:href="#arrow"></use>
+                  </svg>
+                  ${entry}
                 </h2>
+                <span class="index__type">Entry</span>
+                <span class="index__date">${date}</span>
               </a>
             `.trim();
 
-            nestList.appendChild(listItem);
+            nestedList.appendChild(nestedResultListItem);
           });
         }
 
-        resultDesc.appendChild(nestList);
+        resultListItem.appendChild(nestedList);
 
-        this.searchResults.appendChild(resultDesc);
+        this.searchResults.appendChild(resultListItem);
       }
     });
   }
