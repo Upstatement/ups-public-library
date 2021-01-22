@@ -3,18 +3,8 @@ const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const pluginNavigation = require('@11ty/eleventy-navigation');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
-const {
-  getSlugMap,
-  getSortedCollection,
-  // getTagList
-  indexItems,
-} = require('./src/_11ty/collections');
-const {
-  htmlDateString,
-  readableDate,
-  split,
-  // sortCollectionByTitle,
-} = require('./src/_11ty/filters');
+const { getSlugMap, getSortedCollection, indexItems } = require('./src/_11ty/collections');
+const { htmlDateString, readableDate, split } = require('./src/_11ty/filters');
 
 require('dotenv').config({ path: `.env.${process.env.NODE_ENV || 'development'}` });
 
@@ -60,10 +50,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('htmlDateString', htmlDateString);
   eleventyConfig.addFilter('readableDate', readableDate);
   eleventyConfig.addFilter('split', split);
-  // eleventyConfig.addFilter('includesSolution', includesSolution);
-  // eleventyConfig.addFilter('includesTeam', includesTeam);
-  // eleventyConfig.addFilter('includesTechnology', includesTechnology);
-  // eleventyConfig.addFilter('sortCollectionByTitle', sortCollectionByTitle);
 
   /**
    * Add custom watch targets
