@@ -294,9 +294,9 @@
   }
 
   blockquote {
-    border-left: 1px solid var(--text-color);
+    border-left: 2px solid $gray-3;
     color: var(--secondary-text-color);
-    padding: 0 1.5em;
+    padding: 0 1.25em;
 
     p {
       margin: 0;
@@ -308,6 +308,7 @@
 
     code {
       background-color: var(--tertiary-bg-color);
+      color: var(--tertiary-text-color);
     }
   }
 
