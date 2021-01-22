@@ -6,9 +6,9 @@ $gray-2: hsl(0, 0%, 93%);
 $gray-3: hsl(0, 0%, 84%);
 $gray-4: hsl(0, 0%, 75%);
 $gray-5: hsl(0, 0%, 60%);
-$gray-6: hsl(0, 0%, 40%);
+$gray-6: hsl(0, 0%, 45%);
 $gray-7: hsl(0, 0%, 32%);
-$gray-8: hsl(0, 0%, 24%);
+$gray-8: hsl(0, 0%, 22%);
 $gray-9: hsl(0, 0%, 15%);
 $gray-10: hsl(0, 0%, 10%);
 
@@ -25,10 +25,10 @@ $purple: #8e4cf8;
 :root {
   --bg-color: #{$white};
   --text-color: #{$gray-9};
-  --secondary-text-color: #{$gray-7};
+  --secondary-text-color: #{$gray-6};
   --secondary-bg-color: #{$gray-2};
   --tertiary-bg-color: #{$gray-1};
-  --tertiary-text-color: #{$gray-8};
+  --tertiary-text-color: #{$gray-7};
   --bg-color-inverted: #{$black};
   --text-color-inverted: #{$white};
   --border-color: #{$gray-6};
