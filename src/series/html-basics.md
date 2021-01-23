@@ -1,7 +1,7 @@
 ---
 layout: layouts/series/index.njk
-title: Learn HTML
-date: 2021-01-17
+title: HTML Basics
+date: 2021-01-22
 tags:
 entries:
   - What is HTML?
