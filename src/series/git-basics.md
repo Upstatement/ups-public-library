@@ -1,7 +1,7 @@
 ---
 layout: layouts/series/index.njk
-title: Learn Git
-date: 2021-01-17
+title: Git Basics
+date: 2021-01-22
 tags:
 entries:
   - Intro to Git
