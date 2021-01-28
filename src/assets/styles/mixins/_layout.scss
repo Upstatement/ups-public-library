@@ -56,8 +56,8 @@
 }
 
 @mixin content-column {
-  @include margin($sp4 auto);
   @include gutters(horiz, full);
+  @include margin(null auto);
   max-width: $content-max-width;
   width: 100%;
 }
