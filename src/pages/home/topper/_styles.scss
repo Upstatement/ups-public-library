@@ -5,19 +5,24 @@
 }
 
 .home__header {
-  min-height: 30vh;
   flex-direction: column;
 
   @include mq($md) {
     flex-direction: row;
     justify-content: space-between;
+    min-height: 25vh;
   }
 }
 
 .home__nav {
+  align-items: flex-start;
+  flex-direction: column;
   position: relative;
-  align-items: flex-end;
-  flex-direction: row;
+
+  @include mq($md) {
+    align-items: flex-end;
+    flex-direction: row;
+  }
 }
 
 .home__links {
@@ -32,16 +37,25 @@
 .home__print {
   @include gutters;
   line-height: 1;
-  font-size: $fs0;
 
   &--upl,
   &--abl {
     font-family: $mondwest;
+
+    font-size: $fs-1;
+
+    @include mq($sm) {
+      font-size: $fs0;
+    }
   }
 
   &--upl {
-    margin-bottom: $paragraph-spacing;
+    margin-bottom: $sp-5;
     pointer-events: none;
+
+    @include mq($sm) {
+      margin-bottom: $paragraph-spacing;
+    }
 
     .js-print-line:not(:first-child) {
       display: inline-block;
@@ -64,8 +78,13 @@
   &--link,
   &--tip {
     font-family: $neuebit;
+    font-size: $fs0 - 3px;
     font-weight: $neuebit-bold;
     line-height: 0.7;
+
+    @include mq($sm) {
+      font-size: $fs0;
+    }
   }
 
   &--link {
@@ -74,7 +93,13 @@
   }
 
   &--tip {
-    margin-left: auto;
+    @include mq($md, max) {
+      display: none;
+    }
+
+    @include mq($md) {
+      margin-left: auto;
+    }
   }
 }
 
@@ -82,10 +107,10 @@
   @include gutters;
   font-size: $fs-2;
   line-height: 1.25;
-  margin-bottom: $paragraph-spacing;
-  text-indent: 0.5em;
+  text-indent: 1.25em;
 
   @include mq($sm) {
+    margin-bottom: $paragraph-spacing;
     max-width: 23em;
   }
 }
@@ -93,9 +118,10 @@
 .home__link__wrapper {
   flex: 1 0 auto;
   line-height: 1;
-  margin-top: $paragraph-spacing;
 
-  @include mq($md) {
-    margin-top: 0;
+  @include mq($md, max) {
+    & + & {
+      margin-top: var(--gutter-half);
+    }
   }
 }
