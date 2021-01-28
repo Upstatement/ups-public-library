@@ -4,4 +4,9 @@
 
 .entry__content {
   @include content-column;
+  @include margin($sp4 null);
+
+  @include mq($lg) {
+    @include margin(($sp4 * 3) null);
+  }
 }
