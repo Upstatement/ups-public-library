@@ -7,7 +7,7 @@
 .home__header {
   flex-direction: column;
 
-  @include mq($md) {
+  @include mq($sm) {
     flex-direction: row;
     justify-content: space-between;
     min-height: 25vh;
@@ -19,14 +19,14 @@
   flex-direction: column;
   position: relative;
 
-  @include mq($md) {
+  @include mq($sm) {
     align-items: flex-end;
     flex-direction: row;
   }
 }
 
 .home__links {
-  @include mq($md) {
+  @include mq($sm) {
     align-items: flex-end;
     display: flex;
     flex-direction: row;
@@ -44,7 +44,7 @@
 
     font-size: $fs-1;
 
-    @include mq($sm) {
+    @include mq($md) {
       font-size: $fs0;
     }
   }
@@ -82,7 +82,7 @@
     font-weight: $neuebit-bold;
     line-height: 0.7;
 
-    @include mq($sm) {
+    @include mq($md) {
       font-size: $fs0;
     }
   }
@@ -93,11 +93,11 @@
   }
 
   &--tip {
-    @include mq($md, max) {
+    @include mq($sm, max) {
       display: none;
     }
 
-    @include mq($md) {
+    @include mq($sm) {
       margin-left: auto;
     }
   }
