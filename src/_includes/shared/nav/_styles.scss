@@ -1,20 +1,30 @@
-
 .site__nav {
-  @include grid-parent;
-  @include gutters(vert, half, margin);
-  position: absolute;
+  @include flex;
+  @include gutters(horiz, half, margin);
+  @include gutters(vert, half);
   align-items: flex-end;
   flex-direction: row;
+  position: relative;
 
-  @media (min-width: $xxl) {
+  @include mq($md) {
+    @include layer(2);
+    @include padding($sp0 null);
+    background-color: $white;
+    border-top: 1px solid $black;
+    bottom: 0;
+    left: 0;
+    padding-left: calc((100% - #{$content-max-width}) / 2);
+    padding-right: calc((100% - #{$content-max-width}) / 2);
     position: fixed;
+    right: 0;
+    width: auto;
   }
 }
 
 .nav__print {
   @include gutters;
   line-height: 1;
-  font-size: $fs0;
+  font-size: $fs-1;
 
   &--upl,
   &--abl {
@@ -22,8 +32,8 @@
   }
 
   &--upl {
-    margin-bottom: $paragraph-spacing;
-    pointer-events: none;
+    @include layer(2);
+    position: relative;
 
     .js-print-line:not(:first-child) {
       display: inline-block;
@@ -35,11 +45,22 @@
       font-family: $neuebit;
       font-weight: $neuebit-bold;
     }
+
+    @include on-focus {
+      + .nav__print {
+        display: none;
+      }
+    }
   }
 
   &--abl {
+    @include layer(1);
     pointer-events: none;
     position: absolute;
+    top: var(--gutter-half);
+
+    @include mq($md) {
+      top: $sp0;
+    }
   }
 }
-
