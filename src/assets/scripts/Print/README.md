@@ -107,7 +107,7 @@ The amount of times that text should loop.
 
 **Notes**:
 
-1. If Print.js stops and restarts after detecing that a user has idled _and before the target # of loops has been reached_, the loop counter is reset to `0`.
+1. If Print.js stops and restarts after detecting that a user has idled _and before the target # of loops has been reached_, the loop counter is reset to `0`.
 1. If the target number of loops is reached, Print.js will stop checking for user idle and remove all event listeners. The text will become entirely and indefinitely static (unless the page reloads).
 
 ### `data-fill-mode="['forwards'|any]"`

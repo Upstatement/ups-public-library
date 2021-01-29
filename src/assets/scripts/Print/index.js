@@ -76,7 +76,7 @@ class Print {
       this.lineElsFragment.appendChild(lineEl);
     });
 
-    // Attach lines contianing characters to the instantiating DOM element
+    // Attach lines containing characters to the instantiating DOM element
     this.printEl.appendChild(this.lineElsFragment);
   }
 
@@ -192,7 +192,7 @@ class Print {
       this.loopCounter = 0;
       this.isIdling = false;
 
-      // first, hide everthing for a blank slate, to preserve timing
+      // first, hide everything for a blank slate, to preserve timing
       // hideCharacter will then restart the loop from the beginning
       this.hideCharacter(0);
       setTimeout(() => {
