@@ -1,5 +1,9 @@
 .entry {
   @include gutters(vert, half, margin);
+
+  @include mq($md) {
+    padding-bottom: $sp6;
+  }
 }
 
 .entry__content {
@@ -7,6 +11,7 @@
   @include margin($sp4 null);
 
   @include mq($lg) {
-    @include margin(($sp4 * 3) null);
+    margin-top: $sp4 * 3;
+    margin-bottom: $sp6;
   }
 }

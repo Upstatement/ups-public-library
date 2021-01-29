@@ -5,6 +5,7 @@ import ExternalLinks from './ExternalLinks';
 import Search from './Search';
 import SearchBar from './SearchBar';
 import Print from './Print';
+import ProgressBar from './ProgressBar';
 // import ThemeToggle from './ThemeToggle';
 
 onDocumentReady(() => {
@@ -17,4 +18,8 @@ onDocumentReady(() => {
   }
 
   [...document.querySelectorAll('[data-print]')].forEach(printEl => new Print(printEl));
+
+  if (document.getElementById('js-entry-content')) {
+    new ProgressBar();
+  }
 });
