@@ -5,7 +5,6 @@
   align-items: flex-end;
   flex-direction: row;
   position: relative;
-  isolation: isolate;
 
   @include mq($md) {
     @include layer(2);
@@ -13,6 +12,7 @@
     background-color: $white;
     border-top: 1px solid $black;
     bottom: 0;
+    isolation: isolate;
     left: 0;
     padding-left: calc((100% - #{$content-max-width}) / 2);
     padding-right: calc((100% - #{$content-max-width}) / 2);
@@ -28,14 +28,26 @@
   left: calc(-1 * var(--gutter-half));
   position: absolute;
   top: -1px;
+
+  @include mq($md, max) {
+    @include layer(2);
+    bottom: unset;
+    height: 10px;
+    position: fixed;
+    top: 0;
+  }
 }
 
 .nav__print {
   @include gutters;
+  color: $black;
   font-size: $fs-1;
   line-height: 1;
-  mix-blend-mode: difference;
-  color: $white;
+
+  @include mq($md) {
+    color: $white;
+    mix-blend-mode: difference;
+  }
 
   &--upl,
   &--abl {
