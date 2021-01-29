@@ -5,6 +5,7 @@
   align-items: flex-end;
   flex-direction: row;
   position: relative;
+  isolation: isolate;
 
   @include mq($md) {
     @include layer(2);
@@ -21,10 +22,20 @@
   }
 }
 
+.progress-indicator {
+  background-color: $black;
+  bottom: 0;
+  left: calc(-1 * var(--gutter-half));
+  position: absolute;
+  top: -1px;
+}
+
 .nav__print {
   @include gutters;
-  line-height: 1;
   font-size: $fs-1;
+  line-height: 1;
+  mix-blend-mode: difference;
+  color: $white;
 
   &--upl,
   &--abl {
