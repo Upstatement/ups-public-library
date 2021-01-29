@@ -16,10 +16,23 @@
   }
 }
 
-.dingbat {
-  @include content-column;
+.dingbat__wrapper {
+  @include margin($sp6 null);
+  align-items: center;
+  display: flex;
   font-family: $fleuron-dingbats;
   font-size: $h1;
-  margin-bottom: $sp6;
+  height: 1em;
+  justify-content: center;
   text-align: center;
+
+  @include mq($lg) {
+    @include margin($sp8 null);
+  }
+}
+
+.dingbat__text {
+  display: block;
+  height: 1em;
+  line-height: 0.7;
 }
