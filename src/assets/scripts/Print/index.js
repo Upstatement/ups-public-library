@@ -32,6 +32,8 @@ class Print {
     // Create empty array to store char DOM elements
     this.charEls = [];
 
+    this.shouldShow = true;
+    this.shouldHide = true;
     this.loopCounter = 0;
 
     this.isIdling = false;
@@ -144,14 +146,19 @@ class Print {
   }
 
   loop() {
-    if (!this.isIdling && !this.allLoopsComplete) {
+    if (this.isIdling || this.allLoopsComplete) {
+      this.shouldShow = this.fillMode === 'forwards';
+      this.shouldHide = !this.shouldShow;
+    }
+
+    if (this.shouldShow) {
       const timeout = this.loopCounter === 0 ? this.initialDelay : this.invisibleFor;
 
       setTimeout(() => {
         this.loopCounter++;
         this.showCharacter(0);
 
-        if (this.isIdling || (this.allLoopsComplete && this.fillMode === 'forwards')) {
+        if (!this.shouldHide) {
           this.cleanupIdle();
           return;
         }
