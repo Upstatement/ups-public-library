@@ -1,8 +1,10 @@
 .entry {
-  @include gutters(vert, half, margin);
+  padding-bottom: $fs-1;
+  padding-top: var(--gutter-half);
 
   @include mq($md) {
-    padding-bottom: $sp6;
+    padding-bottom: $sp7;
+    padding-top: 0;
   }
 }
 

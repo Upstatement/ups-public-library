@@ -2,17 +2,16 @@
   @include flex;
   @include gutters(horiz, half, margin);
   @include gutters(vert, half);
+  @include layer(2);
   align-items: flex-end;
+  background-color: $white;
   flex-direction: row;
-  position: relative;
 
   @include mq($md) {
-    @include layer(2);
     @include padding($sp0 null);
-    background-color: $white;
+    position: relative;
     border-top: 1px solid $black;
     bottom: 0;
-    isolation: isolate;
     left: 0;
     padding-left: calc((100% - #{$content-max-width}) / 2);
     padding-right: calc((100% - #{$content-max-width}) / 2);
@@ -22,32 +21,16 @@
   }
 }
 
-.progress-indicator {
-  background-color: $black;
-  bottom: 0;
-  left: calc(-1 * var(--gutter-half));
-  position: absolute;
-  top: -1px;
-
-  @include mq($md, max) {
-    @include layer(2);
-    bottom: unset;
-    height: 10px;
-    position: fixed;
-    top: 0;
-  }
+.nav__print,
+.nav__percent-complete {
+  color: $white;
+  mix-blend-mode: difference;
 }
 
 .nav__print {
   @include gutters;
-  color: $black;
   font-size: $fs-1;
   line-height: 1;
-
-  @include mq($md) {
-    color: $white;
-    mix-blend-mode: difference;
-  }
 
   &--upl,
   &--abl {
@@ -80,10 +63,45 @@
     @include layer(1);
     pointer-events: none;
     position: absolute;
-    top: var(--gutter-half);
+    top: var(--gutter-full);
 
     @include mq($md) {
       top: $sp0;
     }
+  }
+}
+
+.nav__percent-complete {
+  font-family: $neuebit;
+  font-size: $fs-1;
+  font-weight: $neuebit-bold;
+  margin-left: auto;
+
+  @include mq($md - 1, max) {
+    bottom: 0.25em;
+    height: 1em;
+    left: var(--gutter-half);
+    position: fixed;
+  }
+
+  @include mq($md) {
+    font-size: $fs0;
+  }
+}
+
+.nav__progress-indicator {
+  background-color: $black;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+
+  @include mq($md - 1, max) {
+    height: $fs-1;
+  }
+
+  @include mq($md) {
+    left: calc(-1 * var(--gutter-half));
+    position: absolute;
+    top: -1px;
   }
 }
