@@ -8,11 +8,10 @@
 
 .entry__content {
   @include content-column;
-  @include margin($sp4 null);
+  padding-top: $sp6;
 
   @include mq($lg) {
-    margin-top: $sp4 * 3;
-    margin-bottom: $sp6;
+    padding-top: $sp8;
   }
 }
 
