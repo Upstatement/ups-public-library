@@ -330,4 +330,8 @@
   th {
     font-weight: $everett-bold;
   }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
 }
