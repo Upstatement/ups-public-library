@@ -15,3 +15,11 @@
     margin-bottom: $sp6;
   }
 }
+
+.dingbat {
+  @include content-column;
+  font-family: $fleuron-dingbats;
+  font-size: $h1;
+  margin-bottom: $sp6;
+  text-align: center;
+}
