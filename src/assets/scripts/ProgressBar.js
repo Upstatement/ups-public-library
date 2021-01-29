@@ -5,8 +5,9 @@ class ProgressBar {
     this.entryContentEl = document.getElementById('js-entry-content');
     this.navigationEl = document.getElementById('js-entry-nav');
     this.progressIndicator = document.getElementById('js-progress-indicator');
+    this.percentCompleteTextWrapper = document.getElementById('js-percent-complete');
 
-    this.setProgressBarWidthThrottled = () => throttle(this.setProgressBarWidth(), 500);
+    this.animateThrottled = () => throttle(this.animate(), 16.66667); // 60fps
 
     this.init();
   }
@@ -25,14 +26,23 @@ class ProgressBar {
   }
 
   setProgressBarWidth() {
+    this.progressIndicator.style.width = `${this.percentComplete}vw`;
+  }
+
+  updatePercentCompleteText() {
+    this.percentCompleteTextWrapper.textContent = `${Math.ceil(this.percentComplete)}%`;
+  }
+
+  animate() {
     window.requestAnimationFrame(() => {
-      this.progressIndicator.style.width = `${this.percentComplete}vw`;
+      this.setProgressBarWidth();
+      this.updatePercentCompleteText();
     });
   }
 
   init() {
-    document.addEventListener('scroll', this.setProgressBarWidthThrottled, { passive: true });
-    window.addEventListener('resize', this.setProgressBarWidthThrottled, { passive: true });
+    document.addEventListener('scroll', () => this.animate(), { passive: true });
+    window.addEventListener('resize', () => this.animate(), { passive: true });
   }
 }
 
