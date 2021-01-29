@@ -26,7 +26,8 @@ class Print {
     this.lineElsFragment = new DocumentFragment();
 
     this.baseCharEl = document.createElement('span');
-    this.baseCharEl.classList.add('js-print-char', this.useHover && 'js-print-shown');
+    this.baseCharEl.classList.add('js-print-char');
+    this.useHover && this.baseCharEl.classList.add('js-print-shown');
 
     // Create empty array to store char DOM elements
     this.charEls = [];
