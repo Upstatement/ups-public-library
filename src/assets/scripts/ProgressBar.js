@@ -4,7 +4,6 @@ class ProgressBar {
   constructor() {
     this.entryContentEl = document.getElementById('js-entry-content');
     this.navigationEl = document.getElementById('js-entry-nav');
-    this.dingbatWrapper = document.getElementById('js-random-dingbat');
     this.progressIndicator = document.getElementById('js-progress-indicator');
 
     this.setProgressBarWidthThrottled = () => throttle(this.setProgressBarWidth(), 500);
@@ -16,8 +15,8 @@ class ProgressBar {
     return (
       this.entryContentEl.scrollHeight -
       window.innerHeight +
-      this.dingbatWrapper.scrollHeight +
-      this.navigationEl.scrollHeight
+      this.navigationEl.getBoundingClientRect().height +
+      (window.innerWidth < 768 ? this.progressIndicator.scrollHeight : 0) // below 768px, the progress bar and nav content are separated, so the heights of both must be added
     );
   }
 
