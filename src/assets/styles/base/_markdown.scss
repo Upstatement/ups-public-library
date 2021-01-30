@@ -306,6 +306,18 @@
     font-weight: $everett-bold;
   }
 
+  kbd {
+    background-color: var(--secondary-bg-color);
+    border-radius: 2px;
+    box-shadow: 0px 2px 0px 1px rgb(0 0 0 / 10%);
+    display: inline-block;
+    font-family: $system-sans;
+    font-size: $fs-kbd;
+    font-weight: 500;
+    padding: 0 4px;
+    transform: translateY(-0.25em);
+  }
+
   > *:last-child {
     margin-bottom: 0;
   }
