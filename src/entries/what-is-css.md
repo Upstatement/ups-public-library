@@ -15,7 +15,7 @@ selector {
 }
 ```
 
-> `property: value;` pairs are referred to as "declarations"
+> `property: value;` pairs are referred to as “declarations”
 
 Selectors target which element(s) a ruleset should affect. A single selector can apply to anywhere from 0 to all elements on a page.
 
@@ -70,7 +70,7 @@ Class selectors are by far the most common and useful selectors, since you have 
 
 ## Combining Selectors
 
-Combinators are characters and keywords that you can use to chain, modify, add conditions to a selector. They are extremely powerful, but can also be extremely confusing. Don't get too complex, and when in doubt, just add a class name.
+Combinators are characters and keywords that you can use to chain, modify, add conditions to a selector. They are extremely powerful, but can also be extremely confusing. Don’t get too complex, and when in doubt, just add a class name.
 
 #### Grouping
 
@@ -149,7 +149,7 @@ h3 + p {
 
 ---
 
-At this point, you should have enough knowledge to write basic CSS. Learning property names and their corresponding values by heart is largely a memorization exercise that takes time. Don't hesitate to look up properties and their documentation on MDN or find advice about how to make something on Stack Overflow. Your editor's autocomplete feature will also likely be a big help.
+At this point, you should have enough knowledge to write basic CSS. Learning property names and their corresponding values by heart is largely a memorization exercise that takes time. Don’t hesitate to look up properties and their documentation on MDN or find advice about how to make something on Stack Overflow. Your editor’s autocomplete feature will also likely be a big help.
 
 #### Helpful Links
 
