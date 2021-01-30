@@ -21,11 +21,11 @@ The area cleared around the content.
 
 #### Border Box
 
-A border that goes around the padding and content. An element's background covers this area (up to the outer edge of the border box) by default. You can change this behavior by setting the `background-clip` property.
+A border that goes around the padding and content. An element’s background covers this area (up to the outer edge of the border box) by default. You can change this behavior by setting the `background-clip` property.
 
 #### Margin Box
 
-The area cleared outside the border. An element's background will never show in its margin box.
+The area cleared outside the border. An element’s background will never show in its margin box.
 
 ## Box Sizing
 
@@ -33,15 +33,15 @@ The CSS attribute `box-sizing` can either be set to `content-box` or `border-box
 
 #### **`content-box`**
 
-The width and height properties **are** inclusive of the element's `content` and **are not** inclusive of the element's `padding`.
+The width and height properties **are** inclusive of the element’s `content` and **are not** inclusive of the element’s `padding`.
 
 #### **`border-box`**
 
-The width and height properties **are** inclusive of the element's `content` **and** `padding`.
+The width and height properties **are** inclusive of the element’s `content` **and** `padding`.
 
 ## Margin Collapsing
 
-You may ask "is there ever a reason I should use margin over padding to space elements, or vice versa?"
+You may ask “is there ever a reason I should use margin over padding to space elements, or vice versa?”
 
 The answer is, yes.
 
@@ -69,25 +69,25 @@ If there is no border, padding, inline part, block formatting context created, o
 ```html
 <section>
   <div>
-    My margin will collapse into my parent's.
+    My margin will collapse into my parent’s.
   </div>
 </section>
 
 <section>
-  I'm in the way...
+  I’m in the way...
   <div>
-    so mine won't.
+    so mine won’t.
   </div>
 </section>
 ```
 
 #### Empty Blocks
 
-If there is no border, padding, inline content, height, or min-height to separate a block's margin-top from its margin-bottom, then its top and bottom margins collapse.
+If there is no border, padding, inline content, height, or min-height to separate a block’s margin-top from its margin-bottom, then its top and bottom margins collapse.
 
 ```html
 <div>
-  <!-- Since I'm empty, my own margins will collapse. -->
+  <!-- Since I’m empty, my own margins will collapse. -->
 </div>
 ```
 
@@ -97,7 +97,7 @@ If there is no border, padding, inline content, height, or min-height to separat
 
 - More complex margin collapsing (of more than two margins) occurs when the above cases are combined.
 
-- These rules apply even to margins that are zero, so the margin of a descendant ends up outside its parent (according to the rules above) whether or not the parent's margin is zero.
+- These rules apply even to margins that are zero, so the margin of a descendant ends up outside its parent (according to the rules above) whether or not the parent’s margin is zero.
 
 - When negative margins are involved, the size of the collapsed margin is the sum of the largest positive margin and the smallest (most negative) negative margin.
 

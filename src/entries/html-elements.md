@@ -6,17 +6,17 @@ topic:
   - HTML
 ---
 
-There are nearly 90 different HTML elements &mdash; you'll only end up using about 10 &ndash; 20 of them regularly. Of those, an even smaller subset will cover most use cases for marking up content, and should be memorized. For the rest, turning to Google and MDN is the best way to make a decision. A good approach to writing markup is to always ask, "does this element accurately describe its content?" If the answer is no or a weak yes, there's a good chance you can pick a better one.
+There are nearly 90 different HTML elements &mdash; you’ll only end up using about 10 &ndash; 20 of them regularly. Of those, an even smaller subset will cover most use cases for marking up content, and should be memorized. For the rest, turning to Google and MDN is the best way to make a decision. A good approach to writing markup is to always ask, “does this element accurately describe its content?” If the answer is no or a weak yes, there’s a good chance you can pick a better one.
 
 You can read the [MDN HTML elements reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) for a full, detailed list.
 
 ## Commonly Used Elements
 
-> You'll notice each element in this list has a "default level". It's explained [at the end of this entry](#element-display-levels).
+> You’ll notice each element in this list has a “default level.” It’s explained [at the end of this entry](#element-display-levels).
 
 #### `section`
 
-Represents a standalone section &mdash; which doesn't have a more specific semantic element to represent it &mdash; contained within an HTML document.
+Represents a standalone section &mdash; which doesn’t have a more specific semantic element to represent it &mdash; contained within an HTML document.
 
 > Default level: Block
 
@@ -120,11 +120,11 @@ Which only requires:
 </details>
 ```
 
-Default styles may be useful at times, but they are ultimately secondary, and shouldn't ever be your reason for choosing an element. What's most important is that you use whichever element most accurately describes the content within it. For this reason, we often remove or override default styles.
+Default styles may be useful at times, but they are ultimately secondary, and shouldn’t ever be your reason for choosing an element. What’s most important is that you use whichever element most accurately describes the content within it. For this reason, we often remove or override default styles.
 
 ## Element Display Levels
 
-HTML elements are categorized as either "block", "inline", or "inline-block" level. Display level is another important factor when choosing elements, since it has semantic, visual, and structural implications (block-level elements can't go inside inline elements). We'll talk more about the design implications of display levels when we get to CSS.
+HTML elements are categorized as either “block”, “inline”, or “inline-block” level. Display level is another important factor when choosing elements, since it has semantic, visual, and structural implications (block-level elements can’t go inside inline elements). We’ll talk more about the design implications of display levels when we get to CSS.
 
 #### Block
 

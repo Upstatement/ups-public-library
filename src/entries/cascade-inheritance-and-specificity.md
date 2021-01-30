@@ -68,7 +68,7 @@ For example, if you set a `color` and `font-family` on an element, every element
 
 Some properties do not inherit &mdash; for example, if you set `width: 50%` on an element, the widths of its children will remain unspecified.
 
-You can check whether a CSS property is inherited on by finding it in [MDN's index of CSS properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference).
+You can check whether a CSS property is inherited on by finding it in [MDN’s index of CSS properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference).
 
 ## Specificity
 

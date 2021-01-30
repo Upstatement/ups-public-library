@@ -10,7 +10,7 @@ topic:
 
 CSS preprocessing adds features for writing CSS, but not for what CSS does in the browser. Each language is a superset of CSS that shares some of the same fundamental syntax and typographical notations, but adds features that are specific to that processor. They let us simplify and consolidate the way CSS is written by making programming features like variables, functions, mixins, and more available to us.
 
-> There are several languages for CSS preprocessing. At Upstatement we use SCSS, so we'll focus on it in the Library.
+> There are several languages for CSS preprocessing. At Upstatement we use SCSS, so we’ll focus on it in the Library.
 
 #### How It Works
 
