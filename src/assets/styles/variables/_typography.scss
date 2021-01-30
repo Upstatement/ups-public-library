@@ -1,7 +1,9 @@
-$sans: 'Everett', system-ui, sans-serif;
+$system-sans: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif,
+  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+$sans: 'Everett', $system-sans;
 $mono: 'EverettMono', Consolas, Menlo, Monaco, 'Courier New', Courier, monospace;
-$fleuron-mix: 'FleuronMixed', system-ui, sans-serif;
-$fleuron-reg: 'FleuronRegular', system-ui, sans-serif;
+$fleuron-mix: 'FleuronMixed', $system-sans;
+$fleuron-reg: 'FleuronRegular', $system-sans;
 $fleuron-dingbats: 'FleuronDingbats', $fleuron-mix;
 $mondwest: 'Mondwest', $sans;
 $neuebit: 'NeueBit', $sans;
@@ -10,6 +12,7 @@ $neuebit-bold: 700;
 $everett-bold: 700;
 
 $fs-smaller: 0.85em;
+$fs-kbd: 0.6em;
 
 $fs-4: 14px;
 $fs-3: 16px;
