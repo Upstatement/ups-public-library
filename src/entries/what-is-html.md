@@ -7,7 +7,7 @@ topic:
 nextEntryTitle: HTML Documents
 ---
 
-HTML, or HyperText Markup Language, is what we use to add content to websites. It's a simple language with only a few rules, but it's also the backbone of a website.
+HTML, or HyperText Markup Language, is what we use to add content to websites. It’s a simple language with only a few rules, but it’s also the backbone of a website.
 
 ## How HTML Works
 
@@ -19,7 +19,7 @@ Every piece of content in HTML goes inside of an element. There are many to choo
 
 ```html
 <p>
-  This is a paragraph element. It's delineated by the opening and closing character sequences above
+  This is a paragraph element. It’s delineated by the opening and closing character sequences above
   and below the text.
 </p>
 ```

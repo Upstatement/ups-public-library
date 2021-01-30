@@ -6,25 +6,25 @@ topic:
   - Terminal
 ---
 
-Most of the time, we interact with computers through graphical interfaces. We can also use the terminal to interface with them through text-based commands. Since writing code is text based, and doesn't depend on a particular program, the terminal is our tool of choice for working on websites.
+Most of the time, we interact with computers through graphical interfaces. We can also use the terminal to interface with them through text-based commands. Since writing code is text based, and doesn’t depend on a particular program, the terminal is our tool of choice for working on websites.
 
 ## How It Works
 
 Operating systems are programs, and we can use code to interface with them. MacOS lets you use [shell scripts](https://en.wikipedia.org/wiki/Shell_script) to give it instructions through the terminal. When we issue commands in the terminal, we are creating and executing tiny scripts for the operating system to run in real time.
 
-Open up terminal (if you can't find it, hit ⌘ + SPACE, then type in 'terminal'). You should see a black window with text that reads something like this:
+Open up terminal (if you can’t find it, hit <kbd>⌘</kbd> + <kbd>SPACE</kbd>, then type in “terminal”). You should see a black window with text that reads something like this:
 
 ```bash
 Your-MacBook-Pro:Your-Username ~ $ _
 ```
 
-This is your computer's interactive shell. There are multiple kinds of shells, and they come with slightly different sets of features. Your system likely uses either `bash` or `zsh` by default.
+This is your computer’s interactive shell. There are multiple kinds of shells, and they come with slightly different sets of features. Your system likely uses either `bash` or `zsh` by default.
 
 > To check your shell, type `echo $0`.
 
 ## Navigating the Filesystem
 
-In terminal, we're always positioned somewhere within our computer's filesystem. We call that current position the "working directory." The command for changing your working directory is `cd` (for change directory), followed by a path. Here are the ingredients for constructing paths:
+In terminal, we’re always positioned somewhere within our computer’s filesystem. We call that current position the “working directory.” The command for changing your working directory is `cd` (for change directory), followed by a path. Here are the ingredients for constructing paths:
 
 #### `.`
 
@@ -62,7 +62,7 @@ No matter where you are, you can start a path with a shortcut character to make 
 ~/Sites/an-awesome-website $ _
 ```
 
-You can chain ../ to go up multiple times.
+You can chain `../` to go up multiple times.
 
 ```bash
 ~/Sites/an-awesome-website $ cd ../../Documents
@@ -83,7 +83,7 @@ Show a list of all the folders in the current directory.
 
 Open a folder in Finder.
 
-#### `open Path/To/File.abc`
+#### `open <file>`
 
 Open a file with the default program (same as double clicking).
 
@@ -123,4 +123,4 @@ Redirect the output of a command to a given path.
 
 These are the basics. There are myriad commands that come with your shell, and you can easily create complex scripts by chaining them together. In addition, you can install command line interfaces (CLI) to add more commands, and increase the amount you can accomplish within terminal.
 
-[Git](/references/#git) is one such CLI that is a core part of contributing to websites and other shared codebases.
+[Git](/entries/intro-to-git) is one such CLI that is a core part of contributing to websites and other shared codebases.
