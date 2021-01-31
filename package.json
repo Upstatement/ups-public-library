@@ -53,6 +53,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "babel-polyfill": "^6.26.0",
+    "eleventy-plugin-nesting-toc": "^1.2.0",
     "fuse.js": "^6.0.0",
     "sass": "^1.26.5"
   },
