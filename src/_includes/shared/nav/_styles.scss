@@ -13,8 +13,8 @@
     border-top: 1px solid $black;
     bottom: 0;
     left: 0;
-    padding-left: calc((100% - #{$content-max-width}) / 2);
-    padding-right: calc((100% - #{$content-max-width}) / 2);
+    padding-left: calc((100% - var(--content-max-width)) / 2);
+    padding-right: calc((100% - var(--content-max-width)) / 2);
     position: fixed;
     right: 0;
     width: auto;
