@@ -58,6 +58,6 @@
 @mixin content-column {
   @include gutters(horiz, full);
   @include margin(null auto);
-  max-width: $content-max-width;
+  max-width: var(--content-max-width);
   width: 100%;
 }
