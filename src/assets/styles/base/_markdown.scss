@@ -147,31 +147,6 @@
     background-color: #902f2f;
   }
 
-  /* Direct Links / Markdown Headers */
-  a.direct-link {
-    margin-left: 0.1em;
-    font-family: inherit;
-    color: transparent;
-
-    &:visited {
-      color: transparent;
-    }
-
-    &:focus,
-    &:focus:visited {
-      color: var(--secondary-text-color);
-    }
-  }
-
-  :hover > a.direct-link,
-  :hover > a.direct-link:visited {
-    color: var(--secondary-text-color);
-
-    &:hover {
-      color: $blue;
-    }
-  }
-
   img[alt~='small'] {
     width: 300px;
   }
