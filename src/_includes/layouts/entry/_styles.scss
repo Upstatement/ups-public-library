@@ -14,8 +14,8 @@
   display: none;
   flex-direction: column;
   font-size: $fs-4;
-  justify-content: center;
   left: 0;
+  overflow-y: auto;
   padding-left: var(--gutter-half);
   position: fixed;
   top: 0;
@@ -28,6 +28,8 @@
 
 .entry__toc {
   line-height: 1;
+  margin-bottom: auto;
+  margin-top: auto;
   position: relative;
 
   @media (min-width: $md) and (max-width: $xl) {
