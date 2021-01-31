@@ -3,6 +3,7 @@ const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const pluginNavigation = require('@11ty/eleventy-navigation');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
+const pluginTOC = require('eleventy-plugin-nesting-toc');
 const { getSlugMap, getSortedCollection, indexItems } = require('./src/_11ty/collections');
 const { htmlDateString, readableDate, split } = require('./src/_11ty/filters');
 
@@ -13,16 +14,17 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
 
+  eleventyConfig.addPlugin(pluginTOC, {
+    wrapperClass: 'entry__toc',
+  });
+
   /* Markdown Overrides */
   let markdownLibrary = markdownIt({
     html: true,
     breaks: true,
     linkify: true,
-  }).use(markdownItAnchor, {
-    permalink: true,
-    permalinkClass: 'direct-link',
-    permalinkSymbol: '#',
-  });
+    typographer: true,
+  }).use(markdownItAnchor);
   eleventyConfig.setLibrary('md', markdownLibrary);
 
   eleventyConfig.setDataDeepMerge(true);
