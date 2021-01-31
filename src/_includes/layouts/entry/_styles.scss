@@ -15,6 +15,7 @@
   flex-direction: column;
   font-size: $fs-4;
   left: 0;
+  line-height: $fs-4;
   overflow-y: auto;
   padding-left: var(--gutter-half);
   position: fixed;
@@ -27,13 +28,12 @@
 }
 
 .entry__toc {
-  line-height: 1;
   margin-bottom: auto;
   margin-top: auto;
   position: relative;
 
-  @media (min-width: $md) and (max-width: $xl) {
-    min-width: 10em;
+  @media (min-width: $md) and (max-width: $lg) {
+    min-width: 12em;
 
     &::before {
       @include layer(-1);
@@ -47,7 +47,7 @@
       top: 50%;
       transform: translateY(-50%);
       transition: width 100ms ease;
-      width: $sp2;
+      width: $sp2 - 4px;
     }
 
     &:hover,
@@ -63,20 +63,40 @@ li {
   .entry__toc & {
     margin: $sp-3 0;
 
-    > * {
-      padding-left: 0.6em;
+    a {
+      padding-left: 0.7em;
     }
 
     ol {
       li {
-        a::before {
-          content: '••';
+        a {
+          padding-left: 1.2em;
+
+          &::before {
+            content: '••';
+          }
         }
 
         ol {
           li {
-            a::before {
-              content: '•••';
+            a {
+              padding-left: 1.6em;
+
+              &::before {
+                content: '•••';
+              }
+            }
+
+            ol {
+              li {
+                a {
+                  padding-left: 2em;
+
+                  &::before {
+                    content: '••••';
+                  }
+                }
+              }
             }
           }
         }
@@ -89,8 +109,10 @@ a {
   .entry__toc:hover & {
     color: var(--secondary-text-color);
 
-    &::before {
-      color: var(--secondary-text-color);
+    &.current {
+      &:not(:hover):not(:focus) {
+        color: var(--text-color);
+      }
     }
   }
 }
@@ -101,24 +123,32 @@ a {
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
-    transition: color ease 150ms;
+    transition: color ease 150ms, -webkit-text-stroke ease 150ms;
     white-space: nowrap;
     width: 100%;
 
     &::before {
-      color: var(--text-color);
+      -webkit-text-stroke: 1px var(--text-color);
+      color: var(--bg-color);
       content: '•';
       display: inline-block;
+      font-size: $fs-3;
       left: 0;
-      letter-spacing: 0.05em;
       position: absolute;
       transform: translateY(-1px);
+    }
+
+    &.current {
+      &::before {
+        color: var(--text-color);
+      }
     }
 
     @include on-focus {
       color: $blue;
 
       &::before {
+        -webkit-text-stroke: $blue 1px;
         color: $blue;
       }
     }
