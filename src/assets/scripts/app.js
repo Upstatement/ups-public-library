@@ -7,6 +7,7 @@ import SearchBar from './SearchBar';
 import Print from './Print';
 import ProgressBar from './ProgressBar';
 import RandomDingbat from './RandomDingbat';
+import InteractiveTOC from './InteractiveTOC';
 // import ThemeToggle from './ThemeToggle';
 
 onDocumentReady(() => {
@@ -23,5 +24,6 @@ onDocumentReady(() => {
   if (document.getElementById('js-entry-content')) {
     new ProgressBar();
     new RandomDingbat();
+    new InteractiveTOC();
   }
 });
