@@ -1,4 +1,18 @@
 $sm-header-height: $sp3 * 2;
 $header-height: $sp5 * 2;
 
-$content-max-width: 980px;
+$content-max-width-sm: 700px;
+$content-max-width-lg: 800px;
+$content-max-width-xl: 920px;
+
+:root {
+  --content-max-width: #{$content-max-width-sm};
+
+  @media (min-width: $lg) {
+    --content-max-width: #{$content-max-width-lg};
+  }
+
+  @media (min-width: $xl) {
+    --content-max-width: #{$content-max-width-xl};
+  }
+}
