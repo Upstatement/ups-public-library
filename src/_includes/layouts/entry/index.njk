@@ -11,18 +11,27 @@ templateClass: entry
 {% endmacro %}
 
 {% if content %}
-  <section class="entry__content md" id="js-entry-content">
-    <h1>{{ wrapWords(title) }}</h1>
-    {{ content | safe }}
-    {% if nextEntryTitle %}
-      <hr>
-      <p>
-        Next:
-        <a href="{{ '/entries/' ~ nextEntryTitle | slug }}" class="next-entry-link">{{ nextEntryTitle }}</a>
-      </p>
-    {% endif %}
-  </section>
-  <div class="dingbat__wrapper">
-    <span id="js-random-dingbat" class="dingbat__text"></span>
-  </div>
+  <aside class="entry__toc--wrapper">
+    {{ content | toc | safe }}
+  </aside>
+  <article>
+    <section class="entry__content md" id="js-entry-content">
+      <h1>{{ wrapWords(title) }}</h1>
+      {{ content | safe }}
+    </section>
+    <footer class="entry__footer">
+      {% if nextEntryTitle %}
+        <section class="md">
+          <hr>
+          <p>
+            Next:
+            <a href="{{ '/entries/' ~ nextEntryTitle | slug }}" class="next-entry-link">{{ nextEntryTitle }}</a>
+          </p>
+        </section>
+      {% endif %}
+      <div class="dingbat__wrapper">
+        <span id="js-random-dingbat" class="dingbat__text"></span>
+      </div>
+    </footer>
+  </article>
 {% endif %}

@@ -8,8 +8,127 @@
   }
 }
 
-.entry__content {
+.entry__toc--wrapper {
+  @include layer(2);
+  bottom: $sp7;
+  display: none;
+  flex-direction: column;
+  font-size: $fs-4;
+  justify-content: center;
+  left: 0;
+  padding-left: var(--gutter-half);
+  position: fixed;
+  top: 0;
+
+  @include mq($md) {
+    display: flex;
+    max-width: calc((100% - var(--content-max-width)) / 2);
+  }
+}
+
+.entry__toc {
+  line-height: 1;
+  position: relative;
+
+  @media (min-width: $md) and (max-width: $xl) {
+    min-width: 10em;
+
+    &::before {
+      @include layer(-1);
+      background-color: var(--bg-color);
+      border-right: 1px solid var(--bg-color-inverted);
+      content: '';
+      height: calc(100vh - #{$sp7});
+      left: 0;
+      opacity: 0.9;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: width 100ms ease;
+      width: $sp2;
+    }
+
+    &:hover,
+    &:focus-within {
+      &:before {
+        width: calc(100% + var(--gutter-half));
+      }
+    }
+  }
+}
+
+li {
+  .entry__toc & {
+    margin: $sp-3 0;
+
+    > * {
+      padding-left: 0.6em;
+    }
+
+    ol {
+      li {
+        a::before {
+          content: '••';
+        }
+
+        ol {
+          li {
+            a::before {
+              content: '•••';
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+a {
+  .entry__toc:hover & {
+    color: var(--secondary-text-color);
+
+    &::before {
+      color: var(--secondary-text-color);
+    }
+  }
+}
+
+a {
+  .entry__toc & {
+    color: rgba(0, 0, 0, 0);
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color ease 150ms;
+    white-space: nowrap;
+    width: 100%;
+
+    &::before {
+      color: var(--text-color);
+      content: '•';
+      display: inline-block;
+      left: 0;
+      letter-spacing: 0.05em;
+      position: absolute;
+      transform: translateY(-1px);
+    }
+
+    @include on-focus {
+      color: $blue;
+
+      &::before {
+        color: $blue;
+      }
+    }
+  }
+}
+
+.entry__content,
+.entry__footer {
   @include content-column;
+}
+
+.entry__content {
   padding-top: $sp6;
 
   @include mq($lg) {
