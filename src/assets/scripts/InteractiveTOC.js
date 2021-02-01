@@ -24,16 +24,15 @@ class InteractiveTOC {
 
   useSmoothScroll() {
     this.anchors.forEach(anchor => {
-      const selector = this.escapeStringForCSS(anchor.getAttribute('href'));
-      const viewportPosY = window.innerHeight * (this.eyeLevel / 100);
-      const scrollPosY =
-        document.querySelector(selector).getBoundingClientRect().top +
-        window.pageYOffset -
-        viewportPosY;
+      const headingID = this.escapeStringForCSS(anchor.getAttribute('href'));
 
       anchor.addEventListener('click', e => {
+        const headingTop = document.querySelector(headingID).getBoundingClientRect().top;
+        const viewportTargetPercent = window.innerHeight * ((this.eyeLevel - 5) / 100);
+        const scrollDestination = headingTop + window.pageYOffset - viewportTargetPercent;
+
         e.preventDefault();
-        window.scrollTo({ top: scrollPosY, behavior: 'smooth' });
+        window.scrollTo({ top: scrollDestination, behavior: 'smooth' });
         e.target.blur();
       });
     });
