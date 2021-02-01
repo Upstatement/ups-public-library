@@ -1,10 +1,9 @@
 ---
 layout: layouts/entry/index.njk
 title: Intro to Terminal
-date: 2021-01-17
-tags:
-  - terminal
-  - basic
+date: 2021-02-01
+topic:
+  - Terminal
 ---
 
 Most of the time, we interact with computers through graphical interfaces. We can also use the terminal to interface with them through text-based commands. Since writing code is text based, and doesn't depend on a particular program, the terminal is our tool of choice for working on websites.
