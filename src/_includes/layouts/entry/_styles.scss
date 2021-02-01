@@ -16,14 +16,49 @@
   font-size: $fs-4;
   left: 0;
   line-height: $fs-4;
-  overflow-y: auto;
+  overflow-x: hidden;
+  overflow-y: hidden;
   padding-left: var(--gutter-half);
   position: fixed;
   top: 0;
 
+  &:hover,
+  &:focus-within {
+    overflow-y: auto;
+  }
+
   @include mq($md) {
     display: flex;
     max-width: calc((100% - var(--content-max-width)) / 2);
+  }
+
+  @media (min-width: $md) and (max-width: $lg) {
+    transition: width 100ms ease;
+    width: calc((100% - var(--content-max-width)) / 2);
+    max-width: none;
+
+    &::before {
+      @include layer(-1);
+      background-color: var(--bg-color);
+      border-right: 1px solid var(--bg-color-inverted);
+      content: '';
+      height: calc(100vh - #{$sp7});
+      left: 0;
+      position: fixed;
+      top: 0;
+      transition: width 100ms ease;
+      width: $sp3;
+    }
+
+    &:hover,
+    &:focus-within {
+      max-width: 18em;
+      width: 18em;
+
+      &:before {
+        width: 18em;
+      }
+    }
   }
 }
 
@@ -33,29 +68,9 @@
   position: relative;
 
   @media (min-width: $md) and (max-width: $lg) {
-    min-width: 12em;
-
-    &::before {
-      @include layer(-1);
-      background-color: var(--bg-color);
-      border-right: 1px solid var(--bg-color-inverted);
-      content: '';
-      height: calc(100vh - #{$sp7});
-      left: 0;
-      opacity: 0.9;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      transition: width 100ms ease;
-      width: $sp2 - 4px;
-    }
-
-    &:hover,
-    &:focus-within {
-      &:before {
-        width: calc(100% + var(--gutter-half));
-      }
-    }
+    @include layer(1);
+    position: relative;
+    padding-right: var(--gutter-half);
   }
 }
 
@@ -112,6 +127,18 @@ a {
     &.current {
       &:not(:hover):not(:focus) {
         color: var(--text-color);
+      }
+    }
+  }
+
+  @media (min-width: $md) and (max-width: $lg) {
+    .entry__toc--wrapper:hover & {
+      color: var(--secondary-text-color);
+
+      &.current {
+        &:not(:hover):not(:focus) {
+          color: var(--text-color);
+        }
       }
     }
   }
