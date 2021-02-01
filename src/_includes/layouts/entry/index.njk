@@ -15,23 +15,33 @@ templateClass: entry
     {{ content | toc | safe }}
   </aside>
   <article>
+    <header class="entry__header">
+      <span class="entry__dat">
+        {{ date | readableDate }}
+      </span>
+      {% if topic %}
+        <span class="entry__topic">
+          /
+          {{ topic }}
+        </span>
+      {% endif %}
+    </header>
     <section class="entry__content md" id="js-entry-content">
       <h1>{{ wrapWords(title) }}</h1>
       {{ content | safe }}
     </section>
     <footer class="entry__footer">
-      {% if nextEntryTitle %}
-        <section class="md">
-          <hr>
-          <p>
-            Next:
-            <a href="{{ '/entries/' ~ nextEntryTitle | slug }}" class="next-entry-link">{{ nextEntryTitle }}</a>
-          </p>
-        </section>
-      {% endif %}
       <div class="dingbat__wrapper">
         <span id="js-random-dingbat" class="dingbat__text"></span>
       </div>
+      {% if nextEntryTitle %}
+        <nav class="next-entry md">
+          <div>
+            Next in this series:
+          </div>
+          <a href="{{ '/entries/' ~ nextEntryTitle | slug }}" class="next-entry-link">{{ nextEntryTitle }}</a>
+        </nav>
+      {% endif %}
     </footer>
   </article>
 {% endif %}
