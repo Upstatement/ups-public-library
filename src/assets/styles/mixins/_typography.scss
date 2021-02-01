@@ -1,7 +1,7 @@
 @mixin responsive-font-size($base) {
   font-size: map-get($font-sizes, fs#{$base - 1});
 
-  @include mq($lg) {
+  @include mq($xl) {
     font-size: map-get($font-sizes, fs#{$base});
   }
 }
@@ -25,7 +25,7 @@
     text-transform: uppercase;
   }
 
-  @include mq($lg) {
+  @include mq($xl) {
     font-size: $fs-base;
   }
 }
