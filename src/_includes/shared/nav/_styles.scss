@@ -1,6 +1,6 @@
 .site__nav {
   @include flex;
-  @include gutters(horiz, half, margin);
+  @include gutters(horiz, half);
   @include gutters(vert, half);
   @include layer(2);
   align-items: flex-end;
@@ -13,8 +13,6 @@
     border-top: 1px solid $black;
     bottom: 0;
     left: 0;
-    padding-left: calc((100% - var(--content-max-width)) / 2);
-    padding-right: calc((100% - var(--content-max-width)) / 2);
     position: fixed;
     right: 0;
     width: auto;
@@ -63,7 +61,7 @@
     @include layer(1);
     pointer-events: none;
     position: absolute;
-    top: var(--gutter-full);
+    top: $sp0;
 
     @include mq($md) {
       top: $sp0;
@@ -100,7 +98,6 @@
   }
 
   @include mq($md) {
-    left: calc(-1 * var(--gutter-half));
     position: absolute;
     top: -1px;
   }
