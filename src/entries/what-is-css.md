@@ -1,10 +1,9 @@
 ---
 layout: layouts/entry/index.njk
 title: What is CSS?
-date: 2021-01-17
-tags:
-  - css
-  - basic
+date: 2021-02-01
+topic:
+  - CSS
 nextEntryTitle: Cascade, Inheritance, & Specificity
 ---
 

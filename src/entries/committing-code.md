@@ -1,10 +1,9 @@
 ---
 layout: layouts/entry/index.njk
 title: Committing Code
-date: 2021-01-17
-tags:
-  - git
-  - basic
+date: 2021-02-01
+topic:
+  - Git
 nextEntryTitle: Pushing, Pulling, & Merging
 ---
 
