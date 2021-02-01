@@ -1,11 +1,12 @@
 class InteractiveTOC {
   constructor() {
+    this.TOCWrapper = document.querySelector('.entry__toc--wrapper');
     this.headings = [...document.querySelectorAll('h2[id], h3[id], h4[id]')];
     this.anchors = this.headings.map(({ id }) =>
       document.querySelector(`a[href="#${this.escapeStringForCSS(id)}"]`),
     );
 
-    this.eyeLevel = 25; // percentage of viewport, from the top
+    this.eyeLevel = 20; // percentage of viewport, from the top
 
     const observerOptions = {
       rootMargin: `0% 0% -${100 - this.eyeLevel}% 0%`,
@@ -42,6 +43,14 @@ class InteractiveTOC {
     this.anchors.forEach(anchor => {
       if (headingID === anchor.href.split('#')[1]) {
         anchor.classList.add('current');
+
+        if (anchor.getBoundingClientRect().top > this.TOCWrapper.getBoundingClientRect().bottom) {
+          anchor.scrollIntoView({ block: 'end', behavior: 'smooth' });
+        } else if (
+          anchor.getBoundingClientRect().bottom < this.TOCWrapper.getBoundingClientRect().top
+        ) {
+          anchor.scrollIntoView({ block: 'start', behavior: 'smooth' });
+        }
       } else {
         anchor.classList.remove('current');
       }
