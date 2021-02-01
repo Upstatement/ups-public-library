@@ -182,9 +182,20 @@ a {
   }
 }
 
+.entry__header,
 .entry__content,
 .entry__footer {
   @include content-column;
+}
+
+.entry__header,
+.entry__footer {
+  font-size: $fs-3;
+  text-align: center;
+}
+
+.entry__header {
+  padding-top: var(--gutter-full);
 }
 
 .entry__content {
@@ -192,6 +203,14 @@ a {
 
   @include mq($lg) {
     padding-top: $sp8;
+  }
+}
+
+.next-entry {
+  padding-bottom: var(--gutter-full);
+
+  a {
+    font-size: $fs-1;
   }
 }
 
