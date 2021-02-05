@@ -15,6 +15,12 @@ templateClass: entry
     {{ content | toc | safe }}
   </aside>
   <article>
+    <nav id="js-entry-nav" class="site__nav">
+      <div id="js-progress-indicator" class="nav__progress-indicator"></div>
+      <a href="/" class="nav__print nav__print--upl" data-print="Upstatement/n/Public Library/n/v2.0a" data-initial-delay="1000"></a>
+      <div class="nav__print nav__print--abl" data-print="Always be learning." data-initial-delay="11500" data-visible-for="1000" data-invisible-for="11000" data-fill-mode="backwards"></div>
+      <div id="js-percent-complete" class="nav__percent-complete">0%</div>
+    </nav>
     <header class="entry__header">
       <span class="entry__dat">
         {{ date | readableDate }}

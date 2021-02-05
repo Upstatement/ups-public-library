@@ -1,3 +1,5 @@
+$progress-bar-height: 73px;
+
 .entry {
   padding-bottom: $fs-1;
   padding-top: var(--gutter-half);
@@ -8,9 +10,11 @@
   }
 }
 
+// Table of contents
+
 .entry__toc--wrapper {
   @include layer(2);
-  bottom: $sp7;
+  bottom: $progress-bar-height;
   display: none;
   flex-direction: column;
   font-size: $fs-4;
@@ -42,7 +46,7 @@
       background-color: var(--bg-color);
       border-right: 1px solid var(--bg-color-inverted);
       content: '';
-      height: calc(100vh - #{$sp7});
+      height: calc(100vh - #{$progress-bar-height});
       left: 0;
       position: fixed;
       top: 0;
@@ -182,6 +186,115 @@ a {
   }
 }
 
+// Nav
+
+.site__nav {
+  @include flex;
+  @include gutters(horiz, half);
+  @include gutters(vert, half);
+  @include layer(2);
+  align-items: flex-end;
+  background-color: $white;
+  flex-direction: row;
+  position: relative;
+
+  @media (max-width: $md) {
+    justify-content: center;
+    margin-bottom: $sp4;
+    text-align: center;
+  }
+
+  @include mq($md) {
+    border-top: 1px solid $black;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    width: auto;
+  }
+}
+
+.nav__print,
+.nav__percent-complete {
+  color: $white;
+  mix-blend-mode: difference;
+}
+
+.nav__print {
+  font-size: $fs-1;
+  line-height: 1;
+
+  &--upl,
+  &--abl {
+    font-family: $mondwest;
+  }
+
+  &--upl {
+    @include layer(2);
+    position: relative;
+
+    .js-print-line:not(:first-child) {
+      display: inline-block;
+    }
+
+    .js-print-line:last-child {
+      vertical-align: super;
+      font-size: 75%;
+      font-family: $neuebit;
+      font-weight: $neuebit-bold;
+    }
+
+    @include on-focus {
+      + .nav__print {
+        display: none;
+      }
+    }
+  }
+
+  &--abl {
+    @include layer(1);
+    pointer-events: none;
+    position: absolute;
+    top: $sp0;
+  }
+}
+
+.nav__percent-complete {
+  font-family: $neuebit;
+  font-size: $fs-1;
+  font-weight: $neuebit-bold;
+  margin-left: auto;
+
+  @include mq($md - 1, max) {
+    bottom: 0.25em;
+    height: 1em;
+    left: var(--gutter-half);
+    position: fixed;
+  }
+
+  @include mq($md) {
+    font-size: $fs0;
+  }
+}
+
+.nav__progress-indicator {
+  background-color: $black;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+
+  @include mq($md - 1, max) {
+    height: $fs-1;
+  }
+
+  @include mq($md) {
+    position: absolute;
+    top: -1px;
+  }
+}
+
+// Entry content
+
 .entry__header,
 .entry__content,
 .entry__footer {
@@ -191,19 +304,30 @@ a {
 .entry__header,
 .entry__footer {
   font-size: $fs-3;
-  text-align: center;
 }
 
 .entry__header {
   padding-top: var(--gutter-full);
+
+  @include mq($md) {
+    text-align: center;
+  }
 }
 
 .entry__content {
-  padding-top: $sp6;
+  padding-top: var(--gutter-half);
+
+  @include mq($md) {
+    padding-top: $sp6;
+  }
 
   @include mq($lg) {
     padding-top: $sp8;
   }
+}
+
+.entry__footer {
+  text-align: center;
 }
 
 .next-entry {
