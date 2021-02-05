@@ -18,9 +18,6 @@
     {% include "shared/svgs.njk" %}
 
     <main class="main{% if templateClass %} {{ templateClass }}{% endif %}">
-      {% if templateClass === "entry" %}
-        {% include "shared/nav/index.njk" %}
-      {% endif %}
       {{ content | safe }}
     </main>
 
