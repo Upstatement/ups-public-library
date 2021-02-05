@@ -1,7 +1,7 @@
 ---
 layout: layouts/entry/index.njk
 title: Intro to Terminal
-date: 2021-02-01
+date: 2021-02-05
 topic:
   - Terminal
 ---
@@ -71,7 +71,7 @@ You can chain ../ to go up multiple times.
 
 ## Basic Commands
 
-#### `cd <folder>`
+#### `cd [folder]`
 
 Change your current directory to the given path.
 
@@ -79,7 +79,7 @@ Change your current directory to the given path.
 
 Show a list of all the folders in the current directory.
 
-#### `open <folder>`
+#### `open [folder]`
 
 Open a folder in Finder.
 
@@ -87,11 +87,11 @@ Open a folder in Finder.
 
 Open a file with the default program (same as double clicking).
 
-#### `<app name> <folder or file>`
+#### `[app] [folder or file]`
 
 Open a folder or file with a specific app.
 
-#### `mkdir <folder or file>`
+#### `mkdir [folder or file]`
 
 Creates a directory at the specified location, using the name at the end of the path.
 
@@ -99,7 +99,7 @@ Creates a directory at the specified location, using the name at the end of the 
 
 Creates a new file at the specified location, using the name and extension at the end of the path.
 
-#### `cp <folder or file> <folder or file>`
+#### `cp [folder or file] [folder or file]`
 
 Copy and paste the first argument to the second argument.
 
@@ -115,7 +115,7 @@ Do both commands simultaneously.
 
 Do the first command, then immediately do the second once complete.
 
-#### `command ><folder or file>`
+#### `command >[folder or file]`
 
 Redirect the output of a command to a given path.
 
