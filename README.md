@@ -42,13 +42,12 @@ This project uses `nvm` and `npm`.
 
 ## Contributing Guidelines
 
-You can teach about whatever you like. We ask that you keep your scope moderate. You can go as in-depth as you like, though. We don’t prescribe a voice or homogeny throughout the library. Embrace your own style and allow your own understanding to direct the lesson.
+You can teach about whatever you like. We ask that you keep your scope moderate and entries digestable. We don’t prescribe a voice or homogeny throughout the Library, so embrace your style and allow your own understanding to direct the lesson.
 
-What we ask of you:
 - Scaffold your lesson. Doing so will make it easier to follow and retain.
 - Attend theory, principals, and best-practices when they present themselves. You don’t need to go into detail — just acknowledge them and their relevance to the lesson. A contrived example would be:
-> We’ll extract this operation into a function so that we don’t need to repeat our code each time we use it with different parameters.
-- If your lesson has knowledge prerequisites not captured in the Library, please add an epigraph with links to people can reference to attain that knowledge (somewhere like MDN is ideal).
+  > We’ll extract this operation into a function so that we don’t need to repeat our code each time we use it with different parameters.
+- If your lesson has knowledge prerequisites not captured in the Library, please add an epigraph with references to where it can be attained (somewhere like MDN is ideal). Or, if you're up for it, consider making a feature request for the missing information, or adding it yourself :)
 - If your lesson is paired with visuals or functional examples, please include them.
 
 ### Creating a new entry via CLI:
