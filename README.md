@@ -1,15 +1,14 @@
 # Upstatement Public Library
 
-todo: point to upl (currently points to playbook)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/2d819e1c-bc96-4eae-b9a7-8c551fe63a82/deploy-status)](https://app.netlify.com/sites/ups-playbook/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bee8b1d9-081e-4ca7-8482-95831f48f177/deploy-status)](https://app.netlify.com/sites/ups-public-library/deploys)
 
-A playbook for Upstatement technology decision making built with [Eleventy](https://www.11ty.dev/)
+A site dedicated to helping web designers learn to code. Compiled by the people of Upstatement. Built with [Eleventy](https://www.11ty.dev/)
 
-Forked from [Eleventy Base Blog](https://github.com/11ty/eleventy-base-blog)
+> Forked from [Eleventy Base Blog](https://github.com/11ty/eleventy-base-blog) ([Eleventy Docs](https://www.11ty.dev/docs/))
 
-View the [Eleventy Docs](https://www.11ty.dev/docs/)
+## Environment Setup
 
-## Getting Started
+This project uses `nvm` and `npm`.
 
 1. Install dependencies
 
@@ -41,11 +40,18 @@ View the [Eleventy Docs](https://www.11ty.dev/docs/)
    npm run build
    ```
 
-## How To Contribute
+## Contributing Guidelines
 
-Playbook documents projects, technologies, and solutions in markdown files.
+You can teach about whatever you like. We ask that you keep your scope moderate. You can go as in-depth as you like, though. We don’t prescribe a voice or homogeny throughout the library. Embrace your own style and allow your own understanding to direct the lesson.
 
-### Creating a new project, technology, or solution page via CLI
+What we ask of you:
+- Scaffold your lesson. Doing so will make it easier to follow and retain.
+- Attend theory, principals, and best-practices when they present themselves. You don’t need to go into detail — just acknowledge them and their relevance to the lesson. A contrived example would be:
+> We’ll extract this operation into a function so that we don’t need to repeat our code each time we use it with different parameters.
+- If your lesson has knowledge prerequisites not captured in the Library, please add an epigraph with links to people can reference to attain that knowledge (somewhere like MDN is ideal).
+- If your lesson is paired with visuals or functional examples, please include them.
+
+### Creating a new entry via CLI:
 
 In your terminal, run the following command and follow the prompts.
 
@@ -82,12 +88,12 @@ npm run start:netlify
 │   ├── _data               # Site data lives here, where external data can be pulled in
 │   ├── _includes           # Template layouts & partials
 │   ├── api                 # We can add JSON endpoints here
-│   ├── assets              # Fonts, images, SCSS, and JS live here
-│   ├── feed                # We can expose an XML feed here
-│   ├── pages               # Pages of the site live here
-│   ├── projects            # Project data (markdown files)
-│   ├── solutions           # Solution data (markdown files)
-│   └── technologies        # Technology data (markdown files)
+│   ├── assets              # SCSS and JS
+│   ├── collections         # Non-serialized, topically related groups entries
+│   ├── entries             # All entries (markdown files)
+│   ├── pages               # Pages of the site
+│   ├── series              # Serialized groups of entries that build toward a specific outome
+│   └── static              # Fonts and images
 ├── .eleventy.js            # Eleventy config
 └── package.json            # You know what it is
 ```
