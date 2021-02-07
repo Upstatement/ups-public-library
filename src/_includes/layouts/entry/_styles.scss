@@ -255,7 +255,11 @@ a {
     @include layer(1);
     pointer-events: none;
     position: absolute;
-    top: $sp0;
+    top: var(--gutter-half);
+
+    @include mq($md) {
+      top: calc(var(--gutter-half) + 1px);
+    }
   }
 }
 
