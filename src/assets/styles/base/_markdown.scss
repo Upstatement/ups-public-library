@@ -103,10 +103,6 @@
       content: 'scss';
     }
 
-    &[class*='scss']:before {
-      content: 'Language: scss';
-    }
-
     &[class*='html']:before {
       content: 'html';
     }

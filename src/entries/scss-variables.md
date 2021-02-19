@@ -1,21 +1,19 @@
 ---
 layout: layouts/entry/index.njk
 title: SCSS Variables
-date: 2021-01-17
+date: 2021-02-19
 tags:
   - scss
 nextEntryTitle: Nesting Selectors
 ---
 
-Variables are a simple, yet fundamental component of writing SCSS. Creating and using variables means that tweaking a color, increasing a font size, or adjusting global spacing can be done by changing code in just one place, instead of everywhere that value is used.
+Variables are a simple yet fundamental component of writing SCSS. Creating and using variables means that tweaking a color, increasing a font size, or adjusting global spacing can be done by changing code in just one place, instead of everywhere that value is used.
 
 > It's imperative to note that, after preprocessors had been around for some time, variables were added to vanilla CSS. Vanilla CSS variables are powerful, useful, and entirely compatible with SCSS variables. We'll be focusing on SCSS variables in this entry.
 
-For an in-depth explanation, see the [official documentation of Sass variables](https://sass-lang.com/documentation/variables).
-
 ## Declaring Variables
 
-Variable declarations look much like style declarations. Variable names must begin with a `$`. To declare a variable, simply type the name, followed by the value, like so:
+Variable declarations look much like style declarations &mdash; the key difference is that variable names must begin with a `$`. To declare a variable, simply type the name, followed by the value, like so:
 
 ```scss
 $purple: #8e4cf8;
@@ -38,6 +36,8 @@ input {
   border: 1px solid $purple;
 }
 ```
+
+For an in-depth explanation on how SCSS variables work, see the [official documentation of Sass variables](https://sass-lang.com/documentation/variables).
 
 ## Variable Composition
 
@@ -103,7 +103,7 @@ As you can see, it's useful to scaffold variables with levels of meaning. We oft
 
 Scope is inherited as SCSS nests. Declaring a variable outside of a selector places it in the global scope. Declaring a variable inside a selector scopes it to that selector, and all nested selectors.
 
-If you use the same name more than once, the declaration that is most recent and in the nearest scope will be used. Reusing variable names should generally be avoided, unless you are intentionally updating a variable's value.
+If you declare multiple variables with the same name, the declaration that is most recent and in the nearest scope will be used:
 
 ```scss
 $img-size: 200px;
@@ -116,7 +116,7 @@ article {
 }
 
 .portrait-wrapper {
-  $size: 10px;
+  $img-size: 10px;
 
   img {
     width: $img-size; // 10px
@@ -125,11 +125,15 @@ article {
 }
 ```
 
-For more on scope and compilation, check out the [official Sass docs](https://sass-lang.com/documentation/variables#scope).
+Reusing variable names should generally be avoided, unless you are intentionally updating a variable's value. The above is a good example of what not to do. At other times though, like in mixins, creating and overwriting variables can be useful.
+
+For more on SCSS scope and compilation, check out the [official Sass docs](https://sass-lang.com/documentation/variables#scope).
 
 ## Variable Interpolation
 
-You may need to use variables for things other than property values. By interpolating a variable, you can embed its value in other parts of your styles, and use them as dynamic property names, inside `calc()` functions, and more.
+You may need to use variables for things other than property values. By interpolating a variable, you can embed its value in other parts of your styles, use them as dynamic property names, inside `calc()` functions, and more.
+
+#### In `calc()` functions
 
 ```scss
 .two-up-image {
@@ -139,6 +143,18 @@ You may need to use variables for things other than property values. By interpol
   img {
     flex: 0 1 calc((100% - #{$gutter-width}) / 2);
   }
+}
+```
+
+#### As property names
+
+```scss
+@mixin site-spacing($property, $side) {
+  #{$property}-#{$side}: $site-spacing;
+}
+
+.section {
+  @include site-spacing(padding, top);
 }
 ```
 
