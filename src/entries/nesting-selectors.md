@@ -4,7 +4,7 @@ title: Nesting Selectors
 date: 2021-02-19
 tags:
   - scss
-nextEntryTitle: Creating Mixins
+nextEntryTitle: Mixins
 ---
 
 One of the most obvious changes SCSS brings to writing styles is the ability to nest them. In CSS, selectors can only contain rules. In SCSS, selectors can contain other selectors, which is called nesting.
