@@ -1,7 +1,7 @@
 ---
 layout: layouts/series/index.njk
-title: Learn SCSS
-date: 2021-01-17
+title: SCSS Basics
+date: 2021-02-19
 tags:
 entries:
   - CSS Preprocessing
