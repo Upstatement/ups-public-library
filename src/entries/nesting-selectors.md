@@ -41,7 +41,7 @@ Before we get into it, let's talk about what not to do. It's tempting to nest de
 
 Here's an inadvisable example of nesting:
 
-<p style="text-align: center;">🙅</p>
+<p style="text-align: center;"><i>☹</i></p>
 
 <div class="two-up-code">
 
@@ -69,7 +69,7 @@ footer {
 
 </div>
 
-<p style="text-align: center;">🙅</p>
+<p style="text-align: center;"><i>☹</i></p>
 
 Let's look at what the above SCSS compiles to:
 
@@ -83,7 +83,7 @@ footer section h1 {
 }
 ```
 
-The pro here is that we were quickly and easily able to scope our styles to the `footer`. The cons are that we've increased the minimum level of specificity required to overwrite them in the cascade, and our SCSS is becoming hard to read.
+The pro here is that we were quickly and easily able to scope our styles to the `footer` <i>☺</i>. The cons are that we've increased the minimum level of specificity required to overwrite them in the cascade <i>☹</i>, and our SCSS is becoming hard to read <i>☹</i>.
 
 Given that in most cases at Upstatement, we will have complete control over styles and markup, its often better to opt for adding a class name to enforce scope, rather than nesting. The specificity stays low, they are free, and the styles more clearly describe which elements they apply to:
 

@@ -5,7 +5,7 @@
   }
 
   i {
-    font-family: $mondwest;
+    font-family: $neuebit;
     font-size: 1.2em;
   }
 
@@ -256,13 +256,23 @@
 
     li {
       counter-increment: list;
-      padding-left: 2em;
+      padding-left: 2.75em;
 
       &::before {
-        content: counter(list, decimal-leading-zero);
-        font-family: $mono;
+        content: '№. ' counter(list);
+        font-family: $neuebit;
+        font-size: 1.25em;
         left: 0;
+        line-height: 1.4;
         position: absolute;
+      }
+
+      @include mq($lg) {
+        padding-left: 0;
+
+        &::before {
+          left: -2.125em;
+        }
       }
     }
   }

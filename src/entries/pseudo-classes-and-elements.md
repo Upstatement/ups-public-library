@@ -46,7 +46,11 @@ input::placeholder {
 
 Two commonly used pseudo-elements are `::before` and `::after`. Unlike most pseudo-elements, which target content that is already present, these two elements don’t exist at all until we target them. They are injected into the DOM as either the first (`::before`) or last (`::after`) child of the parent selector.
 
-<i>⚠</i> In order for the browser to render a `::before` or `::after`, you must include a `content:` declaration in its ruleset. You can leave it empty (`""`), but it must be there.
+<p style="text-align: center;"><i>⚠</i></p>
+
+In order for the browser to render a `::before` or `::after`, you must include a `content:` declaration in its ruleset. You can leave it empty (`""`), but it must be there.
+
+<p style="text-align: center;"><i>⚠</i></p>
 
 ```css
 footer::before {
