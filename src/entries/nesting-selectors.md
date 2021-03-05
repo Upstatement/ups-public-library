@@ -1,7 +1,7 @@
 ---
 layout: layouts/entry/index.njk
 title: Nesting Selectors
-date: 2021-02-19
+date: 2021-03-05
 tags:
   - scss
 nextEntryTitle: Mixins
@@ -41,6 +41,8 @@ Before we get into it, let's talk about what not to do. It's tempting to nest de
 
 Here's an inadvisable example of nesting:
 
+<p style="text-align: center;">🙅</p>
+
 <div class="two-up-code">
 
 ```html
@@ -66,6 +68,8 @@ footer {
 ```
 
 </div>
+
+<p style="text-align: center;">🙅</p>
 
 Let's look at what the above SCSS compiles to:
 
