@@ -1,13 +1,13 @@
 ---
 layout: layouts/entry/index.njk
 title: Committing Code
-date: 2021-02-01
+date: 2021-03-05
 topic:
   - Git
 nextEntryTitle: Pushing, Pulling, & Merging
 ---
 
-Git is called version control because it marks points in the code’s evolution as commits. Commits are like batch-save; each one marks a significant point in a repo’s history. Once a developer completes and saves an incremental change to a project, they can bundle and mark all of the file changes that comprise it into a single commit that marks the change.
+Git is called version control because it marks points in the code’s evolution as commits. Commits are like batch-saves for multiple files at once. Each one marks a significant point in a repo’s history. Once a developer completes and saves an incremental change to a project, they can bundle and mark all of the file changes that comprise it into a single commit that marks the change.
 
 ## Creating a Commit
 
