@@ -1,7 +1,7 @@
 ---
 layout: layouts/entry/index.njk
 title: What is CSS?
-date: 2021-02-01
+date: 2021-03-05
 topic:
   - CSS
 nextEntryTitle: Cascade, Inheritance, & Specificity
@@ -25,7 +25,7 @@ Values set a property to one of its available options. Values can be numbers, ke
 
 ## Writing Selectors
 
-The first step to writing CSS is to write a selector that specifies which element(s) you want to style. There are many types of selectors, each with their own use cases. The most common ways to select elements are by <a href="#type-selector">tag type</a> and by <a href="#class-selector">class name</a>.
+The first step to writing CSS is to create a selector that specifies which element(s) you want to style. There are many types of selectors, each with their own use cases. The most common ways to select elements are by <a href="#type-selector">tag type</a> and by <a href="#class-selector">class name</a>.
 
 Here are some of the most common selectors and their use cases. For a complete list, visit the [CSS selectors reference on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors).
 
@@ -70,7 +70,7 @@ Class selectors are by far the most common and useful selectors, since you have 
 
 ## Combining Selectors
 
-Combinators are characters and keywords that you can use to chain, modify, add conditions to a selector. They are extremely powerful, but can also be extremely confusing. Don’t get too complex, and when in doubt, just add a class name.
+Combinators are characters and keywords that you can use to chain, modify, or add conditions to a selector. They are extremely powerful, but can also become confusing. Don’t get too complex, and when in doubt, just add a class name.
 
 #### Grouping
 

@@ -1,7 +1,7 @@
 ---
 layout: layouts/entry/index.njk
 title: Intro to Terminal
-date: 2021-02-05
+date: 2021-03-05
 topic:
   - Terminal
 ---
@@ -83,7 +83,7 @@ Show a list of all the folders in the current directory.
 
 Open a folder in Finder.
 
-#### `open <file>`
+#### `open [file]`
 
 Open a file with the default program (same as double clicking).
 
@@ -95,7 +95,7 @@ Open a folder or file with a specific app.
 
 Creates a directory at the specified location, using the name at the end of the path.
 
-#### `touch <filename>`
+#### `touch [filename]`
 
 Creates a new file at the specified location, using the name and extension at the end of the path.
 
