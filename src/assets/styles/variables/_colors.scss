@@ -35,6 +35,9 @@ $purple: #8e4cf8;
   --search-text-color: #{$gray-7};
   --search-placeholder-color: #{$gray-5};
   --search-placeholder-focus-color: #{$gray-4};
+
+  // Updated in src/assets/scripts/RotatingColor.js
+  --spectrum: rgb(0 125 255);
 }
 
 [data-theme='dark'] {

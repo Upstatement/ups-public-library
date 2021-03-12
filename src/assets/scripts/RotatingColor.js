@@ -1,42 +1,41 @@
 class RotatingColor {
   constructor() {
-    this.startingRed = 0;
-    this.startingGreen = 125;
-    this.startingBlue = 255;
+    this.document = document.documentElement;
+    this.red = 0;
+    this.green = 125;
+    this.blue = 255;
 
-    this.redModifier = 1;
-    this.greenModifier = 1;
-    this.blueModifier = 1;
+    // 1 = forwards, -1 = backwards
+    this.redDirection = 1;
+    this.greenDirection = 1;
+    this.blueDirection = 1;
 
     setInterval(() => {
-      const links = document.querySelectorAll('.md a');
+      this.document.style.setProperty('--spectrum', `rgb(${this.red} ${this.green} ${this.blue})`);
 
-      links.forEach(el => {
-        el.style.color = `rgb(${this.startingRed}, ${this.startingGreen}, ${this.startingBlue})`;
-      });
-
-      if (this.startingRed <= 0) {
-        this.redModifier = 1;
-      } else if (this.startingRed >= 255) {
-        this.redModifier = -1;
+      if (this.red <= 0) {
+        this.redDirection = 1;
+      } else if (this.red >= 125) {
+        this.redDirection = -1;
       }
 
-      if (this.startingGreen <= 0) {
-        this.greenModifier = 1;
-      } else if (this.startingGreen >= 255) {
-        this.greenModifier = -1;
+      if (this.green <= 30) {
+        this.greenDirection = 1;
+      } else if (this.green >= 200) {
+        this.greenDirection = -1;
       }
 
-      if (this.startingBlue <= 0) {
-        this.blueModifier = 1;
-      } else if (this.startingBlue >= 255) {
-        this.blueModifier = -1;
+      if (this.blue <= 80) {
+        this.blueDirection = 1;
+      } else if (this.blue >= 255) {
+        this.blueDirection = -1;
       }
 
-      this.startingRed += 3 * this.redModifier;
-      this.startingGreen += 5 * this.greenModifier;
-      this.startingBlue += 10 * this.blueModifier;
-    }, 150);
+      this.red += 5 * this.redDirection;
+      this.green += 20 * this.greenDirection;
+      this.blue += 10 * this.blueDirection;
+    }, 1000); // Timeout needs to match the transition duration specified in src/assets/styles/mixins/_spectrum.scss
+    // The less often this timeout runs with JS, the more performant the script is. Letting CSS handle transitions is ideal.
   }
 }
 
