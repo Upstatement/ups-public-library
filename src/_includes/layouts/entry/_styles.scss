@@ -176,11 +176,11 @@ a {
     }
 
     @include on-focus {
-      color: $blue;
+      @include spectrum(color);
 
       &::before {
-        -webkit-text-stroke: $blue 1px;
-        color: $blue;
+        -webkit-text-stroke: currentColor 1px;
+        color: currentColor;
       }
     }
   }

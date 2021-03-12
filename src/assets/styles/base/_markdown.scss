@@ -44,13 +44,14 @@
   }
 
   a {
-    color: $blue;
+    @include spectrum(color);
 
     code {
-      color: $blue;
+      color: currentColor;
     }
 
     @include on-focus {
+      transition: color $transition;
       color: var(--secondary-text-color);
     }
   }
