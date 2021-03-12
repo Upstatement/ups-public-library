@@ -7,7 +7,7 @@ import SearchBar from './SearchBar';
 import Print from './Print';
 import ProgressBar from './ProgressBar';
 import RandomDingbat from './RandomDingbat';
-import RotatingColor from './RotatingColor';
+import Spectrum from './Spectrum';
 import InteractiveTOC from './InteractiveTOC';
 // import ThemeToggle from './ThemeToggle';
 
@@ -23,9 +23,9 @@ onDocumentReady(() => {
   [...document.querySelectorAll('[data-print]')].forEach(printEl => new Print(printEl));
 
   if (document.getElementById('js-entry-content')) {
+    new Spectrum();
     new ProgressBar();
     new RandomDingbat();
-    new RotatingColor();
     new InteractiveTOC();
   }
 });
