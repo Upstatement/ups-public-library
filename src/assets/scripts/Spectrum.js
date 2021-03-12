@@ -1,41 +1,53 @@
 class Spectrum {
   constructor() {
-    this.document = document.documentElement;
-    this.red = 0;
-    this.green = 125;
-    this.blue = 255;
+    // Needs to match the transition duration specified in
+    // src/assets/styles/mixins/_spectrum.scss
+    // The less often this timeout runs with JS, the more
+    // performant the script is, and CSS can handle transitions.
+    this.updateInterval = 1000;
 
-    // 1 = forwards, -1 = backwards
-    this.redDirection = 1;
-    this.greenDirection = 1;
-    this.blueDirection = 1;
+    this.red = {
+      min: 80,
+      max: 125,
+      current: 80,
+      interval: 5,
+      direction: 1, // 1 = forwards, -1 = backwards
+    };
+    this.green = {
+      min: 160,
+      max: 200,
+      current: 160,
+      interval: 20,
+      direction: 1,
+    };
+    this.blue = {
+      min: 180,
+      max: 255,
+      current: 255,
+      interval: 10,
+      direction: 1,
+    };
 
     setInterval(() => {
-      this.document.style.setProperty('--spectrum', `rgb(${this.red} ${this.green} ${this.blue})`);
+      document.documentElement.style.setProperty(
+        '--spectrum',
+        `rgb(${this.red.current} ${this.green.current} ${this.blue.current})`,
+      );
 
-      if (this.red <= 0) {
-        this.redDirection = 1;
-      } else if (this.red >= 125) {
-        this.redDirection = -1;
-      }
+      this.updateColor(this.red);
+      this.updateColor(this.green);
+      this.updateColor(this.blue);
+    }, this.updateInterval);
+  }
 
-      if (this.green <= 30) {
-        this.greenDirection = 1;
-      } else if (this.green >= 200) {
-        this.greenDirection = -1;
-      }
+  updateColor(color) {
+    if (color.current <= color.min) {
+      color.direction = 1;
+    } else if (color.current >= color.max) {
+      color.direction = -1;
+    }
 
-      if (this.blue <= 80) {
-        this.blueDirection = 1;
-      } else if (this.blue >= 255) {
-        this.blueDirection = -1;
-      }
-
-      this.red += 5 * this.redDirection;
-      this.green += 20 * this.greenDirection;
-      this.blue += 10 * this.blueDirection;
-    }, 1000); // Timeout needs to match the transition duration specified in src/assets/styles/mixins/_spectrum.scss
-    // The less often this timeout runs with JS, the more performant the script is. Letting CSS handle transitions is ideal.
+    color.current += color.interval * color.direction;
   }
 }
 
