@@ -1,4 +1,4 @@
-class RotatingColor {
+class Spectrum {
   constructor() {
     this.document = document.documentElement;
     this.red = 0;
@@ -39,4 +39,4 @@ class RotatingColor {
   }
 }
 
-export default RotatingColor;
+export default Spectrum;
