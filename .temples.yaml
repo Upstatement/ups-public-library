@@ -1,3 +1,5 @@
+# Set base paths for templates
+# and target files to be more concise.
 base:
   templates: ./templates
   target: ./src
