@@ -1,23 +1,34 @@
-entry:
-  temples:
-    - template: ./templates/entry.template
-      output: ./src/entries/{{ kebab name }}.md
-  prompt:
-    - key: name
-      doc: Entry name
+base:
+  templates: ./templates
+  target: ./src
 
-collection:
-  temples:
-    - template: ./templates/collection.template
-      output: ./src/collections/{{ kebab name }}.md
-  prompt:
-    - key: name
-      doc: Collection name
+generators:
+  entry:
+    props:
+      - name: name
+        doc: Entry name
 
-series:
-  temples:
-    - template: ./templates/series.template
-      output: ./src/series/{{ kebab name }}.md
-  prompt:
-    - key: name
-      doc: Series name
+    files:
+      - template: entry.hbs
+        target: entries/{{ kebab-case name }}.md
+
+  collection:
+    props:
+      - name: name
+        doc: Collection name
+
+    files:
+      - template: collection.hbs
+        target: collections/{{ kebab-case name }}.md
+    prompt:
+      - key: name
+        doc: Collection name
+
+  series:
+    props:
+      - name: name
+        doc: Series name
+
+    files:
+      - template: series.hbs
+        target: series/{{ kebab-case name }}.md
