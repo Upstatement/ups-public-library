@@ -1,9 +1,8 @@
 ---
 layout: layouts/entry/index.njk
 title: The Box Model
-date: 2021-02-01
-topic:
-  - CSS
+date: 2021-03-26
+topic: css
 nextEntryTitle: Pseudo Classes & Elements
 ---
 
