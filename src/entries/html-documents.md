@@ -1,9 +1,8 @@
 ---
 layout: layouts/entry/index.njk
 title: HTML Documents
-date: 2021-02-01
-topic:
-  - HTML
+date: 2021-03-26
+topic: html
 nextEntryTitle: HTML Elements
 ---
 
