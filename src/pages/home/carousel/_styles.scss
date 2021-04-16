@@ -11,6 +11,13 @@
   overflow-x: scroll;
   padding: 0 var(--gutter-full) var(--gutter-half);
   margin-bottom: $paragraph-spacing * 2;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .carousel__card {
@@ -21,13 +28,13 @@
   height: 300px;
   padding: var(--gutter-half) calc(var(--gutter-half) * 1.5);
   margin-right: 10px;
-  min-width: 270px;
   width: 270px;
 
   &:hover {
     background-color: var(--bg-color-inverted);
     border-color: $black;
     color: var(--text-color-inverted);
+    cursor: ne-resize;
 
     .carousel__card-title {
       color: $white;
@@ -68,5 +75,6 @@
 .carousel__card-description {
   font-size: $fs-1;
   line-height: 1.25;
+  margin-bottom: 0.25em;
 }
 

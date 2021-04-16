@@ -1,11 +1,3 @@
-$index-icon-size: 0.75em;
-$search-icon-size: calc(0.75em + 4px);
-$search-icon-left-margin: calc(var(--gutter-half) - 2px);
-$search-icon-offset: calc(#{$search-icon-left-margin} + #{$search-icon-size});
-$search-input-offset: calc(
-  #{$search-icon-left-margin} + #{$search-icon-size} + var(--gutter-half) - 1px
-);
-
 /**
  * Topics Index
  */
@@ -31,8 +23,12 @@ $search-input-offset: calc(
   padding: var(--gutter-half) 0;
   width: 100%;
 
-  &:hover .topics__item-count {
-    @include spectrum(color);
+  &:hover {
+    cursor: se-resize;
+
+    .topics__item-count {
+      @include spectrum(color);
+    }
   }
 }
 
