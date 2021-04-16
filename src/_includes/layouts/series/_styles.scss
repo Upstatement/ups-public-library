@@ -3,9 +3,11 @@
 }
 
 .breadcrumb {
+  display: flex;
   font-family: $neuebit;
   font-size: $fs-0;
   font-weight: $neuebit-bold;
+  justify-content: center;
   margin-bottom: var(--gutter-half);
-  text-align: center;
+
 }

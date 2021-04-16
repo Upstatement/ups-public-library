@@ -6,7 +6,8 @@ templateClass: series
 {% if content %}
   <section class="series__content md">
     <a class="breadcrumb" href="/">~ups-public-library</a>
-    <h1>Series: {{ title }}</h1>
+    <h5 class="series__label">Series</h5>
+    <h1 class="series__title">{{ title }}</h1>
     {{ content | safe }}
 
     <ul class="series__list">
