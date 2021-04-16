@@ -1,3 +1,121 @@
 .series__content {
   @include content-column;
 }
+
+.series__breadcrumb {
+  display: flex;
+  font-size: $fs-3;
+  justify-content: center;
+  margin-bottom: var(--gutter-half);
+  min-height: 12vh;
+  padding-top: var(--gutter-full);
+
+  @include mq($md) {
+    text-align: center;
+  }
+}
+
+.series__header {
+  text-align: center;
+  margin-bottom: $paragraph-spacing * 2;
+
+  p {
+    text-align: left;
+  }
+}
+
+.series__label {
+  font-family: $neuebit;
+  font-size: $fs-0;
+  font-weight: $neuebit-bold;
+}
+
+.series__title {
+  font-family: $fleuron-reg;
+  font-size:  $fs0;
+  font-weight: 300;
+  margin-bottom: $paragraph-spacing;
+
+  &::first-letter {
+    font-family: $fleuron-mix;
+  }
+}
+
+.series__description {
+  text-align: left;
+}
+
+/**
+ * Entries
+ */
+.series__list {
+  li {
+    padding-left: 0;
+
+    &::before {
+      content: '';
+      display: none;
+    }
+  }
+}
+
+.series__entry {
+  align-items: center;
+  border-top: 1px solid $black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: var(--gutter-half) 0;
+  position: relative;
+  width: 100%;
+
+  &:hover {
+    cursor: ne-resize;
+
+    .series__entry-card {
+      display: block;
+    }
+  }
+}
+
+.series__entry-title {
+  font-size: $fs-0;
+}
+
+.series__entry-card {
+  @include absolute(0 0 n n);
+  @include layer(1);
+  background-color: $gray-1;
+  border: 1px solid $gray-3;
+  color: var(--text-color);
+  display: none;
+  padding: var(--gutter-half) calc(var(--gutter-half) * 1.5);
+  width: 270px;
+}
+
+.entry__card-overline {
+  display: flex;
+  flex-direction: row;
+  font-family: $neuebit;
+  font-size: $fs-0;
+  font-weight: $neuebit-bold;
+  justify-content: space-between;
+  margin-bottom: var(--gutter-half);
+}
+
+.entry__card-title {
+  font-family: $fleuron-reg;
+  font-size: $fs1;
+  line-height: 1.15;
+  margin-bottom: var(--gutter-half);
+
+  &::first-letter {
+    font-family: $fleuron-mix;
+  }
+}
+
+.entry__card-description {
+  font-size: $fs-1;
+  line-height: 1.25;
+  margin-bottom: 0.25em;
+}

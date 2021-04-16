@@ -1,9 +1,8 @@
 ---
 layout: layouts/entry/index.njk
 title: CSS Preprocessing
-date: 2021-02-19
-topic:
-  - CSS
+date: 2021-03-26
+topic: css
 
 nextEntryTitle: SCSS Variables
 ---

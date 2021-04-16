@@ -1,37 +1,76 @@
-.home__header,
-.home__nav {
+.home__header {
   @include grid-parent;
   @include gutters(vert, half, margin);
 }
 
 .home__header {
   flex-direction: column;
+  margin-bottom: $paragraph-spacing * 2;
 
   @include mq($sm) {
+    align-items: flex-start;
     flex-direction: row;
     justify-content: space-between;
-    min-height: 25vh;
+    min-height: 10vh;
   }
 }
 
-.home__nav {
-  align-items: flex-start;
-  flex-direction: column;
+.home__header-primary {
+  position: relative;
+}
+
+.home__header-tip {
+  padding: 0 10px;
+  text-align: center;
   position: relative;
 
-  @include mq($sm) {
-    align-items: flex-end;
-    flex-direction: row;
+  @include mq($sm, max) {
+    display: none;
   }
 }
 
-.home__links {
-  @include mq($sm) {
-    align-items: flex-end;
-    display: flex;
-    flex-direction: row;
-    flex: 0 0 66.667%;
+.home__tip-refresh {
+  @include size(0.85em);
+  @include spectrum(fill);
+}
+
+.home__tip-dingbat {
+  font-size: 52px;
+  margin-bottom: 0;
+  margin-top: 0.45em;
+}
+
+.home__tip-corner {
+  font-family: $neuebit;
+  font-size: $fs1;
+  font-weight: $neuebit-bold;
+  line-height: 1em;
+  position: absolute;
+
+  &--top-left {
+    left: 0;
+    top: -$sp-5;
   }
+
+  &--top-right {
+    right: 0;
+    top: 0;
+    transform: rotate(180deg);
+  }
+
+  &--bottom-left {
+    bottom: 0;
+    left: 0;
+  }
+
+  &--bottom-right {
+    bottom: -$sp-4;
+    right: 0;
+  }
+}
+
+svg.home__tip-corner {
+  @include size(0.4em);
 }
 
 .home__print {
@@ -41,11 +80,10 @@
   &--upl,
   &--abl {
     font-family: $mondwest;
-
     font-size: $fs-1;
 
     @include mq($md) {
-      font-size: $fs0;
+      font-size: $fs-0;
     }
   }
 
@@ -54,7 +92,7 @@
     pointer-events: none;
 
     @include mq($sm) {
-      margin-bottom: $paragraph-spacing;
+      margin-bottom: $sp-1;
     }
 
     .js-print-line:not(:first-child) {
@@ -72,6 +110,7 @@
   &--abl {
     pointer-events: none;
     position: absolute;
+    top: 0;
   }
 
   &--temp,
@@ -93,13 +132,15 @@
   }
 
   &--tip {
-    @include mq($sm, max) {
-      display: none;
-    }
-
     @include mq($sm) {
       margin-left: auto;
     }
+  }
+
+  &--tip-content {
+    font-family: $mondwest;
+    font-size: $fs-0;
+    margin-top: $sp-4;
   }
 }
 
@@ -107,21 +148,13 @@
   @include gutters;
   font-size: $fs-2;
   line-height: 1.25;
-  text-indent: 1.25em;
 
   @include mq($sm) {
     margin-bottom: $paragraph-spacing;
-    max-width: 23em;
+    max-width: 15em;
   }
-}
 
-.home__link__wrapper {
-  flex: 1 0 auto;
-  line-height: 1;
-
-  @include mq($md, max) {
-    & + & {
-      margin-top: var(--gutter-half);
-    }
+  a {
+    @include spectrum(color);
   }
 }

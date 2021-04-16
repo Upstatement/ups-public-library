@@ -1,9 +1,8 @@
 ---
 layout: layouts/entry/index.njk
 title: SCSS Variables
-date: 2021-02-19
-tags:
-  - scss
+date: 2021-03-26
+tags: scss
 nextEntryTitle: Nesting Selectors
 ---
 

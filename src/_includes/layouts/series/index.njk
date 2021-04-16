@@ -4,15 +4,27 @@ templateClass: series
 ---
 
 {% if content %}
-  <section class="series__content md">
-    <h1>Series: {{ title }}</h1>
-    {{ content | safe }}
+  <section class="series__content">
+    <a class="series__breadcrumb" href="/">~ups-public-library</a>
+    <div class="series__header">
+      <h4 class="series__label">Series</h4>
+      <h1 class="series__title">{{ title }}</h1>
+      {{ content | safe }}
+    </div>
 
-    <ul>
+    <ul class="series__list">
       {% for entry in entries %}
         <li>
-          <a href="{{ '/entries/' ~ (entry | slug) }}" class="">
-            {{ entry }}
+          <a href="{{ '/entries/' ~ (entry | slug) }}" class="series__entry">
+            <h5 class="series__entry-title">{{ entry }}</h5>
+            <div class="series__entry-card">
+              <span class="entry__card-overline">
+                <span class="entry__card-type">Entry &#8599;</span>
+                <span class="entry__card-topic">{{ title }}</span>
+              </span>
+              <h4 class="entry__card-title">{{ entry }}</h4>
+              <p class="entry__card-description">Each language is a superset of CSS that shares some of the same fundamental syntax and typographical notations.</p>
+            </div>
           </a>
         </li>
       {% endfor %}
