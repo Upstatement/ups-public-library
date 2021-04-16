@@ -1,87 +1,65 @@
-<section class="index">
-  {# Search #}
-  <div class="search-wrapper js-search-wrapper">
-    <div class="search-bar">
-      <svg class="search-icon">
-        <use xlink:href="#search"></use>
-      </svg>
-      <input class="search-input js-search-input" type="text" placeholder="Search the Library">
-    </div>
-
-    <ul class="index__list search-results js-search-results"></ul>
-  </div>
-
-  {# Page content & search results #}
-  {% if collections.indexItems | length %}
-    <ul class="index__list js-index-list">
-      {% for item in collections.indexItems %}
-
-        {# The tag assigned by the json file in the directory will always be the first tag #}
-        {% set tagDef = item
-          .data
-          .tags[0] %}
-
-        <li class="index__item">
-
-          {% if tagDef == "entries" %}
-            {# Entries #}
-            <a href="{{ item.url }}" class="index__link">
-              <h1 class="index__title">
-                <svg class="index__icon index__icon--arrow">
-                  <use xlink:href="#arrow"></use>
-                </svg>
-                {{ item.data.title }}
-              </h1>
-              <span class="index__type">Entry</span>
-              <span class="index__date">{{ item.data.date | readableDate }}</span>
-            </a>
-
-          {% else %}
-            {# Series & Collections #}
-            {% set inputName = "expand-" ~ (item.data.title | slug) %}
-            <input class="index__expand-input" type="checkbox" name="{{ inputName }}" id="{{ inputName }}"/>
-            <label class="index__expand-label" for="{{ inputName }}">
-              <h1 class="index__title">
-                <svg class="index__icon index__icon--plus">
-                  <use xlink:href="#plus"></use>
-                </svg>
-                <svg class="index__icon index__icon--minus">
-                  <use xlink:href="#minus"></use>
-                </svg>
-                {{ item.data.title }}
-              </h1>
-              <span class="index__type">
-                {{ "Collection" if tagDef == "collections" }}
-                {{ "Series" if tagDef == "series" }}
-              </span>
-              <span class="index__count">
-                {{ item.data.entries | length }}
-                entries
-              </span>
-            </label>
-
-            <ol class="index__nested__list">
-              {% if item.data.entries | length %}
-                {% for entry in item.data.entries %}
-                  <li class="index__item">
-                    <a href="{{ '/entries/' ~ entry | slug }}" class="index__link">
-                      <h2 class="index__title">
-                        <svg class="index__icon index__icon--arrow">
-                          <use xlink:href="#arrow"></use>
-                        </svg>
-                        {{ entry }}
-                      </h2>
-                      <span class="index__type">Entry</span>
-                      <span class="index__date">{{ item.data.date | readableDate }}</span>
-                    </a>
-                  </li>
-                {% endfor %}
-              {% endif %}
-            </ol>
-
-          {% endif %}
-        </li>
-      {% endfor %}
-    </ul>
-  {% endif %}
+<section class="topics">
+  <h4 class="topics__overline">Topics of Learning</h4>
+  <ul class="topics__list">
+    <li>
+      <a href="" class="topics__item">
+        <h5>HTML</h5>
+        <div class="topics__item-count">
+          <span class="topics__item-count__num">1</span>
+          <span class="topics__item-count__type"> Series</span>,
+          <span class="topics__item-count__num">4</span>
+          <span class="topics__item-count__type"> Entries</span>
+          &#8600;
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="" class="topics__item">
+        <h5>CSS</h5>
+        <div class="topics__item-count">
+          <span class="topics__item-count__num">1</span>
+          <span class="topics__item-count__type"> Series</span>,
+          <span class="topics__item-count__num">4</span>
+          <span class="topics__item-count__type"> Entries</span>
+          &#8600;
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="" class="topics__item">
+        <h5>SCSS</h5>
+        <div class="topics__item-count">
+          <span class="topics__item-count__num">1</span>
+          <span class="topics__item-count__type"> Series</span>,
+          <span class="topics__item-count__num">4</span>
+          <span class="topics__item-count__type"> Entries</span>
+          &#8600;
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="" class="topics__item">
+        <h5>Git</h5>
+        <div class="topics__item-count">
+          <span class="topics__item-count__num">1</span>
+          <span class="topics__item-count__type"> Series</span>,
+          <span class="topics__item-count__num">4</span>
+          <span class="topics__item-count__type"> Entries</span>
+          &#8600;
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="" class="topics__item">
+        <h5>Terminal</h5>
+        <div class="topics__item-count">
+          <span class="topics__item-count__num">1</span>
+          <span class="topics__item-count__type"> Series</span>,
+          <span class="topics__item-count__num">4</span>
+          <span class="topics__item-count__type"> Entries</span>
+          &#8600
+        </div>
+      </a>
+    </li>
+  </ul>
 </section>

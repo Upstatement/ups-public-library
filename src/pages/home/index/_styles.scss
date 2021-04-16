@@ -247,3 +247,37 @@ $search-input-offset: calc(
     height: auto;
   }
 }
+
+.topics{
+  @include content-column;
+  margin-bottom: $paragraph-spacing;
+}
+
+.topics__overline {
+  font-family: $neuebit;
+  font-size: $fs-0;
+  font-weight: $neuebit-bold;
+  margin-bottom: var(--gutter-half);
+  text-align: center;
+}
+
+.topics__item {
+  align-items: center;
+  border-top: 1px solid $black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: var(--gutter-half) 0;
+  width: 100%;
+
+  &:hover {
+    @include spectrum(color);
+  }
+}
+
+.topics__item-count {
+  font-family: $neuebit;
+  font-size: $fs-0;
+  font-weight: $neuebit-bold;
+  transform: translateY(1px);
+}

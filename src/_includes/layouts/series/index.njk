@@ -5,13 +5,14 @@ templateClass: series
 
 {% if content %}
   <section class="series__content md">
+    <a class="breadcrumb" href="/">~ups-public-library</a>
     <h1>Series: {{ title }}</h1>
     {{ content | safe }}
 
-    <ul>
+    <ul class="series__list">
       {% for entry in entries %}
         <li>
-          <a href="{{ '/entries/' ~ (entry | slug) }}" class="">
+          <a href="{{ '/entries/' ~ (entry | slug) }}" class="series__entry">
             {{ entry }}
           </a>
         </li>
