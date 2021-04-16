@@ -5,12 +5,13 @@
 
 .home__header {
   flex-direction: column;
+  margin-bottom: $paragraph-spacing * 2;
 
   @include mq($sm) {
     align-items: flex-start;
     flex-direction: row;
     justify-content: space-between;
-    min-height: 15vh;
+    min-height: 10vh;
   }
 }
 
@@ -21,6 +22,7 @@
 .home__header-tip {
   padding: 0 10px;
   text-align: center;
+  position: relative;
 
   @include mq($sm, max) {
     display: none;
@@ -38,24 +40,37 @@
   margin-top: 0.45em;
 }
 
-.home__nav {
-  align-items: flex-start;
-  flex-direction: column;
-  position: relative;
+.home__tip-corner {
+  font-family: $neuebit;
+  font-size: $fs1;
+  font-weight: $neuebit-bold;
+  line-height: 1em;
+  position: absolute;
 
-  @include mq($sm) {
-    align-items: flex-end;
-    flex-direction: row;
+  &--top-left {
+    left: 0;
+    top: -$sp-5;
+  }
+
+  &--top-right {
+    right: 0;
+    top: 0;
+    transform: rotate(180deg);
+  }
+
+  &--bottom-left {
+    bottom: 0;
+    left: 0;
+  }
+
+  &--bottom-right {
+    bottom: -$sp-4;
+    right: 0;
   }
 }
 
-.home__links {
-  @include mq($sm) {
-    align-items: flex-end;
-    display: flex;
-    flex-direction: row;
-    flex: 0 0 66.667%;
-  }
+svg.home__tip-corner {
+  @include size(0.4em);
 }
 
 .home__print {
@@ -65,7 +80,6 @@
   &--upl,
   &--abl {
     font-family: $mondwest;
-
     font-size: $fs-1;
 
     @include mq($md) {
@@ -125,7 +139,7 @@
 
   &--tip-content {
     font-family: $mondwest;
-    font-size: $fs-0 - 2px;
+    font-size: $fs-0;
     margin-top: $sp-4;
   }
 }
@@ -142,17 +156,6 @@
 
   a {
     @include spectrum(color);
-  }
-}
-
-.home__link__wrapper {
-  flex: 1 0 auto;
-  line-height: 1;
-
-  @include mq($md, max) {
-    & + & {
-      margin-top: var(--gutter-half);
-    }
   }
 }
 
