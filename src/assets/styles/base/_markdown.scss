@@ -237,6 +237,10 @@
     position: relative;
     line-height: 1.25;
 
+    li + li {
+      margin-top: $list-item-spacing;
+    }
+
     ul,
     ol {
       margin: 0;
@@ -268,7 +272,6 @@
 
     li {
       counter-increment: list;
-      margin-bottom: $list-item-spacing;
       margin-left: 2em;
 
       &::before {
