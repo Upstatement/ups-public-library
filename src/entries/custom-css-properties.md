@@ -55,7 +55,7 @@ Doing so is a safe default choice. Defining them in a more specific scope is per
 }
 ```
 
-In this case, the current value of the `--thumbnail-width` property at `64px` will only be accessible to elements with the `.thumbnail` class, and their children. That may be useful if you have multiple thumbnails throughout your site at different sizes, or if you want to overwrite a value for the property that was defined in a parent scope.
+In this case, the current value of the `--thumbnail-width` property at `64px` will only be accessible to elements with the `.thumbnail` class, and their children. That may be useful if you have multiple thumbnails throughout your site at different sizes, or if you want to overwrite the value of a property that was defined in a parent scope.
 
 Ultimately, where you define a custom property should depend on context.
 
