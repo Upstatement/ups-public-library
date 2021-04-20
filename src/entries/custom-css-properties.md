@@ -112,7 +112,7 @@ This approach allows a property to retain the same semantic meaning throughout y
 
 With this method, we're able to take a semantic approach to styling by using creating custom properties to use as variables in class styles, and updating the variables as context changes, leaving the original class styles alone.
 
-We try to employ the same methodology with [SCSS variables](/entries/scss-variables) by scaffolding variables into separate assignments for values and application.
+We try to employ the same methodology with [SCSS variables](/entries/scss-variables/#variable-composition) by scaffolding variables into separate assignments for values and application.
 
 ## Real-Time Updates
 
