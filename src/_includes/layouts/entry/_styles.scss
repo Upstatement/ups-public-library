@@ -237,13 +237,6 @@ a {
       display: inline-block;
     }
 
-    .js-print-line:last-child {
-      vertical-align: super;
-      font-size: 75%;
-      font-family: $neuebit;
-      font-weight: $neuebit-bold;
-    }
-
     @include on-focus {
       + .nav__print {
         display: none;

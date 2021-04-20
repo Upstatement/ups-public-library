@@ -60,13 +60,6 @@
     .js-print-line:not(:first-child) {
       display: inline-block;
     }
-
-    .js-print-line:last-child {
-      vertical-align: super;
-      font-size: 75%;
-      font-family: $neuebit;
-      font-weight: $neuebit-bold;
-    }
   }
 
   &--abl {
