@@ -110,13 +110,13 @@ This approach allows a property to retain the same semantic meaning throughout y
 
 </div>
 
-With this method, we're able to take a semantic approach to styling by using creating custom properties to use as variables in class styles, and updating the variables as context changes, leaving the original class styles alone.
+With this method, we're able to take a semantic approach to styling by creating custom properties to use as variables in class styles, and updating those variables as context changes, leaving the original class styles alone.
 
-We try to employ the same methodology with [SCSS variables](/entries/scss-variables/#variable-composition) by scaffolding variables into separate assignments for values and application.
+We try to employ the [same methodology in SCSS](/entries/scss-variables/#variable-composition) by scaffolding variables into separate assignments for values and application.
 
 ## Real-Time Updates
 
-Unlike pre-processed variables, custom properties are evaluated in the browser, in real-time. That gives two benefits:
+Unlike pre-processed variables, custom properties are evaluated by the browser in real-time. That gives two benefits:
 
 1. They can have multiple values at once across contexts, thanks to scope
 1. They can be updated as the site responds to user interaction, media changes, etc.
