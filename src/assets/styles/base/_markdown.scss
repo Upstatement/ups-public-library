@@ -12,9 +12,17 @@
   .two-up-code,
   pre,
   code {
-    font-size: $fs-smaller;
     font-family: $mono;
     line-height: 1.5;
+  }
+
+  code {
+    font-size: $fs-smaller;
+  }
+
+  .two-up-code,
+  pre {
+    font-size: $fs-code-block;
   }
 
   p,
@@ -61,6 +69,11 @@
     display: flex;
     flex-flow: row wrap;
 
+    pre,
+    code {
+      font-size: 1em;
+    }
+
     pre {
       flex: 1 0 auto;
       margin: 0;
@@ -101,7 +114,7 @@
     &[class*='language-']:before {
       color: $gray-4;
       display: block;
-      font-size: $fs-smaller;
+      font-size: inherit;
       margin-bottom: 0.75em;
       text-transform: uppercase;
     }
