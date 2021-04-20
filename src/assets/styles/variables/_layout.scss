@@ -11,3 +11,6 @@ $content-max-width-xl: 900px;
     --content-max-width: #{$content-max-width-xl};
   }
 }
+
+$x-wide-block-overhang: 12.5%;
+$x-wide-block-width: calc(100% + (2 * #{$x-wide-block-overhang}));
