@@ -61,3 +61,11 @@
   max-width: var(--content-max-width);
   width: 100%;
 }
+
+@mixin block-spacing {
+  @include margin($block-spacing-sm null);
+
+  @media (min-width: $xl) {
+    @include margin($block-spacing-lg null);
+  }
+}
