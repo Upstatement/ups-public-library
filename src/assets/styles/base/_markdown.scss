@@ -61,9 +61,18 @@
     flex-flow: row wrap;
 
     pre {
+      flex: 1 0 auto;
       margin: 0;
-      flex: 1 0 50%;
-      min-width: 200px;
+      max-width: 100%;
+      min-width: 300px;
+      resize: horizontal;
+      width: 50%;
+    }
+
+    @media (min-width: $lg) {
+      margin-left: -$x-wide-block-overhang;
+      margin-right: -$x-wide-block-overhang;
+      width: $x-wide-block-width;
     }
   }
 
