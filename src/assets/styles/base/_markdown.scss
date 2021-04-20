@@ -9,6 +9,7 @@
     font-size: 1.2em;
   }
 
+  .two-up-code,
   pre,
   code {
     font-size: $fs-smaller;
@@ -228,12 +229,13 @@
   ul,
   ol,
   img {
-    @include margin($block-spacing null);
+    @include block-spacing;
   }
 
   ul,
   ol {
     position: relative;
+    line-height: 1.25;
 
     ul,
     ol {
@@ -266,23 +268,15 @@
 
     li {
       counter-increment: list;
-      padding-left: 2.75em;
+      margin-bottom: $list-item-spacing;
+      margin-left: 2em;
 
       &::before {
         content: '№. ' counter(list);
+        display: inline-block;
         font-family: $neuebit;
-        font-size: 1.25em;
-        left: 0;
-        line-height: 1.4;
-        position: absolute;
-      }
-
-      @include mq($lg) {
-        padding-left: 0;
-
-        &::before {
-          left: -2.125em;
-        }
+        margin-left: -2em;
+        width: 2em;
       }
     }
   }

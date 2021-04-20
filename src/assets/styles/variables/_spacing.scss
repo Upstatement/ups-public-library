@@ -15,8 +15,9 @@ $sp8: 126px;
 
 $section-spacing: 4em; // <hr>s
 $paragraph-spacing: 1em;
-$block-spacing: 1.75em; // lists, code blocks, blockquotes, etc
-$list-item-spacing: 0.5em;
+$block-spacing-sm: $sp2; // lists, code blocks, blockquotes, etc
+$block-spacing-lg: $sp4; // lists, code blocks, blockquotes, etc
+$list-item-spacing: 0.75em;
 
 $sm-gutter-half: 8px;
 $gutter-half: $sp-2;
