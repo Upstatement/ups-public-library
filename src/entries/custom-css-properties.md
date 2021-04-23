@@ -1,7 +1,7 @@
 ---
 layout: layouts/entry/index.njk
 title: Custom CSS Properties
-date: 2021-04-20
+date: 2021-04-23
 topic: css
 ---
 
@@ -26,7 +26,7 @@ For the most part, custom properties behave like normal ones. Here are their bas
 - Custom property names must always begin with a `--`, otherwise, they will be ignored
 - All of the same [cascade, inheritance, and specificity](/entries/cascade-inheritance-and-specificity) rules of setting and updating regular properties apply to custom ones
 - They can be assigned to any type of CSS value or function, or to another custom property
-- They can only be referenced using `var()` function
+- They can only be referenced using the `var()` function
 - To reference them in a declaration, they must be in scope. If they aren't, that declaration will be ignored
 
 ## Scoping Properties
