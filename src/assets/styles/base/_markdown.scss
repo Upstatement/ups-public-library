@@ -163,16 +163,8 @@
 
   h1 {
     @include h(1);
+    @include first-letter;
     font-family: $fleuron-reg;
-
-    span {
-      display: inline-block;
-      white-space: pre;
-
-      &:first-letter {
-        font-family: $fleuron-mix;
-      }
-    }
   }
 
   h2 {

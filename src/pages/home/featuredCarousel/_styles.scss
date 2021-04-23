@@ -1,6 +1,6 @@
 .carousel__overline {
   font-family: $neuebit;
-  font-size: $fs-0;
+  font-size: $fs0;
   font-weight: $neuebit-bold;
   margin-bottom: var(--gutter-half);
   text-align: center;
@@ -21,7 +21,6 @@
 }
 
 .carousel__card {
-  background-color: $gray-1;
   border: 1px solid $gray-3;
   color: var(--text-color);
   display: block;
@@ -54,22 +53,19 @@
   display: flex;
   flex-direction: row;
   font-family: $neuebit;
-  font-size: $fs-0;
+  font-size: $fs0;
   font-weight: $neuebit-bold;
   justify-content: space-between;
   margin-bottom: var(--gutter-half);
 }
 
 .carousel__card-title {
+  @include first-letter;
   font-family: $fleuron-reg;
-  font-size: $fs1;
+  font-size: $fs2;
   min-height: 70px;
   line-height: 1.15;
   margin-bottom: var(--gutter-half);
-
-  &::first-letter {
-    font-family: $fleuron-mix;
-  }
 }
 
 .carousel__card-description {
@@ -77,4 +73,3 @@
   line-height: 1.25;
   margin-bottom: 0.25em;
 }
-

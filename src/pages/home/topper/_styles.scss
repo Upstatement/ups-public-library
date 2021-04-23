@@ -1,6 +1,10 @@
 .home__header {
   @include grid-parent;
   @include gutters(vert, half, margin);
+
+  a {
+    color: var(--spectrum);
+  }
 }
 
 .home__header {
@@ -42,7 +46,7 @@
 
 .home__tip-corner {
   font-family: $neuebit;
-  font-size: $fs1;
+  font-size: $fs2;
   font-weight: $neuebit-bold;
   line-height: 1em;
   position: absolute;
@@ -83,7 +87,7 @@ svg.home__tip-corner {
     font-size: $fs-1;
 
     @include mq($md) {
-      font-size: $fs-0;
+      font-size: $fs0;
     }
   }
 
@@ -117,12 +121,12 @@ svg.home__tip-corner {
   &--link,
   &--tip {
     font-family: $neuebit;
-    font-size: $fs0 - 3px;
+    font-size: $fs1 - 3px;
     font-weight: $neuebit-bold;
     line-height: 0.7;
 
     @include mq($md) {
-      font-size: $fs0;
+      font-size: $fs1;
     }
   }
 
@@ -139,7 +143,7 @@ svg.home__tip-corner {
 
   &--tip-content {
     font-family: $mondwest;
-    font-size: $fs-0;
+    font-size: $fs0;
     margin-top: $sp-4;
   }
 }

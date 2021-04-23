@@ -29,3 +29,14 @@
     font-size: $fs-base;
   }
 }
+
+@mixin first-letter($ff: $fleuron-mix) {
+  span {
+    display: inline-block;
+    white-space: pre;
+
+    &:first-letter {
+      font-family: $fleuron-mix;
+    }
+  }
+}

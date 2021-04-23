@@ -25,6 +25,12 @@ exports.render = ({ collections }) => {
     redirects.push(`/api/series/${series.fileSlug}`);
   });
 
+  // Generate URLS for topics
+  redirects.push('/api/topics');
+  entries.forEach(topic => {
+    redirects.push(`/api/topics/${topic.fileSlug}`);
+  });
+
   // Generate rewrite rules for URL -> File URL
   redirects = redirects.map(url => {
     const fileUrl = `${url}.json`;

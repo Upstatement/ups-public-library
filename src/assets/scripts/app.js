@@ -13,19 +13,20 @@ import InteractiveTOC from './InteractiveTOC';
 
 onDocumentReady(() => {
   new ExternalLinks();
+  new Spectrum();
+  new RandomDingbat();
+
   // new ThemeToggle();
 
-  const search = new Search();
   if (document.querySelector('.js-search-input')) {
+    const search = new Search();
     new SearchBar(search);
   }
 
   [...document.querySelectorAll('[data-print]')].forEach(printEl => new Print(printEl));
 
   if (document.getElementById('js-entry-content')) {
-    new Spectrum();
     new ProgressBar();
-    new RandomDingbat();
     new InteractiveTOC();
   }
 });

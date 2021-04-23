@@ -1,9 +1,12 @@
 ---
 layout: layouts/entry/index.njk
 title: SCSS Variables
-date: 2021-03-26
-tags: scss
+date: 2021-04-23
+tags:
+  - scss
+  - featured
 nextEntryTitle: Nesting Selectors
+description: Variables are a simple yet fundamental component of writing SCSS.
 ---
 
 Variables are a simple yet fundamental component of writing SCSS. Creating and using variables means that tweaking a color, increasing a font size, or adjusting global spacing can be done by changing code in just one place, instead of everywhere that value is used.

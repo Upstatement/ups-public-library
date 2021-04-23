@@ -4,7 +4,12 @@ const pluginNavigation = require('@11ty/eleventy-navigation');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 const pluginTOC = require('eleventy-plugin-nesting-toc');
-const { getSlugMap, getSortedCollection, indexItems } = require('./src/_11ty/collections');
+const {
+  getSlugMap,
+  getSortedCollection,
+  getTagList,
+  indexItems,
+} = require('./src/_11ty/collections');
 const { htmlDateString, readableDate, split } = require('./src/_11ty/filters');
 
 require('dotenv').config({ path: `.env.${process.env.NODE_ENV || 'development'}` });
@@ -42,6 +47,7 @@ module.exports = function (eleventyConfig) {
     getSortedCollection(collectionApi, 'entries'),
   );
   eleventyConfig.addCollection('entriesMap', collectionApi => getSlugMap(collectionApi, 'entries'));
+  eleventyConfig.addCollection('tagList', getTagList);
   eleventyConfig.addCollection('indexItems', indexItems);
 
   /**

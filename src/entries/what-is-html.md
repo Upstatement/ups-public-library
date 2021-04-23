@@ -1,8 +1,9 @@
 ---
 layout: layouts/entry/index.njk
 title: What is HTML?
-date: 2021-03-26
-topic: html
+date: 2021-04-23
+tags:
+  - html
 nextEntryTitle: HTML Documents
 ---
 

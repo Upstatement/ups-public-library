@@ -1,0 +1,6 @@
+{% macro wrapWords(title = '', className = '') %}
+  {% set words = title | split(' ') %}
+  {% for word in words %}
+    <span {% if className %} class="{{ className }}" {% endif %}>{{ word }}</span>
+  {% endfor %}
+{% endmacro %}

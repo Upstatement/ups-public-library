@@ -8,7 +8,7 @@
 
 .topics__overline {
   font-family: $neuebit;
-  font-size: $fs-0;
+  font-size: $fs0;
   font-weight: $neuebit-bold;
   margin-bottom: var(--gutter-half);
   text-align: center;
@@ -33,12 +33,12 @@
 }
 
 .topics__item-title {
-  font-size: $fs-0;
+  font-size: $fs0;
 }
 
 .topics__item-count {
   font-family: $neuebit;
-  font-size: $fs-0;
+  font-size: $fs0;
   font-weight: $neuebit-bold;
   transform: translateY(1px);
 }

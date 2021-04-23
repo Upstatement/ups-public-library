@@ -1,24 +1,11 @@
 module.exports = collection => {
+  // Use a Set to filter out duplicate values
   const tagSet = new Set();
+
+  // Loop through all entries and crawl all tag values
   collection.getAll().forEach(item => {
     if ('tags' in item.data) {
-      let tags = item.data.tags;
-
-      tags = tags.filter(item => {
-        switch (item) {
-          // this list should match the `filter` list in tags.njk
-          case 'all':
-          case 'nav':
-          case 'project':
-          case 'projects':
-          case 'solutions':
-          case 'team':
-          case 'technologies':
-            return false;
-        }
-
-        return true;
-      });
+      const tags = item.data.tags.filter(item => !['entries', 'series', 'featured'].includes(item));
 
       for (const tag of tags) {
         tagSet.add(tag);

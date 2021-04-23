@@ -1,6 +1,6 @@
-@import '../../pages/home/carousel/styles';
+@import '../../pages/home/featuredCarousel/styles';
 @import '../../pages/home/topper/styles';
-@import '../../pages/home/index/styles';
+@import '../../pages/home/topicIndex/styles';
 
 .home {
   @include gutters(vert, half, margin);

@@ -3,12 +3,7 @@ layout: layouts/base/index.njk
 templateClass: entry
 ---
 
-{% macro wrapWords(title = '', className = '') %}
-  {% set words = title | split(' ') %}
-  {% for word in words %}
-    <span {% if className %} class="{{ className }}" {% endif %}>{{ word }}</span>
-  {% endfor %}
-{% endmacro %}
+{% from "../../shared/wrapWords.njk" import wrapWords %}
 
 {% if content %}
   <aside class="entry__toc--wrapper">

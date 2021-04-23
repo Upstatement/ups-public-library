@@ -1,8 +1,9 @@
 ---
 layout: layouts/entry/index.njk
 title: Intro to Git
-date: 2021-03-26
-topic: git
+date: 2021-04-23
+tags:
+  - git
 nextEntryTitle: Committing Code
 ---
 

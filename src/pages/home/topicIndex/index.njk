@@ -1,0 +1,19 @@
+<section class="topics">
+  <h4 class="topics__overline">Explore Topics</h4>
+  <ul class="topics__list">
+  {% for topic in collections.tagList %}
+    <li>
+      <a href="{{ "/topics/" ~ topic }}" class="topics__item">
+        <h5 class="topics__item-title">{{ topic }}</h5>
+        {# <div class="topics__item-count">
+          <span class="topics__item-count__num">1</span>
+          <span class="topics__item-count__type"> Series</span>,
+          <span class="topics__item-count__num">4</span>
+          <span class="topics__item-count__type"> Entries</span>
+          &#8600;
+        </div> #}
+      </a>
+    </li>
+  {% endfor %}
+  </ul>
+</section>

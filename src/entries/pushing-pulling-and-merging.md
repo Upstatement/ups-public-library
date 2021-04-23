@@ -1,8 +1,10 @@
 ---
 layout: layouts/entry/index.njk
 title: Pushing, Pulling, & Merging
-date: 2021-03-26
-topic: git
+date: 2021-04-23
+tags:
+  - git
+  - featured
 ---
 
 Local changes are synced to remote repositories (in GitHub) using actions called pulling, pushing, and merging.
