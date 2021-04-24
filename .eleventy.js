@@ -8,7 +8,7 @@ const {
   getSlugMap,
   getSortedCollection,
   getTagList,
-  indexItems,
+  deDupedItems,
 } = require('./src/_11ty/collections');
 const { htmlDateString, readableDate, split, formatTopic, where } = require('./src/_11ty/filters');
 
@@ -48,7 +48,7 @@ module.exports = function (eleventyConfig) {
   );
   eleventyConfig.addCollection('entriesMap', collectionApi => getSlugMap(collectionApi, 'entries'));
   eleventyConfig.addCollection('tagList', getTagList);
-  eleventyConfig.addCollection('indexItems', indexItems);
+  eleventyConfig.addCollection('deDupedItems', deDupedItems);
 
   /**
    * Add custom filters

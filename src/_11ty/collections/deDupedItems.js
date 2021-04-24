@@ -1,3 +1,5 @@
+// Filters out entries that belong to a collection or series
+
 module.exports = collectionApi => {
   const allItems = collectionApi.getFilteredByGlob([
     'src/entries/*.md',
@@ -25,16 +27,16 @@ module.exports = collectionApi => {
   ];
 
   // Filter out entries that belong to a collection or series
-  const indexItems = allItems
+  const deDupedItems = allItems
     .filter(item => !entriesThatBelongToCollections.includes(item.data.title))
     .filter(item => !entriesThatBelongToSeries.includes(item.data.title));
 
   // Sort items alphabetically by title
-  indexItems.sort((a, b) => {
+  deDupedItems.sort((a, b) => {
     const aTitle = a.data.title;
     const bTitle = b.data.title;
     return aTitle < bTitle ? -1 : aTitle > bTitle ? 1 : 0;
   });
 
-  return indexItems;
+  return deDupedItems;
 };

@@ -1,11 +1,11 @@
 const getSlugMap = require('./getSlugMap');
 const getSortedCollection = require('./getSortedCollection');
 const getTagList = require('./getTagList');
-const indexItems = require('./indexItems');
+const deDupedItems = require('./deDupedItems');
 
 module.exports = {
   getSlugMap,
   getSortedCollection,
   getTagList,
-  indexItems,
+  deDupedItems,
 };
