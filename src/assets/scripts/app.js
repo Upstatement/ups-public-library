@@ -9,14 +9,14 @@ import ProgressBar from './ProgressBar';
 import RandomDingbat from './RandomDingbat';
 import Spectrum from './Spectrum';
 import InteractiveTOC from './InteractiveTOC';
-// import ThemeToggle from './ThemeToggle';
 
 onDocumentReady(() => {
   new ExternalLinks();
   new Spectrum();
-  new RandomDingbat();
 
-  // new ThemeToggle();
+  if (document.getElementById('js-random-dingbat')) {
+    new RandomDingbat();
+  }
 
   if (document.querySelector('.js-search-input')) {
     const search = new Search();
