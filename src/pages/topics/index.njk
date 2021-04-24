@@ -1,29 +1,32 @@
 ---
 layout: layouts/base/index.njk
-templateClass: tag
+templateClass: topic
 date: Last Modified
 eleventyComputed:
-  title: '{{ tag }}'
-permalink: /topics/{{ tag | slug }}/
+  title: '{{ topic | formatTopic(true) }}'
+permalink: /topics/{{ topic | slug }}/
 pagination:
   data: collections
   size: 1
   filter:
     - entries
     - series
-  alias: tag
+  alias: topic
 ---
 
-{% for item in collections[tag] %}
-  {# The tag assigned by the json file in the directory will always be the first tag #}
-  {% set tagDef = item.data.tags[0] %}
-  <a href="{{ item.url }}">
-    {% if tagDef == "entries" %}
-      Entry
-    {% endif %}
-    {% if tagDef == "series" %}
-      Series
-    {% endif %}
-    {{ item.data.title }}
-  </a>
-{% endfor %}
+{% from "../../_includes/shared/macros.njk" import contentType %}
+
+<h1>
+  Topics / {{ topic | formatTopic(true) }}
+</h1>
+
+<ul>
+  {% for item in collections[topic] %}
+    <li>
+      {{ contentType(item) }}
+      <a href="{{ item.url }}">
+        {{ item.data.title }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>

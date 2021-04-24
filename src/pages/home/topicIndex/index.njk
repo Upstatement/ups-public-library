@@ -4,14 +4,14 @@
   {% for topic in collections.tagList %}
     <li>
       <a href="{{ "/topics/" ~ topic }}" class="topics__item">
-        <h5 class="topics__item-title">{{ topic }}</h5>
-        {# <div class="topics__item-count">
-          <span class="topics__item-count__num">1</span>
+        <h5 class="topics__item-title">{{ topic | formatTopic(true) }}</h5>
+        <div class="topics__item-count">
+          <span class="topics__item-count__num">{{ collections[topic] | where("data.tags[0]", "series") | length }}</span>
           <span class="topics__item-count__type"> Series</span>,
-          <span class="topics__item-count__num">4</span>
+          <span class="topics__item-count__num">{{ collections[topic] | where("data.tags[0]", "entries") | length }}</span>
           <span class="topics__item-count__type"> Entries</span>
           &#8600;
-        </div> #}
+        </div>
       </a>
     </li>
   {% endfor %}
