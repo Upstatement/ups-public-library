@@ -1,25 +1,18 @@
-{% from "../../../_includes/shared/wrapWords.njk" import wrapWords %}
+{% import "../../../_includes/shared/macros.njk" as macros %}
 
 <section class="home__carousel">
   <h4 class="carousel__overline">&#8644; Featured Content &#8644;</h4>
   <ul class="carousel__list">
   {% for item in collections.featured %}
-    {# The tag assigned by the json file in the directory will always be the first tag #}
-    {% set tagDef = item.data.tags[0] %}
     <li>
       <a class="carousel__card" href="{{ item.url }}">
         <span class="carousel__card-overline">
           <span class="carousel__card-type">
-            {% if tagDef == "entries" %}
-              Entry
-            {% endif %}
-            {% if tagDef == "series" %}
-              Series
-            {% endif %}
+            {{ macros.contentType(item) }}
             <span class="carousel__card-arrow">&nbsp;&#8599;</span></span>
           <span class="carousel__card-topic">{{ item.data.tags[1] }}</span>
         </span>
-      <h4 class="carousel__card-title">{{ wrapWords(item.data.title) }}</h4>
+      <h4 class="carousel__card-title">{{ macros.wrapWords(item.data.title) }}</h4>
         <p class="carousel__card-description">
           {% if item.data.description %}
             {{ item.data.description }}
@@ -30,55 +23,5 @@
       </a>
     </li>
   {% endfor %}
-    {# <li>
-      <a class="carousel__card" href="">
-        <span class="carousel__card-overline">
-          <span class="carousel__card-type">Entry<span class="carousel__card-arrow">&nbsp;&#8599;</span></span>
-          <span class="carousel__card-topic">SCSS</span>
-        </span>
-        <h4 class="carousel__card-title">SCSS Variables</h4>
-        <p class="carousel__card-description">Each language is a superset of CSS that shares some of the same fundamental syntax and typographical notations.</p>
-      </a>
-    </li>
-    <li>
-      <a class="carousel__card" href="">
-        <span class="carousel__card-overline">
-          <span class="carousel__card-type">Entry<span class="carousel__card-arrow">&nbsp;&#8599;</span></span>
-          <span class="carousel__card-topic">SCSS</span>
-        </span>
-        <h4 class="carousel__card-title">Mixins</h4>
-        <p class="carousel__card-description">Each language is a superset of CSS that shares some of the same fundamental syntax and typographical notations.</p>
-      </a>
-    </li>
-    <li>
-      <a class="carousel__card" href="">
-        <span class="carousel__card-overline">
-          <span class="carousel__card-type">Entry<span class="carousel__card-arrow">&nbsp;&#8599;</span></span>
-          <span class="carousel__card-topic">Terminal</span>
-        </span>
-        <h4 class="carousel__card-title">Useful Commands</h4>
-        <p class="carousel__card-description">Each language is a superset of CSS that shares some of the same fundamental syntax and typographical notations.</p>
-      </a>
-    </li>
-    <li>
-      <a class="carousel__card" href="">
-        <span class="carousel__card-overline">
-          <span class="carousel__card-type">Entry<span class="carousel__card-arrow">&nbsp;&#8599;</span></span>
-          <span class="carousel__card-topic">CSS</span>
-        </span>
-        <h4 class="carousel__card-title">The Box Model</h4>
-        <p class="carousel__card-description">Each language is a superset of CSS that shares some of the same fundamental syntax and typographical notations.</p>
-      </a>
-    </li>
-    <li >
-      <a class="carousel__card" href="">
-        <span class="carousel__card-overline">
-          <span class="carousel__card-type">Entry<span class="carousel__card-arrow">&nbsp;&#8599;</span></span>
-          <span class="carousel__card-topic">CSS</span>
-        </span>
-        <h4 class="carousel__card-title">CSS Preprocessing</h4>
-        <p class="carousel__card-description">Each language is a superset of CSS that shares some of the same fundamental syntax and typographical notations.</p>
-      </a>
-    </li> #}
   </ul>
 </section>

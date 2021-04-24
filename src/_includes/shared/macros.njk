@@ -1,0 +1,20 @@
+{% macro wrapWords(title = '', className = '') %}
+  {% set words = title | split(' ') %}
+  {% for word in words %}
+    <span {% if className %} class="{{ className }}" {% endif %}>{{ word }}</span>
+  {% endfor %}
+{% endmacro %}
+
+{% macro contentType(item) %}
+  {# The tag assigned by the json file in the directory will always be the first tag #}
+  {% set tagDef = item.data.tags[0] %}
+  {% if tagDef == "entries" %}
+    Entry
+  {% endif %}
+  {% if tagDef == "series" %}
+    Series
+  {% endif %}
+  {% if tagDef == "collections" %}
+    Collection
+  {% endif %}
+{% endmacro %}
