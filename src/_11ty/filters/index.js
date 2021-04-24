@@ -5,6 +5,7 @@ const includesTechnology = require('./includesTechnology');
 const readableDate = require('./readableDate');
 const split = require('./split');
 const formatTopic = require('./formatTopic');
+const where = require('./where');
 
 module.exports = {
   htmlDateString,
@@ -14,4 +15,5 @@ module.exports = {
   readableDate,
   split,
   formatTopic,
+  where,
 };
