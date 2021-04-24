@@ -74,6 +74,7 @@
     "eslint-config-prettier": "^6.11.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.1.7",
+    "lodash": "^4.17.21",
     "luxon": "^1.21.3",
     "markdown-it": "^8.4.2",
     "markdown-it-anchor": "^5.2.5",
