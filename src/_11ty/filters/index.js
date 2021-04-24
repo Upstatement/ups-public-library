@@ -4,6 +4,7 @@ const includesTeam = require('./includesTeam');
 const includesTechnology = require('./includesTechnology');
 const readableDate = require('./readableDate');
 const split = require('./split');
+const formatTopic = require('./formatTopic');
 
 module.exports = {
   htmlDateString,
@@ -12,4 +13,5 @@ module.exports = {
   includesTechnology,
   readableDate,
   split,
+  formatTopic,
 };
