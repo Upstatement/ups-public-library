@@ -14,14 +14,15 @@ pagination:
   alias: topic
 ---
 
-{% from "../../_includes/shared/macros.njk" import contentType %}
+{% from "../../shared/macros.njk" import contentType %}
 
 <h1>
   Topics / {{ topic | formatTopic(true) }}
 </h1>
 
 <ul>
-  {% for item in collections[topic] %}
+  {% set items = collections.deDupedItems | where("data.tags[1]", topic) %}
+  {% for item in items %}
     <li>
       {{ contentType(item) }}
       <a href="{{ item.url }}">
