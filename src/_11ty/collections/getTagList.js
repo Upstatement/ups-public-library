@@ -13,7 +13,8 @@ module.exports = collection => {
     }
   });
 
-  // returning an array in addCollection works in Eleventy 0.5.3
-  const tagList = [...tagSet];
+  // Convert the set into an alphabetized (desc) array
+  const tagList = [...tagSet].sort((a, b) => (a < b ? -1 : a > b ? 1 : 0));
+
   return tagList;
 };
