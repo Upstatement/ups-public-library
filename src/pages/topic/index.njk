@@ -20,8 +20,7 @@ pagination:
   {{ macros.breadcrumbs('Topics', topic, 'topic__breadcrumbs') }}
 
   <ul>
-    {% set items = collections.deDupedItems | where("data.tags[1]", topic) %}
-    {% for item in items %}
+    {% for item in collections[topic] %}
       <li>
         {{ macros.contentType(item.data.tags) }}
         <a href="{{ item.url }}">
