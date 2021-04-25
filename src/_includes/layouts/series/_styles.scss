@@ -2,17 +2,9 @@
   @include content-column;
 }
 
-.series__breadcrumb {
-  display: flex;
-  font-size: $fs-3;
-  justify-content: center;
-  margin-bottom: var(--gutter-half);
+.series__breadcrumbs {
   min-height: 12vh;
   padding-top: var(--gutter-full);
-
-  @include mq($md) {
-    text-align: center;
-  }
 }
 
 .series__header {

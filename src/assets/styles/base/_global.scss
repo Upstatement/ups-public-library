@@ -109,3 +109,15 @@ hr {
     display: block;
   }
 }
+
+.breadcrumbs {
+  display: flex;
+  font-size: $fs-3;
+  justify-content: center;
+  margin-bottom: var(--gutter-half);
+  white-space: pre;
+
+  @include mq($md) {
+    text-align: center;
+  }
+}

@@ -3,9 +3,12 @@ layout: layouts/base/index.njk
 templateClass: entry
 ---
 
-{% from "../../shared/macros.njk" import wrapWords %}
+{% import "../../shared/macros.njk" as macros %}
 
 {% if content %}
+
+{% set topic = tags[1] %}
+
   <aside class="entry__toc--wrapper">
     {{ content | toc | safe }}
   </aside>
@@ -17,18 +20,10 @@ templateClass: entry
       <div id="js-percent-complete" class="nav__percent-complete">0%</div>
     </nav>
     <header class="entry__header">
-      <span>
-        {{ date | readableDate }}
-      </span>
-      {% if topic %}
-        <span class="entry__topic">
-          /
-          {{ topic }}
-        </span>
-      {% endif %}
+      {{ macros.breadcrumbs(topic, title) }}
     </header>
     <section class="entry__content md" id="js-entry-content">
-      <h1>{{ wrapWords(title) }}</h1>
+      <h1>{{ macros.wrapWords(title) }}</h1>
       {{ content | safe }}
     </section>
     <footer class="entry__footer">
