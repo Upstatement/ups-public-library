@@ -9,7 +9,7 @@
 
 .series__header {
   text-align: center;
-  margin-bottom: $paragraph-spacing * 2;
+  margin-bottom: $section-spacing;
 
   p {
     text-align: left;
@@ -20,17 +20,12 @@
   font-family: $neuebit;
   font-size: $fs0;
   font-weight: $neuebit-bold;
+  margin-bottom: var(--gutter-half);
 }
 
 .series__title {
-  font-family: $fleuron-reg;
-  font-size:  $fs1;
-  font-weight: 300;
-  margin-bottom: $paragraph-spacing;
-
-  &::first-letter {
-    font-family: $fleuron-mix;
-  }
+  @include h(1, $family: $fleuron-reg);
+  margin-bottom: $sp1;
 }
 
 .series__description {
@@ -72,6 +67,7 @@
 
 .series__entry-title {
   font-size: $fs0;
+  font-family: $fleuron-reg;
 }
 
 .series__entry-card {
