@@ -4,7 +4,7 @@
 // edits the first letter (nunjucks lowercases subsequent chars)
 const capitalize = s => s.charAt(0).toUpperCase() + s.slice(1);
 
-module.exports = (topic, capitalized = false) => {
+module.exports = (topic, capitalized = true) => {
   const formattedTopics = {
     css: 'CSS',
     scss: 'SCSS',

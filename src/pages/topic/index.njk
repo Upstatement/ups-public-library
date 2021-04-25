@@ -3,7 +3,7 @@ layout: layouts/base/index.njk
 templateClass: topic
 date: Last Modified
 eleventyComputed:
-  title: '{{ topic | formatTopic(true) }}'
+  title: '{{ topic | formatTopic }}'
 permalink: /topics/{{ topic | slug }}/
 pagination:
   data: collections

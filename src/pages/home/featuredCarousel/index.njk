@@ -10,7 +10,7 @@
           <span class="carousel__card-type">
             {{ macros.contentType(item.data.tags) }}
             <span class="carousel__card-arrow">&nbsp;&#8599;</span></span>
-          <span class="carousel__card-topic">{{ item.data.tags[1] | formatTopic(true) }}</span>
+          <span class="carousel__card-topic">{{ item.data.tags[1] | formatTopic }}</span>
         </span>
       <h4 class="carousel__card-title">{{ macros.wrapWords(item.data.title) }}</h4>
         <p class="carousel__card-description">
