@@ -1,10 +1,11 @@
 ---
 layout: layouts/entry/index.njk
 title: SCSS Variables
-date: 2021-04-23
+date: 2021-04-25
 tags:
   - scss
   - featured
+order: 4
 nextEntryTitle: Nesting Selectors
 description: Variables are a simple yet fundamental component of writing SCSS.
 ---

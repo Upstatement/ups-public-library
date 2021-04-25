@@ -46,6 +46,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection('sortedEntries', collectionApi =>
     getSortedCollection(collectionApi, 'entries'),
   );
+  eleventyConfig.addCollection('sortedFeatured', collectionApi =>
+    getSortedCollection(collectionApi, 'featured', 'order'),
+  );
   eleventyConfig.addCollection('entriesMap', collectionApi => getSlugMap(collectionApi, 'entries'));
   eleventyConfig.addCollection('tagList', getTagList);
   eleventyConfig.addCollection('deDupedItems', deDupedItems);

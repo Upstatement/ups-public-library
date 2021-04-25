@@ -1,10 +1,11 @@
 ---
 layout: layouts/entry/index.njk
 title: Mixins
-date: 2021-04-24
+date: 2021-04-25
 tags:
   - scss
   - featured
+order: 1
 ---
 
 Oftentimes, we need to apply the same groups of styles in numerous instances throughout a site. Mixins allow us to define a group of rules and insert them into selectors. We can even pass them parameters to adjust the output as needed in different contexts. Mixins are defined using the `@mixin` keyword, and invoked using the `@include` keyword.
@@ -51,7 +52,7 @@ a {
 
 ## Nesting
 
-Nesting in mixins behaves exactly like in selectors. Modifiers, nesting, and qualification are all functional.
+Nesting in mixins behaves exactly like in selectors. [Modifiers](/entries/nesting-selectors/#adding-modifiers), [nesting](/entries/nesting-selectors/), and [qualification](/entries/nesting-selectors/#qualifying-scope) are all functional.
 
 ```scss
 @mixin link($color-base: $c-link, $color-active: $c-link-active) {
