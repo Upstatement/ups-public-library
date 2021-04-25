@@ -1,0 +1,8 @@
+.topic__content {
+  @include content-column;
+}
+
+.topic__breadcrumbs {
+  min-height: 12vh;
+  padding-top: var(--gutter-full);
+}

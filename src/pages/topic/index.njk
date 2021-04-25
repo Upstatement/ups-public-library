@@ -1,0 +1,33 @@
+---
+layout: layouts/base/index.njk
+templateClass: topic
+date: Last Modified
+eleventyComputed:
+  title: '{{ topic | formatTopic(true) }}'
+permalink: /topics/{{ topic | slug }}/
+pagination:
+  data: collections
+  size: 1
+  filter:
+    - entries
+    - series
+  alias: topic
+---
+
+{% import "../../_includes/shared/macros.njk" as macros %}
+
+<section class="topic__content">
+  {{ macros.breadcrumbs('Topics', topic, 'topic__breadcrumbs') }}
+
+  <ul>
+    {% set items = collections.deDupedItems | where("data.tags[1]", topic) %}
+    {% for item in items %}
+      <li>
+        {{ macros.contentType(item.data.tags) }}
+        <a href="{{ item.url }}">
+          {{ item.data.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
