@@ -8,7 +8,7 @@
       <a class="carousel__card" href="{{ item.url }}">
         <span class="carousel__card-overline">
           <span class="carousel__card-type">
-            {{ macros.contentType(item) }}
+            {{ macros.contentType(item.data.tags) }}
             <span class="carousel__card-arrow">&nbsp;&#8599;</span></span>
           <span class="carousel__card-topic">{{ item.data.tags[1] }}</span>
         </span>

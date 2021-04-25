@@ -5,9 +5,9 @@
   {% endfor %}
 {% endmacro %}
 
-{% macro contentType(item) %}
+{% macro contentType(tags) %}
   {# The tag assigned by the json file in the directory will always be the first tag #}
-  {% set tagDef = item.data.tags[0] %}
+  {% set tagDef = tags[0] %}
   {% if tagDef == "entries" %}
     Entry
   {% endif %}
