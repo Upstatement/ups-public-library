@@ -111,6 +111,7 @@ hr {
 }
 
 .breadcrumbs {
+  align-items: flex-start;
   display: flex;
   font-size: $fs-3;
   justify-content: center;
@@ -119,5 +120,12 @@ hr {
 
   @include mq($md) {
     text-align: center;
+  }
+
+  a {
+    @include transition (color);
+    @include on-focus {
+      color: $blue;
+    }
   }
 }
