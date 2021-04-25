@@ -30,13 +30,13 @@
   }
 }
 
-@mixin first-letter($ff: $fleuron-mix) {
-  span {
+@mixin first-letter($selector, $ff) {
+  #{$selector} {
     display: inline-block;
     white-space: pre;
 
     &:first-letter {
-      font-family: $fleuron-mix;
+      font-family: $ff;
     }
   }
 }

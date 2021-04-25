@@ -60,7 +60,6 @@
 }
 
 .carousel__card-title {
-  @include first-letter;
   font-family: $fleuron-reg;
   font-size: $fs2;
   min-height: 70px;

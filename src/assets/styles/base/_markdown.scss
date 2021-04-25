@@ -162,9 +162,7 @@
   }
 
   h1 {
-    @include h(1);
-    @include first-letter;
-    font-family: $fleuron-reg;
+    @include h(1, $family: $fleuron-reg);
   }
 
   h2 {

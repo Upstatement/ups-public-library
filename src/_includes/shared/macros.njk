@@ -1,7 +1,7 @@
-{% macro wrapWords(title = '', className = '') %}
+{% macro wrapWords(title = '', className = 'fleuron-mix') %}
   {% set words = title | split(' ') %}
   {% for word in words %}
-    <span {% if className %} class="{{ className }}" {% endif %}>{{ word }}</span>
+    <span class="{{ className }}">{{ word }}</span>
   {% endfor %}
 {% endmacro %}
 
