@@ -1,7 +1,7 @@
 ---
 layout: layouts/entry/index.njk
 title: Mixins
-date: 2021-04-23
+date: 2021-04-24
 tags:
   - scss
   - featured
@@ -105,6 +105,7 @@ Here's an extremely common use case that builds upon what we've seen so far in t
 }
 
 @mixin link($color-base: $c-link, $color-active: $c-link-active) {
+  @include focus-reset;
   color: $color-base;
   text-decoration: none;
 
