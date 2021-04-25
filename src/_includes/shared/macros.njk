@@ -18,3 +18,13 @@
     Collection
   {% endif %}
 {% endmacro %}
+
+{% macro breadcrumbs(first, current, class) %}
+  <nav class="breadcrumbs{% if class %} {{ class }}{% endif %}" >
+    {% if first == 'Topics' %}
+      <a href="/">~ups-public-library</a> / Topics / {{ current | formatTopic }}
+    {% else %}
+      <a href="/">~ups-public-library</a> / <a href="{{ "/topics/" ~ first }}">{{ first | formatTopic }}</a> / {{ current }}
+    {% endif %}
+  </nav>
+{% endmacro %}
