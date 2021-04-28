@@ -1,10 +1,21 @@
-.series__content {
-  @include content-column;
+.series {
+  @include gutters(vert, half, margin);
+}
+
+.series__breadcrumbs-wrapper {
+  @include mq($sm) {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+  }
 }
 
 .series__breadcrumbs {
-  min-height: 12vh;
-  padding-top: var(--gutter-full);
+  padding-top: var(--gutter-half);
+}
+.series__content {
+  @include content-column;
 }
 
 .series__header {
@@ -48,11 +59,10 @@
 
 .series__entry {
   align-items: center;
-  border-top: 1px solid $black;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: var(--gutter-half) 0;
+  padding: var(--gutter-full) 0;
   position: relative;
   width: 100%;
 
@@ -66,8 +76,7 @@
 }
 
 .series__entry-title {
-  font-size: $fs0;
-  font-family: $fleuron-reg;
+  @include h(2, $family: $fleuron-reg);
 }
 
 .series__entry-card {

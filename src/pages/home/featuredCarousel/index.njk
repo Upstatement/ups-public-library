@@ -1,25 +1,27 @@
 {% import "../../../_includes/shared/macros.njk" as macros %}
 
 <section class="home__carousel">
-  <h4 class="carousel__overline">&#8644; Featured Content &#8644;</h4>
+  <h4 class="carousel__overline"></h4>
   <ul class="carousel__list">
   {% for item in collections.sortedFeatured %}
     <li>
       <a class="carousel__card" href="{{ item.url }}">
-        <span class="carousel__card-overline">
+        <div class="carousel__card-content">
+          <h4 class="carousel__card-title">{{ macros.wrapWords(item.data.title) }}</h4>
+          <p class="carousel__card-description">
+            {% if item.data.description %}
+              {{ item.data.description }}
+            {% else %}
+              HEY!!! This item needs a description in the frontmatter. Pretty please :)
+            {% endif %}
+          </p>
+        </div>
+        <span class="carousel__card-meta">
           <span class="carousel__card-type">
             {{ macros.contentType(item.data.tags) }}
             <span class="carousel__card-arrow">&nbsp;&#8599;</span></span>
           <span class="carousel__card-topic">{{ item.data.tags[1] | formatTopic }}</span>
         </span>
-      <h4 class="carousel__card-title">{{ macros.wrapWords(item.data.title) }}</h4>
-        <p class="carousel__card-description">
-          {% if item.data.description %}
-            {{ item.data.description }}
-          {% else %}
-            HEY!!! This item needs a description in the frontmatter. Pretty please :)
-          {% endif %}
-        </p>
       </a>
     </li>
   {% endfor %}

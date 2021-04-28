@@ -5,17 +5,17 @@
   @include content-column;
   margin-bottom: $paragraph-spacing;
 
-  &::before {
-    @include absolute(50%);
-    @include size(450px);
-    @include spectrum(background-color);
-    border-radius: 50%;
-    content: '';
-    display: block;
-    transform: translateX(-50%);
-    transition: background-color 0.3s;
-    z-index: -1;
-  }
+  // &::before {
+  //   @include absolute(50%);
+  //   @include size(450px);
+  //   @include spectrum(background-color);
+  //   border-radius: 50%;
+  //   content: '';
+  //   display: block;
+  //   transform: translateX(-50%);
+  //   transition: background-color 0.3s;
+  //   z-index: -1;
+  // }
 }
 
 .topics__overline {
@@ -45,7 +45,7 @@
 
 .topics__item-title {
   font-family: $fleuron-reg;
-  font-size: $fs1;
+  font-size: $h2;
 }
 
 .topics__item-count {

@@ -23,6 +23,10 @@
   position: relative;
 }
 
+.home__header-secondary {
+  @include gutters;
+}
+
 .home__header-tip {
   padding: 0 10px;
   text-align: center;
@@ -64,12 +68,12 @@
   }
 
   &--bottom-left {
-    bottom: 0;
+    bottom: $sp-2;
     left: 0;
   }
 
   &--bottom-right {
-    bottom: -$sp-4;
+    bottom: $sp-4;
     right: 0;
   }
 }

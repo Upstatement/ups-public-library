@@ -22,20 +22,15 @@
 
 .carousel__card {
   color: var(--text-color);
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 300px;
   padding: var(--gutter-half) var(--gutter-full);
   width: 480px;
 
   &:hover {
-    background-color: var(--bg-color-inverted);
-    border-color: $black;
-    color: var(--text-color-inverted);
     cursor: ne-resize;
-
-    .carousel__card-title {
-      color: $white;
-    }
 
     .carousel__card-arrow {
       display: inline-block;
@@ -47,7 +42,7 @@
   display: none;
 }
 
-.carousel__card-overline {
+.carousel__card-meta {
   display: flex;
   flex-direction: row;
   font-family: $neuebit;

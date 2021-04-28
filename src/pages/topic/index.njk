@@ -16,15 +16,27 @@ pagination:
 
 {% import "../../_includes/shared/macros.njk" as macros %}
 
-<section class="topic__content">
+{% include '../home/topper/index.njk' %}
+<span class="topic__breadcrumbs-wrapper">
   {{ macros.breadcrumbs('Topics', topic, 'topic__breadcrumbs') }}
+</span>
 
-  <ul>
+<section class="topic__content">
+  <header class="topic__header">
+    <div class="topic__label">Topic</div>
+    <h1 class="topic__title">{{ macros.wrapWords(title) }}</h1>
+  </header>
+
+  <ul class="topic__list">
     {% for item in collections[topic] %}
       <li>
-        {{ macros.contentType(item.data.tags) }}
-        <a href="{{ item.url }}">
-          {{ item.data.title }}
+        <a href="{{ item.url }}" class="topic__entry">
+          {% if item.data.title %}
+            <h4 class="topic__entry-title">{{ macros.wrapWords(item.data.title) }}</h4>
+          {% endif %}
+          <span class="topic__entry-type">
+            {{ macros.contentType(item.data.tags) }}
+          </span>
         </a>
       </li>
     {% endfor %}
