@@ -1,9 +1,21 @@
 /**
  * Topics Index
  */
-.topics{
+.topics {
   @include content-column;
   margin-bottom: $paragraph-spacing;
+
+  &::before {
+    @include absolute(50%);
+    @include size(450px);
+    @include spectrum(background-color);
+    border-radius: 50%;
+    content: '';
+    display: block;
+    transform: translateX(-50%);
+    transition: background-color 0.3s;
+    z-index: -1;
+  }
 }
 
 .topics__overline {
@@ -16,7 +28,6 @@
 
 .topics__item {
   align-items: center;
-  border-top: 1px solid $black;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -33,7 +44,8 @@
 }
 
 .topics__item-title {
-  font-size: $fs0;
+  font-family: $fleuron-reg;
+  font-size: $fs1;
 }
 
 .topics__item-count {

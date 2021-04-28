@@ -34,14 +34,15 @@
 }
 
 .home__tip-refresh {
-  @include size(0.85em);
-  @include spectrum(fill);
+  @include size(0.9em);
+  @include spectrum(color);
+  transform: translateY(-4px);
 }
 
 .home__tip-dingbat {
-  font-size: 52px;
-  margin-bottom: 0;
-  margin-top: 0.45em;
+  font-size: 70px;
+  margin-bottom: -0.25em;
+  margin-top: 0.2em;
 }
 
 .home__tip-corner {
@@ -143,8 +144,12 @@ svg.home__tip-corner {
 
   &--tip-content {
     font-family: $mondwest;
-    font-size: $fs0;
+    font-size: $fs-1;
     margin-top: $sp-4;
+
+    @include mq($md) {
+      font-size: $fs0;
+    }
   }
 }
 

@@ -1,11 +1,9 @@
 ---
 layout: layouts/entry/index.njk
 title: Mixins
-date: 2021-04-25
+date: 2021-04-28
 tags:
   - scss
-  - featured
-order: 1
 ---
 
 Oftentimes, we need to apply the same groups of styles in numerous instances throughout a site. Mixins allow us to define a group of rules and insert them into selectors. We can even pass them parameters to adjust the output as needed in different contexts. Mixins are defined using the `@mixin` keyword, and invoked using the `@include` keyword.

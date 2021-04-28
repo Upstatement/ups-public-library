@@ -1,9 +1,11 @@
 ---
 layout: layouts/entry/index.njk
 title: Pseudo Classes & Elements
-date: 2021-04-23
+date: 2021-04-28
 tags:
   - css
+  - featured
+order: 2
 ---
 
 By adding pseudo- CSS keywords to the end of a selector, we can style states and nodes that aren’t present in HTML. Pseudo-classes specify states, like `:hover`. Pseudo-elements reference visual aspects or parts of elements, like `::first-line`.
