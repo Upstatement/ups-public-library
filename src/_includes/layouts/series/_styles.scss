@@ -3,7 +3,7 @@
 }
 
 .series__breadcrumbs-wrapper {
-  @include mq($sm) {
+  @include mq($md) {
     display: flex;
     align-items: center;
     position: absolute;
@@ -12,8 +12,10 @@
 }
 
 .series__breadcrumbs {
-  padding-top: var(--gutter-half);
+  margin: 0 auto;
+  padding-top: $sp-4;
 }
+
 .series__content {
   @include content-column;
 }

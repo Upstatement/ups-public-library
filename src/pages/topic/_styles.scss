@@ -3,7 +3,7 @@
 }
 
 .topic__breadcrumbs-wrapper {
-  @include mq($sm) {
+  @include mq($md) {
     display: flex;
     align-items: center;
     position: absolute;
@@ -12,7 +12,8 @@
 }
 
 .topic__breadcrumbs {
-  padding-top: var(--gutter-half);
+  margin: 0 auto;
+  padding-top: $sp-4;
 }
 
 .topic__content {
