@@ -1,5 +1,5 @@
 .topic {
-  @include gutters(vert, half, margin);
+  margin-top: var(--gutter-half);
 }
 
 .topic__breadcrumbs-wrapper {
@@ -46,6 +46,8 @@
  * Entries
  */
  .topic__entries-list {
+  margin-bottom: $section-spacing;
+
   li {
     padding-left: 0;
 
@@ -61,7 +63,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: var(--gutter-full) 0;
+  padding: $paragraph-spacing 0;
   position: relative;
   width: 100%;
 
@@ -76,6 +78,7 @@
 
 .topic__entry-title {
   @include h(2, $family: $fleuron-reg, $weight: 300);
+  font-size: $fs3;
 }
 
 .topic__entry-card {

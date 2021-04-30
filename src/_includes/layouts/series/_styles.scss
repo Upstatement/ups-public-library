@@ -1,5 +1,5 @@
 .series {
-  @include gutters(vert, half, margin);
+  margin-top: var(--gutter-half);
 }
 
 .series__breadcrumbs-wrapper {
@@ -45,6 +45,8 @@
  * Entries
  */
 .series__list {
+  margin-bottom: $section-spacing;
+
   li {
     padding-left: 0;
 
@@ -75,37 +77,10 @@
   @include h(2, $family: $fleuron-reg, $weight: 300);
 }
 
-.series__entry-card {
-  @include absolute(0 n n 50%);
-  @include layer(1);
-  background-color: $gray-1;
-  border: 1px solid $gray-3;
-  color: var(--text-color);
-  display: none;
-  transform: translateX(-50%);
-  padding: var(--gutter-half) calc(var(--gutter-half) * 1.5);
-  width: 270px;
-}
-
-.entry__card-overline {
-  display: flex;
-  flex-direction: row;
+.series__entry-num {
+  display: block;
   font-family: $neuebit;
   font-size: $fs0;
   font-weight: $neuebit-bold;
-  justify-content: space-between;
-  margin-bottom: var(--gutter-half);
-}
-
-.entry__card-title {
-  font-family: $fleuron-reg;
-  font-size: $fs2;
-  line-height: 1.15;
-  margin-bottom: var(--gutter-half);
-}
-
-.entry__card-description {
-  font-size: $fs-1;
-  line-height: 1.25;
-  margin-bottom: 0.25em;
+  margin-bottom: $sp-2;
 }

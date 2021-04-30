@@ -9,7 +9,8 @@ templateClass: series
 
 {% set topic = tags[1] %}
 
-  {% include '../../../pages/home/topper/index.njk' %}
+{% include '../../../pages/home/topper/index.njk' %}
+
 <span class="series__breadcrumbs-wrapper">
     {{ macros.breadcrumbs(topic, title, 'series__breadcrumbs') }}
   </span>
@@ -17,7 +18,7 @@ templateClass: series
   <section class="series__content">
     <header class="series__header">
       <div class="series__label">{{ macros.contentType(tags) }}</div>
-      <h1 class="series__title">{{ macros.wrapWords(title) }}</h1>
+      <h1 class="series__title">{{ title }}</h1>
       {{ content | safe }}
     </header>
 
@@ -25,17 +26,13 @@ templateClass: series
       {% for entry in entries %}
         <li>
           <a href="{{ '/entries/' ~ (entry | slug) }}" class="series__entry">
+            <span class="series__entry-num">0{{ loop.index }}</span>
             <h5 class="series__entry-title">{{ macros.wrapWords(entry) }}</h5>
-            <div class="series__entry-card">
-              <span class="entry__card-overline">
-                <span class="entry__card-type">Entry &#8599;</span>
-                <span class="entry__card-topic">{{ title }}</span>
-              </span>
-              <p class="entry__card-description">Each language is a superset of CSS that shares some of the same fundamental syntax and typographical notations.</p>
-            </div>
           </a>
         </li>
       {% endfor %}
     </ul>
   </section>
 {% endif %}
+
+{% include '../../../pages/home/topicIndex/index.njk' %}
