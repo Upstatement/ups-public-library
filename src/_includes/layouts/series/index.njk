@@ -7,11 +7,11 @@ templateClass: series
 
 {% if content %}
 
+{% include '../../shared/topper/index.njk' %}
+
 {% set topic = tags[1] %}
 
-{% include '../../../pages/home/topper/index.njk' %}
-
-<span class="series__breadcrumbs-wrapper">
+  <span class="series__breadcrumbs-wrapper">
     {{ macros.breadcrumbs(topic, title, 'series__breadcrumbs') }}
   </span>
 
@@ -33,6 +33,5 @@ templateClass: series
       {% endfor %}
     </ul>
   </section>
-{% endif %}
 
-{% include '../../../pages/home/topicIndex/index.njk' %}
+{% endif %}

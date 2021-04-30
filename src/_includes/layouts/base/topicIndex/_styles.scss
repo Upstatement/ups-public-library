@@ -10,29 +10,16 @@
 }
 
 .topics__overline {
-    @include content-column;
-  // font-family: $mondwest;
-  // opacity: 0.15;
-  // letter-spacing: 0.15em;
-  // margin-bottom: -250px;
-  // text-transform: uppercase;
-  // width: 100%;
-  // z-index: -1;
+  @include content-column;
   color: $white;
   font-family: $mondwest;
-  font-size: 60px;
+  font-size: $fs3;
   margin-bottom: $sp-1;
   text-align: center;
-
-
-  // span {
-  //   display: inline-block;
-  //   transform: translateY(-85px);
-  // }
 }
 
 .topics__list {
-  justify-content: center;
+  justify-content: space-around;
   display: flex;
   flex-wrap: wrap;
   margin-bottom: $paragraph-spacing;
@@ -41,7 +28,7 @@
 
 .topics__item {
   display: block;
-  margin: $sp-5 30px;
+  margin: $sp1 $sp2;
   text-align: center;
 
   &:hover {
@@ -56,8 +43,8 @@
 .topics__item-title {
   color: $white;
   font-family: $fleuron-mix;
-  font-size: 58px;
-  line-height: 1.25;
+  font-size: $fs3;
+  line-height: 1.125;
 }
 
 .topics__item-count {
@@ -65,5 +52,4 @@
   font-family: $neuebit;
   font-size: $fs0;
   font-weight: $neuebit-bold;
-  transform: translateY(1px);
 }
