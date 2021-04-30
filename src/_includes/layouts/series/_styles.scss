@@ -22,7 +22,7 @@
 
 .series__header {
   text-align: center;
-  margin-bottom: $section-spacing;
+  margin-bottom: $paragraph-spacing;
 
   p {
     text-align: center;
@@ -33,11 +33,10 @@
   font-family: $neuebit;
   font-size: $fs0;
   font-weight: $neuebit-bold;
-  margin-bottom: var(--gutter-half);
 }
 
 .series__title {
-  @include h(1, $family: $fleuron-reg);
+  @include h(2, $family: $everett-bold);
   margin-bottom: $sp1;
 }
 
