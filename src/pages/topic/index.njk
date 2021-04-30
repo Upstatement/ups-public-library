@@ -28,36 +28,42 @@ pagination:
     <h1 class="topic__title">{{ macros.wrapWords(title) }}</h1>
   </header>
 
-  <ul class="topic__series-list">
-    <div class="topic__label">Series</div>
-    {% for item in collections[topic] | where("data.tags[0]", "series") %}
-      <li>
-        <a href="{{ item.url }}" class="topic__entry">
-          {% if item.data.title %}
-            <h4 class="topic__entry-title">{{ item.data.title }}</h4>
-          {% endif %}
-        </a>
-      </li>
-    {% endfor %}
-  </ul>
+  <section class="topic__series__section">
+    <ul class="topic__series__list">
+      <div class="topic__label">Series</div>
+      {% for item in collections[topic] | where("data.tags[0]", "series") %}
+        <li class="topic__series__wrapper">
+          <a href="{{ item.url }}" class="topic__series__link">
+            <h4 class="topic__series__title">
+              {{ item.data.title }}
+              <span class="arrow">
+                &#8599;
+              </span>
+            </h4>
+            <p>
+              {{ item.data.description }}
+            </p>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
 
-  <ul class="topic__entries-list">
-    <div class="topic__label">All Entries</div>
-    {% for item in collections[topic] | where("data.tags[0]", "entries") %}
-      <li>
-        <a href="{{ item.url }}" class="topic__entry">
-          {% if item.data.title %}
-            <h4 class="topic__entry-title">{{ item.data.title }}</h4>
-          {% endif %}
-          {# <div class="topic__entry-card">
-            <span class="entry__card-overline">
-              <span class="entry__card-type">{{ macros.contentType(item.data.tags) }} &#8599;</span>
-              <span class="entry__card-topic">{{ title }}</span>
-            </span>
-            <p class="entry__card-description"></p>
-          </div> #}
-        </a>
-      </li>
-    {% endfor %}
-  </ul>
+  <section class="topic__entries__section">
+    <ul class="topic__entries__list">
+      <div class="topic__label">All Entries</div>
+      {% for item in collections[topic] | where("data.tags[0]", "entries") %}
+        <li class="topic__entry__wrapper">
+          <a href="{{ item.url }}" class="topic__entry__link">
+            <h4 class="topic__entry__title">
+              {{ item.data.title }}
+              <span class="arrow">
+                &#8599;
+              </span>
+            </h4>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
 </section>

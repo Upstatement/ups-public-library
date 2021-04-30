@@ -10,11 +10,9 @@
   $level,
   $weight: $everett-bold,
   $family: $sans,
-  $color: var(--text-color),
   $fs-sm: map-get($headings, h#{$level + 1}),
   $fs-base: map-get($headings, h#{$level})
 ) {
-  color: $color;
   font-family: $family;
   font-weight: $weight;
   font-size: $fs-sm;

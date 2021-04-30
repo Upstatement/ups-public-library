@@ -4,7 +4,6 @@ title: SCSS Basics
 date: 2021-04-30
 tags:
   - scss
-
 entries:
   - CSS Preprocessing
   - SCSS Variables

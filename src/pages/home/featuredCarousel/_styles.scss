@@ -12,6 +12,7 @@
 
 .carousel__list {
   @include grid-parent;
+  flex-wrap: nowrap;
   overflow-x: scroll;
   padding: $paragraph-spacing 0 0;
   -ms-overflow-style: none;  /* IE and Edge */
@@ -27,8 +28,8 @@
   color: var(--text-color);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   height: 300px;
+  justify-content: space-between;
   padding: var(--gutter-half) var(--gutter-full);
   width: 480px;
 

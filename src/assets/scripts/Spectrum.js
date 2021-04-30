@@ -4,27 +4,27 @@ class Spectrum {
     // src/assets/styles/mixins/_spectrum.scss
     // The less often this timeout runs with JS, the more
     // performant the script is, and CSS can handle transitions.
-    this.updateInterval = 1000;
+    this.updateInterval = 100;
 
     this.red = {
-      min: 80,
-      max: 125,
+      min: 100,
+      max: 220,
       current: 80,
-      interval: 5,
+      interval: 1,
       direction: 1, // 1 = forwards, -1 = backwards
     };
     this.green = {
-      min: 160,
-      max: 200,
+      min: 100,
+      max: 240,
       current: 160,
-      interval: 20,
+      interval: 3,
       direction: 1,
     };
     this.blue = {
-      min: 180,
+      min: 100,
       max: 255,
       current: 255,
-      interval: 10,
+      interval: 2,
       direction: 1,
     };
 

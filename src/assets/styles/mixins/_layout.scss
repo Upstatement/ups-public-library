@@ -51,8 +51,14 @@
 @mixin grid-parent {
   @include flex;
   @include gutters;
+  flex-flow: row wrap;
   flex: 0 0 100%;
   width: 100%;
+}
+
+@mixin grid-child($cols) {
+  @include gutters;
+  flex: 1 0 cols($cols);
 }
 
 @mixin content-column {

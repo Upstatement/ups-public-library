@@ -1,5 +1,5 @@
 @mixin spectrum($property) {
-  @include transition(1000ms, $property, cubic-bezier(0.87, 0, 0.13, 1));
+  @include transition(100ms, $property, linear);
 
   @if type-of($property) != list {
     #{$property}: var(--spectrum);

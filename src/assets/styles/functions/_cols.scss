@@ -1,3 +1,3 @@
-@function cols($count, $base: $grid-col-count) {
-  @return calc(100% / #{$base} * #{$count});
+@function cols($count, $base: $grid-col-count, $unit: '%') {
+  @return calc(100#{$unit} / #{$base} * #{$count});
 }
