@@ -5,7 +5,8 @@ date: 2021-04-30
 tags:
   - git
   - featured
-order: 5
+order: 3
+description: Local changes are synced to remote repositories using these essential actions.
 ---
 
 Local changes are synced to remote repositories (in GitHub) using actions called pulling, pushing, and merging.

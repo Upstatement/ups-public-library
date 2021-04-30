@@ -25,7 +25,7 @@
   margin-bottom: $section-spacing;
 
   p {
-    text-align: left;
+    text-align: center;
   }
 }
 
@@ -39,10 +39,6 @@
 .series__title {
   @include h(1, $family: $fleuron-reg);
   margin-bottom: $sp1;
-}
-
-.series__description {
-  text-align: left;
 }
 
 /**

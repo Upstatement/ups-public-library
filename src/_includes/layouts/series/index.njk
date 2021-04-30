@@ -25,7 +25,7 @@ templateClass: series
       {% for entry in entries %}
         <li>
           <a href="{{ '/entries/' ~ (entry | slug) }}" class="series__entry">
-            <h5 class="series__entry-title">{{ entry }}</h5>
+            <h5 class="series__entry-title">{{ macros.wrapWords(entry) }}</h5>
             <div class="series__entry-card">
               <span class="entry__card-overline">
                 <span class="entry__card-type">Entry &#8599;</span>

@@ -1,11 +1,10 @@
 ---
 layout: layouts/series/index.njk
 title: SCSS Basics
-date: 2021-04-25
+date: 2021-04-30
 tags:
   - scss
-  - featured
-order: 3
+
 entries:
   - CSS Preprocessing
   - SCSS Variables
@@ -13,4 +12,4 @@ entries:
   - Mixins
 ---
 
-[description]
+SCSS is a CSS preprocessing language that helps us write and maintan styles. Learn some of the foundational concepts of what makes SCSS so powerful.

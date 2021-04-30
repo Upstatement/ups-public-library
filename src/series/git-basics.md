@@ -1,7 +1,7 @@
 ---
 layout: layouts/series/index.njk
 title: Git Basics
-date: 2021-04-23
+date: 2021-04-30
 tags:
   - git
 entries:
@@ -10,4 +10,4 @@ entries:
   - Pushing, Pulling, & Merging
 ---
 
-[description]
+Git is the software used for tracking changes in a set of files. We use it to collaboratively develop on a singular codebase.
