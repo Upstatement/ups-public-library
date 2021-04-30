@@ -36,8 +36,8 @@
 }
 
 .series__title {
-  @include h(2, $family: $everett-bold);
   margin-bottom: $sp1;
+  font-size: $fs2;
 }
 
 /**

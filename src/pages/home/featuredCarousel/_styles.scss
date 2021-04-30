@@ -9,8 +9,7 @@
 .carousel__list {
   @include grid-parent;
   overflow-x: scroll;
-  padding: 0 0 var(--gutter-half);
-  margin-bottom: $paragraph-spacing * 2;
+  padding: $section-spacing 0;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 
@@ -63,5 +62,5 @@
 .carousel__card-description {
   font-size: $fs-1;
   line-height: 1.25;
-  margin-bottom: 0.25em;
+  margin-bottom: $sp-1;
 }

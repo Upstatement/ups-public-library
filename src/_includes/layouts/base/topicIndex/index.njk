@@ -4,8 +4,8 @@
   {% for topic in collections.tagList %}
     <li>
       <a href="{{ "/topics/" ~ topic }}" class="topics__item">
-        <h2 class="topics__item-title">{{ topic | formatTopic }}</h2>
         <span class="topics__item-count">0{{ collections[topic] | where("data.tags[0]", "entries") | length }}</span>
+        <h2 class="topics__item-title">{{ topic | formatTopic }}</h2>
       </a>
     </li>
   {% endfor %}
