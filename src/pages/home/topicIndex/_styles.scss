@@ -2,40 +2,50 @@
  * Topics Index
  */
 .topics {
-  @include content-column;
-  margin-bottom: $paragraph-spacing;
-
-  // &::before {
-  //   @include absolute(50%);
-  //   @include size(450px);
-  //   @include spectrum(background-color);
-  //   border-radius: 50%;
-  //   content: '';
-  //   display: block;
-  //   transform: translateX(-50%);
-  //   transition: background-color 0.3s;
-  //   z-index: -1;
-  // }
+  @include gutters;
+  background-color: $black;
+  color: $white;
+  padding-top: $section-spacing;
+  padding-bottom: $section-spacing;
 }
 
 .topics__overline {
-  font-family: $neuebit;
-  font-size: $fs0;
-  font-weight: $neuebit-bold;
-  margin-bottom: var(--gutter-half);
+    @include content-column;
+  // font-family: $mondwest;
+  // opacity: 0.15;
+  // letter-spacing: 0.15em;
+  // margin-bottom: -250px;
+  // text-transform: uppercase;
+  // width: 100%;
+  // z-index: -1;
+  color: $white;
+  font-family: $mondwest;
+  font-size: 60px;
+  margin-bottom: $sp-1;
   text-align: center;
+
+
+  // span {
+  //   display: inline-block;
+  //   transform: translateY(-85px);
+  // }
+}
+
+.topics__list {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: $paragraph-spacing;
+  position: relative;
 }
 
 .topics__item {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: var(--gutter-half) 0;
-  width: 100%;
+  display: block;
+  margin: $sp-5 30px;
+  text-align: center;
 
   &:hover {
-    cursor: se-resize;
+    cursor: ne-resize;
 
     .topics__item-count {
       @include spectrum(color);
@@ -44,11 +54,14 @@
 }
 
 .topics__item-title {
-  font-family: $fleuron-reg;
-  font-size: $h2;
+  color: $white;
+  font-family: $fleuron-mix;
+  font-size: 58px;
+  line-height: 1.25;
 }
 
 .topics__item-count {
+  color: $white;
   font-family: $neuebit;
   font-size: $fs0;
   font-weight: $neuebit-bold;

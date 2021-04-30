@@ -45,7 +45,7 @@
 /**
  * Entries
  */
- .topic__list {
+ .topic__entries-list {
   li {
     padding-left: 0;
 
@@ -68,17 +68,46 @@
   &:hover {
     cursor: ne-resize;
 
-    .series__entry-card {
+    .topic__entry-card {
       display: block;
     }
   }
 }
 
 .topic__entry-title {
-  @include h(2, $family: $fleuron-reg);
+  @include h(2, $family: $fleuron-reg, $weight: 300);
 }
 
-.topic__entry-type {
-  font-size: $fs0;
+.topic__entry-card {
+  @include absolute(0 0 n n);
+  @include layer(1);
+  background-color: $gray-1;
+  border: 1px solid $gray-3;
+  color: var(--text-color);
+  display: none;
+  padding: var(--gutter-half) calc(var(--gutter-half) * 1.5);
+  width: 270px;
+}
+
+.entry__card-overline {
+  display: flex;
+  flex-direction: row;
   font-family: $neuebit;
+  font-size: $fs0;
+  font-weight: $neuebit-bold;
+  justify-content: space-between;
+  margin-bottom: var(--gutter-half);
+}
+
+.entry__card-title {
+  font-family: $fleuron-reg;
+  font-size: $fs2;
+  line-height: 1.15;
+  margin-bottom: var(--gutter-half);
+}
+
+.entry__card-description {
+  font-size: $fs-1;
+  line-height: 1.25;
+  margin-bottom: 0.25em;
 }

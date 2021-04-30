@@ -22,9 +22,9 @@
 {% macro breadcrumbs(first, current, class) %}
   <nav class="breadcrumbs{% if class %} {{ class }}{% endif %}" >
     {% if first == 'Topics' %}
-      <a href="/">~ups-public-library</a> / {{ current | formatTopic }}
+      <a href="/">~ups-public-library</a> / <span>{{ current | formatTopic }}</span>
     {% else %}
-      <a href="/">~ups-public-library</a> / <a href="{{ "/topics/" ~ first }}">{{ first | formatTopic }}</a> / {{ current }}
+      <a href="/">~ups-public-library</a> / <a href="{{ "/topics/" ~ first }}">{{ first | formatTopic }}</a> / <span>{{ current }}</span>
     {% endif %}
   </nav>
 {% endmacro %}

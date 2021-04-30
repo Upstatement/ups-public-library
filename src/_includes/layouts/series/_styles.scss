@@ -60,12 +60,10 @@
 }
 
 .series__entry {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: block;
   padding: var(--gutter-full) 0;
   position: relative;
+  text-align: center;
   width: 100%;
 
   &:hover {
@@ -78,16 +76,17 @@
 }
 
 .series__entry-title {
-  @include h(2, $family: $fleuron-reg);
+  @include h(2, $family: $fleuron-reg, $weight: 300);
 }
 
 .series__entry-card {
-  @include absolute(0 0 n n);
+  @include absolute(0 n n 50%);
   @include layer(1);
   background-color: $gray-1;
   border: 1px solid $gray-3;
   color: var(--text-color);
   display: none;
+  transform: translateX(-50%);
   padding: var(--gutter-half) calc(var(--gutter-half) * 1.5);
   width: 270px;
 }

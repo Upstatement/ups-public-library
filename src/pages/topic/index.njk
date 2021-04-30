@@ -27,16 +27,34 @@ pagination:
     <h1 class="topic__title">{{ macros.wrapWords(title) }}</h1>
   </header>
 
-  <ul class="topic__list">
-    {% for item in collections[topic] %}
+  <ul class="topic__series-list">
+    <div class="topic__label">Series</div>
+    {% for item in collections[topic] | where("data.tags[0]", "series") %}
       <li>
         <a href="{{ item.url }}" class="topic__entry">
           {% if item.data.title %}
-            <h4 class="topic__entry-title">{{ macros.wrapWords(item.data.title) }}</h4>
+            <h4 class="topic__entry-title">{{ item.data.title }}</h4>
           {% endif %}
-          <span class="topic__entry-type">
-            {{ macros.contentType(item.data.tags) }}
-          </span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <ul class="topic__entries-list">
+    <div class="topic__label">All Entries</div>
+    {% for item in collections[topic] | where("data.tags[0]", "entries") %}
+      <li>
+        <a href="{{ item.url }}" class="topic__entry">
+          {% if item.data.title %}
+            <h4 class="topic__entry-title">{{ item.data.title }}</h4>
+          {% endif %}
+          {# <div class="topic__entry-card">
+            <span class="entry__card-overline">
+              <span class="entry__card-type">{{ macros.contentType(item.data.tags) }} &#8599;</span>
+              <span class="entry__card-topic">{{ title }}</span>
+            </span>
+            <p class="entry__card-description"></p>
+          </div> #}
         </a>
       </li>
     {% endfor %}

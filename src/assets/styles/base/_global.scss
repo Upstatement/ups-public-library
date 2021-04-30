@@ -124,8 +124,36 @@ hr {
 
   a {
     @include transition (color);
-    @include on-focus {
-      color: $blue;
+    // background-color: $gray-1;
+    // border-radius: 2px;
+    // box-shadow: 0px 2px 0px 1px rgb(0 0 0 / 10%);
+    // display: inline-block;
+    // font-weight: 500;
+    // margin: 0 4px;
+    // padding: 0 4px;
+    // transform: translateY(-1px);
+
+    &:hover {
+      @include spectrum(color);
+      // background-color: var(--secondary-bg-color);
+      // box-shadow: 0px 2px 0px 1px rgb(0 0 0 / 15%);
     }
+
+    // &:active {
+    //   background-color: var(--secondary-bg-color);
+    //   box-shadow: 0px 1px 0px 1px rgb(0 0 0 / 15%);
+    //   transform: translateY(0);
+    // }
   }
+
+  // span {
+  //   background-color: $gray-2;
+  //   border-radius: 2px;
+  //   box-shadow: 0px 1px 0px 1px rgb(0 0 0 / 15%);
+  //   display: inline-block;
+  //   font-weight: 500;
+  //   margin: 0 4px;
+  //   padding: 0 4px;
+  //   transform: translateY(0);
+  // }
 }

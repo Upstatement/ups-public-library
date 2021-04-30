@@ -1,12 +1,13 @@
 ---
 layout: layouts/entry/index.njk
 title: Nesting Selectors
-date: 2021-04-28
+date: 2021-04-30
 tags:
   - scss
   - featured
 order: 1
 nextEntryTitle: Mixins
+description: Nesting is when selectors contain other selectors to match the structure of the markup.
 ---
 
 One of the most obvious changes SCSS brings to writing styles is the ability to nest them. In CSS, selectors can only contain rules. In SCSS, selectors can contain other selectors, which is called nesting.

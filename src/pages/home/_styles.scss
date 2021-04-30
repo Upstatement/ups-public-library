@@ -3,5 +3,5 @@
 @import '../../pages/home/topicIndex/styles';
 
 .home {
-  @include gutters(vert, half, margin);
+  margin-top: var(--gutter-half);
 }
