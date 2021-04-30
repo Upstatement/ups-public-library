@@ -31,13 +31,15 @@
 
 .series__label {
   font-family: $neuebit;
-  font-size: $fs0;
+  font-size: $fs1;
   font-weight: $neuebit-bold;
+  line-height: 1;
 }
 
 .series__title {
+  font-family: $mondwest;
   margin-bottom: $sp1;
-  font-size: $fs2;
+  font-size: $fs1;
 }
 
 /**
@@ -79,7 +81,7 @@
 .series__entry-num {
   display: block;
   font-family: $neuebit;
-  font-size: $fs0;
+  font-size: $fs1;
   font-weight: $neuebit-bold;
-  margin-bottom: $sp-2;
+  margin-bottom: $sp-3;
 }

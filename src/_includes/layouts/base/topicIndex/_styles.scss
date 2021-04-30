@@ -5,16 +5,15 @@
   @include gutters;
   background-color: $black;
   color: $white;
-  padding-top: $section-spacing;
-  padding-bottom: $section-spacing;
+  padding: $section-spacing 0;
 }
 
 .topics__overline {
-  @include content-column;
+  border-bottom: 1px solid $white;
   color: $white;
   font-family: $mondwest;
-  font-size: $fs3;
-  margin-bottom: $sp-1;
+  font-size: $fs1;
+  margin: 0 var(--gutter-full) $sp-1;
   text-align: center;
 }
 

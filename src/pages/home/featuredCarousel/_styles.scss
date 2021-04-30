@@ -1,15 +1,19 @@
+.home__carousel {
+  padding: $section-spacing 0;
+}
+
 .carousel__overline {
-  font-family: $neuebit;
-  font-size: $fs0;
-  font-weight: $neuebit-bold;
-  margin-bottom: var(--gutter-half);
+  border-bottom: 1px solid $black;
+  font-family: $mondwest;
+  font-size: $fs1;
+  margin: 0 var(--gutter-full) $paragraph-spacing;
   text-align: center;
 }
 
 .carousel__list {
   @include grid-parent;
   overflow-x: scroll;
-  padding: $section-spacing 0;
+  padding: $paragraph-spacing 0 0;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 
