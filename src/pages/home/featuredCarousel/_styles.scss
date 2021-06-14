@@ -1,21 +1,30 @@
 .home__carousel {
   padding: $section-spacing 0;
+
+  &::after {
+    border-bottom: 1px solid $black;
+    content: '';
+    margin: 0 var(--gutter-full);
+    display: block;
+  }
 }
 
 .carousel__overline {
+  @include gutters(horiz, full, margin);
   border-bottom: 1px solid $black;
   font-family: $mondwest;
   font-size: $fs1;
-  margin: 0 var(--gutter-full) $paragraph-spacing;
+  padding-bottom: var(--gutter-half);
   text-align: center;
 }
 
 .carousel__list {
-  @include grid-parent;
+  display: flex;
+  -ms-overflow-style: none;  /* IE and Edge */
   flex-wrap: nowrap;
   overflow-x: scroll;
-  padding: $paragraph-spacing 0 0;
-  -ms-overflow-style: none;  /* IE and Edge */
+  padding-bottom: var(--gutter-half);
+  padding-top: var(--gutter-full);
   scrollbar-width: none;  /* Firefox */
 
   /* Hide scrollbar for Chrome, Safari and Opera */
@@ -24,17 +33,23 @@
   }
 }
 
-.carousel__card {
+.carousel__card__wrapper {
+  @include gutters(horiz, full);
+}
+
+.carousel__card__link {
   color: var(--text-color);
   display: flex;
   flex-direction: column;
-  height: 300px;
-  justify-content: space-between;
-  padding: var(--gutter-half) var(--gutter-full);
-  width: 480px;
+  min-height: 240px;
+  width: 360px;
 
-  &:hover {
+  @include on-focus {
     cursor: ne-resize;
+
+    .carousel__card-title {
+      @include spectrum(color);
+    }
 
     .carousel__card-arrow {
       display: inline-block;
@@ -42,8 +57,18 @@
   }
 }
 
-.carousel__card-arrow {
-  display: none;
+.carousel__card-title {
+  font-family: $fleuron-reg;
+  font-weight: 400;
+  font-size: $fs3;
+  line-height: 1;
+  margin-bottom: var(--gutter-half);
+}
+
+.carousel__card-description {
+  font-size: $fs-2;
+  line-height: 1.25;
+  margin-bottom: var(--gutter-half);
 }
 
 .carousel__card-meta {
@@ -53,19 +78,10 @@
   font-size: $fs0;
   font-weight: $neuebit-bold;
   justify-content: space-between;
-  margin-bottom: var(--gutter-half);
-  padding-top: $sp-4;
+  line-height: 1;
+  margin-top: auto;
 }
 
-.carousel__card-title {
-  font-family: $fleuron-reg;
-  font-size: $fs3;
-  line-height: 1.15;
-  margin-bottom: var(--gutter-half);
-}
-
-.carousel__card-description {
-  font-size: $fs-1;
-  line-height: 1.25;
-  margin-bottom: $sp-1;
+.carousel__card-arrow {
+  display: none;
 }

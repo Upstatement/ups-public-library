@@ -18,36 +18,37 @@
 }
 
 .topics__list {
-  justify-content: space-around;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   margin-bottom: $paragraph-spacing;
   position: relative;
 }
 
+.topic__wrapper {
+  margin: 0 auto;
+}
+
 .topics__item {
+  color: $white;
   display: block;
   margin: $sp1 $sp2;
   text-align: center;
 
   &:hover {
+    @include spectrum(color);
     cursor: ne-resize;
-
-    .topics__item-count {
-      @include spectrum(color);
-    }
   }
 }
 
-.topics__item-title {
-  color: $white;
+.topics__item__title {
+  color: currentColor;
   font-family: $fleuron-mix;
   font-size: $fs3;
   line-height: 1.125;
 }
 
-.topics__item-count {
-  color: $white;
+.topics__item__count {
   font-family: $neuebit;
   font-size: $fs0;
   font-weight: $neuebit-bold;

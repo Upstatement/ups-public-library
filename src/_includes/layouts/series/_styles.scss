@@ -25,6 +25,7 @@
   margin-bottom: $paragraph-spacing;
 
   p {
+    font-size: $fs0;
     text-align: center;
   }
 }
@@ -75,13 +76,13 @@
 }
 
 .series__entry-title {
-  @include h(2, $family: $fleuron-reg, $weight: 300);
+  @include h(2, $family: $fleuron-reg, $weight: 400);
 }
 
 .series__entry-num {
   display: block;
   font-family: $neuebit;
-  font-size: $fs1;
+  font-size: $fs0;
   font-weight: $neuebit-bold;
   margin-bottom: $sp-3;
 }

@@ -21,7 +21,7 @@ $fs-1: 20px;
 $fs0: 24px;
 $fs1: 28px;
 $fs2: 30px;
-$fs3: 58px;
+$fs3: 50px;
 
 $font-sizes: (
   fs-4: $fs-4,
@@ -45,7 +45,6 @@ $headings: (
   h3: $h3,
   h4: $h4,
   h5: $h5,
-  // for stepping down in the h() mixin
-    h6: $fs-3,
-  h7: $fs-4,
+  h6: $fs-3, // for stepping down in the h() mixin
+  h7: $fs-4, // for stepping down in the h() mixin
 );

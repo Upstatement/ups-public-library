@@ -23,8 +23,10 @@
     text-transform: uppercase;
   }
 
-  @include mq($xl) {
-    font-size: $fs-base;
+  @if (map-get($headings, h#{$level})) {
+    @include mq($xl) {
+      font-size: $fs-base;
+    }
   }
 }
 
