@@ -1,0 +1,29 @@
+---
+layout: layouts/base/index.njk
+templateClass: tag
+date: Last Modified
+eleventyComputed:
+  title: '{{ tag }}'
+permalink: /topics/{{ tag | slug }}/
+pagination:
+  data: collections
+  size: 1
+  filter:
+    - entries
+    - series
+  alias: tag
+---
+
+{% for item in collections[tag] %}
+  {# The tag assigned by the json file in the directory will always be the first tag #}
+  {% set tagDef = item.data.tags[0] %}
+  <a href="{{ item.url }}">
+    {% if tagDef == "entries" %}
+      Entry
+    {% endif %}
+    {% if tagDef == "series" %}
+      Series
+    {% endif %}
+    {{ item.data.title }}
+  </a>
+{% endfor %}
