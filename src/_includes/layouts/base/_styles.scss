@@ -17,8 +17,9 @@
 }
 
 .base__masthead {
-  position: relative;
+  display: block;
   font-size: $fs4;
+  position: relative;
 
   @include mq($bp-tablet) {
     @include grid-child(0, 0, 3);
@@ -45,6 +46,22 @@
     pointer-events: none;
     position: absolute;
     top: 0;
+  }
+
+  .base__masthead:hover &,
+  .base__masthead:focus & {
+    &--upl {
+      .js-print-char {
+        opacity: 0.5;
+      }
+      .js-print-shown {
+        opacity: 1;
+      }
+    }
+
+    &--abl {
+      opacity: 0;
+    }
   }
 }
 
