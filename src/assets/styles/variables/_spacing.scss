@@ -1,34 +1,32 @@
-$sp-5: 4px;
-$sp-4: 8px;
-$sp-3: 12px;
-$sp-2: 14px;
-$sp-1: 16px;
-$sp0: 18px;
-$sp1: 24px;
-$sp2: 32px;
-$sp3: 40px;
-$sp4: 48px;
-$sp5: 56px;
-$sp6: 64px;
-$sp7: 81px;
-$sp8: 126px;
+$sp1: 4px;
+$sp2: 8px;
+$sp3: 12px;
+$sp4: 16px;
+$sp5: 20px;
+$sp6: 24px;
+$sp7: 32px;
+$sp8: 40px;
+$sp9: 48px;
+$sp10: 56px;
+$sp11: 64px;
+$sp12: 81px;
+$sp13: 126px;
 
 $section-spacing: 4em; // <hr>s
 $paragraph-spacing: 1em;
-$block-spacing-sm: $sp2; // lists, code blocks, blockquotes, etc
-$block-spacing-lg: $sp4; // lists, code blocks, blockquotes, etc
+$block-spacing-sm: $sp7; // lists, code blocks, blockquotes, etc
+$block-spacing-lg: $sp9; // lists, code blocks, blockquotes, etc
 $list-item-spacing: 0.75em;
 
-$sm-gutter-half: 8px;
-$gutter-half: $sp-2;
+$sm-gutter-half: $sp2;
+$gutter-half: $sp3;
 $gutter-full: calc(#{var(--gutter-half)} * 2);
-$grid-col-count: 18;
 
 :root {
   --gutter-half: #{$sm-gutter-half};
   --gutter-full: #{$gutter-full};
 
-  @media (min-width: $md) {
+  @media (min-width: $bp-tablet) {
     --gutter-half: #{$gutter-half};
   }
 }

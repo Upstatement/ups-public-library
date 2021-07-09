@@ -1,7 +1,11 @@
-@mixin responsive-font-size($base) {
-  font-size: map-get($font-sizes, fs#{$base - 1});
+@mixin responsive-fs($base, $steps: 2, $bp: $bp-desktop) {
+  @if map-has-key($font-sizes, fs#{$base - $steps}) {
+    font-size: map-get($font-sizes, fs#{$base - $steps});
+  } @else {
+    font-size: $fs1;
+  }
 
-  @include mq($xl) {
+  @include mq($bp) {
     font-size: map-get($font-sizes, fs#{$base});
   }
 }
@@ -28,4 +32,11 @@
   @include mq($xl) {
     font-size: $fs-base;
   }
+}
+
+@mixin neuebit {
+  font-family: $neuebit;
+  font-weight: $neuebit-bold;
+  line-height: $lh-solid;
+  font-size: $fs3;
 }
