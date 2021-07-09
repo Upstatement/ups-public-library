@@ -51,8 +51,21 @@
 @mixin grid-parent {
   @include flex;
   @include gutters;
+  align-items: flex-start;
+  flex-direction: row;
   flex: 0 0 100%;
   width: 100%;
+}
+
+@mixin grid-child($grow, $shrink: 0, $cols: false) {
+  $basis: auto;
+
+  @if $cols != false {
+    $basis: cols($cols);
+  }
+
+  @include gutters;
+  flex: $grow $shrink $basis;
 }
 
 @mixin content-column {

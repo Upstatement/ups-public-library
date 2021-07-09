@@ -1,8 +1,10 @@
-$sm-header-height: $sp3 * 2;
-$header-height: $sp5 * 2;
+$sm-header-height: $sp8 * 2;
+$header-height: $sp10 * 2;
 
 $content-max-width-sm: 700px;
 $content-max-width-xl: 900px;
+
+$grid-col-count: 18;
 
 :root {
   --content-max-width: #{$content-max-width-sm};
