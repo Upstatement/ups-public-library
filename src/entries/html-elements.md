@@ -1,8 +1,9 @@
 ---
 layout: layouts/entry/index.njk
 title: HTML Elements
-date: 2021-03-26
-topic: html
+date: 2021-07-09
+tags:
+  - html
 ---
 
 There are nearly 90 different HTML elements &mdash; you’ll only end up using about 10 &ndash; 20 of them regularly. Of those, an even smaller subset will cover most use cases for marking up content, and should be memorized. For the rest, turning to Google and MDN is the best way to make a decision. A good approach to writing markup is to always ask, “does this element accurately describe its content?” If the answer is no or a weak yes, there’s a good chance you can pick a better one.

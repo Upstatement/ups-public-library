@@ -3,6 +3,7 @@ layout: layouts/series/index.njk
 title: SCSS Basics
 date: 2021-07-09
 tags:
+  - scss
 entries:
   - CSS Preprocessing
   - SCSS Variables

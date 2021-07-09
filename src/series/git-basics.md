@@ -3,6 +3,7 @@ layout: layouts/series/index.njk
 title: Git Basics
 date: 2021-07-09
 tags:
+  - git
 entries:
   - Intro to Git
   - Committing Code

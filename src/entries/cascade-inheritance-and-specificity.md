@@ -1,8 +1,9 @@
 ---
 layout: layouts/entry/index.njk
 title: Cascade, Inheritance, & Specificity
-date: 2021-03-26
-topic: css
+date: 2021-07-09
+tags:
+  - css
 nextEntryTitle: The Box Model
 ---
 

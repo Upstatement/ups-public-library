@@ -3,6 +3,7 @@ layout: layouts/series/index.njk
 title: CSS Basics
 date: 2021-07-09
 tags:
+  - css
 entries:
   - What is CSS?
   - Cascade, Inheritance, & Specificity

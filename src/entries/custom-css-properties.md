@@ -1,8 +1,9 @@
 ---
 layout: layouts/entry/index.njk
 title: Custom CSS Properties
-date: 2021-04-20
-topic: css
+date: 2021-07-09
+tags:
+  - css
 ---
 
 In addition to the many [properties](/entries/what-is-css) that are included in CSS (`color`, `font-size`, etc), we can create custom properties to use as variables. Here's an example:

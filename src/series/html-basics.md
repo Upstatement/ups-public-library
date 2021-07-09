@@ -3,6 +3,7 @@ layout: layouts/series/index.njk
 title: HTML Basics
 date: 2021-07-09
 tags:
+  - html
 entries:
   - What is HTML?
   - HTML Documents
