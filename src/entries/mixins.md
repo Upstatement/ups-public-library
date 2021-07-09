@@ -1,7 +1,7 @@
 ---
 layout: layouts/entry/index.njk
 title: Mixins
-date: 2021-02-19
+date: 2021-07-09
 tags:
   - scss
 ---
@@ -50,7 +50,7 @@ a {
 
 ## Nesting
 
-Nesting in mixins behaves exactly like in selectors. Modifiers, nesting, and qualification are all functional.
+Nesting in mixins behaves exactly like in selectors. [Modifiers](/entries/nesting-selectors/#adding-modifiers), [nesting](/entries/nesting-selectors/), and [qualification](/entries/nesting-selectors/#qualifying-scope) are all functional.
 
 ```scss
 @mixin link($color-base: $c-link, $color-active: $c-link-active) {
@@ -104,6 +104,7 @@ Here's an extremely common use case that builds upon what we've seen so far in t
 }
 
 @mixin link($color-base: $c-link, $color-active: $c-link-active) {
+  @include focus-reset;
   color: $color-base;
   text-decoration: none;
 
