@@ -4,5 +4,8 @@ $sm: 600px;
 $md: 768px;
 $lg: 960px;
 $xl: 1200px;
-$xxl: 1400px;
-$xxxl: 1800px;
+$xxl: 1366px;
+$xxxl: 1600px;
+
+$bp-tablet: $md;
+$bp-desktop: $lg;
