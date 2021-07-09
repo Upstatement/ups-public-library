@@ -9,23 +9,24 @@ import ProgressBar from './ProgressBar';
 import RandomDingbat from './RandomDingbat';
 import Spectrum from './Spectrum';
 import InteractiveTOC from './InteractiveTOC';
-// import ThemeToggle from './ThemeToggle';
 
 onDocumentReady(() => {
   new ExternalLinks();
-  // new ThemeToggle();
+  new Spectrum();
 
-  const search = new Search();
+  if (document.getElementById('js-random-dingbat')) {
+    new RandomDingbat();
+  }
+
   if (document.querySelector('.js-search-input')) {
+    const search = new Search();
     new SearchBar(search);
   }
 
   [...document.querySelectorAll('[data-print]')].forEach(printEl => new Print(printEl));
 
   if (document.getElementById('js-entry-content')) {
-    new Spectrum();
     new ProgressBar();
-    new RandomDingbat();
     new InteractiveTOC();
   }
 });
