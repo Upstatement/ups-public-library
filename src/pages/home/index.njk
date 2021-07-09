@@ -1,9 +1,33 @@
 ---
-layout: layouts/base/index.njk
 permalink: /
 title: Always Be Learning
 templateClass: home
 ---
 
-{% include './topper/index.njk' %}
-{% include './index/index.njk' %}
+{% extends "layouts/base/index.njk" %}
+
+{% block headerContent %}
+  <div class="home__welcome">
+    <p>
+      Welcome to the Upstatement Public Library, a knowledge base for web designers who want to code.
+    </p>
+    <p>
+      Brought to you by the people of <a href="https://upstatement.com">Upstatement ☕</a>.
+    </p>
+  </div>
+  <div class="home__foss">
+    <p>
+      This website’s source code is distributed for free under the <a href="https://github.com/Upstatement/ups-public-library/blob/main/LICENSE">BSD 3-Clause License ⚖</a>.
+    </p>
+    <p>
+      View source code on <a href="https://github.com/Upstatement/ups-public-library">GitHub ↗.</a>
+    </p>
+  </div>
+{% endblock %}
+
+{# {% block sidebar %}
+{% endblock %} #}
+
+{% block mainContent %}
+Home page
+{% endblock %}

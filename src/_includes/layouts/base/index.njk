@@ -14,12 +14,98 @@
     <link rel="stylesheet" href="/assets/styles/app.css">
   </head>
 
-  <body>
+  <body class="base{% if templateClass %} {{ templateClass }}{% endif %}">
     {% include "shared/svgs.njk" %}
 
-    <main class="main{% if templateClass %} {{ templateClass }}{% endif %}">
-      {{ content | safe }}
-    </main>
+    <header class="base__header">
+      <div class="base__masthead">
+        <h1 class="base__print base__print--upl" data-print="Upstatement/n/Public Library" data-initial-delay="1000"></h1>
+        <div class="base__print base__print--abl" data-print="Always be/n/learning" data-initial-delay="11500" data-visible-for="1000" data-invisible-for="11000" data-fill-mode="backwards"></div>
+      </div>
+      {% block headerContent %}
+      {% endblock %}
+      <div class="base__tip">
+        <div class="base__tip__corners">
+          <svg class="base__tip__corner base__tip__corner--top-right">
+            <use xlink:href="#corner"></use>
+          </svg>
+          <svg class="base__tip__corner base__tip__corner--top-left">
+            <use xlink:href="#refresh"></use>
+          </svg>
+          <span class="base__tip__corner base__tip__corner--bottom-right">
+            ✨
+          </span>
+          <svg class="base__tip__corner base__tip__corner--bottom-left">
+            <use xlink:href="#corner"></use>
+          </svg>
+        </div>
+        <span class="base__tip__text base__print base__print--tip" data-print="Tip № 17:       /n/Take your time. ♪" data-initial-delay="1200"></span>
+      </div>
+    </header>
+
+    <div class="base__main-wrapper">
+
+      {% block sidebar %}
+        <div class="base__sidebar">
+
+          {% block sidebarSiteNav %}
+            <nav class="base__topics-nav">
+              <h1 class="base__sidebar__title">
+                {% block sidebarSiteNavTitle %}
+                  All Topics
+                {% endblock %}
+              </h1>
+              {% block sidebarSiteNavContent %}
+                <ul class="base__sidebar__nav__links">
+                  <li class="base__sidebar__nav__item"><a href="/" class="base__sidebar__nav__link">SCSS</a></li>
+                  <li class="base__sidebar__nav__item"><a href="/" class="base__sidebar__nav__link">HTML</a></li>
+                  <li class="base__sidebar__nav__item"><a href="/" class="base__sidebar__nav__link">Git</a></li>
+                </ul>
+              {% endblock %}
+            </nav>
+          {% endblock %}
+
+          {% block sidebarGitNav %}
+            <nav class="base__git-nav">
+              <ul>
+                <li class="base__git-nav__item">
+                  <span class="icon">⚠</span> <a data-use-hover="true" data-print="Log an ISSUE" data-invisible-for="500" href="https://github.com/Upstatement/ups-public-library/issues/new?assignees=&labels=&template=bug_report.md" class="base__git-nav__link"></a>
+                </li>
+                <li class="base__git-nav__item">
+                  <span class="icon">☑</span><a data-use-hover="true" data-print="Submit a REQUEST" data-invisible-for="500" href="https://github.com/Upstatement/ups-public-library/issues/new?assignees=&labels=&template=feature_request.md" class="base__git-nav__link"></a>
+                </li>
+                <li class="base__git-nav__item">
+                  <span class="icon">±</span><a data-use-hover="true" data-print="Make an EDIT" data-invisible-for="500" href="https://github.com/Upstatement/ups-public-library" class="base__git-nav__link"></a>
+                </li>
+              </ul>
+            </nav>
+          {% endblock %}
+
+        </div>
+      {% endblock %}
+
+      <main class="base__main{% if templateClass %} main--{{ templateClass }}{% endif %}">
+        {% block mainContent %}
+          {{ content | safe }}
+        {% endblock %}
+      </main>
+    </div>
+
+    {% block marquee %}
+      <aside class="base__marquee">
+        <ul class="base__marquee__list">
+          <li class="base__marquee__item">
+            <span>COMING SOON:</span> <span>iTerm & zsh</span>, or, How I Learned to Stop Worrying and Love the Terminal
+          </li>
+          <li class="base__marquee__item">
+            <span>ALWAYS BE LEARNING:</span> Follow Upstatement on IG for occasional education continuation
+          </li>
+          <li class="base__marquee__item">
+            <span>UNSTUCK YOURSELF:</span> Keep things moving with our Unstuck cards, available for purchase on the Ups Store
+          </li>
+        </ul>
+      </aside>
+    {% endblock %}
 
     <script src="/assets/scripts/app.js" defer="defer"></script>
 

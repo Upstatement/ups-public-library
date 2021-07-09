@@ -1,3 +1,243 @@
-.main {
+.base {
   @include flex(column, 1);
+}
+
+.base__header {
+  @include gutters(vert, full, margin);
+  @include gutters(horiz, full);
+
+  @include mq($bp-tablet) {
+    @include grid-parent;
+    align-items: baseline;
+  }
+
+  @include mq($xl) {
+    align-items: flex-start;
+  }
+}
+
+.base__masthead {
+  position: relative;
+  font-size: $fs4;
+
+  @include mq($bp-tablet) {
+    @include grid-child(0, 0, 3);
+  }
+
+  @include mq($bp-desktop) {
+    font-size: $fs5;
+  }
+
+  @include mq($xxl) {
+    font-size: $h3;
+  }
+}
+
+.base__print {
+  line-height: $lh-base;
+
+  &--upl,
+  &--abl {
+    font-family: $mondwest;
+  }
+
+  &--abl {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+  }
+}
+
+.base__tip {
+  @include neuebit;
+  @include gutters(vert, full, margin);
+  position: relative;
+  justify-content: flex-end;
+
+  @include mq($bp-tablet, max) {
+    display: none;
+  }
+
+  @include mq($bp-tablet) {
+    @include grid-parent;
+    @include grid-child(0, 0, 4);
+    @include margin(0 x);
+    margin-left: auto;
+    max-width: 12em;
+  }
+}
+
+.base__tip__corners {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  @include mq($bp-tablet) {
+    @include gutters(horiz, half, margin);
+  }
+}
+
+.base__tip__text {
+  display: block;
+  line-height: $lh-xs;
+  padding: 0.125em 0.125em $sp6 1.5em;
+  text-align: right;
+}
+
+.base__tip__corner {
+  line-height: $lh-solid;
+  position: absolute;
+
+  &--top-right {
+    @include size(0.5em);
+    top: 0;
+    right: 0;
+    transform: rotate(180deg);
+  }
+
+  &--top-left {
+    @include size(1em);
+    top: 0;
+    left: 0;
+  }
+
+  &--bottom-right {
+    bottom: -0.25em;
+    font-size: 1.5em;
+    right: 0;
+  }
+
+  &--bottom-left {
+    @include size(0.5em);
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.base__main-wrapper {
+  @include gutters(horiz, full);
+  @include margin($sp8 x);
+  @include flex(column, 0);
+  position: relative;
+
+  @include mq($bp-tablet) {
+    @include grid-parent;
+    @include margin($sp10 x);
+    align-items: baseline;
+    flex-grow: 1;
+  }
+}
+
+.base__sidebar {
+  @include flex(column, 1);
+
+  @include mq($bp-tablet) {
+    @include grid-child(1, 1, 2);
+  }
+}
+
+.base__sidebar__title {
+  @include neuebit;
+}
+
+.base__sidebar__nav__links {
+  display: flex;
+  flex-direction: row;
+  font-family: $mondwest;
+  margin-top: $sp2;
+
+  @include mq($bp-tablet) {
+    @include gutters(vert, full, margin);
+    flex-direction: column
+  }
+}
+
+.base__sidebar__nav__item {
+  margin-right: var(--gutter-full);
+  font-size: $fs4;
+
+  @include mq($bp-tablet) {
+    @include gutters(vert, half, margin);
+    @include margin(x 0);
+    font-size: $fs5;
+  }
+}
+
+.base__git-nav {
+  @include neuebit;
+  position: relative;
+  padding-left: $sp2;
+
+  @include mq($bp-tablet, max) {
+    display: none;
+  }
+
+  @include mq($bp-tablet) {
+    bottom: 0;
+    position: absolute;
+  }
+
+  &::before {
+    line-height: 0;
+    letter-spacing: -0.26em;
+    content: '▩▩▩▩▩▩▩▩▩';
+    display: block;
+    left: 0;
+    position: absolute;
+    text-orientation: upright;
+    top: -0.25em;
+    writing-mode: vertical-lr;
+  }
+}
+
+.base__git-nav__item {
+  & + & {
+    margin-top: $sp2;
+  }
+
+  .icon {
+    display: inline-block;
+    width: 1em;
+    text-align: center;
+    margin-right: 0.125em;
+  }
+}
+
+.base__git-nav__link {
+  display: inline-block;
+}
+
+.base__main {
+  @include flex(column, 1);
+
+  @include mq($bp-tablet, max) {
+    @include margin($sp8 x);
+  }
+
+  @include mq($bp-tablet) {
+    @include grid-child(1, 1, 15);
+    margin-left: cols(1);
+  }
+}
+
+.base__marquee {
+  @include neuebit;
+  background: $black;
+  bottom: 0;
+  color: $white;
+  left: 0;
+  padding: $sp2 0;
+  position: fixed;
+  right: 0;
+}
+
+.base__marquee__list {
+  display: flex;
+}
+
+.base__marquee__item {
+  @include gutters;
+  flex: 0 0 auto;
 }
