@@ -52,14 +52,16 @@
             <nav class="base__topics-nav">
               <h1 class="base__sidebar__title">
                 {% block sidebarSiteNavTitle %}
-                  All Topics
+                  Topics
                 {% endblock %}
               </h1>
               {% block sidebarSiteNavContent %}
                 <ul class="base__sidebar__nav__links">
-                  <li class="base__sidebar__nav__item"><a href="/" class="base__sidebar__nav__link">SCSS</a></li>
-                  <li class="base__sidebar__nav__item"><a href="/" class="base__sidebar__nav__link">HTML</a></li>
-                  <li class="base__sidebar__nav__item"><a href="/" class="base__sidebar__nav__link">Git</a></li>
+                {% for topic in collections.tagList %}
+                  <li class="base__sidebar__nav__item">
+                    <a href="{{ "/topics/" ~ topic }}" class="base__sidebar__nav__link" data-print="{{ topic | formatTopic }}" data-use-hover="true" data-invisible-for="500" ></a>
+                  </li>
+                {% endfor %}
                 </ul>
               {% endblock %}
             </nav>
