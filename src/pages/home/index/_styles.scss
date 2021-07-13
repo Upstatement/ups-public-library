@@ -117,7 +117,7 @@ $search-input-offset: calc(
   justify-content: space-between;
   user-select: none;
 
-  @include mq($md) {
+  @include mq($bp-tablet) {
     flex-wrap: nowrap;
   }
 }
@@ -178,7 +178,7 @@ $search-input-offset: calc(
   color: currentColor;
   flex: 0 0 100%;
 
-  @include mq($md) {
+  @include mq($bp-tablet) {
     flex: 0 1 70%;
 
     .index__nested__list & {
@@ -210,7 +210,7 @@ $search-input-offset: calc(
   margin-bottom: 0.125em;
   text-transform: uppercase;
 
-  @include mq($md) {
+  @include mq($bp-tablet) {
     flex: 0 1 15%;
     margin-bottom: 0;
 
@@ -219,13 +219,13 @@ $search-input-offset: calc(
     }
   }
 
-  @include mq($lg) {
+  @include mq($bp-desktop-sm) {
     font-size: $fs-2;
   }
 }
 
 .index__type {
-  @include mq($md, max) {
+  @include mq($bp-tablet, max) {
     padding-left: calc(var(--gutter-full) + var(--gutter-half));
 
     .index__nested__list & {

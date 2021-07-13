@@ -9,7 +9,7 @@ $grid-col-count: 18;
 :root {
   --content-max-width: #{$content-max-width-sm};
 
-  @media (min-width: $xl) {
+  @media (min-width: $bp-desktop-md) {
     --content-max-width: #{$content-max-width-xl};
   }
 }

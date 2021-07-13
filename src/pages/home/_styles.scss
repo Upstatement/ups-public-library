@@ -9,7 +9,7 @@
   margin-top: $sp4;
 
   @include mq($bp-tablet) {
-    @include grid-child(1, 1, 5);
+    @include grid-child(1, 1, 7);
     margin: 0;
 
     p {
@@ -17,7 +17,7 @@
     }
   }
 
-  @include mq($xl) {
+  @include mq($bp-desktop-lg) {
     @include grid-child(0, 0, 5);
   }
 

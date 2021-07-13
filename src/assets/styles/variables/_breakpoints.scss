@@ -1,11 +1,19 @@
-$xxs: 380px;
-$xs: 450px;
-$sm: 600px;
-$md: 768px;
-$lg: 960px;
-$xl: 1200px;
-$xxl: 1366px;
-$xxxl: 1600px;
+$bp1: 380px;
+$bp2: 450px;
+$bp3: 600px;
+$bp4: 768px;
+$bp5: 960px;
+$bp6: 1100px;
+$bp7: 1366px;
+$bp8: 1600px;
 
-$bp-tablet: $md;
-$bp-desktop: $lg;
+$bp-mobile-sm: $bp1;
+$bp-mobile-md: $bp2;
+$bp-mobile-lg: $bp3;
+
+$bp-tablet: $bp4;
+
+$bp-desktop-sm: $bp5;
+$bp-desktop-md: $bp6;
+$bp-desktop-lg: $bp7;
+$bp-desktop-xl: $bp8;

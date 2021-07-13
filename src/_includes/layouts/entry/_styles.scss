@@ -4,7 +4,7 @@ $progress-bar-height: 73px;
   padding-bottom: $fs4;
   padding-top: var(--gutter-half);
 
-  @include mq($md) {
+  @include mq($bp-tablet) {
     padding-bottom: $sp12;
     padding-top: 0;
   }
@@ -31,12 +31,12 @@ $progress-bar-height: 73px;
     overflow-y: auto;
   }
 
-  @include mq($md) {
+  @include mq($bp-tablet) {
     display: flex;
     max-width: calc((100% - var(--content-max-width)) / 2);
   }
 
-  @media (min-width: $md) and (max-width: $lg) {
+  @media (min-width: $bp-tablet) and (max-width: $bp-desktop-sm) {
     transition: width 100ms ease;
     width: calc((100% - var(--content-max-width)) / 2);
     max-width: none;
@@ -71,7 +71,7 @@ $progress-bar-height: 73px;
   margin-top: auto;
   position: relative;
 
-  @media (min-width: $md) and (max-width: $lg) {
+  @media (min-width: $bp-tablet) and (max-width: $bp-desktop-sm) {
     @include layer(1);
     position: relative;
     padding-right: var(--gutter-half);
@@ -135,7 +135,7 @@ a {
     }
   }
 
-  @media (min-width: $md) and (max-width: $lg) {
+  @media (min-width: $bp-tablet) and (max-width: $bp-desktop-sm) {
     .entry__toc--wrapper:hover & {
       color: var(--secondary-text-color);
 
@@ -198,13 +198,13 @@ a {
   flex-direction: row;
   position: relative;
 
-  @media (max-width: $md) {
+  @media (max-width: $bp-tablet) {
     justify-content: center;
     margin-bottom: $sp9;
     text-align: center;
   }
 
-  @include mq($md) {
+  @include mq($bp-tablet) {
     border-top: 1px solid $black;
     bottom: 0;
     left: 0;
@@ -250,7 +250,7 @@ a {
     position: absolute;
     top: var(--gutter-half);
 
-    @include mq($md) {
+    @include mq($bp-tablet) {
       top: calc(var(--gutter-half) + 1px);
     }
   }
@@ -262,14 +262,14 @@ a {
   font-weight: $neuebit-bold;
   margin-left: auto;
 
-  @include mq($md - 1, max) {
+  @include mq($bp-tablet - 1, max) {
     bottom: 0.25em;
     height: 1em;
     left: var(--gutter-half);
     position: fixed;
   }
 
-  @include mq($md) {
+  @include mq($bp-tablet) {
     font-size: $fs5;
   }
 }
@@ -280,11 +280,11 @@ a {
   left: 0;
   position: fixed;
 
-  @include mq($md - 1, max) {
+  @include mq($bp-tablet - 1, max) {
     height: $fs4;
   }
 
-  @include mq($md) {
+  @include mq($bp-tablet) {
     position: absolute;
     top: -1px;
   }
@@ -306,7 +306,7 @@ a {
 .entry__header {
   padding-top: var(--gutter-full);
 
-  @include mq($md) {
+  @include mq($bp-tablet) {
     text-align: center;
   }
 }
@@ -314,11 +314,11 @@ a {
 .entry__content {
   padding-top: var(--gutter-half);
 
-  @include mq($md) {
+  @include mq($bp-tablet) {
     padding-top: $sp11;
   }
 
-  @include mq($lg) {
+  @include mq($bp-desktop-sm) {
     padding-top: $sp13;
   }
 }
@@ -345,7 +345,7 @@ a {
   justify-content: center;
   text-align: center;
 
-  @include mq($lg) {
+  @include mq($bp-desktop-sm) {
     @include margin($sp13 null);
   }
 }

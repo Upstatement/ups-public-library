@@ -1,4 +1,4 @@
-@mixin responsive-fs($base, $steps: 2, $bp: $bp-desktop) {
+@mixin responsive-fs($base, $steps: 2, $bp: $bp-desktop-sm) {
   @if map-has-key($font-sizes, fs#{$base - $steps}) {
     font-size: map-get($font-sizes, fs#{$base - $steps});
   } @else {
@@ -29,7 +29,7 @@
     text-transform: uppercase;
   }
 
-  @include mq($xl) {
+  @include mq($bp-desktop-sm) {
     font-size: $fs-base;
   }
 }

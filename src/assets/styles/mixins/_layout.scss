@@ -78,7 +78,7 @@
 @mixin block-spacing {
   @include margin($block-spacing-sm null);
 
-  @media (min-width: $xl) {
+  @media (min-width: $bp-desktop-md) {
     @include margin($block-spacing-lg null);
   }
 }
