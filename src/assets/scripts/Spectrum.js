@@ -7,24 +7,24 @@ class Spectrum {
     this.updateInterval = 1000;
 
     this.red = {
-      min: 80,
-      max: 125,
+      min: 30,
+      max: 220,
       current: 80,
-      interval: 5,
+      interval: 11,
       direction: 1, // 1 = forwards, -1 = backwards
     };
     this.green = {
-      min: 160,
-      max: 200,
+      min: 30,
+      max: 220,
       current: 160,
-      interval: 20,
+      interval: 21,
       direction: 1,
     };
     this.blue = {
-      min: 180,
-      max: 255,
-      current: 255,
-      interval: 10,
+      min: 30,
+      max: 220,
+      current: 200,
+      interval: 16,
       direction: 1,
     };
 
