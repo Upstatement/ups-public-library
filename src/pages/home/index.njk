@@ -25,9 +25,11 @@ templateClass: home
   </div>
 {% endblock %}
 
-{# {% block sidebar %}
-{% endblock %} #}
+{#
+{% block sidebar %}
+{% endblock %}
+#}
 
 {% block mainContent %}
-Home page
+  {% include "./index/index.njk" %}
 {% endblock %}

@@ -8,17 +8,13 @@
 
   @include mq($bp-tablet) {
     @include grid-parent;
-    align-items: baseline;
-  }
-
-  @include mq($bp-desktop-md) {
     align-items: flex-start;
   }
 }
 
 .base__masthead {
   display: block;
-  font-size: $fs4;
+  font-size: $fs3;
   position: relative;
 
   @include mq($bp-tablet) {
@@ -27,7 +23,7 @@
 
   @include mq($bp-desktop-md) {
     @include grid-child(0, 0, 3);
-    font-size: $fs5;
+    font-size: $fs4;
   }
 }
 
@@ -132,14 +128,14 @@
 
 .base__main-wrapper {
   @include gutters(horiz, full);
-  @include margin($sp8 x);
+  @include margin($sp7 x);
   @include flex(column, 0);
   position: relative;
 
   @include mq($bp-tablet) {
     @include grid-parent;
     @include margin($sp10 x);
-    align-items: baseline;
+    align-items: stretch;
     flex-grow: 1;
   }
 }
@@ -149,6 +145,7 @@
 
   @include mq($bp-tablet) {
     @include grid-child(0, 0, 4);
+    padding-top: var(--gutter-half);
   }
 
   @include mq($bp-desktop-md) {
@@ -164,24 +161,27 @@
   display: flex;
   flex-direction: row;
   font-family: $mondwest;
-  margin-top: $sp1;
+  margin-top: $sp3;
   text-transform: capitalize;
 
   @include mq($bp-tablet) {
-    @include gutters(vert, full, margin);
-    flex-direction: column
+    margin-top: $sp10;
+    flex-direction: column;
   }
 }
 
 .base__sidebar__nav__item {
-  font-size: $fs4;
+  font-size: $fs3;
   line-height: $lh-solid;
   margin-right: var(--gutter-full);
 
   @include mq($bp-tablet) {
     @include gutters(vert, half, margin);
     @include margin(x 0);
-    font-size: $fs5;
+  }
+
+  @include mq($bp-desktop-md) {
+    font-size: $fs4;
   }
 }
 
@@ -193,14 +193,10 @@
   @include neuebit;
   position: relative;
   padding-left: $sp2;
+  margin-top: auto;
 
   @include mq($bp-tablet, max) {
     display: none;
-  }
-
-  @include mq($bp-tablet) {
-    bottom: 0;
-    position: absolute;
   }
 
   &::before {
@@ -211,7 +207,7 @@
     left: 0;
     position: absolute;
     text-orientation: upright;
-    top: -0.3em;
+    top: -0.25em;
     writing-mode: vertical-lr;
   }
 }
@@ -251,7 +247,7 @@
   bottom: 0;
   color: $white;
   left: 0;
-  padding: $sp2 0;
+  padding: $sp3 0;
   position: fixed;
   right: 0;
 }

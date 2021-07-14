@@ -1,6 +1,25 @@
+@import './index/_styles.scss';
+
+.base__main-wrapper {
+  .home & {
+    @include mq($bp-tablet) {
+      padding-right: 0;
+    }
+  }
+}
+
 .main--home {
-  padding-right: 0;
-  margin-right: calc(-1 * var(--gutter-half));
+  @include mq($bp-tablet) {
+    flex: 0 0 cols(14);
+    margin-bottom: calc(-1 * var(--gutter-half));
+    margin-right: calc(-1 * var(--gutter-half));
+    overflow-x: scroll;
+    padding: 0;
+  }
+
+  @include mq($bp-desktop-md) {
+    flex: 0 0 cols(15);
+  }
 }
 
 .home__welcome,
@@ -19,6 +38,10 @@
 
   @include mq($bp-desktop-lg) {
     @include grid-child(0, 0, 5);
+  }
+
+  @include mq($bp-desktop-xl) {
+    @include grid-child(0, 0, 4);
   }
 
   p + p {
