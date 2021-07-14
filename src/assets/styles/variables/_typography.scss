@@ -32,10 +32,12 @@ $font-sizes: (
 $h5: $fs3;
 $h4: $fs5;
 $h3: 28px;
-$h2: 56px;
-$h1: 104px;
+$h2: 36px;
+$h1: 54px;
+$h0: 104px;
 
 $headings: (
+  h0: $h0,
   h1: $h1,
   h2: $h2,
   h3: $h3,
