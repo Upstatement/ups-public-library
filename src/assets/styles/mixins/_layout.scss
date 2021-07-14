@@ -60,7 +60,9 @@
 @mixin grid-child($grow, $shrink: 0, $cols: false) {
   $basis: auto;
 
-  @if $cols != false {
+  @if $cols == auto {
+    $basis: auto;
+  } @else if $cols != false {
     $basis: cols($cols);
   }
 
