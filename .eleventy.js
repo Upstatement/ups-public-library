@@ -11,6 +11,7 @@ const {
   indexItems,
 } = require('./src/_11ty/collections');
 const { htmlDateString, readableDate, split, formatTopic } = require('./src/_11ty/filters');
+const util = require('util');
 
 require('dotenv').config({ path: `.env.${process.env.NODE_ENV || 'development'}` });
 
@@ -59,6 +60,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('readableDate', readableDate);
   eleventyConfig.addFilter('split', split);
   eleventyConfig.addFilter('formatTopic', formatTopic);
+  eleventyConfig.addFilter('console', function (value) {
+    return util.inspect(value);
+  });
 
   /**
    * Add custom watch targets
