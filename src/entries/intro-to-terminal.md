@@ -1,9 +1,10 @@
 ---
 layout: layouts/entry/index.njk
 title: Intro to Terminal
-date: 2021-07-09
+date: 2021-07-14
 tags:
   - terminal
+summary: 'The Terminal is a fast and powerful tool for navigating computers and executing commands. Developers use it to navigate, run, & process code. Bonus: a glossary of commands!'
 ---
 
 Most of the time, we interact with computers through graphical interfaces. We can also use the terminal to interface with them through text-based commands. Since writing code is text based, and doesn’t depend on a particular program, the terminal is our tool of choice for working on websites.
