@@ -1,87 +1,46 @@
-<section class="index">
-  {# Search #}
-  <div class="search-wrapper js-search-wrapper">
-    <div class="search-bar">
-      <svg class="search-icon">
-        <use xlink:href="#search"></use>
-      </svg>
-      <input class="search-input js-search-input" type="text" placeholder="Search the Library">
-    </div>
+{% if collections.tagList | length %}
+  <ul class="index__all-topics">
+    {% for topic in collections.tagList %}
+    <li class="index__topic__wrapper">
+      <h2 class="index__topic__title">
+        {{ topic | formatTopic }}
+      </h2>
+      <ul class="index__topic__list">
 
-    <ul class="index__list search-results js-search-results"></ul>
-  </div>
+        {% set i = 0 %}
 
-  {# Page content & search results #}
-  {% if collections.indexItems | length %}
-    <ul class="index__list js-index-list">
-      {% for item in collections.indexItems %}
+        {% for item in collections.indexItems %}
 
-        {# The tag assigned by the json file in the directory will always be the first tag #}
-        {% set tagDef = item
-          .data
-          .tags[0] %}
+          {# The tag assigned by the json file in the directory will always be the first tag #}
+          {% set tagDef = item.data.tags[0] %}
+          {% set itemType = "Entry" if tagDef == "entries" else "Series" %}
 
-        <li class="index__item">
+          {% set itemTopic = item
+            .data
+            .tags[1] %}
 
-          {% if tagDef == "entries" %}
-            {# Entries #}
-            <a href="{{ item.url }}" class="index__link">
-              <h1 class="index__title">
-                <svg class="index__icon index__icon--arrow">
-                  <use xlink:href="#arrow"></use>
-                </svg>
-                {{ item.data.title }}
-              </h1>
-              <span class="index__type">Entry</span>
-              <span class="index__date">{{ item.data.date | readableDate }}</span>
-            </a>
+          {% if (itemTopic == topic) and (i < 3) %}
+            <li class="index__topic__item">
+              <a href="{{ item.url }}" class="index__link">
+                <div class="index__meta">
+                  <span class="index__type">{{ itemType }}</span>
+                  <span class="index__date">{{ item.data.date | readableDate }}</span>
+                </div>
+                <h3 class="index__item__title">
+                  {{ item.data.title }}
+                </h3>
+                <p class="index__summary">
+                  {{ item.data.summary }}
+                </p>
+              </a>
+            </li>
 
-          {% else %}
-            {# Series & Collections #}
-            {% set inputName = "expand-" ~ (item.data.title | slug) %}
-            <input class="index__expand-input" type="checkbox" name="{{ inputName }}" id="{{ inputName }}"/>
-            <label class="index__expand-label" for="{{ inputName }}">
-              <h1 class="index__title">
-                <svg class="index__icon index__icon--plus">
-                  <use xlink:href="#plus"></use>
-                </svg>
-                <svg class="index__icon index__icon--minus">
-                  <use xlink:href="#minus"></use>
-                </svg>
-                {{ item.data.title }}
-              </h1>
-              <span class="index__type">
-                {{ "Collection" if tagDef == "collections" }}
-                {{ "Series" if tagDef == "series" }}
-              </span>
-              <span class="index__count">
-                {{ item.data.entries | length }}
-                entries
-              </span>
-            </label>
-
-            <ol class="index__nested__list">
-              {% if item.data.entries | length %}
-                {% for entry in item.data.entries %}
-                  <li class="index__item">
-                    <a href="{{ '/entries/' ~ entry | slug }}" class="index__link">
-                      <h2 class="index__title">
-                        <svg class="index__icon index__icon--arrow">
-                          <use xlink:href="#arrow"></use>
-                        </svg>
-                        {{ entry }}
-                      </h2>
-                      <span class="index__type">Entry</span>
-                      <span class="index__date">{{ item.data.date | readableDate }}</span>
-                    </a>
-                  </li>
-                {% endfor %}
-              {% endif %}
-            </ol>
-
+            {% set i = i + 1 %}
           {% endif %}
-        </li>
-      {% endfor %}
-    </ul>
-  {% endif %}
-</section>
+
+        {% endfor %}
+        </ul>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

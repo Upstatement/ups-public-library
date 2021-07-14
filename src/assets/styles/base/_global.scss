@@ -21,7 +21,7 @@ html {
 
 body {
   @include flex(column, 1);
-  @include responsive-font-size(0);
+  @include responsive-fs(4);
   background-color: var(--bg-color);
   color: var(--text-color);
   font-family: $sans;

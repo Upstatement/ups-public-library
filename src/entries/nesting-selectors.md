@@ -1,7 +1,7 @@
 ---
 layout: layouts/entry/index.njk
 title: Nesting Selectors
-date: 2021-03-05
+date: 2021-07-09
 tags:
   - scss
 nextEntryTitle: Mixins

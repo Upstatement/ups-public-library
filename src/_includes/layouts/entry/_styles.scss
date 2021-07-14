@@ -1,11 +1,11 @@
 $progress-bar-height: 73px;
 
 .entry {
-  padding-bottom: $fs-1;
+  padding-bottom: $fs4;
   padding-top: var(--gutter-half);
 
-  @include mq($md) {
-    padding-bottom: $sp7;
+  @include mq($bp-tablet) {
+    padding-bottom: $sp12;
     padding-top: 0;
   }
 }
@@ -17,9 +17,9 @@ $progress-bar-height: 73px;
   bottom: $progress-bar-height;
   display: none;
   flex-direction: column;
-  font-size: $fs-4;
+  font-size: $fs1;
   left: 0;
-  line-height: $fs-4;
+  line-height: $fs1;
   overflow-x: hidden;
   overflow-y: hidden;
   padding-left: var(--gutter-half);
@@ -31,12 +31,12 @@ $progress-bar-height: 73px;
     overflow-y: auto;
   }
 
-  @include mq($md) {
+  @include mq($bp-tablet) {
     display: flex;
     max-width: calc((100% - var(--content-max-width)) / 2);
   }
 
-  @media (min-width: $md) and (max-width: $lg) {
+  @media (min-width: $bp-tablet) and (max-width: $bp-desktop-sm) {
     transition: width 100ms ease;
     width: calc((100% - var(--content-max-width)) / 2);
     max-width: none;
@@ -51,7 +51,7 @@ $progress-bar-height: 73px;
       position: fixed;
       top: 0;
       transition: width 100ms ease;
-      width: $sp3;
+      width: $sp8;
     }
 
     &:hover,
@@ -71,7 +71,7 @@ $progress-bar-height: 73px;
   margin-top: auto;
   position: relative;
 
-  @media (min-width: $md) and (max-width: $lg) {
+  @media (min-width: $bp-tablet) and (max-width: $bp-desktop-sm) {
     @include layer(1);
     position: relative;
     padding-right: var(--gutter-half);
@@ -80,7 +80,7 @@ $progress-bar-height: 73px;
 
 li {
   .entry__toc & {
-    margin: $sp-3 0;
+    margin: $sp2 0;
 
     a {
       padding-left: 0.7em;
@@ -135,7 +135,7 @@ a {
     }
   }
 
-  @media (min-width: $md) and (max-width: $lg) {
+  @media (min-width: $bp-tablet) and (max-width: $bp-desktop-sm) {
     .entry__toc--wrapper:hover & {
       color: var(--secondary-text-color);
 
@@ -163,7 +163,7 @@ a {
       color: var(--bg-color);
       content: '•';
       display: inline-block;
-      font-size: $fs-3;
+      font-size: $fs2;
       left: 0;
       position: absolute;
       transform: translateY(-1px);
@@ -198,13 +198,13 @@ a {
   flex-direction: row;
   position: relative;
 
-  @media (max-width: $md) {
+  @media (max-width: $bp-tablet) {
     justify-content: center;
-    margin-bottom: $sp4;
+    margin-bottom: $sp9;
     text-align: center;
   }
 
-  @include mq($md) {
+  @include mq($bp-tablet) {
     border-top: 1px solid $black;
     bottom: 0;
     left: 0;
@@ -221,7 +221,7 @@ a {
 }
 
 .nav__print {
-  font-size: $fs-1;
+  font-size: $fs4;
   line-height: 1;
 
   &--upl,
@@ -250,7 +250,7 @@ a {
     position: absolute;
     top: var(--gutter-half);
 
-    @include mq($md) {
+    @include mq($bp-tablet) {
       top: calc(var(--gutter-half) + 1px);
     }
   }
@@ -258,19 +258,19 @@ a {
 
 .nav__percent-complete {
   font-family: $neuebit;
-  font-size: $fs-1;
+  font-size: $fs4;
   font-weight: $neuebit-bold;
   margin-left: auto;
 
-  @include mq($md - 1, max) {
+  @include mq($bp-tablet - 1, max) {
     bottom: 0.25em;
     height: 1em;
     left: var(--gutter-half);
     position: fixed;
   }
 
-  @include mq($md) {
-    font-size: $fs0;
+  @include mq($bp-tablet) {
+    font-size: $fs5;
   }
 }
 
@@ -280,11 +280,11 @@ a {
   left: 0;
   position: fixed;
 
-  @include mq($md - 1, max) {
-    height: $fs-1;
+  @include mq($bp-tablet - 1, max) {
+    height: $fs4;
   }
 
-  @include mq($md) {
+  @include mq($bp-tablet) {
     position: absolute;
     top: -1px;
   }
@@ -300,13 +300,13 @@ a {
 
 .entry__header,
 .entry__footer {
-  font-size: $fs-3;
+  font-size: $fs2;
 }
 
 .entry__header {
   padding-top: var(--gutter-full);
 
-  @include mq($md) {
+  @include mq($bp-tablet) {
     text-align: center;
   }
 }
@@ -314,12 +314,12 @@ a {
 .entry__content {
   padding-top: var(--gutter-half);
 
-  @include mq($md) {
-    padding-top: $sp6;
+  @include mq($bp-tablet) {
+    padding-top: $sp11;
   }
 
-  @include mq($lg) {
-    padding-top: $sp8;
+  @include mq($bp-desktop-sm) {
+    padding-top: $sp13;
   }
 }
 
@@ -331,12 +331,12 @@ a {
   padding-bottom: var(--gutter-full);
 
   a {
-    font-size: $fs-1;
+    font-size: $fs4;
   }
 }
 
 .dingbat__wrapper {
-  @include margin($sp6 null);
+  @include margin($sp11 null);
   align-items: center;
   display: flex;
   font-family: $fleuron-dingbats;
@@ -345,8 +345,8 @@ a {
   justify-content: center;
   text-align: center;
 
-  @include mq($lg) {
-    @include margin($sp8 null);
+  @include mq($bp-desktop-sm) {
+    @include margin($sp13 null);
   }
 }
 
